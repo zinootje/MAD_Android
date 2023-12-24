@@ -4,9 +4,9 @@ import com.example.mvp.Network.RestoApiService
 import com.example.mvp.Network.asDomainObject
 import com.example.mvp.Network.getRestoListAsFlow
 import com.example.mvp.Network.getRestoMenuAsFlow
-import com.example.mvp.data.room.RestoDao
-import com.example.mvp.data.room.asDbObject
-import com.example.mvp.data.room.asDomainObject
+import com.example.mvp.data.database.RestoDao
+import com.example.mvp.data.database.asDbObject
+import com.example.mvp.data.database.asDomainObject
 import com.example.mvp.model.MenuData
 import com.example.mvp.model.Resto
 import kotlinx.coroutines.flow.Flow
