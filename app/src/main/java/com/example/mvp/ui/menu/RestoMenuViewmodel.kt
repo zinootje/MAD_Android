@@ -11,11 +11,12 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.mvp.MvpApplication
+import com.example.mvp.core.Result
+import com.example.mvp.core.asResult
 import com.example.mvp.data.RestoRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 class RestoMenuViewmodel(
@@ -40,15 +41,36 @@ class RestoMenuViewmodel(
 
     fun getRestoMenu() {
         viewModelScope.launch {
-            restoApiState = try {
-                //TODO Remove first() to get a flow
-                val restoMenu = restoRepository.getRestoMenu(restoName).first()
-                RestoMenuApiState.Success(restoMenu)
-            } catch (e: Exception) {
-                //Log error to logcat
-                Log.e("RestoMenuViewmodel", "getRestoMenu: ", e)
-                RestoMenuApiState.Error(e.message ?: "Unknown error")
+            restoRepository.getRestoMenu(restoName).asResult().collect() { it ->
+                val state = when (it) {
+                    is Result.Loading -> RestoMenuApiState.Loading
+                    is Result.Error -> {
+
+                        Log.e("RestoMenuViewmodel", "getRestoMenu: ", it.exception)
+                        RestoMenuApiState.Error(it.exception?.message ?: "Unknown error")
+                    }
+
+                    is Result.Success -> {
+                        //TODO remover one of the two orzfwdxs
+                        _uiState.value = _uiState.value.copy()
+                        RestoMenuApiState.Success(it.data)
+                    }
+                }
+                //TODO remive one of the two
+                _uiState.value = _uiState.value.copy(restoMenuApiState = state)
+                restoApiState = state
+
+
             }
+//            restoApiState = try {
+//                //TODO Remove first() to get a flow
+//                val restoMenu = restoRepository.getRestoMenu(restoName).first()
+//                RestoMenuApiState.Success(restoMenu)
+//            } catch (e: Exception) {
+//                //Log error to logcat
+//                Log.e("RestoMenuViewmodel", "getRestoMenu: ", e)
+//                RestoMenuApiState.Error(e.message ?: "Unknown error")
+//            }
         }
     }
 
@@ -59,7 +81,7 @@ class RestoMenuViewmodel(
     companion object {
         fun Factory(name: String): ViewModelProvider.Factory = viewModelFactory { initializer {
             val application = (this[APPLICATION_KEY] as MvpApplication)
-            val restoRepository = application.container.restoRepository
+            val restoRepository = application.container.oflRepository
             RestoMenuViewmodel(restoRepository, name)
         } }
     }

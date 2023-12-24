@@ -29,7 +29,7 @@ fun RestoOverviewPage(
     navigateToMenu: (String) -> Unit = {},
     restoOverviewViewModel: RestoOverviewViewModel = viewModel(factory = RestoOverviewViewModel.Factory)) {
     val restoOverviewUiState by restoOverviewViewModel.uiState.collectAsState()
-
+    val apiState = restoOverviewUiState.restoOverviewApiState
     Scaffold(
         topBar = {
             TopAppBar(
@@ -50,15 +50,16 @@ fun RestoOverviewPage(
         }
     ) {innerPadding ->
         Box(modifier = Modifier.padding(innerPadding)) {
-            when (restoOverviewUiState.restoOverviewApiState) {
+            when (apiState) {
                 is RestoOverviewApiState.Loading -> {
                     Text(text = "Loading")
                 }
+
                 is RestoOverviewApiState.Success -> {
-                    val restoList = (restoOverviewUiState.restoOverviewApiState as RestoOverviewApiState.Success).data
+                    val restoList = apiState.data
                     if (restoOverviewUiState.gridMode) {
                         LazyVerticalGrid(columns = GridCells.Fixed(2)) {
-                            items((restoOverviewUiState.restoOverviewApiState as RestoOverviewApiState.Success).data.size) { index ->
+                            items(apiState.data.size) { index ->
                                 RestoGridTile(name = restoList[index]) {
                                     navigateToMenu(
                                         restoList[index]

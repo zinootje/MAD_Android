@@ -2,6 +2,7 @@ package com.example.mvp.data
 
 import android.content.Context
 import com.example.mvp.Network.RestoApiService
+import com.example.mvp.data.database.MenuDatabase
 import com.example.mvp.data.database.RestoDatabase
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
@@ -31,6 +32,11 @@ class DefaultAppContainer(
     override val restoRepository: RestoRepository by lazy { RestoRepositoryImpl(retrofitService)
     }
 
-    override val oflRepository: RestoRepository by lazy { RestoOfflineRepositoryImpl(retrofitService, RestoDatabase.getDatabase(context).restoDao())
+    override val oflRepository: RestoRepository by lazy {
+        RestoOfflineRepositoryImpl(
+            retrofitService,
+            RestoDatabase.getDatabase(context).restoDao(),
+            MenuDatabase.getDatabase(context).menuDao()
+        )
     }
 }

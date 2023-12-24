@@ -5,6 +5,8 @@ import com.example.mvp.model.MenuData
 
 data class RestoMenuUiState(
     val currentTab: Int = 0,
+    val restoMenuApiState: RestoMenuApiState = RestoMenuApiState.Loading,
+    val restoName: String = ""
 
 )
 

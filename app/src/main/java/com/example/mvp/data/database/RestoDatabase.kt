@@ -18,7 +18,7 @@ abstract class RestoDatabase : RoomDatabase() {
                  Room.databaseBuilder(
                     context,
                     RestoDatabase::class.java,
-                    "resto_database"
+                    "resto_list_database"
                 ).build().also { Instace = it }
 
             }
