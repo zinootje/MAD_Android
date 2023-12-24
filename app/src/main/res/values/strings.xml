@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MVP</string>
+    <string name="resto_overview_title">Resto\'s</string>
+    <string name="resto_menu_title">Menu\'s</string>
+    <string name="vegan">vegan</string>
+    <string name="veggie">veggie</string>
+    <string name="unknown">unknown</string>
+    <string name="none">geen</string>
+</resources>
