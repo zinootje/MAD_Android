@@ -5,10 +5,12 @@ import com.example.mvp.Network.asDomainObject
 import com.example.mvp.Network.getRestoListAsFlow
 import com.example.mvp.Network.getRestoMenuAsFlow
 import com.example.mvp.data.room.RestoDao
+import com.example.mvp.data.room.asDbObject
 import com.example.mvp.data.room.asDomainObject
 import com.example.mvp.model.MenuData
 import com.example.mvp.model.Resto
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onEach
 
@@ -79,7 +81,10 @@ class RestoOfflineRepositoryImpl(
     }
 
     override suspend fun refreshRestoList() {
-        TODO("Not yet implemented")
+        //TODO maybe error handling
+        val restos =  RestoApiService.getRestoListAsFlow().map { it.map { Resto(it) } }.first()
+        for (resto in restos) {
+            RestoDao.insert(resto.asDbObject())
+        }
     }
-
 }
