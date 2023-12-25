@@ -1,5 +1,6 @@
 package com.example.mvp.fake
 
+import com.example.mvp.model.Resto
 import com.example.mvp.network.ApiRestoMenu
 import com.example.mvp.network.Day
 import com.example.mvp.network.Dish
@@ -7,6 +8,10 @@ import com.example.mvp.network.Special
 
 object FakeDataSource {
     val restoList = listOf("Resto 1", "Resto 2", "Resto 3")
+    var restoObjectList = listOf(Resto(
+        restoList[0],true), Resto(
+        restoList[1],false), Resto(
+        restoList[2],false))
     val restoMenu = ApiRestoMenu(
         location = "Resto 1",
         days = listOf(

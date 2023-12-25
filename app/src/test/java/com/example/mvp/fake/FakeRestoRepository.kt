@@ -9,9 +9,9 @@ import kotlinx.coroutines.flow.flow
 
 class FakeRestoRepository: RestoRepository
 {
-    override suspend fun getRestoList(): Flow<List<Resto>> {
+    override  fun getRestoList(): Flow<List<Resto>> {
         return flow {
-            emit(FakeDataSource.restoList.map { Resto(it) })
+            emit(FakeDataSource.restoObjectList)
         }
     }
 
@@ -19,6 +19,18 @@ class FakeRestoRepository: RestoRepository
         return flow {
             emit(FakeDataSource.restoMenu.asDomainObject())
         }
+    }
+
+    override suspend fun setFavoriteResto(name: String, favorite: Boolean) {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun refreshRestoList() {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun refreshRestoMenu(name: String) {
+        TODO("Not yet implemented")
     }
 
 }
