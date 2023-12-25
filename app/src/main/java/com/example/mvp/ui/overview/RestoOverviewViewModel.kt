@@ -18,7 +18,7 @@ import kotlinx.coroutines.launch
 
 
 class RestoOverviewViewModel(private val restoRepository: RestoRepository): ViewModel() {
-    val _uiState = MutableStateFlow(RestoOverviewUiState(restoOverviewApiState = RestoOverviewApiState.Loading))
+    private val _uiState = MutableStateFlow(RestoOverviewUiState(restoOverviewApiState = RestoOverviewApiState.Loading))
     val uiState : StateFlow<RestoOverviewUiState> = _uiState.asStateFlow()
 
 
@@ -26,9 +26,9 @@ class RestoOverviewViewModel(private val restoRepository: RestoRepository): View
         getRestoList()
     }
 
-    fun getRestoList() {
+    private fun getRestoList() {
        viewModelScope.launch {
-           restoRepository.getRestoList().asResult().collect() {it ->
+           restoRepository.getRestoList().asResult().collect { it ->
                val state: RestoOverviewApiState = when (it) {
                    is Result.Loading -> RestoOverviewApiState.Loading
                    is Result.Error -> {

@@ -1,7 +1,7 @@
 package com.example.mvp.data
 
 import android.content.Context
-import com.example.mvp.Network.RestoApiService
+import com.example.mvp.network.RestoApiService
 import com.example.mvp.data.database.MenuDatabase
 import com.example.mvp.data.database.RestoDatabase
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory

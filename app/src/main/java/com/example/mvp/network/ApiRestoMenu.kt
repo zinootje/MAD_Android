@@ -1,11 +1,10 @@
-package com.example.mvp.Network
+package com.example.mvp.network
 
 import com.example.mvp.model.MenuData
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.json.JsonNames
 import com.example.mvp.model.Day as ModelDay
 import com.example.mvp.model.Menu as ModelMenu
 import com.example.mvp.model.Dish as ModelDish
@@ -28,15 +27,15 @@ data class Day(
 @Serializable
 data class Dish(
     val name: String,
-    val special: special
+    val special: Special
 )
 
 @Serializable
-enum class special {
+enum class Special {
                    @SerialName("vegan")
     VEGAN,
                       @SerialName("veggie")
-    VEGIE,
+    VEGGIE,
                         @SerialName("none")
     NONE,
     //TODO
@@ -45,12 +44,12 @@ enum class special {
     UNKNOWN
 }
 
-fun special.asDomainObject(): ModelSpecial {
+fun Special.asDomainObject(): ModelSpecial {
     return when (this) {
-        special.VEGAN -> ModelSpecial.VEGAN
-        special.VEGIE -> ModelSpecial.VEGIE
-        special.NONE -> ModelSpecial.NONE
-        special.UNKNOWN -> ModelSpecial.UNKNOWN
+        Special.VEGAN -> ModelSpecial.VEGAN
+        Special.VEGGIE -> ModelSpecial.VEGIE
+        Special.NONE -> ModelSpecial.NONE
+        Special.UNKNOWN -> ModelSpecial.UNKNOWN
     }
 }
 

@@ -1,9 +1,9 @@
 package com.example.mvp.fake
 
-import com.example.mvp.Network.ApiRestoMenu
-import com.example.mvp.Network.Day
-import com.example.mvp.Network.Dish
-import com.example.mvp.Network.special
+import com.example.mvp.network.ApiRestoMenu
+import com.example.mvp.network.Day
+import com.example.mvp.network.Dish
+import com.example.mvp.network.Special
 
 object FakeDataSource {
     val restoList = listOf("Resto 1", "Resto 2", "Resto 3")
@@ -23,29 +23,29 @@ object FakeDataSource {
                     "Lunch" to listOf(
                         Dish(
                             name = "Dish 1",
-                            special = special.NONE
+                            special = Special.NONE
                         ),
                         Dish(
                             name = "Dish 2",
-                            special = special.VEGAN
+                            special = Special.VEGAN
                         ),
                         Dish(
                             name = "Dish 3",
-                            special = special.VEGIE
+                            special = Special.VEGGIE
                         ),
                     ),
                     "Dinner" to listOf(
                         Dish(
                             name = "Dish 4",
-                            special = special.NONE
+                            special = Special.NONE
                         ),
                         Dish(
                             name = "Dish 5",
-                            special = special.VEGAN
+                            special = Special.VEGAN
                         ),
                         Dish(
                             name = "Dish 6",
-                            special = special.VEGIE
+                            special = Special.VEGGIE
                         ),
                     )
                 )
@@ -57,29 +57,29 @@ object FakeDataSource {
                     "Lunch" to listOf(
                         Dish(
                             name = "Dish 1",
-                            special = special.NONE
+                            special = Special.NONE
                         ),
                         Dish(
                             name = "Dish 2",
-                            special = special.VEGAN
+                            special = Special.VEGAN
                         ),
                         Dish(
                             name = "Dish 3",
-                            special = special.VEGIE
+                            special = Special.VEGGIE
                         ),
                     ),
                     "Dinner" to listOf(
                         Dish(
                             name = "Dish 4",
-                            special = special.NONE
+                            special = Special.NONE
                         ),
                         Dish(
                             name = "Dish 5",
-                            special = special.VEGAN
+                            special = Special.VEGAN
                         ),
                         Dish(
                             name = "Dish 6",
-                            special = special.VEGIE
+                            special = Special.VEGGIE
                         ),
                     )
                 )
@@ -91,29 +91,29 @@ object FakeDataSource {
                     "Lunch" to listOf(
                         Dish(
                             name = "Dish 1",
-                            special = special.NONE
+                            special = Special.NONE
                         ),
                         Dish(
                             name = "Dish 2",
-                            special = special.VEGAN
+                            special = Special.VEGAN
                         ),
                         Dish(
                             name = "Dish 3",
-                            special = special.VEGIE
+                            special = Special.VEGGIE
                         ),
                     ),
                     "Dinner" to listOf(
                         Dish(
                             name = "Dish 4",
-                            special = special.NONE
+                            special = Special.NONE
                         ),
                         Dish(
                             name = "Dish 5",
-                            special = special.VEGAN
+                            special = Special.VEGAN
                         ),
                         Dish(
                             name = "Dish 6",
-                            special = special.VEGIE
+                            special = Special.VEGGIE
                         ),
                     )
                 )
@@ -125,29 +125,29 @@ object FakeDataSource {
                     "Lunch" to listOf(
                         Dish(
                             name = "Dish 1",
-                            special = special.NONE
+                            special = Special.NONE
                         ),
                         Dish(
                             name = "Dish 2",
-                            special = special.VEGAN
+                            special = Special.VEGAN
                         ),
                         Dish(
                             name = "Dish 3",
-                            special = special.VEGIE
+                            special = Special.VEGGIE
                         ),
                     ),
                     "Dinner" to listOf(
                         Dish(
                             name = "Dish 4",
-                            special = special.NONE
+                            special = Special.NONE
                         ),
                         Dish(
                             name = "Dish 5",
-                            special = special.VEGAN
+                            special = Special.VEGAN
                         ),
                         Dish(
                             name = "Dish 6",
-                            special = special.VEGIE
+                            special = Special.VEGGIE
                         ),
                     )
                 )

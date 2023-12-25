@@ -5,11 +5,11 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.example.mvp.data.database.convertors.DayConverter
+import com.example.mvp.data.database.convertors.DayMenuConverter
 
 //TODO reset version to 1
 @Database(entities = [MenuDataEntity::class], version = 2)
-@TypeConverters(DayConverter::class)
+@TypeConverters(DayMenuConverter::class)
 abstract class MenuDatabase : RoomDatabase() {
     abstract fun menuDao(): MenuDao
 

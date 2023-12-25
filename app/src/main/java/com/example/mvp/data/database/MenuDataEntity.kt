@@ -2,8 +2,8 @@ package com.example.mvp.data.database
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.mvp.Network.ApiRestoMenu
-import com.example.mvp.Network.asDomainObject
+import com.example.mvp.network.ApiRestoMenu
+import com.example.mvp.network.asDomainObject
 import com.example.mvp.model.Day
 import com.example.mvp.model.MenuData
 
@@ -12,6 +12,8 @@ data class MenuDataEntity(
     @PrimaryKey
     val location: String,
     val days: List<Day>,
+
+    val timestamp: Long = System.currentTimeMillis()
 )
 
 

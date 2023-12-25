@@ -10,7 +10,7 @@ data class RestoOverviewUiState(
 
 @Immutable
 sealed interface RestoOverviewApiState {
-    object Loading : RestoOverviewApiState
+    data object Loading : RestoOverviewApiState
     data class Success(val data: List<String>) : RestoOverviewApiState
     data class Error(val message: String) : RestoOverviewApiState
 }

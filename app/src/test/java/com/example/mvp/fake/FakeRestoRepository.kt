@@ -1,6 +1,6 @@
 package com.example.mvp.fake
 
-import com.example.mvp.Network.asDomainObject
+import com.example.mvp.network.asDomainObject
 import com.example.mvp.data.RestoRepository
 import com.example.mvp.model.MenuData
 import com.example.mvp.model.Resto

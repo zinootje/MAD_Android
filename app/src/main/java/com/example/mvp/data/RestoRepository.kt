@@ -1,9 +1,9 @@
 package com.example.mvp.data
 
-import com.example.mvp.Network.RestoApiService
-import com.example.mvp.Network.asDomainObject
-import com.example.mvp.Network.getRestoListAsFlow
-import com.example.mvp.Network.getRestoMenuAsFlow
+import com.example.mvp.network.RestoApiService
+import com.example.mvp.network.asDomainObject
+import com.example.mvp.network.getRestoListAsFlow
+import com.example.mvp.network.getRestoMenuAsFlow
 import com.example.mvp.data.database.MenuDao
 import com.example.mvp.data.database.RestoDao
 import com.example.mvp.data.database.asDbObject
@@ -35,33 +35,33 @@ interface RestoRepository {
 
 }
 
-
-class RestoRepositoryImpl(private val RestoApiService: RestoApiService) : RestoRepository {
-    override fun getRestoList(): Flow<List<Resto>> {
-        return RestoApiService.getRestoListAsFlow().map { it -> it.map { Resto(it) } }
-    }
-
-    override suspend fun getRestoMenu(name: String): Flow<MenuData> {
-        return RestoApiService.getRestoMenuAsFlow(name).map { it.asDomainObject() }
-    }
-
-    override suspend fun favoriteResto(name: String) {
-        TODO("Not yet implemented")
-    }
-
-    override suspend fun unFavoriteResto(name: String) {
-        TODO("Not yet implemented")
-    }
-
-    override suspend fun refreshRestoList() {
-        TODO("Not yet implemented")
-    }
-
-    override suspend fun refreshRestoMenu(name: String) {
-        TODO("Not yet implemented")
-    }
-
-}
+//
+//class RestoRepositoryImpl(private val RestoApiService: RestoApiService) : RestoRepository {
+//    override fun getRestoList(): Flow<List<Resto>> {
+//        return RestoApiService.getRestoListAsFlow().map { it -> it.map { Resto(it) } }
+//    }
+//
+//    override suspend fun getRestoMenu(name: String): Flow<MenuData> {
+//        return RestoApiService.getRestoMenuAsFlow(name).map { it.asDomainObject() }
+//    }
+//
+//    override suspend fun favoriteResto(name: String) {
+//        TODO("Not yet implemented")
+//    }
+//
+//    override suspend fun unFavoriteResto(name: String) {
+//        TODO("Not yet implemented")
+//    }
+//
+//    override suspend fun refreshRestoList() {
+//        TODO("Not yet implemented")
+//    }
+//
+//    override suspend fun refreshRestoMenu(name: String) {
+//        TODO("Not yet implemented")
+//    }
+//
+//}
 
 class RestoOfflineRepositoryImpl(
     private val restoApiService: RestoApiService,

@@ -1,6 +1,5 @@
-package com.example.mvp.Network
+package com.example.mvp.network
 
-import com.example.mvp.model.MenuData
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.http.GET

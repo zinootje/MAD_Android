@@ -1,7 +1,7 @@
 package com.example.mvp.fake
 
-import com.example.mvp.Network.ApiRestoMenu
-import com.example.mvp.Network.RestoApiService
+import com.example.mvp.network.ApiRestoMenu
+import com.example.mvp.network.RestoApiService
 
 class FakeRestoApiService: RestoApiService {
     override suspend fun getRestoList(): List<String> {
