@@ -52,7 +52,7 @@ class RestoOverviewViewModel(private val restoRepository: RestoRepository): View
     companion object {
         val Factory: ViewModelProvider.Factory = viewModelFactory { initializer {
             val application = (this[APPLICATION_KEY] as MvpApplication)
-            val restoRepository = application.container.oflRepository
+            val restoRepository = application.container.restoRepository
             RestoOverviewViewModel(restoRepository)
         } }
     }

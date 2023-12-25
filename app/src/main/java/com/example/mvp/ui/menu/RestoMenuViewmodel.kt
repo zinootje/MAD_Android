@@ -82,7 +82,7 @@ class RestoMenuViewmodel(
     companion object {
         fun Factory(name: String): ViewModelProvider.Factory = viewModelFactory { initializer {
             val application = (this[APPLICATION_KEY] as MvpApplication)
-            val restoRepository = application.container.oflRepository
+            val restoRepository = application.container.restoRepository
             RestoMenuViewmodel(restoRepository, name)
         } }
     }

@@ -12,8 +12,6 @@ import retrofit2.Retrofit
 
 interface AppContainer {
     val restoRepository: RestoRepository
-    //TODO remove old maybe
-    val oflRepository: RestoRepository
 }
 
 class DefaultAppContainer(
@@ -29,14 +27,11 @@ class DefaultAppContainer(
 
     private  val retrofitService: RestoApiService by lazy { retrofit.create(RestoApiService::class.java)  }
 
-    override val restoRepository: RestoRepository by lazy { RestoRepositoryImpl(retrofitService)
+    override val restoRepository: RestoRepository by lazy { RestoOfflineRepositoryImpl(
+        retrofitService,
+        RestoDatabase.getDatabase(context).restoDao(),
+        MenuDatabase.getDatabase(context).menuDao()
+    )
     }
 
-    override val oflRepository: RestoRepository by lazy {
-        RestoOfflineRepositoryImpl(
-            retrofitService,
-            RestoDatabase.getDatabase(context).restoDao(),
-            MenuDatabase.getDatabase(context).menuDao()
-        )
-    }
 }
