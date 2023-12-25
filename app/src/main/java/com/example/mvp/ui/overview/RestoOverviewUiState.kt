@@ -1,6 +1,7 @@
 package com.example.mvp.ui.overview
 
 import androidx.compose.runtime.Immutable
+import com.example.mvp.model.Resto
 
 data class RestoOverviewUiState(
     val restoOverviewApiState: RestoOverviewApiState ,
@@ -11,6 +12,6 @@ data class RestoOverviewUiState(
 @Immutable
 sealed interface RestoOverviewApiState {
     data object Loading : RestoOverviewApiState
-    data class Success(val data: List<String>) : RestoOverviewApiState
+    data class Success(val data: List<Resto>) : RestoOverviewApiState
     data class Error(val message: String) : RestoOverviewApiState
 }

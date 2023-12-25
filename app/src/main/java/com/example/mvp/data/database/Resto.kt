@@ -18,7 +18,7 @@ data class Resto(
 fun Resto.asDomainObject(): ModelResto {
     return ModelResto(
         name = name,
-        favorite = favorite
+        isFavorite = favorite
     )
 }
 
@@ -26,7 +26,7 @@ fun List<Resto>.asDomainObject(): List<ModelResto> {
     return map {
         ModelResto(
             name = it.name,
-            favorite = it.favorite
+            isFavorite = it.favorite
         )
     }
 }
@@ -34,6 +34,6 @@ fun List<Resto>.asDomainObject(): List<ModelResto> {
 fun ModelResto.asDbObject(): Resto {
     return Resto(
         name = name,
-        favorite = favorite
+        favorite = isFavorite
     )
 }

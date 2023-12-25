@@ -24,9 +24,9 @@ interface RestoRepository {
 
     suspend fun getRestoMenu(name: String): Flow<MenuData>
 
-    suspend fun favoriteResto(name: String)
+    suspend fun setFavoriteResto(name: String, favorite: Boolean)
 
-    suspend fun unFavoriteResto(name: String)
+
 
     suspend fun refreshRestoList()
 
@@ -87,14 +87,10 @@ class RestoOfflineRepositoryImpl(
         }.filterNotNull().map { it.toMenuData() }
     }
 
-    override suspend fun favoriteResto(name: String) {
-        TODO("Not yet implemented")
-    }
 
-    override suspend fun unFavoriteResto(name: String) {
-        TODO("Not yet implemented")
+    override suspend fun setFavoriteResto(name: String, favorite: Boolean) {
+        restoDao.setFavoriteResto(name, favorite)
     }
-
     override suspend fun refreshRestoList() {
         //TODO maybe error handling
         val restos = restoApiService.getRestoListAsFlow().map { it -> it.map { Resto(it) } }.first()

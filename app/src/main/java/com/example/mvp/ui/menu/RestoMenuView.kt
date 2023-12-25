@@ -1,17 +1,18 @@
-@file:OptIn(ExperimentalMaterial3Api::class)
+@file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3Api::class)
 
 package com.example.mvp.ui.menu
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.pager.HorizontalPager
+import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -21,7 +22,9 @@ import com.example.mvp.model.Day
 import com.example.mvp.model.Dish
 import com.example.mvp.model.MenuData
 import com.example.mvp.model.special
+import kotlinx.coroutines.launch
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RestoMenuPage(
     viewModel: RestoMenuViewmodel,
@@ -52,7 +55,7 @@ fun RestoMenuPage(
             is RestoMenuApiState.Success -> {
                 Box(modifier = Modifier.padding(innerPadding)) {
                     //success
-                    MenuTabScreen(apiState.data, uiState.currentTab, viewModel::switchTab)
+                    MenuTabScreen(apiState.data)
                 }
             }
             is RestoMenuApiState.Error -> {
@@ -67,29 +70,50 @@ fun RestoMenuPage(
 
 
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun MenuTabScreen(menuData: MenuData, currentTabIndex: Int = 0, onTabChange: (Int) -> Unit = {}) {
-    // Tab state
+fun MenuTabScreen(menuData: MenuData) {
+    // Pager state
+    val pagerState = rememberPagerState(
+        initialPage = 0,
+        initialPageOffsetFraction = 0F
+    ) {
+       menuData.days.size
+    }
+    val days = listOf("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 
+    val animationScope = rememberCoroutineScope()
     Column {
-        // Tab row for each day
+        // Tab row
         ScrollableTabRow(
-            selectedTabIndex = currentTabIndex,
+            selectedTabIndex = pagerState.currentPage,
             contentColor = MaterialTheme.colorScheme.onSurface,
-            divider = {},
-            edgePadding = 16.dp
+
         ) {
-            menuData.days.forEachIndexed { index, day ->
+            days.forEachIndexed { index, day ->
                 Tab(
-                    selected = index == currentTabIndex,
-                    onClick = { onTabChange(index) },
-                    text = { Text(day.dag) }
+                    selected = pagerState.currentPage == index,
+                    onClick = {
+                        // Animate to the selected page
+                        animationScope.launch {
+                            pagerState.animateScrollToPage(index)
+                        }
+
+                        //onTabChange(index)
+                    },
+                    text = { Text(day) }
                 )
             }
         }
 
-        // Content for the selected day
-        DayMenuContent(day = menuData.days[currentTabIndex])
+        // Horizontal pager for the content
+        HorizontalPager(
+            state = pagerState,
+            contentPadding = PaddingValues(horizontal = 16.dp)
+        ) { page ->
+            // Content for the selected day
+            DayMenuContent(day = menuData.days[page])
+        }
     }
 }
 

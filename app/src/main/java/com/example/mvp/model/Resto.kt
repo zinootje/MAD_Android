@@ -1,6 +1,9 @@
 package com.example.mvp.model
 
+import androidx.compose.runtime.Immutable
+
+@Immutable
 data class Resto(
     val name: String,
-    val favorite: Boolean = false
+    val isFavorite: Boolean = false
 )

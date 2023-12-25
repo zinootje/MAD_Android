@@ -26,6 +26,13 @@ class RestoOverviewViewModel(private val restoRepository: RestoRepository): View
         getRestoList()
     }
 
+
+    fun setFavorite(restoName: String, isFavorite: Boolean) {
+        viewModelScope.launch {
+            restoRepository.setFavoriteResto(restoName, isFavorite)
+        }
+    }
+
     private fun getRestoList() {
        viewModelScope.launch {
            restoRepository.getRestoList().asResult().collect { it ->
@@ -36,7 +43,7 @@ class RestoOverviewViewModel(private val restoRepository: RestoRepository): View
                        RestoOverviewApiState.Error(it.exception?.message ?: "Unknown error")
                    }
 
-                   is Result.Success -> RestoOverviewApiState.Success(it.data.map { it.name })
+                   is Result.Success -> RestoOverviewApiState.Success(it.data)
                }
 
                _uiState.value = _uiState.value.copy(restoOverviewApiState = state)

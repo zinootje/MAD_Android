@@ -19,6 +19,7 @@ import com.example.mvp.R
 import com.example.mvp.ui.menu.RestoMenuPage
 import com.example.mvp.ui.menu.RestoMenuViewmodel
 import com.example.mvp.ui.overview.RestoOverviewPage
+import com.example.mvp.ui.overview.RestoOverviewViewModel
 import com.example.mvp.ui.theme.MVPTheme
 
 
@@ -59,7 +60,7 @@ fun MVPApp(navController: NavHostController = rememberNavController()) {
         ) {
            NavHost(navController = navController, startDestination = MvpScreens.Start.name) {
                composable(MvpScreens.Start.toRoute()) {
-                    RestoOverviewPage(navigateToMenu = ::navigateToMenu)
+                    RestoOverviewPage(navigateToMenu = ::navigateToMenu, restoOverviewViewModel = viewModel(factory = RestoOverviewViewModel.Factory))
                }
                composable(MvpScreens.RestoOverview.toRoute()) {
                }
