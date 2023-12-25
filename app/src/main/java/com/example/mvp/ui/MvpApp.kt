@@ -38,6 +38,12 @@ enum class MvpScreens(@StringRes val title: Int,val arguments: String? = null) {
         arguments?.let { append("/{$it}") }
     }
 
+    //TODO maybe otherways
+    fun toRouteWithArgument(argument: String): String = buildString {
+        append(name)
+        append("/$argument")
+    }
+
 
 }
 
