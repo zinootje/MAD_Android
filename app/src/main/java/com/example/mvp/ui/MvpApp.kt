@@ -6,6 +6,7 @@ import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.ViewModel
@@ -16,6 +17,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.mvp.R
+import com.example.mvp.ui.Util.GridSize
+import com.example.mvp.ui.Util.TabRowType
 import com.example.mvp.ui.menu.RestoMenuPage
 import com.example.mvp.ui.menu.RestoMenuViewmodel
 import com.example.mvp.ui.overview.RestoOverviewPage
@@ -40,7 +43,7 @@ enum class MvpScreens(@StringRes val title: Int,val arguments: String? = null) {
 
 
 @Composable
-fun MVPApp(navController: NavHostController = rememberNavController()) {
+fun MVPApp(navController: NavHostController = rememberNavController(),windowSize: WindowWidthSizeClass){
 
 
     val backStackEntry = navController.currentBackStackEntryAsState()
@@ -60,7 +63,21 @@ fun MVPApp(navController: NavHostController = rememberNavController()) {
         ) {
            NavHost(navController = navController, startDestination = MvpScreens.Start.name) {
                composable(MvpScreens.Start.toRoute()) {
-                    RestoOverviewPage(navigateToMenu = ::navigateToMenu, restoOverviewViewModel = viewModel(factory = RestoOverviewViewModel.Factory))
+                    RestoOverviewPage(navigateToMenu = ::navigateToMenu, restoOverviewViewModel = viewModel(factory = RestoOverviewViewModel.Factory), gridSize = when(windowSize){
+                        WindowWidthSizeClass.Compact -> {
+                            GridSize.Fixed
+                        }
+                        WindowWidthSizeClass.Medium -> {
+                            GridSize.Fixed
+                        }
+                        WindowWidthSizeClass.Expanded -> {
+                            GridSize.Fixed
+                        }
+
+                        else -> {
+                            GridSize.Fixed
+                        }
+                    })
                }
                composable(MvpScreens.RestoOverview.toRoute()) {
                }
@@ -73,6 +90,20 @@ fun MVPApp(navController: NavHostController = rememberNavController()) {
                    }
                    //TODO fix null safety
                     RestoMenuPage(viewModel = viewModel(factory= RestoMenuViewmodel.Factory(restoId)), onBack = { navController.popBackStack()
+                    }, tabRowType = when(windowSize){
+                        WindowWidthSizeClass.Compact -> {
+                            TabRowType.Scrollable
+                        }
+                        WindowWidthSizeClass.Medium -> {
+                            TabRowType.Scrollable
+                        }
+                        WindowWidthSizeClass.Expanded -> {
+                            TabRowType.Expanded
+                        }
+
+                        else -> {
+                            TabRowType.Scrollable
+                        }
                     })
                }
            }

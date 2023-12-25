@@ -14,6 +14,7 @@ import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -22,12 +23,14 @@ import com.example.mvp.model.Day
 import com.example.mvp.model.Dish
 import com.example.mvp.model.MenuData
 import com.example.mvp.model.special
+import com.example.mvp.ui.Util.TabRowType
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RestoMenuPage(
     viewModel: RestoMenuViewmodel,
+    tabRowType: TabRowType= TabRowType.Scrollable,
     onBack: () -> Unit
 ) {
     val uiState by viewModel.uiState.collectAsState()
@@ -35,7 +38,7 @@ fun RestoMenuPage(
 
     Scaffold(
         topBar = {
-            TopAppBar(
+            CenterAlignedTopAppBar(
                 title = { Text(text = "Menu of ${viewModel.getRestoName()}") },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
@@ -55,7 +58,7 @@ fun RestoMenuPage(
             is RestoMenuApiState.Success -> {
                 Box(modifier = Modifier.padding(innerPadding)) {
                     //success
-                    MenuTabScreen(apiState.data)
+                    MenuTabScreen(apiState.data,tabRowType)
                 }
             }
             is RestoMenuApiState.Error -> {
@@ -72,7 +75,7 @@ fun RestoMenuPage(
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun MenuTabScreen(menuData: MenuData) {
+fun MenuTabScreen(menuData: MenuData,tabRowType: TabRowType) {
     // Pager state
     val pagerState = rememberPagerState(
         initialPage = 0,
@@ -85,10 +88,10 @@ fun MenuTabScreen(menuData: MenuData) {
     val animationScope = rememberCoroutineScope()
     Column {
         // Tab row
-        ScrollableTabRow(
+        MvpTabRow(
             selectedTabIndex = pagerState.currentPage,
             contentColor = MaterialTheme.colorScheme.onSurface,
-
+            tabRowType = tabRowType
         ) {
             days.forEachIndexed { index, day ->
                 Tab(
@@ -115,6 +118,34 @@ fun MenuTabScreen(menuData: MenuData) {
             DayMenuContent(day = menuData.days[page])
         }
     }
+}
+
+
+@Composable
+fun MvpTabRow(
+    selectedTabIndex: Int,
+    contentColor: Color,
+    tabRowType: TabRowType,
+    tabs: @Composable () -> Unit
+) {
+    when (tabRowType) {
+        TabRowType.Scrollable -> {
+            ScrollableTabRow(
+                selectedTabIndex = selectedTabIndex,
+                contentColor = contentColor,
+                edgePadding = 0.dp,
+                tabs = tabs
+            )
+        }
+        TabRowType.Expanded -> {
+            TabRow(
+                selectedTabIndex = selectedTabIndex,
+                contentColor = contentColor,
+                tabs = tabs
+            )
+        }
+    }
+
 }
 
 @Composable

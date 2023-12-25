@@ -18,17 +18,20 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.unit.times
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.mvp.ui.Util.GridSize
 import com.example.mvp.ui.Util.getColorFromName
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RestoOverviewPage(
     navigateToMenu: (String) -> Unit = {},
-    restoOverviewViewModel: RestoOverviewViewModel
+    restoOverviewViewModel: RestoOverviewViewModel,
+    gridSize: GridSize = GridSize.Fixed
 ) {
     val restoOverviewUiState by restoOverviewViewModel.uiState.collectAsState()
 
@@ -51,7 +54,7 @@ fun RestoOverviewPage(
             )
         }
     ) { innerPadding ->
-        ShowRestoOverview(innerPadding, restoOverviewUiState, restoOverviewViewModel, navigateToMenu)
+        ShowRestoOverview(innerPadding, restoOverviewUiState, restoOverviewViewModel, navigateToMenu, gridSize)
 
     }
 
@@ -81,7 +84,8 @@ private fun ShowRestoOverview(
     innerPadding: PaddingValues,
     restoOverviewUiState: RestoOverviewUiState,
     restoOverviewViewModel: RestoOverviewViewModel,
-    navigateToMenu: (String) -> Unit
+    navigateToMenu: (String) -> Unit,
+    gridSize: GridSize
 ) {
     Box(modifier = Modifier.padding(innerPadding)) {
         when (restoOverviewUiState.restoOverviewApiState) {
@@ -92,7 +96,10 @@ private fun ShowRestoOverview(
             is RestoOverviewApiState.Success -> {
                 val restoList = (restoOverviewUiState.restoOverviewApiState as RestoOverviewApiState.Success).data
                 if (restoOverviewUiState.gridMode) {
-                    LazyVerticalGrid(columns = GridCells.Fixed(2)) {
+                    LazyVerticalGrid(columns = when (gridSize) {
+                        GridSize.Fixed -> GridCells.Fixed(2)
+                        GridSize.Adaptive -> GridCells.Adaptive(100.dp)
+                    }) {
                         items(
                             restoList.size,
                             key = { index -> restoList[index].name },
@@ -144,6 +151,7 @@ private fun ShowRestoOverview(
 }
 
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RestoGridTile(
     modifier: Modifier = Modifier,
@@ -155,7 +163,7 @@ fun RestoGridTile(
     val initial = name.first().uppercase()
     Card(
         modifier = modifier
-            .padding(8.dp).size(200.dp, 200.dp),
+            .padding(8.dp).aspectRatio(1f),
         elevation = CardDefaults.elevatedCardElevation(),
         onClick = { navigateToMenu() }
         ) {
@@ -213,3 +221,11 @@ fun RestoListTile(
             .clickable(onClick = navigateToMenu)
     )
 }
+
+//
+//@Preview(showBackground = true)
+//@Composable
+//fun RestoOverviewPagePreview() {
+//    val restoOverviewViewModel = RestoOverviewViewModel(FakeRestoRepository())
+//    RestoOverviewPage(restoOverviewViewModel = restoOverviewViewModel)
+//}
