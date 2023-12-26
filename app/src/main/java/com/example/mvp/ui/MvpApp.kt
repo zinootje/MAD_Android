@@ -17,7 +17,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.mvp.R
 import com.example.mvp.ui.Util.GridSize
 import com.example.mvp.ui.Util.TabRowType
-import com.example.mvp.ui.menu.RestoMenuPage
+import com.example.mvp.ui.menu.RestoMenuScreen
 import com.example.mvp.ui.menu.RestoMenuViewmodel
 import com.example.mvp.ui.overview.RestoOverviewScreen
 import com.example.mvp.ui.overview.RestoOverviewViewModel
@@ -93,7 +93,7 @@ fun MVPApp(navController: NavHostController = rememberNavController(),windowSize
                        return@composable
                    }
                    //TODO fix null safety
-                    RestoMenuPage(viewModel = viewModel(factory= RestoMenuViewmodel.Factory(restoId)), onBack = { navController.popBackStack()
+                    RestoMenuScreen(viewModel = viewModel(factory= RestoMenuViewmodel.Factory(restoId)), onBack = { navController.popBackStack()
                     }, tabRowType = when(windowSize){
                         WindowWidthSizeClass.Compact -> {
                             TabRowType.Scrollable

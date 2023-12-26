@@ -2,14 +2,12 @@
 
 package com.example.mvp.ui.menu
 
-import android.util.Log
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.pager.HorizontalPager
-import androidx.compose.foundation.pager.PagerState
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -28,13 +26,13 @@ import com.example.mvp.model.MenuData
 import com.example.mvp.model.special
 import com.example.mvp.ui.Util.TabRowType
 import com.example.mvp.ui.Util.tabKey
+import com.example.mvp.ui.common.LoadingIndicator
 import com.theapache64.rebugger.Rebugger
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun RestoMenuPage(
+fun RestoMenuScreen(
     viewModel: RestoMenuViewmodel,
     tabRowType: TabRowType= TabRowType.Scrollable,
     onBack: () -> Unit
@@ -54,35 +52,57 @@ fun RestoMenuPage(
         }
     ) {
         innerPadding ->
-        when (apiState) {
-            is RestoMenuApiState.Loading -> {
-                Box(modifier = Modifier.padding(innerPadding)) {
-                    //loading
-                    Text(text = "Loading")
-                }
-            }
-            is RestoMenuApiState.Success -> {
-                Box(modifier = Modifier.padding(innerPadding)) {
-                    //success
-                    MenuTabScreen(apiState.data,tabRowType)
-                }
-            }
-            is RestoMenuApiState.Error -> {
-                Box(modifier = Modifier.padding(innerPadding)) {
-                    //error
-                    Text(text = apiState.message)
-                }
-            }
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding)
+        ) {
+            RestoMenu(
+                apiState = apiState,
+                tabRowType = tabRowType
+            )
     }
 }
 }
 
 
+@Composable
+fun RestoMenu(
+    modifier: Modifier = Modifier,
+    apiState: RestoMenuApiState,
+    tabRowType: TabRowType,
+) {
+    when (apiState) {
+        is RestoMenuApiState.Loading -> {
+            Box(
+                modifier = modifier
+            ) {
+                LoadingIndicator()
+            }
+        }
+        is RestoMenuApiState.Success -> {
+            Box(
+                modifier = modifier
+            ) {
+                //success
+                MenuContent(apiState.data,tabRowType)
+            }
+        }
+        is RestoMenuApiState.Error -> {
+            Box(
+                modifier = modifier
+            ) {
+                //error
+                Text(text = apiState.message)
+            }
+        }
+    }
+}
 
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun MenuTabScreen(menuData: MenuData,tabRowType: TabRowType) {
+fun MenuContent(menuData: MenuData, tabRowType: TabRowType) {
     // Pager state
     val pagerState = rememberPagerState(
         initialPage = 0,
