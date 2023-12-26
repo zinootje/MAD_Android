@@ -23,7 +23,8 @@ object FakeDataSource {
             ),
             Day(
                 dag = "Tuesday",
-                message = "",
+                //keep this message for testing
+                message = "Test message day2",
                 menu = mapOf(
                     "Lunch" to listOf(
                         Dish(

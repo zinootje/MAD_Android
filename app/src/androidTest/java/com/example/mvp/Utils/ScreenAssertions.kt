@@ -1,4 +1,4 @@
-package com.example.mvp
+package com.example.mvp.Utils
 //https://github.com/google-developer-training/basic-android-kotlin-compose-training-cupcake/blob/main/app/src/androidTest/java/com/example/cupcake/test/ScreenAssertions.kt
 /*
  * Copyright (C) 2023 The Android Open Source Project

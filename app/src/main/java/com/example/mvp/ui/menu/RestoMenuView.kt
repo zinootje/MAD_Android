@@ -2,12 +2,14 @@
 
 package com.example.mvp.ui.menu
 
+import android.util.Log
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.pager.HorizontalPager
+import androidx.compose.foundation.pager.PagerState
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -16,6 +18,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -24,6 +27,9 @@ import com.example.mvp.model.Dish
 import com.example.mvp.model.MenuData
 import com.example.mvp.model.special
 import com.example.mvp.ui.Util.TabRowType
+import com.example.mvp.ui.Util.tabKey
+import com.theapache64.rebugger.Rebugger
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -73,6 +79,7 @@ fun RestoMenuPage(
 
 
 
+
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun MenuTabScreen(menuData: MenuData,tabRowType: TabRowType) {
@@ -83,9 +90,19 @@ fun MenuTabScreen(menuData: MenuData,tabRowType: TabRowType) {
     ) {
        menuData.days.size
     }
-    val days = listOf("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+
 
     val animationScope = rememberCoroutineScope()
+
+    //ToAvoid recomposition on every page change
+    val animatedNavigate = remember {
+        { page: Int ->
+            animationScope.launch {
+                pagerState.animateScrollToPage(page)
+            }
+        }
+    }
+
     Column {
         // Tab row
         MvpTabRow(
@@ -93,18 +110,15 @@ fun MenuTabScreen(menuData: MenuData,tabRowType: TabRowType) {
             contentColor = MaterialTheme.colorScheme.onSurface,
             tabRowType = tabRowType
         ) {
-            days.forEachIndexed { index, day ->
-                Tab(
+            menuData.days.forEachIndexed { index, day ->
+
+
+                DayTab(
                     selected = pagerState.currentPage == index,
                     onClick = {
-                        // Animate to the selected page
-                        animationScope.launch {
-                            pagerState.animateScrollToPage(index)
-                        }
-
-                        //onTabChange(index)
+                        animatedNavigate(index)
                     },
-                    text = { Text(day) }
+                    text = day.dag
                 )
             }
         }
@@ -118,6 +132,21 @@ fun MenuTabScreen(menuData: MenuData,tabRowType: TabRowType) {
             DayMenuContent(day = menuData.days[page])
         }
     }
+}
+
+@Composable
+private fun DayTab(
+    selected : Boolean,
+    onClick : () -> Unit,
+    text : String
+) {
+    Tab(
+        modifier = Modifier.semantics {  tabKey = text },
+        selected = selected,
+        onClick = onClick,
+        text = { Text(text = text) }
+    )
+    Rebugger(trackMap = mapOf("selected" to selected, "text" to text, "onClick" to onClick))
 }
 
 

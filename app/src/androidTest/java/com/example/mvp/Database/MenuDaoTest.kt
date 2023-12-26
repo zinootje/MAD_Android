@@ -1,4 +1,4 @@
-package com.example.mvp
+package com.example.mvp.Database
 
 import android.content.Context
 import androidx.room.Room
@@ -8,7 +8,6 @@ import com.example.mvp.data.database.MenuDao
 import com.example.mvp.data.database.MenuDatabase
 import com.example.mvp.data.database.toDbMenu
 import com.example.mvp.fake.FakeDataSource
-import com.example.mvp.model.Menu
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.junit.After

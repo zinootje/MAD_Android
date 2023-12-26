@@ -1,4 +1,4 @@
-package com.example.mvp
+package com.example.mvp.Utils
 
 //https://github.com/google-developer-training/basic-android-kotlin-compose-training-cupcake/blob/main/app/src/androidTest/java/com/example/cupcake/test/ComposeRuleExtensions.kt
 
@@ -24,6 +24,7 @@ import androidx.compose.ui.test.SemanticsNodeInteraction
 import androidx.compose.ui.test.junit4.AndroidComposeTestRule
 import androidx.compose.ui.test.onNodeWithText
 import androidx.test.ext.junit.rules.ActivityScenarioRule
+import com.example.mvp.MvpApplication
 
 /**
  * Finds a semantics node with the given string resource id.
@@ -36,3 +37,13 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule
 fun <A : ComponentActivity> AndroidComposeTestRule<ActivityScenarioRule<A>, A>.onNodeWithStringId(
     @StringRes id: Int
 ): SemanticsNodeInteraction = onNodeWithText(activity.getString(id))
+
+
+
+//trun above into a extension function
+fun <A : ComponentActivity> AndroidComposeTestRule<ActivityScenarioRule<A>, A>.setFakeAppContainer() {
+    activityRule.scenario.onActivity {
+        val app = it.application as MvpApplication
+        app.container = FakeAppContainer()
+    }
+}
