@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
@@ -23,8 +25,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.unit.times
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.mvp.model.Resto
 import com.example.mvp.ui.Util.GridSize
 import com.example.mvp.ui.Util.getColorFromName
+import com.theapache64.rebugger.Rebugger
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -34,6 +38,20 @@ fun RestoOverviewPage(
     gridSize: GridSize = GridSize.Fixed
 ) {
     val restoOverviewUiState by restoOverviewViewModel.uiState.collectAsState()
+
+
+    //Makes function stable to avoid recomposition
+    val fav = remember {
+        { name: String, isFavorite: Boolean ->
+            restoOverviewViewModel.setFavorite(name, isFavorite)
+        }
+    }
+
+    val nav = remember {
+        { name: String ->
+            navigateToMenu(name)
+        }
+    }
 
     val gridMode by remember {
         derivedStateOf {
@@ -54,7 +72,7 @@ fun RestoOverviewPage(
             )
         }
     ) { innerPadding ->
-        ShowRestoOverview(innerPadding, restoOverviewUiState, restoOverviewViewModel, navigateToMenu, gridSize)
+        ShowRestoOverview(innerPadding, restoOverviewUiState, nav,fav, gridSize)
 
     }
 
@@ -83,8 +101,8 @@ private fun GriddTogleButton(
 private fun ShowRestoOverview(
     innerPadding: PaddingValues,
     restoOverviewUiState: RestoOverviewUiState,
-    restoOverviewViewModel: RestoOverviewViewModel,
     navigateToMenu: (String) -> Unit,
+    favoriteResto: (String, Boolean) -> Unit,
     gridSize: GridSize
 ) {
     Box(modifier = Modifier.padding(innerPadding)) {
@@ -94,47 +112,51 @@ private fun ShowRestoOverview(
             }
 
             is RestoOverviewApiState.Success -> {
-                val restoList = (restoOverviewUiState.restoOverviewApiState as RestoOverviewApiState.Success).data
+                val restoList = restoOverviewUiState.restoOverviewApiState.data
                 if (restoOverviewUiState.gridMode) {
                     LazyVerticalGrid(columns = when (gridSize) {
                         GridSize.Fixed -> GridCells.Fixed(2)
                         GridSize.Adaptive -> GridCells.Adaptive(100.dp)
                     }) {
                         items(
-                            restoList.size,
-                            key = { index -> restoList[index].name },
-                        ) { index ->
+                            restoList,
+                            key = { resto -> resto.name }
+                        ) { (name, isFavorite) ->
+                            //Avoids recomposition due to animation
+                            val modifier = remember {
+                                Modifier.animateItemPlacement()
+                            }
                             RestoGridTile(
-                                modifier = Modifier.animateItemPlacement(),
-                                name = restoList[index].name,
-                                isFavorite = restoList[index].isFavorite,
-                                onFavoriteClick = {
-                                    restoOverviewViewModel.setFavorite(restoList[index].name, it)
-                                },
+                                modifier = modifier,
+                                name = name,
+                                isFavorite = isFavorite,
                                 navigateToMenu = {
-                                    navigateToMenu(restoList[index].name)
-                                }
-                            )
+                                    navigateToMenu(name)
+                                },
+                                onFavoriteClick = {
+                                    favoriteResto(name, !isFavorite)
+                                })
                         }
                     }
                 } else {
                     LazyColumn {
                         items(
-                            restoList.size,
-                            key = { index -> restoList[index].name },
-                        ) { index ->
+                            restoList,
+                            key = { resto -> resto.name }
+                        ) { (name, isFavorite) ->
+                            //Avoids recomposition due to animation
+                            val modifier = remember {
+                                Modifier.animateItemPlacement()
+                            }
                             RestoListTile(
-                                modifier = Modifier.animateItemPlacement(),
-                                name = restoList[index].name,
-                                isFavorite = restoList[index].isFavorite,
+                                modifier = modifier,
+                                name = name,
+                                isFavorite = isFavorite,
                                 navigateToMenu = {
-                                    navigateToMenu(restoList[index].name)
+                                    navigateToMenu(name)
                                 },
                                 favoriteResto = {
-                                    restoOverviewViewModel.setFavorite(
-                                        restoList[index].name,
-                                        !restoList[index].isFavorite
-                                    )
+                                    favoriteResto(name, !isFavorite)
                                 })
                         }
                     }
@@ -158,12 +180,13 @@ fun RestoGridTile(
     name: String,
     isFavorite: Boolean,
     navigateToMenu: () -> Unit = {},
-    onFavoriteClick: (Boolean) -> Unit
+    onFavoriteClick: () -> Unit
 ) {
     val initial = name.first().uppercase()
     Card(
         modifier = modifier
-            .padding(8.dp).aspectRatio(1f),
+            .padding(8.dp)
+            .aspectRatio(1f),
         elevation = CardDefaults.elevatedCardElevation(),
         onClick = { navigateToMenu() }
         ) {
@@ -188,13 +211,10 @@ fun RestoGridTile(
                     .align(Alignment.BottomStart)
                     .padding(start = initial.length * 24.dp)
             )
-            Icon(
-                imageVector = if (isFavorite) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
-                contentDescription = if (isFavorite) "Unfavorite" else "Favorite",
-                modifier = Modifier
-                    .align(Alignment.BottomEnd)
-                    .clickable { onFavoriteClick(!isFavorite) },
-                tint = if (isFavorite) Color.Red else Color.Gray
+            FavoriteButton(
+                modifier = Modifier.align(Alignment.BottomEnd),
+                isFavorite = isFavorite,
+                favoriteResto = onFavoriteClick
             )
         }
     }
@@ -208,18 +228,35 @@ fun RestoListTile(
     navigateToMenu: () -> Unit = {},
     favoriteResto: () -> Unit = {}
 ) {
+
+    Rebugger(trackMap = mapOf("modifier" to modifier,
+        "name" to name,
+        "isFavorite" to isFavorite,
+        "navigateToMenu" to navigateToMenu,
+        "favoriteResto" to favoriteResto))
+
     ListItem(
         headlineContent = { Text(text = name) },
         trailingContent = {
-            Icon(imageVector = if (isFavorite) Icons.Filled.FilledStar else Icons.Outlined.OutlinedStar,
-                contentDescription = if (isFavorite) "Star Icon filled" else "Star Icon border",
-                tint = if (isFavorite) Color.Yellow else Color.Gray,
-                modifier = Modifier.clickable { favoriteResto() })
+            FavoriteButton(isFavorite = isFavorite, favoriteResto = favoriteResto)
         },
         modifier = modifier
             .padding(8.dp)
-            .clickable(onClick = navigateToMenu)
+            .clickable(onClick = { navigateToMenu() })
     )
+}
+
+@Composable
+fun FavoriteButton(
+    modifier: Modifier = Modifier,
+    isFavorite: Boolean = false,
+    favoriteResto: () -> Unit = {}
+) {
+    IconButton(onClick = favoriteResto, modifier = modifier) {
+        Icon(imageVector = if (isFavorite) Icons.Filled.Favorite else Icons.Filled.FavoriteBorder,
+            contentDescription = if (isFavorite) "Star Icon filled" else "Star Icon border",
+            tint = if (isFavorite) Color.Yellow else Color.Gray)
+    }
 }
 
 //
