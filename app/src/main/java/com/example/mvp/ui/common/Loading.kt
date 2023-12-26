@@ -30,6 +30,6 @@ fun LoadingIndicator() {
 
 @Preview(showBackground = true)
 @Composable
-fun LoadingIndicatorPreview() {
+private fun LoadingIndicatorPreview() {
     LoadingIndicator()
 }

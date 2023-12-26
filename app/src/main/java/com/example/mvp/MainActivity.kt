@@ -36,7 +36,7 @@ class MainActivity : ComponentActivity() {
 
 @Preview(showBackground = true, widthDp = 700)
 @Composable
-fun MvpAppMediumPreview() {
+private fun MvpAppMediumPreview() {
     MVPTheme {
         Surface(
             modifier = Modifier.fillMaxSize(),
@@ -49,7 +49,7 @@ fun MvpAppMediumPreview() {
 
 @Preview(showBackground = true, widthDp = 1000)
 @Composable
-fun MvpAppExpandedPreview() {
+private fun MvpAppExpandedPreview() {
     MVPTheme {
         Surface(
             modifier = Modifier.fillMaxSize(),
@@ -62,7 +62,7 @@ fun MvpAppExpandedPreview() {
 
 @Preview(showBackground = true, widthDp = 300)
 @Composable
-fun MvpAppCompactPreview() {
+private fun MvpAppCompactPreview() {
     MVPTheme {
         Surface(
             modifier = Modifier.fillMaxSize(),

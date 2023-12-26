@@ -64,6 +64,6 @@ fun ErrorView(message: String, onRetry:( () -> Unit)?) {
 
 @Composable
 @Preview(showBackground = true)
-fun ErrorViewPreview() {
+private fun ErrorViewPreview() {
     ErrorView(message = "Error message", onRetry = null)
 }
