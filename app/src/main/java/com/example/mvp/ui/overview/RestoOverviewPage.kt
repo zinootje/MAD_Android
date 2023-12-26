@@ -28,6 +28,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.mvp.model.Resto
 import com.example.mvp.ui.Util.GridSize
 import com.example.mvp.ui.Util.getColorFromName
+import com.example.mvp.ui.common.ErrorComponent
+import com.example.mvp.ui.common.LoadingIndicator
 import com.theapache64.rebugger.Rebugger
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -108,7 +110,7 @@ private fun ShowRestoOverview(
     Box(modifier = Modifier.padding(innerPadding)) {
         when (restoOverviewUiState.restoOverviewApiState) {
             is RestoOverviewApiState.Loading -> {
-                Text(text = "Loading")
+                LoadingIndicator()
             }
 
             is RestoOverviewApiState.Success -> {
@@ -164,7 +166,7 @@ private fun ShowRestoOverview(
             }
 
             is RestoOverviewApiState.Error -> {
-                Text(text = "Error")
+                ErrorComponent(message = restoOverviewUiState.restoOverviewApiState.message)
             }
         }
 

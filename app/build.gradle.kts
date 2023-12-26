@@ -40,6 +40,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.7"
@@ -106,6 +107,10 @@ dependencies {
     //Layout
     implementation("androidx.compose.material3:material3-window-size-class")
 
+
+    //TODO remove in production
+    //rebugger
+    implementation("io.github.theapache64:rebugger:1.0.0-rc02")
 
 
 }
