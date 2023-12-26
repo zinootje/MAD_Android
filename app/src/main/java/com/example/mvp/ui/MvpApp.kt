@@ -92,7 +92,6 @@ fun MVPApp(navController: NavHostController = rememberNavController(),windowSize
                        navController.popBackStack()
                        return@composable
                    }
-                   //TODO fix null safety
                     RestoMenuScreen(viewModel = viewModel(factory= RestoMenuViewmodel.Factory(restoId)), onBack = { navController.popBackStack()
                     }, tabRowType = when(windowSize){
                         WindowWidthSizeClass.Compact -> {

@@ -23,7 +23,6 @@ class ShowRestoOverviewTest {
 
     @Test
     fun showRestoOverview_Displays_showsLoadingState() {
-        //TODO
         composeTestRule.setContent {
             CreateShowRestoOverview(
                 restoOverviewUiState = RestoOverviewUiState(
@@ -40,7 +39,6 @@ class ShowRestoOverviewTest {
     fun showRestoOverview_Displays_showsErrorState() {
 
         val error = "error"
-        //TODO
         composeTestRule.setContent {
             CreateShowRestoOverview(
                 restoOverviewUiState = RestoOverviewUiState(
@@ -55,7 +53,6 @@ class ShowRestoOverviewTest {
 
     @Test
     fun showRestoOverview_Displays_showsSuccessState() {
-        //TODO
         composeTestRule.setContent {
             CreateShowRestoOverview(
                 RestoOverviewUiState(
@@ -83,7 +80,6 @@ class ShowRestoOverviewTest {
 
     @Test
     fun showRestoOverview_Displays_FavoritedResto() {
-        //TODO
         composeTestRule.setContent {
             ShowRestoOverview(
                 innerPadding = PaddingValues(),
@@ -113,7 +109,6 @@ class ShowRestoOverviewTest {
 
     @Test
     fun showRestoOverview_Displays_withFavoritedResto() {
-        //TODO
         composeTestRule.setContent {
             ShowRestoOverview(
                 innerPadding = PaddingValues(),
@@ -141,7 +136,6 @@ class ShowRestoOverviewTest {
 
     @Test
     fun showRestoOverview_Displays_GridModeCorretly() {
-        //TODO
         composeTestRule.setContent {
             ShowRestoOverview(
                 innerPadding = PaddingValues(),
@@ -171,7 +165,6 @@ class ShowRestoOverviewTest {
 
     @Test
     fun showRestoOverview_Displays_ListModeCorretly() {
-        //TODO
         composeTestRule.setContent {
             ShowRestoOverview(
                 innerPadding = PaddingValues(),

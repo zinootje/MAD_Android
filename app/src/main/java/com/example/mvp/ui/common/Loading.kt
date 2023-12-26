@@ -7,20 +7,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.semantics.contentDescription
-import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.mvp.R
+import com.example.mvp.ui.Util.contentDescription
 
 @Composable
 fun LoadingIndicator() {
     //nonprescription loading
-    //TODO maybe fix this
-    val contentDesc = stringResource(id = R.string.loading_indicator)
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .semantics { contentDescription = contentDesc },
+            .contentDescription(stringResource(id = R.string.loading_indicator)),
         contentAlignment = Alignment.Center,
     ) {
         CircularProgressIndicator()

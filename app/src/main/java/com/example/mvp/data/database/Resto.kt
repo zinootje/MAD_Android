@@ -7,7 +7,6 @@ import com.example.mvp.model.Resto as ModelResto
 
 @Entity(tableName = "resto_list_table")
 data class Resto(
-    //TODO check if primary key is needed
     @PrimaryKey
     val name: String,
     val favorite: Boolean,

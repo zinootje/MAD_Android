@@ -7,6 +7,15 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.example.mvp.data.database.convertors.DayMenuConverter
 
+/**
+
+ * Database class that extends RoomDatabase.
+ *
+ * This class is responsible for creating and managing the database instance.
+ * It has an abstract method to get the DAO class and a companion object to get the database instance.
+ *
+ * @property context The context used to create the database.
+ * */
 //TODO reset version to 1
 @Database(entities = [MenuDataEntity::class], version = 2)
 @TypeConverters(DayMenuConverter::class)

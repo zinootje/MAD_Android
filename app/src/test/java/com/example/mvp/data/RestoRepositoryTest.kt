@@ -24,7 +24,6 @@ class RestoRepositoryTest {
         }
     }
 
-    //TODO check reason for tests
     @Test
     fun getRestoMenu() {
         runTest {

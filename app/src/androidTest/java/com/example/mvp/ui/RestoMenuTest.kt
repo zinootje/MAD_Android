@@ -110,9 +110,6 @@ class RestoMenuTest {
         composeTestRule.onNodeWithStringId(R.string.vegan).assertExists()
         composeTestRule.onNodeWithStringId(R.string.veggie).assertExists()
 
-
-
-        // TODO: Replace with actual assertions based on your menu data
     }
 
     @Test

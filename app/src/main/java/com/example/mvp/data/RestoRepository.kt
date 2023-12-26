@@ -35,34 +35,6 @@ interface RestoRepository {
 
 }
 
-//
-//class RestoRepositoryImpl(private val RestoApiService: RestoApiService) : RestoRepository {
-//    override fun getRestoList(): Flow<List<Resto>> {
-//        return RestoApiService.getRestoListAsFlow().map { it -> it.map { Resto(it) } }
-//    }
-//
-//    override suspend fun getRestoMenu(name: String): Flow<MenuData> {
-//        return RestoApiService.getRestoMenuAsFlow(name).map { it.asDomainObject() }
-//    }
-//
-//    override suspend fun favoriteResto(name: String) {
-//        TODO("Not yet implemented")
-//    }
-//
-//    override suspend fun unFavoriteResto(name: String) {
-//        TODO("Not yet implemented")
-//    }
-//
-//    override suspend fun refreshRestoList() {
-//        TODO("Not yet implemented")
-//    }
-//
-//    override suspend fun refreshRestoMenu(name: String) {
-//        TODO("Not yet implemented")
-//    }
-//
-//}
-
 class RestoOfflineRepositoryImpl(
     private val restoApiService: RestoApiService,
     private val restoDao: RestoDao,

@@ -18,12 +18,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.mvp.model.Day
-import com.example.mvp.model.Dish
-import com.example.mvp.model.MenuData
-import com.example.mvp.model.special
+import com.example.mvp.model.*
 import com.example.mvp.ui.Util.TabRowType
 import com.example.mvp.ui.Util.tabKey
 import com.example.mvp.ui.common.LoadingIndicator
@@ -34,7 +32,7 @@ import kotlinx.coroutines.launch
 @Composable
 fun RestoMenuScreen(
     viewModel: RestoMenuViewmodel,
-    tabRowType: TabRowType= TabRowType.Scrollable,
+    tabRowType: TabRowType = TabRowType.Scrollable,
     onBack: () -> Unit
 ) {
     val uiState by viewModel.uiState.collectAsState()
@@ -50,8 +48,7 @@ fun RestoMenuScreen(
                     }
                 })
         }
-    ) {
-        innerPadding ->
+    ) { innerPadding ->
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -61,8 +58,8 @@ fun RestoMenuScreen(
                 apiState = apiState,
                 tabRowType = tabRowType
             )
+        }
     }
-}
 }
 
 
@@ -80,14 +77,16 @@ fun RestoMenu(
                 LoadingIndicator()
             }
         }
+
         is RestoMenuApiState.Success -> {
             Box(
                 modifier = modifier
             ) {
                 //success
-                MenuContent(apiState.data,tabRowType)
+                MenuContent(apiState.data, tabRowType)
             }
         }
+
         is RestoMenuApiState.Error -> {
             Box(
                 modifier = modifier
@@ -108,7 +107,7 @@ fun MenuContent(menuData: MenuData, tabRowType: TabRowType) {
         initialPage = 0,
         initialPageOffsetFraction = 0F
     ) {
-       menuData.days.size
+        menuData.days.size
     }
 
 
@@ -156,12 +155,12 @@ fun MenuContent(menuData: MenuData, tabRowType: TabRowType) {
 
 @Composable
 private fun DayTab(
-    selected : Boolean,
-    onClick : () -> Unit,
-    text : String
+    selected: Boolean,
+    onClick: () -> Unit,
+    text: String
 ) {
     Tab(
-        modifier = Modifier.semantics {  tabKey = text },
+        modifier = Modifier.semantics { tabKey = text },
         selected = selected,
         onClick = onClick,
         text = { Text(text = text) }
@@ -186,6 +185,7 @@ fun MvpTabRow(
                 tabs = tabs
             )
         }
+
         TabRowType.Expanded -> {
             TabRow(
                 selectedTabIndex = selectedTabIndex,
@@ -199,10 +199,12 @@ fun MvpTabRow(
 
 @Composable
 fun DayMenuContent(day: Day) {
-    LazyColumn(modifier = Modifier
-        .fillMaxSize()
-        .background(MaterialTheme.colorScheme.background)
-        .padding(16.dp)) {
+    LazyColumn(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colorScheme.background)
+            .padding(16.dp)
+    ) {
         item {
             Text(
                 text = day.dag,
@@ -232,7 +234,6 @@ fun DayMenuContent(day: Day) {
 }
 
 
-
 @Composable
 fun MenuCategory(categoryName: String, dishes: List<Dish>) {
     Text(
@@ -256,6 +257,8 @@ fun DishItem(dish: Dish) {
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Text(
+            modifier = Modifier.weight(5f),
+            maxLines = 5,
             text = dish.name,
             fontSize = 16.sp,
             color = MaterialTheme.colorScheme.onBackground
@@ -263,8 +266,9 @@ fun DishItem(dish: Dish) {
         when (dish.special) {
             special.NONE, special.UNKNOWN -> {} //Only show special if it's not NONE or UNKNOWN
             else -> {
-                //TODO this textbox is being squished or cut off
                 Text(
+                    modifier = Modifier.weight(1f, false),
+                    maxLines = 1,
                     text = stringResource(id = dish.special.title),
                     fontSize = 14.sp,
                     color = MaterialTheme.colorScheme.onBackground
@@ -274,4 +278,96 @@ fun DishItem(dish: Dish) {
         }
 
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun DishItemPreview() {
+    DishItem(
+        dish = Dish(
+            name = "Dish names",
+            special = special.VEGIE
+        )
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun DishItemCutoffPreview() {
+    DishItem(
+        dish = Dish(
+            name = "Dish namessdqfsdqf dsq fsqdf sdf sdqf sdqf sqdfsdqfsqdf sdfsdqfsdqsdf sdfq",
+            special = special.VEGIE
+        )
+    )
+}
+
+@Composable
+@Preview(showBackground = true)
+private fun MenuContentPreview() {
+    MenuContent(
+        menuData = MenuData(
+            location = "location",
+            days = listOf(
+                Day(
+                    dag = "Monday",
+                    message = "message",
+                    menu = Menu(
+                        items = mapOf(
+                            "Breakfast" to listOf(
+                                Dish(
+                                    name = "Bread",
+                                    special = special.NONE
+                                ),
+                                Dish(
+                                    name = "Cereal",
+                                    special = special.VEGAN
+                                )
+                            ),
+                            "Drinks" to listOf(
+                                Dish(
+                                    name = "Coffee",
+                                    special = special.NONE
+                                ),
+                                Dish(
+                                    name = "Tea",
+                                    special = special.VEGIE
+                                )
+                            )
+                        )
+                    )
+                ),
+                Day(
+                    dag = "Tuesday",
+                    message = "message2",
+                    menu =
+                    Menu(
+                        mapOf(
+                            "Breakfast2" to listOf(
+                                Dish(
+                                    name = "Bread2",
+                                    special = special.NONE
+                                ),
+                                Dish(
+                                    name = "Cereal2",
+                                    special = special.VEGAN
+                                )
+                            ),
+                            "Drinks2" to listOf(
+                                Dish(
+                                    name = "Coffee2",
+                                    special = special.NONE
+                                ),
+                                Dish(
+                                    name = "Tea2",
+                                    special = special.VEGIE
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+        ),
+        tabRowType = TabRowType.Scrollable
+    )
 }
