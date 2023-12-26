@@ -1,6 +1,7 @@
 @file:OptIn(ExperimentalMaterial3Api::class)
 package com.example.mvp.ui.overview
 
+import androidx.annotation.VisibleForTesting
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -12,21 +13,21 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
-import androidx.compose.material.icons.filled.Star as FilledStar
-import androidx.compose.material.icons.outlined.Star as OutlinedStar
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.unit.times
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.mvp.model.Resto
+import com.example.mvp.R
 import com.example.mvp.ui.Util.GridSize
+import com.example.mvp.ui.Util.contentDescription
 import com.example.mvp.ui.Util.getColorFromName
 import com.example.mvp.ui.common.ErrorComponent
 import com.example.mvp.ui.common.LoadingIndicator
@@ -34,7 +35,7 @@ import com.theapache64.rebugger.Rebugger
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun RestoOverviewPage(
+fun RestoOverviewScreen(
     navigateToMenu: (String) -> Unit = {},
     restoOverviewViewModel: RestoOverviewViewModel,
     gridSize: GridSize = GridSize.Fixed
@@ -100,7 +101,9 @@ private fun GriddTogleButton(
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-private fun ShowRestoOverview(
+//private except for testing
+@VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
+internal fun ShowRestoOverview(
     innerPadding: PaddingValues,
     restoOverviewUiState: RestoOverviewUiState,
     navigateToMenu: (String) -> Unit,
@@ -119,7 +122,13 @@ private fun ShowRestoOverview(
                     LazyVerticalGrid(columns = when (gridSize) {
                         GridSize.Fixed -> GridCells.Fixed(2)
                         GridSize.Adaptive -> GridCells.Adaptive(100.dp)
-                    }) {
+                    },
+                        modifier = Modifier.contentDescription(
+                            stringResource(
+                                id = R.string.resto_overview_grid
+                            )
+                        )
+                    ) {
                         items(
                             restoList,
                             key = { resto -> resto.name }
@@ -141,7 +150,13 @@ private fun ShowRestoOverview(
                         }
                     }
                 } else {
-                    LazyColumn {
+                    LazyColumn(
+                        modifier = Modifier.contentDescription(
+                            stringResource(
+                                id = R.string.resto_overview_list
+                            )
+                        )
+                    ) {
                         items(
                             restoList,
                             key = { resto -> resto.name }
@@ -256,8 +271,9 @@ fun FavoriteButton(
 ) {
     IconButton(onClick = favoriteResto, modifier = modifier) {
         Icon(imageVector = if (isFavorite) Icons.Filled.Favorite else Icons.Filled.FavoriteBorder,
-            contentDescription = if (isFavorite) "Star Icon filled" else "Star Icon border",
+            contentDescription = if (isFavorite) stringResource(id = R.string.favorited) else stringResource(id = R.string.unfavorited),
             tint = if (isFavorite) Color.Yellow else Color.Gray)
+
     }
 }
 

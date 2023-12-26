@@ -7,4 +7,10 @@
     <string name="unknown">unknown</string>
     <string name="none">geen</string>
     <string name="retry">Retry</string>
+    <string name="loading_indicator">Loading Indicator</string>
+    <string name="favorited">favorited</string>
+    <string name="unfavorite">unfavorite</string>
+    <string name="unfavorited">unfavorited</string>
+    <string name="resto_overview_grid">resto_overview_grid</string>
+    <string name="resto_overview_list">resto_overview_list</string>
 </resources>

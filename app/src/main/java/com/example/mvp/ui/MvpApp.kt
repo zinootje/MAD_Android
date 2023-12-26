@@ -1,6 +1,5 @@
 package com.example.mvp.ui
 
-import android.text.Spannable.Factory
 import android.util.Log
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.fillMaxSize
@@ -9,7 +8,6 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -21,7 +19,7 @@ import com.example.mvp.ui.Util.GridSize
 import com.example.mvp.ui.Util.TabRowType
 import com.example.mvp.ui.menu.RestoMenuPage
 import com.example.mvp.ui.menu.RestoMenuViewmodel
-import com.example.mvp.ui.overview.RestoOverviewPage
+import com.example.mvp.ui.overview.RestoOverviewScreen
 import com.example.mvp.ui.overview.RestoOverviewViewModel
 import com.example.mvp.ui.theme.MVPTheme
 
@@ -69,7 +67,7 @@ fun MVPApp(navController: NavHostController = rememberNavController(),windowSize
         ) {
            NavHost(navController = navController, startDestination = MvpScreens.Start.name) {
                composable(MvpScreens.Start.toRoute()) {
-                    RestoOverviewPage(navigateToMenu = ::navigateToMenu, restoOverviewViewModel = viewModel(factory = RestoOverviewViewModel.Factory), gridSize = when(windowSize){
+                    RestoOverviewScreen(navigateToMenu = ::navigateToMenu, restoOverviewViewModel = viewModel(factory = RestoOverviewViewModel.Factory), gridSize = when(windowSize){
                         WindowWidthSizeClass.Compact -> {
                             GridSize.Fixed
                         }

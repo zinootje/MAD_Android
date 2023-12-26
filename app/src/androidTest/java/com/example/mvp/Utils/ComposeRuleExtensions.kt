@@ -22,17 +22,17 @@ import androidx.activity.ComponentActivity
 import androidx.annotation.StringRes
 import androidx.compose.ui.test.SemanticsNodeInteraction
 import androidx.compose.ui.test.junit4.AndroidComposeTestRule
+import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import com.example.mvp.MvpApplication
 
 /**
- * Finds a semantics node with the given string resource id.
+ * Retrieves the [SemanticsNodeInteraction] with the given string resource id as text.
+ * This is a wrapper around [onNodeWithText] that takes a string resource id instead
  *
- * The [onNodeWithText] finder provided by compose ui test API, doesn't support usage of
- * string resource id to find the semantics node. This extension function accesses string resource
- * using underlying activity property and passes it to [onNodeWithText] function as argument and
- * returns the [SemanticsNodeInteraction] object.
+ * @param id The resource ID of the text string.
+ * @return The [SemanticsNodeInteraction] for the specified text string.
  */
 fun <A : ComponentActivity> AndroidComposeTestRule<ActivityScenarioRule<A>, A>.onNodeWithStringId(
     @StringRes id: Int
@@ -40,7 +40,24 @@ fun <A : ComponentActivity> AndroidComposeTestRule<ActivityScenarioRule<A>, A>.o
 
 
 
-//trun above into a extension function
+/**
+ * Retrieves the [SemanticsNodeInteraction] with the given string resource id as content description.
+ * This is a wrapper around [onNodeWithContentDescription] that takes a string resource id instead
+ *
+ * @param id The resource ID of the content description string.
+ * @return The [SemanticsNodeInteraction] for the specified content description string.
+ */
+fun <A : ComponentActivity> AndroidComposeTestRule<ActivityScenarioRule<A>, A>.onNodeWithContentDescriptionStringId(
+    @StringRes id: Int
+): SemanticsNodeInteraction = onNodeWithContentDescription(activity.getString(id))
+
+
+
+/**
+ * Sets the [FakeAppContainer] as the application container in the [MvpApplication].
+ * This is useful for testing purposes when you want to replace the default implementation
+ * with a fake implementation of the [AppContainer].
+ */
 fun <A : ComponentActivity> AndroidComposeTestRule<ActivityScenarioRule<A>, A>.setFakeAppContainer() {
     activityRule.scenario.onActivity {
         val app = it.application as MvpApplication
