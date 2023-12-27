@@ -21,6 +21,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.core.model.*
 import com.example.mvp.ui.Util.TabRowType
 import com.example.mvp.ui.Util.tabKey
@@ -35,8 +36,10 @@ fun RestoMenuScreen(
     tabRowType: TabRowType = TabRowType.Scrollable,
     onBack: () -> Unit
 ) {
-    val uiState by viewModel.uiState.collectAsState()
-    val apiState = viewModel.restoApiState
+    val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val apiState = remember {
+        derivedStateOf { uiState.restoMenuApiState }
+    }
 
     Scaffold(
         topBar = {
@@ -55,7 +58,7 @@ fun RestoMenuScreen(
                 .padding(innerPadding)
         ) {
             RestoMenu(
-                apiState = apiState,
+                apiState = apiState.value,
                 tabRowType = tabRowType
             )
         }

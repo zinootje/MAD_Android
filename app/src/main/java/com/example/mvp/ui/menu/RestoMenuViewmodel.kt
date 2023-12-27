@@ -1,9 +1,6 @@
 package com.example.mvp.ui.menu
 
 import android.util.Log
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
@@ -27,8 +24,6 @@ class RestoMenuViewmodel(
     private val _uiState = MutableStateFlow(RestoMenuUiState())
     val uiState: StateFlow<RestoMenuUiState> = _uiState.asStateFlow()
 
-    var restoApiState: RestoMenuApiState by mutableStateOf(RestoMenuApiState.Loading)
-        private set
 
     init {
         getRestoMenu()
@@ -59,7 +54,6 @@ class RestoMenuViewmodel(
                 }
                 //TODO remive one of the two
                 _uiState.value = _uiState.value.copy(restoMenuApiState = state)
-                restoApiState = state
 
 
             }

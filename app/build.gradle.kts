@@ -62,7 +62,8 @@ dependencies {
 
     implementation(libs.androidx.ktx)
     implementation(libs.androidx.appcompat)
-    implementation(libs.androidx.lifecycle.runtime)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.bundles.compose)
     implementation(libs.bundles.navigation)
     testImplementation(libs.androidx.navigation.testing)
