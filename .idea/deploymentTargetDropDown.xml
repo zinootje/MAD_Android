@@ -2,7 +2,19 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="DishItemCutoffPreview">
+        <State />
+      </entry>
+      <entry key="RestoMenuTest">
+        <State />
+      </entry>
+      <entry key="ShowRestoOverviewTest">
+        <State />
+      </entry>
       <entry key="app">
+        <State />
+      </entry>
+      <entry key="dao_insertMenuData()">
         <State />
       </entry>
     </value>

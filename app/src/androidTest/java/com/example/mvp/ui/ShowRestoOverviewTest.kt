@@ -5,16 +5,15 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import com.example.core.model.Resto
+import com.example.mvp.R
 import com.example.mvp.Utils.onNodeWithContentDescriptionStringId
 import com.example.mvp.ui.Util.GridSize
 import com.example.mvp.ui.overview.RestoOverviewApiState
 import com.example.mvp.ui.overview.RestoOverviewUiState
 import com.example.mvp.ui.overview.ShowRestoOverview
-import com.example.mvp.R
-import com.example.mvp.model.Resto
 import org.junit.Rule
 import org.junit.Test
-import kotlin.concurrent.thread
 
 class ShowRestoOverviewTest {
 
@@ -86,9 +85,9 @@ class ShowRestoOverviewTest {
                 restoOverviewUiState = RestoOverviewUiState(
                     RestoOverviewApiState.Success(
                         listOf(
-                            com.example.mvp.model.Resto("name", true),
-                            com.example.mvp.model.Resto("name2", false),
-                            com.example.mvp.model.Resto("name3", false),
+                            Resto("name", true),
+                            Resto("name2", false),
+                            Resto("name3", false),
 
                             )
                     ),
@@ -115,7 +114,7 @@ class ShowRestoOverviewTest {
                 restoOverviewUiState = RestoOverviewUiState(
                     RestoOverviewApiState.Success(
                         listOf(
-                            com.example.mvp.model.Resto("name", true),
+                            Resto("name", true),
                             )
                     ),
                     true
@@ -142,8 +141,8 @@ class ShowRestoOverviewTest {
                 restoOverviewUiState = RestoOverviewUiState(
                     RestoOverviewApiState.Success(
                         listOf(
-                            com.example.mvp.model.Resto("name", false),
-                            com.example.mvp.model.Resto("name2", true),
+                            Resto("name", false),
+                            Resto("name2", true),
                         )
                     ),
                     true
@@ -171,8 +170,8 @@ class ShowRestoOverviewTest {
                 restoOverviewUiState = RestoOverviewUiState(
                     RestoOverviewApiState.Success(
                         listOf(
-                            com.example.mvp.model.Resto("name", false),
-                            com.example.mvp.model.Resto("name2", true),
+                            Resto("name", false),
+                            Resto("name2", true),
                         )
                     ),
                     false

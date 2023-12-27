@@ -1,10 +1,10 @@
 package com.example.mvp.Utils
 
-import com.example.mvp.data.AppContainer
-import com.example.mvp.data.RestoRepository
+import com.example.data.AppContainer
+import com.example.data.RestoRepository
 import com.example.mvp.fake.FakeRestoRepository
 
-class FakeAppContainer:AppContainer {
+class FakeAppContainer : AppContainer {
     override val restoRepository: RestoRepository
         get() = FakeRestoRepository()
 }

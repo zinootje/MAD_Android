@@ -1,11 +1,12 @@
 package com.example.mvp.fake
 
-import com.example.mvp.data.database.*
-import com.example.mvp.network.asDomainObject
+import com.example.data.database.Resto
+import com.example.data.database.RestoDao
+import com.example.data.database.asDbObject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
-class FakeRestoDao:RestoDao{
+class FakeRestoDao : RestoDao {
     override suspend fun insert(resto: Resto) {
         TODO("Not yet implemented")
     }

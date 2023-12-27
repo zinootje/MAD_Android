@@ -4,18 +4,16 @@ import androidx.activity.ComponentActivity
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
-import com.example.mvp.Utils.onNodeWithContentDescriptionStringId
-import com.example.mvp.ui.menu.RestoMenuApiState
-import com.example.mvp.ui.menu.RestoMenuUiState
-import org.junit.Rule
-import org.junit.Test
+import com.example.core.model.*
 import com.example.mvp.R
+import com.example.mvp.Utils.onNodeWithContentDescriptionStringId
 import com.example.mvp.Utils.onNodeWithStringId
-import com.example.mvp.fake.FakeDataSource
-import com.example.mvp.model.*
 import com.example.mvp.ui.Util.TabKey
 import com.example.mvp.ui.Util.TabRowType
 import com.example.mvp.ui.menu.RestoMenu
+import com.example.mvp.ui.menu.RestoMenuApiState
+import org.junit.Rule
+import org.junit.Test
 
 class RestoMenuTest {
 
@@ -60,22 +58,22 @@ class RestoMenuTest {
                             "Breakfast" to listOf(
                                 Dish(
                                     name = "Bread",
-                                    special.NONE
+                                    Special.NONE
                                 ),
                                 Dish(
                                     name = "Cereal",
-                                    special.VEGAN
+                                    Special.VEGAN
                                 )
                             ),
                             "Drinks"
                                     to listOf(
                                 Dish(
                                     name = "Coffee",
-                                    special.NONE
+                                    Special.NONE
                                 ),
                                 Dish(
                                     name = "Tea",
-                                    special.VEGIE
+                                    Special.VEGIE
                                 )
                             )
                         )
@@ -116,7 +114,9 @@ class RestoMenuTest {
     fun restoMenu_switch_showsCorrectTab() {
 
         composeTestRule.setContent {
-            CreateRestoMenu(apiState = RestoMenuApiState.Success(MenuData(
+            CreateRestoMenu(
+                apiState = RestoMenuApiState.Success(
+                    MenuData(
                 location = "location",
                 days = listOf(
                     //showed on first tab
@@ -128,22 +128,22 @@ class RestoMenuTest {
                                 "Breakfast" to listOf(
                                     Dish(
                                         name = "Bread",
-                                        special.NONE
+                                        Special.NONE
                                     ),
                                     Dish(
                                         name = "Cereal",
-                                        special.VEGAN
+                                        Special.VEGAN
                                     )
                                 ),
                                 "Drinks"
                                         to listOf(
                                     Dish(
                                         name = "Coffee",
-                                        special.NONE
+                                        Special.NONE
                                     ),
                                     Dish(
                                         name = "Tea",
-                                        special.VEGIE
+                                        Special.VEGIE
                                     )
                                 )
                             )
@@ -151,7 +151,7 @@ class RestoMenuTest {
 
                     )
                     //showed on second tab
-                    ,Day(
+                    , Day(
                         dag = "dayName2",
                         message = "message2",
                         menu = Menu(
@@ -159,22 +159,22 @@ class RestoMenuTest {
                                 "Breakfast2" to listOf(
                                     Dish(
                                         name = "Bread2",
-                                        special.NONE
+                                        Special.NONE
                                     ),
                                     Dish(
                                         name = "Cereal2",
-                                        special.VEGAN
+                                        Special.VEGAN
                                     )
                                 ),
                                 "Drinks2"
                                         to listOf(
                                     Dish(
                                         name = "Coffee2",
-                                        special.NONE
+                                        Special.NONE
                                     ),
                                     Dish(
                                         name = "Tea2",
-                                        special.VEGIE
+                                        Special.VEGIE
                                     )
                                 )
                             )
@@ -182,7 +182,9 @@ class RestoMenuTest {
 
                     )
                 )
-            )))
+                    )
+                )
+            )
         }
 
         //simple check if the first tab is displayed

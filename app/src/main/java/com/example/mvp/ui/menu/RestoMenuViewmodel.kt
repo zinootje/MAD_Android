@@ -10,10 +10,10 @@ import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.AP
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
+import com.example.core.Result
+import com.example.core.asResult
+import com.example.data.RestoRepository
 import com.example.mvp.MvpApplication
-import com.example.mvp.core.Result
-import com.example.mvp.core.asResult
-import com.example.mvp.data.RestoRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

@@ -1,14 +1,11 @@
 package com.example.mvp.ui.test
 
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.mvp.data.RestoRepository
 import com.example.mvp.fake.FakeDataSource
 import com.example.mvp.fake.TestRestoRepository
-import com.example.mvp.network.asDomainObject
 import com.example.mvp.ui.menu.RestoMenuApiState
 import com.example.mvp.ui.menu.RestoMenuViewmodel
 import com.example.mvp.util.MainDispatcherRule
-import kotlinx.coroutines.ExperimentalCoroutinesApi
+import com.example.network.asDomainObject
 import kotlinx.coroutines.test.runTest
 import org.junit.Before
 import org.junit.Rule

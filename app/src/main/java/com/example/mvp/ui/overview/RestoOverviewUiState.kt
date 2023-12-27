@@ -1,7 +1,7 @@
 package com.example.mvp.ui.overview
 
 import androidx.compose.runtime.Immutable
-import com.example.mvp.model.Resto
+import com.example.core.model.Resto
 
 data class RestoOverviewUiState(
     val restoOverviewApiState: RestoOverviewApiState ,

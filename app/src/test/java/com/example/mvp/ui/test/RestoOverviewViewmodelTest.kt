@@ -2,9 +2,6 @@ package com.example.mvp.ui.test
 
 import com.example.mvp.fake.FakeDataSource
 import com.example.mvp.fake.TestRestoRepository
-import com.example.mvp.network.asDomainObject
-import com.example.mvp.ui.menu.RestoMenuApiState
-import com.example.mvp.ui.menu.RestoMenuViewmodel
 import com.example.mvp.ui.overview.RestoOverviewApiState
 import com.example.mvp.ui.overview.RestoOverviewViewModel
 import com.example.mvp.util.MainDispatcherRule

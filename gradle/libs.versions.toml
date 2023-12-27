@@ -1,0 +1,59 @@
+[versions]
+appcompat = "1.6.1"
+ktx = "1.12.0"
+lifecycle = "2.6.2"
+activityCompose = "1.8.2"
+compose = "2023.10.01"
+navigation = "2.7.6"
+junit = "4.13.2"
+junitJupiter = "5.8.1"
+androidxTest = "1.1.5"
+espresso = "3.5.1"
+retrofit2KotlinxSerializationConverter = "1.0.0"
+serializationJson = "1.5.1"
+retrofit = "2.9.0"
+okhttp = "4.12.0"
+coroutinesTest = "1.7.3"
+room = "2.6.1"
+rebugger = "1.0.0-rc02"
+kotlin = "1.9.21"
+
+[libraries]
+kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib-jdk8", version.ref = "kotlin" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "ktx" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose" }
+androidx-lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-compose-compose-ui-lib = { group = "androidx.compose.ui", name = "ui" }
+androidx-compose-ui-test = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-compose-compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-navigation-runtime = { group = "androidx.navigation", name = "navigation-runtime-ktx", version.ref = "navigation" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation" }
+androidx-navigation-testing = { group = "androidx.navigation", name = "navigation-testing", version.ref = "navigation" }
+junit-lib = { group = "junit", name = "junit", version.ref = "junit" }
+junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junitJupiter" }
+androidx-test-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxTest" }
+androidx-test-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
+androidx-test-espresso-intents = { group = "androidx.test.espresso", name = "espresso-intents", version.ref = "espresso" }
+retrofit2-kotlinx-serialization-converter = { module = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter", version.ref = "retrofit2KotlinxSerializationConverter" }
+serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serializationJson" }
+retrofit-lib = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+okhttp-lib = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutinesTest" }
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+room-testing = { group = "androidx.room", name = "room-testing", version.ref = "room" }
+rebugger-lib = { group = "io.github.theapache64", name = "rebugger", version.ref = "rebugger" }
+androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-compose-material3-windowSizeClass = { group = "androidx.compose.material3", name = "material3-window-size-class" }
+
+[bundles]
+
+compose = ["androidx-compose-compose-ui-lib", "androidx-compose-compose-ui-graphics", "androidx-compose-ui-tooling-preview", "androidx-compose-material3", "androidx-activity-compose", "androidx-compose-bom"]
+composeDebug = ["androidx-compose-ui-tooling", "androidx-compose-ui-test-manifest"]
+navigation = ["androidx-navigation-runtime", "androidx-navigation-compose"]

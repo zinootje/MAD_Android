@@ -1,6 +1,6 @@
 package com.example.mvp.ui.menu
 
-import com.example.mvp.model.MenuData
+import com.example.core.model.MenuData
 
 
 data class RestoMenuUiState(

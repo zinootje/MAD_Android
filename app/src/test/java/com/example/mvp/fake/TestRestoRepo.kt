@@ -1,9 +1,8 @@
 package com.example.mvp.fake
 
-import com.example.mvp.data.RestoRepository
-import com.example.mvp.model.MenuData
-import com.example.mvp.model.Resto
-
+import com.example.core.model.MenuData
+import com.example.core.model.Resto
+import com.example.data.RestoRepository
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow

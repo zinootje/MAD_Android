@@ -1,306 +1,305 @@
 package com.example.mvp.fake
 
-import com.example.mvp.model.Resto
-import com.example.mvp.network.ApiRestoMenu
-import com.example.mvp.network.Day
-import com.example.mvp.network.Dish
-import com.example.mvp.network.Special
+import com.example.core.model.Resto
 
 object FakeDataSource {
     val restoList = listOf("Resto 1", "Resto 2", "Resto 3")
-    var restoObjectList = listOf(Resto(
+    var restoObjectList = listOf(
+        Resto(
         restoList[0],true), Resto(
         restoList[1],false), Resto(
-        restoList[2],false))
-    val restoMenu = ApiRestoMenu(
+            restoList[2], false
+        )
+    )
+    val restoMenu = com.example.network.ApiRestoMenu(
         location = "Resto 1",
         days = listOf(
-            Day(
+            com.example.network.Day(
                 dag = "Monday",
                 message = "CLOSED",
                 menu = mapOf(
                 )
             ),
-            Day(
+            com.example.network.Day(
                 dag = "Tuesday",
                 //keep this message for testing
                 message = "Test message day2",
                 menu = mapOf(
                     "Lunch" to listOf(
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 1",
-                            special = Special.NONE
+                            special = com.example.network.Special.NONE
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 2",
-                            special = Special.VEGAN
+                            special = com.example.network.Special.VEGAN
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 3",
-                            special = Special.VEGGIE
+                            special = com.example.network.Special.VEGGIE
                         ),
                     ),
                     "Dinner" to listOf(
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 4",
-                            special = Special.NONE
+                            special = com.example.network.Special.NONE
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 5",
-                            special = Special.VEGAN
+                            special = com.example.network.Special.VEGAN
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 6",
-                            special = Special.VEGGIE
+                            special = com.example.network.Special.VEGGIE
                         ),
                     )
                 )
             ),
-            Day(
+            com.example.network.Day(
                 dag = "Wednesday",
                 message = "",
                 menu = mapOf(
                     "Lunch" to listOf(
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 1",
-                            special = Special.NONE
+                            special = com.example.network.Special.NONE
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 2",
-                            special = Special.VEGAN
+                            special = com.example.network.Special.VEGAN
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 3",
-                            special = Special.VEGGIE
+                            special = com.example.network.Special.VEGGIE
                         ),
                     ),
                     "Dinner" to listOf(
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 4",
-                            special = Special.NONE
+                            special = com.example.network.Special.NONE
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 5",
-                            special = Special.VEGAN
+                            special = com.example.network.Special.VEGAN
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 6",
-                            special = Special.VEGGIE
+                            special = com.example.network.Special.VEGGIE
                         ),
                     )
                 )
             ),
-            Day(
+            com.example.network.Day(
                 dag = "Thursday",
                 message = "",
                 menu = mapOf(
                     "Lunch" to listOf(
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 1",
-                            special = Special.NONE
+                            special = com.example.network.Special.NONE
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 2",
-                            special = Special.VEGAN
+                            special = com.example.network.Special.VEGAN
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 3",
-                            special = Special.VEGGIE
+                            special = com.example.network.Special.VEGGIE
                         ),
                     ),
                     "Dinner" to listOf(
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 4",
-                            special = Special.NONE
+                            special = com.example.network.Special.NONE
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 5",
-                            special = Special.VEGAN
+                            special = com.example.network.Special.VEGAN
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 6",
-                            special = Special.VEGGIE
+                            special = com.example.network.Special.VEGGIE
                         ),
                     )
                 )
             ),
-            Day(
+            com.example.network.Day(
                 dag = "Friday",
                 message = "",
                 menu = mapOf(
                     "Lunch" to listOf(
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 1",
-                            special = Special.NONE
+                            special = com.example.network.Special.NONE
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 2",
-                            special = Special.VEGAN
+                            special = com.example.network.Special.VEGAN
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 3",
-                            special = Special.VEGGIE
+                            special = com.example.network.Special.VEGGIE
                         ),
                     ),
                     "Dinner" to listOf(
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 4",
-                            special = Special.NONE
+                            special = com.example.network.Special.NONE
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 5",
-                            special = Special.VEGAN
+                            special = com.example.network.Special.VEGAN
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 6",
-                            special = Special.VEGGIE
+                            special = com.example.network.Special.VEGGIE
                         ),
                     )
                 )
             ),
         )
     )
-    val restoMenu2 = ApiRestoMenu(
+    val restoMenu2 = com.example.network.ApiRestoMenu(
         location = "Resto 2",
         days = listOf(
-            Day(
+            com.example.network.Day(
                 dag = "Monday",
                 message = "Open",
                 menu = mapOf(
                 )
             ),
-            Day(
+            com.example.network.Day(
                 dag = "Tuesday",
                 message = "",
                 menu = mapOf(
                     "Lunch" to listOf(
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 1",
-                            special = Special.NONE
+                            special = com.example.network.Special.NONE
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 2",
-                            special = Special.VEGAN
+                            special = com.example.network.Special.VEGAN
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 3",
-                            special = Special.VEGGIE
+                            special = com.example.network.Special.VEGGIE
                         ),
                     ),
                     "Dinner" to listOf(
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 4",
-                            special = Special.NONE
+                            special = com.example.network.Special.NONE
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 5",
-                            special = Special.VEGAN
+                            special = com.example.network.Special.VEGAN
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 6",
-                            special = Special.VEGGIE
+                            special = com.example.network.Special.VEGGIE
                         ),
                     )
                 )
             ),
-            Day(
+            com.example.network.Day(
                 dag = "Wednesday",
                 message = "",
                 menu = mapOf(
                     "Lunch" to listOf(
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 1",
-                            special = Special.NONE
+                            special = com.example.network.Special.NONE
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 2",
-                            special = Special.VEGAN
+                            special = com.example.network.Special.VEGAN
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 3",
-                            special = Special.VEGGIE
+                            special = com.example.network.Special.VEGGIE
                         ),
                     ),
                     "Dinner" to listOf(
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 4",
-                            special = Special.NONE
+                            special = com.example.network.Special.NONE
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 5",
-                            special = Special.VEGAN
+                            special = com.example.network.Special.VEGAN
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 6",
-                            special = Special.VEGGIE
+                            special = com.example.network.Special.VEGGIE
                         ),
                     )
                 )
             ),
-            Day(
+            com.example.network.Day(
                 dag = "Thursday",
                 message = "",
                 menu = mapOf(
                     "Lunch" to listOf(
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 1",
-                            special = Special.NONE
+                            special = com.example.network.Special.NONE
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 2",
-                            special = Special.VEGAN
+                            special = com.example.network.Special.VEGAN
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 3",
-                            special = Special.VEGGIE
+                            special = com.example.network.Special.VEGGIE
                         ),
                     ),
                     "Dinner" to listOf(
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 4",
-                            special = Special.NONE
+                            special = com.example.network.Special.NONE
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 5",
-                            special = Special.VEGAN
+                            special = com.example.network.Special.VEGAN
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 6",
-                            special = Special.VEGGIE
+                            special = com.example.network.Special.VEGGIE
                         ),
                     )
                 )
             ),
-            Day(
+            com.example.network.Day(
                 dag = "Friday",
                 message = "",
                 menu = mapOf(
                     "Lunch" to listOf(
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 1",
-                            special = Special.NONE
+                            special = com.example.network.Special.NONE
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 2",
-                            special = Special.VEGAN
+                            special = com.example.network.Special.VEGAN
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 3",
-                            special = Special.VEGGIE
+                            special = com.example.network.Special.VEGGIE
                         ),
                     ),
                     "Dinner" to listOf(
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 4",
-                            special = Special.NONE
+                            special = com.example.network.Special.NONE
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 5",
-                            special = Special.VEGAN
+                            special = com.example.network.Special.VEGAN
                         ),
-                        Dish(
+                        com.example.network.Dish(
                             name = "Dish 6",
-                            special = Special.VEGGIE
+                            special = com.example.network.Special.VEGGIE
                         ),
                     )
                 )

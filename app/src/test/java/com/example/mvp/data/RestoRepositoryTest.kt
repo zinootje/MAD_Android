@@ -1,15 +1,15 @@
 package com.example.mvp.data
 
-import com.example.mvp.network.asDomainObject
-import com.example.mvp.data.RestoOfflineRepositoryImpl
+import com.example.data.RestoOfflineRepositoryImpl
 import com.example.mvp.fake.FakeDataSource
 import com.example.mvp.fake.FakeMenuDao
 import com.example.mvp.fake.FakeRestoApiService
 import com.example.mvp.fake.FakeRestoDao
+import com.example.network.asDomainObject
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
-import org.junit.jupiter.api.Assertions.*
 import org.junit.Test
+import org.junit.jupiter.api.Assertions.*
 
 class RestoRepositoryTest {
 

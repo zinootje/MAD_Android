@@ -21,7 +21,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.mvp.model.*
+import com.example.core.model.*
 import com.example.mvp.ui.Util.TabRowType
 import com.example.mvp.ui.Util.tabKey
 import com.example.mvp.ui.common.LoadingIndicator
@@ -264,7 +264,7 @@ fun DishItem(dish: Dish) {
             color = MaterialTheme.colorScheme.onBackground
         )
         when (dish.special) {
-            special.NONE, special.UNKNOWN -> {} //Only show special if it's not NONE or UNKNOWN
+            Special.NONE, Special.UNKNOWN -> {} //Only show special if it's not NONE or UNKNOWN
             else -> {
                 Text(
                     modifier = Modifier.weight(1f, false),
@@ -286,7 +286,7 @@ private fun DishItemPreview() {
     DishItem(
         dish = Dish(
             name = "Dish names",
-            special = special.VEGIE
+            special = Special.VEGIE
         )
     )
 }
@@ -297,7 +297,7 @@ private fun DishItemCutoffPreview() {
     DishItem(
         dish = Dish(
             name = "Dish namessdqfsdqf dsq fsqdf sdf sdqf sdqf sqdfsdqfsqdf sdfsdqfsdqsdf sdfq",
-            special = special.VEGIE
+            special = Special.VEGIE
         )
     )
 }
@@ -317,21 +317,21 @@ private fun MenuContentPreview() {
                             "Breakfast" to listOf(
                                 Dish(
                                     name = "Bread",
-                                    special = special.NONE
+                                    special = Special.NONE
                                 ),
                                 Dish(
                                     name = "Cereal",
-                                    special = special.VEGAN
+                                    special = Special.VEGAN
                                 )
                             ),
                             "Drinks" to listOf(
                                 Dish(
                                     name = "Coffee",
-                                    special = special.NONE
+                                    special = Special.NONE
                                 ),
                                 Dish(
                                     name = "Tea",
-                                    special = special.VEGIE
+                                    special = Special.VEGIE
                                 )
                             )
                         )
@@ -346,21 +346,21 @@ private fun MenuContentPreview() {
                             "Breakfast2" to listOf(
                                 Dish(
                                     name = "Bread2",
-                                    special = special.NONE
+                                    special = Special.NONE
                                 ),
                                 Dish(
                                     name = "Cereal2",
-                                    special = special.VEGAN
+                                    special = Special.VEGAN
                                 )
                             ),
                             "Drinks2" to listOf(
                                 Dish(
                                     name = "Coffee2",
-                                    special = special.NONE
+                                    special = Special.NONE
                                 ),
                                 Dish(
                                     name = "Tea2",
-                                    special = special.VEGIE
+                                    special = Special.VEGIE
                                 )
                             )
                         )

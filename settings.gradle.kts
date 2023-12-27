@@ -15,4 +15,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "MVP"
 include(":app")
- 
+include(":data")
+include(":core")
+include(":network")

@@ -4,9 +4,9 @@ import android.content.Context
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.example.mvp.data.database.MenuDao
-import com.example.mvp.data.database.MenuDatabase
-import com.example.mvp.data.database.toDbMenu
+import com.example.data.database.MenuDao
+import com.example.data.database.MenuDatabase
+import com.example.data.database.toDbMenu
 import com.example.mvp.fake.FakeDataSource
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
