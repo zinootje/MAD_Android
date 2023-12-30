@@ -6,7 +6,9 @@ import com.example.core.model.MenuData
 data class RestoMenuUiState(
     val currentTab: Int = 0,
     val restoMenuApiState: RestoMenuApiState = RestoMenuApiState.Loading,
-    val restoName: String = ""
+    val restoName: String = "",
+    val staleData: Boolean = false,
+    val toastDataShown: Boolean = false,
 
 )
 

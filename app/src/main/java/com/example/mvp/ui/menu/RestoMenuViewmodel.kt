@@ -34,9 +34,13 @@ class RestoMenuViewmodel(
         return restoName
     }
 
+    fun toastShown() {
+        _uiState.value = _uiState.value.copy(toastDataShown = true)
+    }
+
     private fun getRestoMenu() {
         viewModelScope.launch {
-            restoRepository.getRestoMenu(restoName).asResult().collect {
+            restoRepository.getRestoMenuSt(restoName).asResult().collect {
                 val state = when (it) {
                     is Result.Loading -> RestoMenuApiState.Loading
                     is Result.Error -> {
@@ -46,13 +50,14 @@ class RestoMenuViewmodel(
                     }
 
                     is Result.Success -> {
-                        //TODO remover one of the two orzfwdxs
-                        _uiState.value = _uiState.value.copy()
-                        RestoMenuApiState.Success(it.data)
+                        //TODO remove double reassignment
+                        if (it.data.isStale) {
+                            _uiState.value = _uiState.value.copy(staleData = true, toastDataShown = false)
+                        }
+                        RestoMenuApiState.Success(it.data.data)
                     }
 
                 }
-                //TODO remive one of the two
                 _uiState.value = _uiState.value.copy(restoMenuApiState = state)
 
 

@@ -1,4 +1,4 @@
-package com.example.mvp.Utils
+package com.example.mvp.utils
 
 import com.example.data.AppContainer
 import com.example.data.RestoRepository

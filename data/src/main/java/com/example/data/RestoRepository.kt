@@ -1,22 +1,14 @@
 package com.example.data
 
+import com.example.core.StaleAbleData
 import com.example.core.model.MenuData
 import com.example.core.model.Resto
-import com.example.data.database.MenuDao
-import com.example.data.database.RestoDao
-import com.example.data.database.asDbObject
-import com.example.data.database.asDomainObject
-import com.example.data.database.toDbMenu
-import com.example.data.database.toMenuData
+import com.example.data.database.*
 import com.example.network.RestoApiService
 import com.example.network.asDomainObject
 import com.example.network.getRestoListAsFlow
 import com.example.network.getRestoMenuAsFlow
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.filterNotNull
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.*
 
 interface RestoRepository {
 
@@ -26,6 +18,7 @@ interface RestoRepository {
 
     suspend fun setFavoriteResto(name: String, favorite: Boolean)
 
+    suspend fun getRestoMenuSt(name: String): Flow<StaleAbleData<MenuData>>
 
 
     suspend fun refreshRestoList()
@@ -48,15 +41,32 @@ class RestoOfflineRepositoryImpl(
         }
     }
 
-    override suspend fun getRestoMenu(name: String): Flow<MenuData> {
+
+    private suspend fun getRestoMenuInternal(name: String): Flow<StaleAbleData<MenuData>> {
         //TODO move logic to different function
         //Needed because of the way the api works
         var shortName = ToShortName(name)
-        return menuDao.getMenuData(shortName).onEach {
+        return menuDao.getMenuData(shortName).transform {
             if (it == null) {
                 refreshRestoMenu(name)
+            } else {
+                if (it.timestamp + 86400000 < System.currentTimeMillis()) {
+                    refreshRestoMenu(name)
+                    return@transform emit(StaleAbleData(it.toMenuData(), true))
+                } else {
+                    return@transform emit(StaleAbleData(it.toMenuData(), false))
+                }
             }
-        }.filterNotNull().map { it.toMenuData() }
+        }
+    }
+
+    override suspend fun getRestoMenuSt(name: String): Flow<StaleAbleData<MenuData>> {
+        return getRestoMenuInternal(name)
+    }
+
+
+    override suspend fun getRestoMenu(name: String): Flow<MenuData> {
+        return getRestoMenuInternal(name).map { it.data }
     }
 
 

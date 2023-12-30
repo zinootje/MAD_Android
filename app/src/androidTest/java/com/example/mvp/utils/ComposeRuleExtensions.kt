@@ -1,4 +1,4 @@
-package com.example.mvp.Utils
+package com.example.mvp.utils
 
 //https://github.com/google-developer-training/basic-android-kotlin-compose-training-cupcake/blob/main/app/src/androidTest/java/com/example/cupcake/test/ComposeRuleExtensions.kt
 

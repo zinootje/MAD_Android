@@ -68,9 +68,9 @@ dependencies {
     implementation(libs.bundles.navigation)
     testImplementation(libs.androidx.navigation.testing)
     implementation(libs.androidx.navigation.testing)
-
     androidTestImplementation(libs.junit.lib)
     androidTestImplementation(libs.androidx.test.espresso.core)
+    androidTestImplementation(libs.androidx.compose.ui.test)
     androidTestImplementation(libs.androidx.test.espresso.intents)
     androidTestImplementation(platform(libs.androidx.compose.bom))
 

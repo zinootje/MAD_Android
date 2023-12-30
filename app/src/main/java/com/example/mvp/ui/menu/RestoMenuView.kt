@@ -2,6 +2,7 @@
 
 package com.example.mvp.ui.menu
 
+import android.widget.Toast
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -15,6 +16,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
@@ -23,6 +25,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.core.model.*
+import com.example.mvp.R
 import com.example.mvp.ui.Util.TabRowType
 import com.example.mvp.ui.Util.tabKey
 import com.example.mvp.ui.common.LoadingIndicator
@@ -36,10 +39,27 @@ fun RestoMenuScreen(
     tabRowType: TabRowType = TabRowType.Scrollable,
     onBack: () -> Unit
 ) {
+    val context = LocalContext.current
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val apiState = remember {
         derivedStateOf { uiState.restoMenuApiState }
     }
+
+    val shouldShowToast by remember {
+        derivedStateOf { !uiState.toastDataShown && uiState.staleData }
+    }
+    val toastMessage = stringResource(R.string.showing_stale_data)
+    LaunchedEffect(key1 = shouldShowToast) {
+        if (shouldShowToast) {
+            Toast.makeText(
+                context,
+                toastMessage,
+                Toast.LENGTH_SHORT
+            ).show()
+            viewModel.toastShown()
+        }
+    }
+
 
     Scaffold(
         topBar = {

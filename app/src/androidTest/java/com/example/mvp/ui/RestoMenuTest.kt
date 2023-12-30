@@ -6,12 +6,12 @@ import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import com.example.core.model.*
 import com.example.mvp.R
-import com.example.mvp.Utils.onNodeWithContentDescriptionStringId
-import com.example.mvp.Utils.onNodeWithStringId
 import com.example.mvp.ui.Util.TabKey
 import com.example.mvp.ui.Util.TabRowType
 import com.example.mvp.ui.menu.RestoMenu
 import com.example.mvp.ui.menu.RestoMenuApiState
+import com.example.mvp.utils.onNodeWithContentDescriptionStringId
+import com.example.mvp.utils.onNodeWithStringId
 import org.junit.Rule
 import org.junit.Test
 

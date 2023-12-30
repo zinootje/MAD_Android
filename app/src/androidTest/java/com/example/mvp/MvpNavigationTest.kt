@@ -8,12 +8,11 @@ import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.performClick
 import androidx.navigation.compose.ComposeNavigator
 import androidx.navigation.testing.TestNavHostController
-import com.example.mvp.Utils.FakeAppContainer
-import com.example.mvp.Utils.assertCurrentRouteName
-import com.example.mvp.Utils.setFakeAppContainer
 import com.example.mvp.fake.FakeDataSource
 import com.example.mvp.ui.MVPApp
 import com.example.mvp.ui.MvpScreens
+import com.example.mvp.utils.assertCurrentRouteName
+import com.example.mvp.utils.setFakeAppContainer
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test

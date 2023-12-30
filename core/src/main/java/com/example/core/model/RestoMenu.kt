@@ -1,6 +1,7 @@
 package com.example.core.model
 
 import androidx.annotation.StringRes
+import com.example.core.R
 //TODO fix
 //import com.example.mvp.R
 import kotlinx.serialization.Serializable
@@ -32,12 +33,12 @@ data class Dish(
 //TODO fix
 @Serializable
 enum class Special(@StringRes val title: Int) {
-    /*    VEGAN(R.string.vegan),
+    VEGAN(R.string.vegan),
         VEGIE(R.string.veggie),
         NONE(R.string.none),
-        UNKNOWN(R.string.unknown)*/
-    VEGAN(0),
-    VEGIE(0),
-    NONE(0),
-    UNKNOWN(0)
+    UNKNOWN(R.string.unknown)
+//    VEGAN(0),
+//    VEGIE(0),
+//    NONE(0),
+//    UNKNOWN(0)
 }

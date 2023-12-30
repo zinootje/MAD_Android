@@ -18,18 +18,9 @@ class DefaultAppContainer(
     private val context: Context
 ) : AppContainer {
     private val baseUrl = "https://horesto-api-b1545d045cdf.herokuapp.com/"
-    var json = Json {
-        ignoreUnknownKeys = true
-    }
-
     private val retrofit = Retrofit.Builder()
         .addConverterFactory(
-            //ignoreUnknownKeys = true
-
-
-            Json {
-                ignoreUnknownKeys = true
-            }.asConverterFactory("application/json".toMediaType())
+            Json.asConverterFactory("application/json".toMediaType())
         )
         .baseUrl(baseUrl)
         .build()
