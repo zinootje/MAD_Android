@@ -87,27 +87,34 @@ fun MVPApp(navController: NavHostController = rememberNavController(),windowSize
                }
                composable(MvpScreens.RestoMenu.toRoute()) {
                    val restoId = it.arguments?.getString(MvpScreens.RestoMenu.arguments)
+                   val tabRowType = when (windowSize) {
+                       WindowWidthSizeClass.Compact -> {
+                           TabRowType.Scrollable
+                       }
+
+                       WindowWidthSizeClass.Medium -> {
+                           TabRowType.Scrollable
+                       }
+
+                       WindowWidthSizeClass.Expanded -> {
+                           TabRowType.Expanded
+                       }
+
+                       else -> {
+                           TabRowType.Scrollable
+                       }
+                   }
                    if (restoId == null) {
                        Log.e("MVPApp", "RestoMenu route called without restoId")
                        navController.popBackStack()
                        return@composable
                    }
-                    RestoMenuScreen(viewModel = viewModel(factory= RestoMenuViewmodel.Factory(restoId)), onBack = { navController.popBackStack()
-                    }, tabRowType = when(windowSize){
-                        WindowWidthSizeClass.Compact -> {
-                            TabRowType.Scrollable
-                        }
-                        WindowWidthSizeClass.Medium -> {
-                            TabRowType.Scrollable
-                        }
-                        WindowWidthSizeClass.Expanded -> {
-                            TabRowType.Expanded
-                        }
-
-                        else -> {
-                            TabRowType.Scrollable
-                        }
-                    })
+                   RestoMenuScreen(
+                       viewModel = viewModel<RestoMenuViewmodel>(factory = RestoMenuViewmodel.Factory(restoId)),
+                       onBack = { navController.popBackStack() },
+                       tabRowType =
+                       tabRowType
+                   )
                }
            }
         }

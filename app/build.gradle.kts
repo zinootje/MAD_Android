@@ -59,7 +59,10 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":network"))
 
+    implementation(libs.kotlinx.collections.immutable)
 
+
+    implementation((libs.androidx.compose.bom))
     implementation(libs.androidx.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -84,7 +87,6 @@ dependencies {
     testImplementation(libs.kotlinx.coroutines.test)
 
 
-    //TODO check
     //Layout
     implementation(libs.androidx.compose.material3.windowSizeClass)
 

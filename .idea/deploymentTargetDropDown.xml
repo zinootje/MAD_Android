@@ -12,10 +12,20 @@
         <State />
       </entry>
       <entry key="app">
-        <State />
-      </entry>
-      <entry key="dao_insertMenuData()">
-        <State />
+        <State>
+          <runningDeviceTargetSelectedWithDropDown>
+            <Target>
+              <type value="RUNNING_DEVICE_TARGET" />
+              <deviceKey>
+                <Key>
+                  <type value="SERIAL_NUMBER" />
+                  <value value="192.168.0.198:39569" />
+                </Key>
+              </deviceKey>
+            </Target>
+          </runningDeviceTargetSelectedWithDropDown>
+          <timeTargetWasSelectedWithDropDown value="2023-12-30T22:31:48.274901600Z" />
+        </State>
       </entry>
     </value>
   </component>

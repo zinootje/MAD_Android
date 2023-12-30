@@ -21,6 +21,13 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
+    //enable compose for marking class table and avoiding recomposition
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.7"
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -31,10 +38,14 @@ android {
 }
 
 dependencies {
+    implementation(platform(libs.androidx.compose.bom))
 
     testImplementation(libs.junit.lib)
     implementation(libs.androidx.ktx)
     implementation(libs.androidx.appcompat)
+    implementation(libs.kotlinx.collections.immutable)
+
+    implementation(libs.androidx.compose.runtime)
     androidTestImplementation(libs.androidx.test.junit)
 
     //serilization

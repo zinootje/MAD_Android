@@ -6,6 +6,7 @@ import com.example.core.model.Day
 import com.example.core.model.MenuData
 import com.example.network.ApiRestoMenu
 import com.example.network.asDomainObject
+import kotlinx.collections.immutable.toImmutableList
 
 
 /**
@@ -34,7 +35,7 @@ data class MenuDataEntity(
 fun MenuDataEntity.toMenuData(): MenuData {
     return MenuData(
         location = this.location,
-        days = this.days
+        days = this.days.toImmutableList()
     )
 }
 

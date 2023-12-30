@@ -38,6 +38,8 @@ dependencies {
     implementation(libs.androidx.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.serialization.json)
+    implementation(libs.kotlinx.collections.immutable)
+
 
     // Retrofit
     implementation(libs.retrofit.lib)

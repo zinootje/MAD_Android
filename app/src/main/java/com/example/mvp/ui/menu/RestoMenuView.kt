@@ -30,6 +30,8 @@ import com.example.mvp.ui.Util.TabRowType
 import com.example.mvp.ui.Util.tabKey
 import com.example.mvp.ui.common.LoadingIndicator
 import com.theapache64.rebugger.Rebugger
+import kotlinx.collections.immutable.persistentMapOf
+import kotlinx.collections.immutable.toImmutableList
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -336,7 +338,7 @@ private fun MenuContentPreview() {
                     dag = "Monday",
                     message = "message",
                     menu = Menu(
-                        items = mapOf(
+                        items = persistentMapOf(
                             "Breakfast" to listOf(
                                 Dish(
                                     name = "Bread",
@@ -365,7 +367,7 @@ private fun MenuContentPreview() {
                     message = "message2",
                     menu =
                     Menu(
-                        mapOf(
+                        persistentMapOf(
                             "Breakfast2" to listOf(
                                 Dish(
                                     name = "Bread2",
@@ -387,9 +389,10 @@ private fun MenuContentPreview() {
                                 )
                             )
                         )
+
                     )
                 )
-            )
+            ).toImmutableList()
         ),
         tabRowType = TabRowType.Scrollable
     )

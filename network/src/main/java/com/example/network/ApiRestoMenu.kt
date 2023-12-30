@@ -1,14 +1,16 @@
 package com.example.network
 
 import com.example.core.model.MenuData
-import com.example.core.model.Day as ModelDay
-import com.example.core.model.Dish as ModelDish
-import com.example.core.model.Menu as ModelMenu
-import com.example.core.model.Special as ModelSpecial
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.collections.immutable.toImmutableMap
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import com.example.core.model.Day as ModelDay
+import com.example.core.model.Dish as ModelDish
+import com.example.core.model.Menu as ModelMenu
+import com.example.core.model.Special as ModelSpecial
 
 @Serializable
 data class ApiRestoMenu(
@@ -74,11 +76,11 @@ fun ApiRestoMenu.asDomainObject(): MenuData {
                                 name = dish.name,
                                 special = dish.special.asDomainObject()
                             )
-                        }
-                    }.toMap()
+                        }.toImmutableList()
+                    }.toMap().toImmutableMap()
                 )
             )
-        }
+        }.toImmutableList()
     )
 }
 

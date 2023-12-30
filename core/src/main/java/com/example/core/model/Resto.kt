@@ -1,5 +1,7 @@
 package com.example.core.model
 
+//import androidx.compose.runtime.Immutable
+
 //TODO check if necneccasry
 //import androidx.compose.runtime.Immutable
 

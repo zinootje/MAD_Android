@@ -35,6 +35,7 @@ dependencies {
 
     implementation(libs.androidx.ktx)
     implementation(libs.androidx.appcompat)
+    implementation(libs.kotlinx.collections.immutable)
 
 
 
