@@ -12,17 +12,56 @@ import kotlinx.coroutines.flow.*
 
 interface RestoRepository {
 
+    /**
+     * Retrieves a flow of a list of Resto objects.
+     *
+     * @return A flow of a list of Resto objects. The emitted list represents the available restaurants.
+     */
     fun getRestoList(): Flow<List<Resto>>
 
+    /**
+     * Retrieves the menu data for a restaurant with the given name.
+     * This method is suspended and returns a flow of [MenuData].
+     *
+     * @param name The name of the restaurant.
+     * @return A flow of [MenuData] containing the menu information for the restaurant.
+     */
     suspend fun getRestoMenu(name: String): Flow<MenuData>
 
+    /**
+     * Sets the favorite status of a restaurant.
+     *
+     * @param name The name of the restaurant.
+     * @param favorite True if the restaurant should be marked as favorite, false otherwise.
+     */
     suspend fun setFavoriteResto(name: String, favorite: Boolean)
 
+    /**
+     * Retrieves the menu data for a restaurant with the given name.
+     * This method is suspended and returns a flow of [StaleAbleData] of [MenuData].
+     *
+     * @param name The name of the restaurant.
+     * @return A flow of [StaleAbleData] containing the menu information for the restaurant.
+     */
     suspend fun getRestoMenuSt(name: String): Flow<StaleAbleData<MenuData>>
 
 
+    /**
+     * Suspends the execution and refreshes the list of restaurants.
+     *
+     * This method is responsible for refreshing the list of restaurants.
+     * It suspends the execution until the operation is completed.
+     */
     suspend fun refreshRestoList()
 
+    /**
+     * Suspends the execution and refreshes the menu for a restaurant with the given name.
+     *
+     * This method is responsible for refreshing the menu data for a specific restaurant.
+     * It suspends the execution until the operation is completed.
+     *
+     * @param name The name of the restaurant.
+     */
     suspend fun refreshRestoMenu(name: String)
 
 

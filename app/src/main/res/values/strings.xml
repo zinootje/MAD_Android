@@ -14,4 +14,6 @@
     <string name="resto_overview_grid">resto_overview_grid</string>
     <string name="resto_overview_list">resto_overview_list</string>
     <string name="showing_stale_data">Showing stale data</string>
+    <string name="list">List</string>
+    <string name="grid">Grid</string>
 </resources>

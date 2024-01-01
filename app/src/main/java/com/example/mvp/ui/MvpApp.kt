@@ -26,13 +26,36 @@ import com.example.mvp.ui.overview.RestoOverviewViewModel
 import com.example.mvp.ui.theme.MVPTheme
 
 
-
-enum class MvpScreens(@StringRes val title: Int,val arguments: String? = null) {
+/**
+ * Enumeration class representing the screens in the MVP app.
+ *
+ * @param title The string resource ID for the screen title.
+ * @param arguments Optional string value representing the screen argument.
+ *
+ *
+ */
+enum class MvpScreens(@StringRes val title: Int, val arguments: String? = null) {
+    /**
+     * This class represents the Start screen in the MVP app.
+     *
+     * @param title The string resource ID for the screen title.
+     */
     Start(title = R.string.app_name),
-    RestoOverview(title = R.string.resto_overview_title),
+
+    /**
+     * Represents a restaurant menu in the MVP app.
+     *
+     * @property title The title of the menu, retrieved from a string resource ID.
+     * @property arguments Optional string value representing the menu argument.
+     */
     RestoMenu(title = R.string.resto_menu_title, arguments = "restoName");
 
 
+    /**
+     * Converts the enumeration class representing the screens in the MVP app to a route string.
+     *
+     * @return The route string corresponding to the screen.
+     */
     fun toRoute(): String = buildString {
         append(name)
         arguments?.let { append("/{$it}") }
@@ -48,6 +71,12 @@ enum class MvpScreens(@StringRes val title: Int,val arguments: String? = null) {
 }
 
 
+/**
+ * Composable function representing the MVPApp.
+ *
+ * @param navController The instance of [NavHostController] used for navigation.
+ * @param windowSize The [WindowWidthSizeClass] representing the size of the window.
+ */
 @Composable
 fun MVPApp(navController: NavHostController = rememberNavController(),windowSize: WindowWidthSizeClass){
 
@@ -84,8 +113,6 @@ fun MVPApp(navController: NavHostController = rememberNavController(),windowSize
                             GridSize.Fixed
                         }
                     })
-               }
-               composable(MvpScreens.RestoOverview.toRoute()) {
                }
                composable(MvpScreens.RestoMenu.toRoute(),
                    enterTransition = {

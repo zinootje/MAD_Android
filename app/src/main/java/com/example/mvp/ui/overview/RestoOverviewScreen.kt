@@ -32,6 +32,16 @@ import com.example.mvp.ui.common.ErrorComponent
 import com.example.mvp.ui.common.LoadingIndicator
 import com.theapache64.rebugger.Rebugger
 
+/**
+ * Composable function that displays the restaurant overview screen.
+ *
+ * @param navigateToMenu a function that takes a [String] parameter and does not return anything. It is used to navigate to the menu screen of a specific restaurant.
+ * @param restoOverviewViewModel an instance of [RestoOverviewViewModel] that contains the necessary data for rendering the screen.
+ * @param gridSize a [GridSize] enum value that determines the size of the grid used to display the restaurant tiles.
+ *
+ * @see RestoOverviewViewModel
+ * @see GridSize
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RestoOverviewScreen(
@@ -81,6 +91,12 @@ fun RestoOverviewScreen(
 
 }
 
+/**
+ * Composable function that renders a toggle button for switching between grid and list view.
+ *
+ * @param isGrid a boolean indicating whether the current mode is grid view.
+ * @param toggleGridMode a callback function that is called when the toggle button is clicked.
+ */
 @Composable
 private fun GriddTogleButton(
     isGrid: Boolean,
@@ -89,15 +105,24 @@ private fun GriddTogleButton(
     if (isGrid) {
         //TODO: icon button
         TextButton(onClick = { toggleGridMode() }) {
-            Text(text = "List")
+            Text(text = stringResource(R.string.list))
         }
     } else {
         TextButton(onClick = { toggleGridMode()}) {
-            Text(text = "Grid")
+            Text(text = stringResource(R.string.grid))
         }
     }
 }
 
+/**
+ * Displays the restaurant overview screen.
+ *
+ * @param innerPadding The padding applied to the content inside the screen.
+ * @param restoOverviewUiState The state of the restaurant overview UI, including the API state and grid mode.
+ * @param navigateToMenu The callback function to navigate to the menu screen of a restaurant.
+ * @param favoriteResto The callback function to mark a restaurant as favorite or remove it from favorites.
+ * @param gridSize The size of the grid for the restaurant list.
+ */
 @OptIn(ExperimentalFoundationApi::class, ExperimentalAnimationApi::class)
 @Composable
 //private except for testing
@@ -112,6 +137,13 @@ internal fun ShowRestoOverview(
     Box(modifier = Modifier.padding(innerPadding)) {
         AnimatedContent(
             targetState = restoOverviewUiState,
+            contentKey = {
+                if (it.restoOverviewApiState is RestoOverviewApiState.Success) {
+                    return@AnimatedContent it.gridMode
+                } else {
+                    return@AnimatedContent it
+                }
+            },
             transitionSpec = {
                 if (targetState.gridMode) {
                     fadeIn() togetherWith fadeOut()
@@ -201,7 +233,15 @@ internal fun ShowRestoOverview(
 }
 
 
-
+/**
+ * Composable function that displays a tile representing a restaurant in a grid layout.
+ *
+ * @param modifier The modifier to be applied to the tile.
+ * @param name The name of the restaurant.
+ * @param isFavorite Whether the restaurant is marked as a favorite.
+ * @param navigateToMenu The callback function to navigate to the menu screen of the restaurant.
+ * @param onFavoriteClick The callback function to mark the restaurant as a favorite or remove it from favorites.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RestoGridTile(
@@ -249,8 +289,17 @@ fun RestoGridTile(
     }
 }
 
+/**
+ * Composable function that displays a restaurant list tile.
+ *
+ * @param modifier The modifier to be applied to the tile.
+ * @param name The name of the restaurant.
+ * @param isFavorite Whether the restaurant is marked as a favorite. Default value is false.
+ * @param navigateToMenu The callback function to navigate to the menu screen of the restaurant. Default value is an empty function.
+ * @param favoriteResto The callback function to mark the restaurant as a favorite or remove it from favorites. Default value is an empty function.
+ */
 @Composable
-fun RestoListTile(
+private fun RestoListTile(
     modifier: Modifier = Modifier,
     name: String,
     isFavorite: Boolean = false,
@@ -275,8 +324,15 @@ fun RestoListTile(
     )
 }
 
+/**
+ * Composable function that displays a favorite button.
+ *
+ * @param modifier The modifier to be applied to the button.
+ * @param isFavorite Whether the button is in a favorited state. Default value is false.
+ * @param favoriteResto The callback function to be called when the button is clicked. Default value is an empty function.
+ */
 @Composable
-fun FavoriteButton(
+private fun FavoriteButton(
     modifier: Modifier = Modifier,
     isFavorite: Boolean = false,
     favoriteResto: () -> Unit = {}

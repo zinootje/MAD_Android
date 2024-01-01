@@ -1,24 +1,26 @@
 package com.example.mvp.ui.Util
 
-import androidx.annotation.StringRes
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.composed
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import kotlin.math.abs
 
 
 //Todo check colors
-val COLORS = listOf(
+private val COLORS = listOf(
     Color(0xFFEF9A9A),
     Color(0xFFE57373),
     Color(0xFFF44336),
     Color(0xFFE91E63),
 )
 
+/**
+ * Retrieves a color based on the name of the restaurant.
+ *
+ * @param name The name of the restaurant.
+ * @return The color associated with the restaurant name.
+ */
 //function to get a random color base on the name of the resto
 fun getColorFromName(name: String): Color{
     val index = abs(name.hashCode() % COLORS.size)

@@ -16,6 +16,14 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
+/**
+ * The RestoMenuViewmodel class represents the ViewModel for the restaurant menu screen.
+ *
+ * @property restoRepository The repository for restaurant data.
+ * @property restoName The name of the restaurant.
+ * @property _uiState The mutable state flow for the UI state of the restaurant menu screen.
+ * @property uiState The state flow for the UI state of the restaurant menu screen.
+ */
 class RestoMenuViewmodel(
     private val restoRepository: RestoRepository,
     private val restoName: String
@@ -29,11 +37,20 @@ class RestoMenuViewmodel(
         getRestoMenu()
     }
 
-    //public restoname
+    /**
+     * Retrieves the name of the restaurant.
+     *
+     * @return The name of the restaurant as a [String].
+     */
+//public restoname
     fun getRestoName(): String {
         return restoName
     }
 
+    /**
+     * Updates the UI state to indicate that the toast has been shown.
+     * Sets the `toastDataShown` property of the UI state to `true`.
+     */
     fun toastShown() {
         _uiState.value = _uiState.value.copy(toastDataShown = true)
     }
@@ -79,6 +96,12 @@ class RestoMenuViewmodel(
     }
 
     companion object {
+        /**
+         * Creates a [ViewModelProvider.Factory] for creating instances of [RestoMenuViewmodel] with the provided name.
+         *
+         * @param name The name of the restaurant.
+         * @return A [ViewModelProvider.Factory] object.
+         */
         fun Factory(name: String): ViewModelProvider.Factory = viewModelFactory { initializer {
             val application = (this[APPLICATION_KEY] as MvpApplication)
             val restoRepository = application.container.restoRepository

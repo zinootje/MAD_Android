@@ -12,6 +12,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.mvp.R
 
+/**
+ * A composable function that renders an error view with an optional message and retry functionality.
+ *
+ * @param message The optional error message to display.
+ * @param error The optional [Throwable]  representing the error.
+ * @param onRetry The optional callback function to invoke when the retry button is clicked.
+ */
 @Composable
 fun ErrorComponent(
     message: String? = null,
@@ -25,9 +32,15 @@ if (message != null) {
     }
 }
 
+/**
+ * A composable function that renders an error view with an optional message and retry functionality.
+ *
+ * @param message The error message to display.
+ * @param onRetry The callback function to invoke when the retry button is clicked. If null, the retry button will not be shown.
+ */
 //TODO add svg
 @Composable
-fun ErrorView(message: String, onRetry:( () -> Unit)?) {
+private fun ErrorView(message: String, onRetry: (() -> Unit)?) {
     Column(
         modifier = Modifier
             .fillMaxSize()

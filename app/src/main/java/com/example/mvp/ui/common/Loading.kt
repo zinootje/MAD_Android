@@ -11,6 +11,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.mvp.R
 import com.example.mvp.ui.Util.contentDescription
 
+/**
+ * Displays a loading indicator.
+ *
+ * @param modifier The [Modifier] to be applied to the loading indicator.
+ */
 @Composable
 fun LoadingIndicator() {
     //nonprescription loading

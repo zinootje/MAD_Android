@@ -36,6 +36,13 @@ import kotlinx.collections.immutable.persistentMapOf
 import kotlinx.collections.immutable.toImmutableList
 import kotlinx.coroutines.launch
 
+/**
+ * Composable function that represents the screen for displaying the menu of a restaurant.
+ *
+ * @param viewModel Intance of [RestoMenuViewmodel] to handle the business logic.
+ * @param tabRowType The type of the tab row, can be either [TabRowType.Scrollable] or [TabRowType.Expanded].
+ * @param onBack Callback function for navigating back from the screen.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RestoMenuScreen(
@@ -90,6 +97,13 @@ fun RestoMenuScreen(
 }
 
 
+/**
+ * Displays the restaurant menu based on the API state.
+ *
+ * @param modifier The modifier to be applied to the RestoMenu composable. Defaults to [Modifier].
+ * @param apiState The API state of the restaurant menu.
+ * @param tabRowType The type of the tab row. It can be either TabRowType.Scrollable or TabRowType.Expanded.
+ */
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun RestoMenu(
@@ -133,9 +147,15 @@ fun RestoMenu(
 }
 
 
+/**
+ * Composable function that displays the menu content.
+ *
+ * @param menuData The menu data containing the location and days.
+ * @param tabRowType The type of the tab row.
+ */
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun MenuContent(menuData: MenuData, tabRowType: TabRowType) {
+private fun MenuContent(menuData: MenuData, tabRowType: TabRowType) {
     // Pager state
     val pagerState = rememberPagerState(
         initialPage = 0,
@@ -187,6 +207,13 @@ fun MenuContent(menuData: MenuData, tabRowType: TabRowType) {
     }
 }
 
+/**
+ * Private composable function that represents a tab in the MenuContent.
+ *
+ * @param selected True if the tab is currently selected, false otherwise.
+ * @param onClick Callback function that is triggered when the tab is clicked.
+ * @param text The text to be displayed on the tab.
+ */
 @Composable
 private fun DayTab(
     selected: Boolean,
@@ -203,6 +230,14 @@ private fun DayTab(
 }
 
 
+/**
+ * Composable function that displays a tab row based on the tab row type.
+ *
+ * @param selectedTabIndex The index of the currently selected tab.
+ * @param contentColor The color of the tab content.
+ * @param tabRowType The type of the tab row.
+ * @param tabs The composable function that renders the tabs.
+ */
 @Composable
 fun MvpTabRow(
     selectedTabIndex: Int,
@@ -231,8 +266,13 @@ fun MvpTabRow(
 
 }
 
+/**
+ * Composable function that displays the menu content for a specific day.
+ *
+ * @param day The Day object containing the menu information for the day.
+ */
 @Composable
-fun DayMenuContent(day: Day) {
+private fun DayMenuContent(day: Day) {
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
@@ -268,6 +308,12 @@ fun DayMenuContent(day: Day) {
 }
 
 
+/**
+ * Composable function that displays the menu category with its dishes.
+ *
+ * @param categoryName The name of the menu category.
+ * @param dishes The list of [Dish]es belonging to the category.
+ */
 @Composable
 fun MenuCategory(categoryName: String, dishes: List<Dish>) {
     Text(
@@ -282,8 +328,13 @@ fun MenuCategory(categoryName: String, dishes: List<Dish>) {
     Spacer(modifier = Modifier.height(8.dp))
 }
 
+/**
+ * Composable function that displays a dish item.
+ *
+ * @param dish The [Dish] object containing the name and special info.
+ */
 @Composable
-fun DishItem(dish: Dish) {
+private fun DishItem(dish: Dish) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
