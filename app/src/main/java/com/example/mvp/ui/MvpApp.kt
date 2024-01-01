@@ -2,6 +2,8 @@ package com.example.mvp.ui
 
 import android.util.Log
 import androidx.annotation.StringRes
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -85,7 +87,23 @@ fun MVPApp(navController: NavHostController = rememberNavController(),windowSize
                }
                composable(MvpScreens.RestoOverview.toRoute()) {
                }
-               composable(MvpScreens.RestoMenu.toRoute()) {
+               composable(MvpScreens.RestoMenu.toRoute(),
+                   enterTransition = {
+                       //slide in from the right
+                       slideInHorizontally(
+                           //slide in from the right
+                           initialOffsetX = { it / 2 }
+                       )
+                   },
+                   exitTransition = {
+                       //slide out to the left
+                       slideOutHorizontally(
+
+                           //slide out to the left
+                           targetOffsetX = { it },
+                       )
+                   }
+               ) {
                    val restoId = it.arguments?.getString(MvpScreens.RestoMenu.arguments)
                    val tabRowType = when (windowSize) {
                        WindowWidthSizeClass.Compact -> {
@@ -112,8 +130,7 @@ fun MVPApp(navController: NavHostController = rememberNavController(),windowSize
                    RestoMenuScreen(
                        viewModel = viewModel<RestoMenuViewmodel>(factory = RestoMenuViewmodel.Factory(restoId)),
                        onBack = { navController.popBackStack() },
-                       tabRowType =
-                       tabRowType
+                       tabRowType = tabRowType
                    )
                }
            }

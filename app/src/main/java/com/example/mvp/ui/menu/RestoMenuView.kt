@@ -3,6 +3,8 @@
 package com.example.mvp.ui.menu
 
 import android.widget.Toast
+import androidx.compose.animation.Crossfade
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -88,39 +90,46 @@ fun RestoMenuScreen(
 }
 
 
+@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun RestoMenu(
     modifier: Modifier = Modifier,
     apiState: RestoMenuApiState,
     tabRowType: TabRowType,
 ) {
-    when (apiState) {
-        is RestoMenuApiState.Loading -> {
-            Box(
-                modifier = modifier
-            ) {
-                LoadingIndicator()
+    Crossfade(
+        targetState = apiState, label = "stateTransition",
+    )
+    { apiState ->
+        when (apiState) {
+            is RestoMenuApiState.Loading -> {
+                Box(
+                    modifier = modifier
+                ) {
+                    LoadingIndicator()
+                }
             }
-        }
 
-        is RestoMenuApiState.Success -> {
-            Box(
-                modifier = modifier
-            ) {
-                //success
-                MenuContent(apiState.data, tabRowType)
+            is RestoMenuApiState.Success -> {
+                Box(
+                    modifier = modifier
+                ) {
+                    //success
+                    MenuContent(apiState.data, tabRowType)
+                }
             }
-        }
 
-        is RestoMenuApiState.Error -> {
-            Box(
-                modifier = modifier
-            ) {
-                //error
-                Text(text = apiState.message)
+            is RestoMenuApiState.Error -> {
+                Box(
+                    modifier = modifier
+                ) {
+                    //error
+                    Text(text = apiState.message)
+                }
             }
         }
     }
+
 }
 
 
@@ -327,73 +336,84 @@ private fun DishItemCutoffPreview() {
     )
 }
 
+private val mndata = MenuData(
+    location = "location",
+    days = listOf(
+        Day(
+            dag = "Monday",
+            message = "message",
+            menu = Menu(
+                items = persistentMapOf(
+                    "Breakfast" to listOf(
+                        Dish(
+                            name = "Bread",
+                            special = Special.NONE
+                        ),
+                        Dish(
+                            name = "Cereal",
+                            special = Special.VEGAN
+                        )
+                    ),
+                    "Drinks" to listOf(
+                        Dish(
+                            name = "Coffee",
+                            special = Special.NONE
+                        ),
+                        Dish(
+                            name = "Tea",
+                            special = Special.VEGIE
+                        )
+                    )
+                )
+            )
+        ),
+        Day(
+            dag = "Tuesday",
+            message = "message2",
+            menu =
+            Menu(
+                persistentMapOf(
+                    "Breakfast2" to listOf(
+                        Dish(
+                            name = "Bread2",
+                            special = Special.NONE
+                        ),
+                        Dish(
+                            name = "Cereal2",
+                            special = Special.VEGAN
+                        )
+                    ),
+                    "Drinks2" to listOf(
+                        Dish(
+                            name = "Coffee2",
+                            special = Special.NONE
+                        ),
+                        Dish(
+                            name = "Tea2",
+                            special = Special.VEGIE
+                        )
+                    )
+                )
+
+            )
+        )
+    ).toImmutableList()
+)
+
 @Composable
 @Preview(showBackground = true)
 private fun MenuContentPreview() {
     MenuContent(
-        menuData = MenuData(
-            location = "location",
-            days = listOf(
-                Day(
-                    dag = "Monday",
-                    message = "message",
-                    menu = Menu(
-                        items = persistentMapOf(
-                            "Breakfast" to listOf(
-                                Dish(
-                                    name = "Bread",
-                                    special = Special.NONE
-                                ),
-                                Dish(
-                                    name = "Cereal",
-                                    special = Special.VEGAN
-                                )
-                            ),
-                            "Drinks" to listOf(
-                                Dish(
-                                    name = "Coffee",
-                                    special = Special.NONE
-                                ),
-                                Dish(
-                                    name = "Tea",
-                                    special = Special.VEGIE
-                                )
-                            )
-                        )
-                    )
-                ),
-                Day(
-                    dag = "Tuesday",
-                    message = "message2",
-                    menu =
-                    Menu(
-                        persistentMapOf(
-                            "Breakfast2" to listOf(
-                                Dish(
-                                    name = "Bread2",
-                                    special = Special.NONE
-                                ),
-                                Dish(
-                                    name = "Cereal2",
-                                    special = Special.VEGAN
-                                )
-                            ),
-                            "Drinks2" to listOf(
-                                Dish(
-                                    name = "Coffee2",
-                                    special = Special.NONE
-                                ),
-                                Dish(
-                                    name = "Tea2",
-                                    special = Special.VEGIE
-                                )
-                            )
-                        )
-
-                    )
-                )
-            ).toImmutableList()
-        ),
+        menuData = mndata,
         tabRowType = TabRowType.Scrollable
+    )
+}
+
+@Composable
+@Preview(showBackground = true)
+private fun RestoMenuPreviewExpanded() {
+    RestoMenu(
+        apiState = RestoMenuApiState.Success(mndata),
+        tabRowType = TabRowType.Expanded
     )
 }

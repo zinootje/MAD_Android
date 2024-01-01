@@ -93,6 +93,8 @@ dependencies {
     //TODO remove in production
     //rebugger
     implementation(libs.rebugger.lib)
+    implementation("androidx.compose.runtime:runtime-tracing:1.0.0-beta01")
+
 
 
 }

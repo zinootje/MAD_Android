@@ -2,6 +2,7 @@
 package com.example.mvp.ui.overview
 
 import androidx.annotation.VisibleForTesting
+import androidx.compose.animation.*
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -19,8 +20,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.semantics.contentDescription
-import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -99,7 +98,7 @@ private fun GriddTogleButton(
     }
 }
 
-@OptIn(ExperimentalFoundationApi::class)
+@OptIn(ExperimentalFoundationApi::class, ExperimentalAnimationApi::class)
 @Composable
 //private except for testing
 @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
@@ -111,83 +110,96 @@ internal fun ShowRestoOverview(
     gridSize: GridSize
 ) {
     Box(modifier = Modifier.padding(innerPadding)) {
-        when (restoOverviewUiState.restoOverviewApiState) {
-            is RestoOverviewApiState.Loading -> {
-                LoadingIndicator()
-            }
-
-            is RestoOverviewApiState.Success -> {
-                val restoList = restoOverviewUiState.restoOverviewApiState.data
-                if (restoOverviewUiState.gridMode) {
-                    LazyVerticalGrid(columns = when (gridSize) {
-                        GridSize.Fixed -> GridCells.Fixed(2)
-                        GridSize.Adaptive -> GridCells.Adaptive(100.dp)
-                    },
-                        modifier = Modifier.contentDescription(
-                            stringResource(
-                                id = R.string.resto_overview_grid
-                            )
-                        )
-                    ) {
-                        items(
-                            restoList,
-                            key = { resto -> resto.name }
-                        ) { (name, isFavorite) ->
-                            //Avoids recomposition due to animation
-                            val modifier = remember {
-                                Modifier.animateItemPlacement()
-                            }
-                            RestoGridTile(
-                                modifier = modifier,
-                                name = name,
-                                isFavorite = isFavorite,
-                                navigateToMenu = {
-                                    navigateToMenu(name)
-                                },
-                                onFavoriteClick = {
-                                    favoriteResto(name, !isFavorite)
-                                })
-                        }
-                    }
+        AnimatedContent(
+            targetState = restoOverviewUiState,
+            transitionSpec = {
+                if (targetState.gridMode) {
+                    fadeIn() togetherWith fadeOut()
                 } else {
-                    LazyColumn(
-                        modifier = Modifier.contentDescription(
-                            stringResource(
-                                id = R.string.resto_overview_list
+                    fadeIn() togetherWith fadeOut()
+                }
+            }, label = ""
+        ) { restoOverviewUiState ->
+
+            when (restoOverviewUiState.restoOverviewApiState) {
+                is RestoOverviewApiState.Loading -> {
+                    LoadingIndicator()
+                }
+
+                is RestoOverviewApiState.Success -> {
+                    val restoList = restoOverviewUiState.restoOverviewApiState.data
+                    if (restoOverviewUiState.gridMode) {
+                        LazyVerticalGrid(
+                            columns = when (gridSize) {
+                                GridSize.Fixed -> GridCells.Fixed(2)
+                                GridSize.Adaptive -> GridCells.Adaptive(100.dp)
+                            },
+                            modifier = Modifier.contentDescription(
+                                stringResource(
+                                    id = R.string.resto_overview_grid
+                                )
                             )
-                        )
-                    ) {
-                        items(
-                            restoList,
-                            key = { resto -> resto.name }
-                        ) { (name, isFavorite) ->
-                            //Avoids recomposition due to animation
-                            val modifier = remember {
-                                Modifier.animateItemPlacement()
+                        ) {
+                            items(
+                                restoList,
+                                key = { resto -> resto.name }
+                            ) { (name, isFavorite) ->
+                                //Avoids recomposition due to animation
+                                val modifier = remember {
+                                    Modifier.animateItemPlacement()
+                                }
+                                RestoGridTile(
+                                    modifier = modifier,
+                                    name = name,
+                                    isFavorite = isFavorite,
+                                    navigateToMenu = {
+                                        navigateToMenu(name)
+                                    },
+                                    onFavoriteClick = {
+                                        favoriteResto(name, !isFavorite)
+                                    })
                             }
-                            RestoListTile(
-                                modifier = modifier,
-                                name = name,
-                                isFavorite = isFavorite,
-                                navigateToMenu = {
-                                    navigateToMenu(name)
-                                },
-                                favoriteResto = {
-                                    favoriteResto(name, !isFavorite)
-                                })
+                        }
+                    } else {
+                        LazyColumn(
+                            modifier = Modifier.contentDescription(
+                                stringResource(
+                                    id = R.string.resto_overview_list
+                                )
+                            )
+                        ) {
+                            items(
+                                restoList,
+                                key = { resto -> resto.name }
+                            ) { (name, isFavorite) ->
+                                //Avoids recomposition due to animation
+                                val modifier = remember {
+                                    Modifier.animateItemPlacement()
+                                }
+                                RestoListTile(
+                                    modifier = modifier,
+                                    name = name,
+                                    isFavorite = isFavorite,
+                                    navigateToMenu = {
+                                        navigateToMenu(name)
+                                    },
+                                    favoriteResto = {
+                                        favoriteResto(name, !isFavorite)
+                                    })
+                            }
                         }
                     }
                 }
-            }
 
-            is RestoOverviewApiState.Error -> {
-                ErrorComponent(message = restoOverviewUiState.restoOverviewApiState.message)
+                is RestoOverviewApiState.Error -> {
+                    ErrorComponent(message = restoOverviewUiState.restoOverviewApiState.message)
+                }
             }
         }
 
-
     }
 }
+
 
 
 @OptIn(ExperimentalMaterial3Api::class)
