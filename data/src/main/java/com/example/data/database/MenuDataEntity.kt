@@ -42,7 +42,7 @@ fun MenuDataEntity.toMenuData(): MenuData {
 /**
  * Converts a [MenuData] (domain)object  to a [MenuDataEntity] databaseobject used in the database.
  *
- * @param MenuData The menu data to be converted.
+ * @receiver The [MenuData] object to be converted.
  * @return A [MenuDataEntity] object representing the menu data.
  */
 fun MenuData.toDbMenu(): MenuDataEntity {

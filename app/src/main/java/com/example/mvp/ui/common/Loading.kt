@@ -9,7 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.mvp.R
-import com.example.mvp.ui.Util.contentDescription
+import com.example.mvp.ui.util.contentDescription
 
 /**
  * Displays a loading indicator.
@@ -17,10 +17,10 @@ import com.example.mvp.ui.Util.contentDescription
  * @param modifier The [Modifier] to be applied to the loading indicator.
  */
 @Composable
-fun LoadingIndicator() {
+fun LoadingIndicator(modifier: Modifier = Modifier) {
     //nonprescription loading
     Box(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .contentDescription(stringResource(id = R.string.loading_indicator)),
         contentAlignment = Alignment.Center,

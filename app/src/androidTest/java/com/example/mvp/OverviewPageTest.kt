@@ -1,4 +1,3 @@
 package com.example.mvp
 
-class OverviewPageTest {
-}
+class OverviewPageTest

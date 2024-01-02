@@ -1,4 +1,4 @@
-package com.example.mvp.ui.Util
+package com.example.mvp.ui.util
 
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color

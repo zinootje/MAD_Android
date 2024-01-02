@@ -1,4 +1,4 @@
-package com.example.mvp.ui.Util
+package com.example.mvp.ui.util
 
 
 /**

@@ -14,7 +14,6 @@ import com.example.data.database.convertors.DayMenuConverter
  * This class is responsible for creating and managing the database instance.
  * It has an abstract method to get the DAO class and a companion object to get the database instance.
  *
- * @property context The context used to create the database.
  * */
 //TODO reset version to 1
 @Database(entities = [MenuDataEntity::class], version = 2)
@@ -26,6 +25,14 @@ abstract class MenuDatabase : RoomDatabase() {
         @Volatile
         private var Instace: MenuDatabase? = null
 
+        /**
+         * Retrieves the MenuDatabase instance.
+         *
+         * This method is used to get the database instance of type MenuDatabase.
+         *
+         * @param context The context in which the database is initialized.
+         * @return The MenuDatabase instance.
+         */
         fun getDatabase(context: Context): MenuDatabase {
             return Instace ?: synchronized(this) {
                 Room.databaseBuilder(

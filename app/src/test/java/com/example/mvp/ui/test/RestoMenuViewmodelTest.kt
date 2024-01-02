@@ -19,13 +19,13 @@ class RestoMenuViewmodelTest {
     val RESTO_NAME = "test"
 
 
-    private val RestoRepository = TestRestoRepository()
+    private val restoRepository = TestRestoRepository()
 
     private lateinit var restoMenuViewmodel: RestoMenuViewmodel
 
     @Before
     fun setup() {
-        restoMenuViewmodel = RestoMenuViewmodel(RestoRepository, RESTO_NAME)
+        restoMenuViewmodel = RestoMenuViewmodel(restoRepository, RESTO_NAME)
     }
 
 
@@ -40,7 +40,7 @@ class RestoMenuViewmodelTest {
     @Test
     fun restoViewModel_Init_LoadsData() {
         runTest {
-            RestoRepository.sendRestoMenu(RESTO_NAME, FakeDataSource.restoMenu.asDomainObject())
+            restoRepository.sendRestoMenu(RESTO_NAME, FakeDataSource.restoMenu.asDomainObject())
             assert(restoMenuViewmodel.restoApiState is RestoMenuApiState.Success)
             assert((restoMenuViewmodel.restoApiState as RestoMenuApiState.Success).data == FakeDataSource.restoMenu.asDomainObject())
         }

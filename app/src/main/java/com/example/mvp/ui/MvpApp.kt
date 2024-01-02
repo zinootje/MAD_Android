@@ -17,13 +17,13 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.mvp.R
-import com.example.mvp.ui.Util.GridSize
-import com.example.mvp.ui.Util.TabRowType
 import com.example.mvp.ui.menu.RestoMenuScreen
 import com.example.mvp.ui.menu.RestoMenuViewmodel
 import com.example.mvp.ui.overview.RestoOverviewScreen
 import com.example.mvp.ui.overview.RestoOverviewViewModel
 import com.example.mvp.ui.theme.MVPTheme
+import com.example.mvp.ui.util.GridSize
+import com.example.mvp.ui.util.TabRowType
 
 
 /**
@@ -38,15 +38,12 @@ enum class MvpScreens(@StringRes val title: Int, val arguments: String? = null) 
     /**
      * This class represents the Start screen in the MVP app.
      *
-     * @param title The string resource ID for the screen title.
      */
     Start(title = R.string.app_name),
 
     /**
      * Represents a restaurant menu in the MVP app.
      *
-     * @property title The title of the menu, retrieved from a string resource ID.
-     * @property arguments Optional string value representing the menu argument.
      */
     RestoMenu(title = R.string.resto_menu_title, arguments = "restoName");
 

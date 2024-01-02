@@ -2,7 +2,10 @@
 package com.example.mvp.ui.overview
 
 import androidx.annotation.VisibleForTesting
-import androidx.compose.animation.*
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -25,11 +28,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.unit.times
 import com.example.mvp.R
-import com.example.mvp.ui.Util.GridSize
-import com.example.mvp.ui.Util.contentDescription
-import com.example.mvp.ui.Util.getColorFromName
 import com.example.mvp.ui.common.ErrorComponent
 import com.example.mvp.ui.common.LoadingIndicator
+import com.example.mvp.ui.util.GridSize
+import com.example.mvp.ui.util.contentDescription
+import com.example.mvp.ui.util.getColorFromName
 import com.theapache64.rebugger.Rebugger
 
 /**
@@ -123,7 +126,7 @@ private fun GriddTogleButton(
  * @param favoriteResto The callback function to mark a restaurant as favorite or remove it from favorites.
  * @param gridSize The size of the grid for the restaurant list.
  */
-@OptIn(ExperimentalFoundationApi::class, ExperimentalAnimationApi::class)
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 //private except for testing
 @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)

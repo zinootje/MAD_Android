@@ -14,7 +14,7 @@ data class MenuData(
 )
 
 //Made this serializable so that it can be used in the database
-@Serializable()
+@Serializable
 data class Day(
     val dag: String,
     val message: String,

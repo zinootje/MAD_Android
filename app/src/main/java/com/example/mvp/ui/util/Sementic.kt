@@ -1,4 +1,4 @@
-package com.example.mvp.ui.Util
+package com.example.mvp.ui.util
 
 import androidx.compose.ui.semantics.SemanticsPropertyKey
 import androidx.compose.ui.semantics.SemanticsPropertyReceiver

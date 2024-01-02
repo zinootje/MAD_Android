@@ -9,7 +9,7 @@ import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import com.example.mvp.fake.FakeDataSource
 import com.example.mvp.ui.MVPApp
-import com.example.mvp.ui.Util.TabKey
+import com.example.mvp.ui.util.TabKey
 import com.example.mvp.utils.setFakeAppContainer
 import org.junit.Rule
 import org.junit.Test

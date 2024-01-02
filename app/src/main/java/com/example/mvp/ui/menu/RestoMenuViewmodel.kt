@@ -10,6 +10,7 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.core.Result
 import com.example.core.asResult
 import com.example.data.RestoRepository
+import com.example.data.util.NetworkMonitor
 import com.example.mvp.MvpApplication
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -26,11 +27,14 @@ import kotlinx.coroutines.launch
  */
 class RestoMenuViewmodel(
     private val restoRepository: RestoRepository,
-    private val restoName: String
+    private val restoName: String,
+    private val networkMonitor: NetworkMonitor
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(RestoMenuUiState())
     val uiState: StateFlow<RestoMenuUiState> = _uiState.asStateFlow()
+
+    //val networkStatus: Flow<Boolean>  = networkMonitor.
 
 
     init {
@@ -105,7 +109,7 @@ class RestoMenuViewmodel(
         fun Factory(name: String): ViewModelProvider.Factory = viewModelFactory { initializer {
             val application = (this[APPLICATION_KEY] as MvpApplication)
             val restoRepository = application.container.restoRepository
-            RestoMenuViewmodel(restoRepository, name)
+            RestoMenuViewmodel(restoRepository, name, application.container.networkMonitor)
         } }
     }
 

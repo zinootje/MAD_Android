@@ -84,7 +84,7 @@ class RestoOfflineRepositoryImpl(
     private suspend fun getRestoMenuInternal(name: String): Flow<StaleAbleData<MenuData>> {
         //TODO move logic to different function
         //Needed because of the way the api works
-        var shortName = ToShortName(name)
+        val shortName = toShortName(name)
         return menuDao.getMenuData(shortName).transform {
             if (it == null) {
                 refreshRestoMenu(name)
@@ -121,13 +121,13 @@ class RestoOfflineRepositoryImpl(
     }
 
     override suspend fun refreshRestoMenu(name: String) {
-        var menuData = restoApiService.getRestoMenuAsFlow(name).first().asDomainObject()
+        val menuData = restoApiService.getRestoMenuAsFlow(name).first().asDomainObject()
         menuDao.insertMenuData(menuData.toDbMenu())
     }
 }
 
 
-fun ToShortName(name: String): String {
+fun toShortName(name: String): String {
     //if it contains "schoonmeersen-" remove it
     if (name.contains("schoonmeersen-")) {
         return name.replace("schoonmeersen-", "")

@@ -3,8 +3,7 @@
 package com.example.mvp.ui.menu
 
 import android.widget.Toast
-import androidx.compose.animation.Crossfade
-import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.animation.*
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -16,6 +15,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
@@ -28,9 +28,10 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.core.model.*
 import com.example.mvp.R
-import com.example.mvp.ui.Util.TabRowType
-import com.example.mvp.ui.Util.tabKey
 import com.example.mvp.ui.common.LoadingIndicator
+import com.example.mvp.ui.common.NiaOverlayLoadingWheel
+import com.example.mvp.ui.util.TabRowType
+import com.example.mvp.ui.util.tabKey
 import com.theapache64.rebugger.Rebugger
 import kotlinx.collections.immutable.persistentMapOf
 import kotlinx.collections.immutable.toImmutableList
@@ -59,6 +60,9 @@ fun RestoMenuScreen(
     val shouldShowToast by remember {
         derivedStateOf { !uiState.toastDataShown && uiState.staleData }
     }
+    val isRefreshing by remember {
+        derivedStateOf { uiState.showRefreshingIndicator }
+    }
     val toastMessage = stringResource(R.string.showing_stale_data)
     LaunchedEffect(key1 = shouldShowToast) {
         if (shouldShowToast) {
@@ -70,6 +74,7 @@ fun RestoMenuScreen(
             viewModel.toastShown()
         }
     }
+
 
 
     Scaffold(
@@ -88,6 +93,7 @@ fun RestoMenuScreen(
                 .fillMaxSize()
                 .padding(innerPadding)
         ) {
+            //show loading indicator when stale data is shown but is loading
             RestoMenu(
                 apiState = apiState.value,
                 tabRowType = tabRowType
@@ -104,7 +110,6 @@ fun RestoMenuScreen(
  * @param apiState The API state of the restaurant menu.
  * @param tabRowType The type of the tab row. It can be either TabRowType.Scrollable or TabRowType.Expanded.
  */
-@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun RestoMenu(
     modifier: Modifier = Modifier,
@@ -114,8 +119,8 @@ fun RestoMenu(
     Crossfade(
         targetState = apiState, label = "stateTransition",
     )
-    { apiState ->
-        when (apiState) {
+    { state ->
+        when (state) {
             is RestoMenuApiState.Loading -> {
                 Box(
                     modifier = modifier
@@ -129,7 +134,7 @@ fun RestoMenu(
                     modifier = modifier
                 ) {
                     //success
-                    MenuContent(apiState.data, tabRowType)
+                    MenuContent(state.data, tabRowType)
                 }
             }
 
@@ -138,7 +143,7 @@ fun RestoMenu(
                     modifier = modifier
                 ) {
                     //error
-                    Text(text = apiState.message)
+                    Text(text = state.message)
                 }
             }
         }

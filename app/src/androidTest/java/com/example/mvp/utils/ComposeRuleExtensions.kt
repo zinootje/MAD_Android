@@ -56,7 +56,8 @@ fun <A : ComponentActivity> AndroidComposeTestRule<ActivityScenarioRule<A>, A>.o
 /**
  * Sets the [FakeAppContainer] as the application container in the [MvpApplication].
  * This is useful for testing purposes when you want to replace the default implementation
- * with a fake implementation of the [AppContainer].
+ * with a fake implementation of the [com.example.data.AppContainer].
+ *
  */
 fun <A : ComponentActivity> AndroidComposeTestRule<ActivityScenarioRule<A>, A>.setFakeAppContainer() {
     activityRule.scenario.onActivity {
