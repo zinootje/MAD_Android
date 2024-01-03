@@ -30,6 +30,17 @@ class RestoMenuViewmodelTest {
     @Before
     fun setup() {
         restoMenuViewmodel = RestoMenuViewmodel(restoRepository, RESTO_NAME, FakeNetworkMonitor())
+
+
+    }
+
+    @Test
+    fun restoViewModel_init_RestoNameCorrect() {
+        runTest {
+            assertEquals(
+                RESTO_NAME, restoMenuViewmodel.restoName,
+            )
+        }
     }
 
 
@@ -38,9 +49,10 @@ class RestoMenuViewmodelTest {
     fun restoViewModel_Init_StartsInLoading() {
         runTest {
             assertEquals(
-                restoMenuViewmodel.uiState.value, RestoMenuUiState(
+                RestoMenuUiState(
                     restoMenuApiState = RestoMenuApiState.Loading,
-                )
+                ),
+                restoMenuViewmodel.uiState.value,
             )
         }
     }
@@ -50,9 +62,9 @@ class RestoMenuViewmodelTest {
         runTest {
             restoRepository.sendRestoMenu(RESTO_NAME, StaleAbleData(FakeDataSource.restoMenu.asDomainObject(), false))
             assertEquals(
-                restoMenuViewmodel.uiState.value, RestoMenuUiState(
+                RestoMenuUiState(
                     restoMenuApiState = RestoMenuApiState.Success(FakeDataSource.restoMenu.asDomainObject()),
-                )
+                ), restoMenuViewmodel.uiState.value
             )
         }
     }
@@ -62,11 +74,11 @@ class RestoMenuViewmodelTest {
         runTest {
             restoRepository.sendRestoMenu(RESTO_NAME, StaleAbleData(FakeDataSource.restoMenu.asDomainObject(), true))
             assertEquals(
-                restoMenuViewmodel.uiState.value, RestoMenuUiState(
+                RestoMenuUiState(
                     restoMenuApiState = RestoMenuApiState.Success(FakeDataSource.restoMenu.asDomainObject()),
                     staleData = true,
                     showRefreshingIndicator = true
-                )
+                ), restoMenuViewmodel.uiState.value
             )
         }
     }
@@ -76,9 +88,43 @@ class RestoMenuViewmodelTest {
         runTest {
             restoRepository.throwErrorInRestoMenu(RESTO_NAME, RuntimeException())
             assertEquals(
-                restoMenuViewmodel.uiState.value, RestoMenuUiState(
+                RestoMenuUiState(
                     restoMenuApiState = RestoMenuApiState.Error("Unknown error"),
-                )
+                ), restoMenuViewmodel.uiState.value
+            )
+        }
+    }
+
+    @Test
+    fun restoViewModel_StaleData_then_error_correctUiState() {
+        runTest {
+            restoRepository.sendRestoMenu(RESTO_NAME, StaleAbleData(FakeDataSource.restoMenu.asDomainObject(), true))
+            restoRepository.throwErrorInRestoMenu(RESTO_NAME, RuntimeException())
+            assertEquals(
+                RestoMenuUiState(
+                    restoMenuApiState = RestoMenuApiState.Success(FakeDataSource.restoMenu.asDomainObject()),
+                    staleData = true,
+                    showRefreshingIndicator = true,
+                    //TODO error enum
+                    errorSnackbar = "Network error"
+                ),
+                restoMenuViewmodel.uiState.value,
+            )
+        }
+    }
+
+    @Test
+    fun restoViewModel_StaleData_then_freshData_correctUiState() {
+        runTest {
+            restoRepository.sendRestoMenu(RESTO_NAME, StaleAbleData(FakeDataSource.restoMenu.asDomainObject(), true))
+            restoRepository.sendRestoMenu(RESTO_NAME, StaleAbleData(FakeDataSource.restoMenu2.asDomainObject(), false))
+            assertEquals(
+                RestoMenuUiState(
+                    restoMenuApiState = RestoMenuApiState.Success(FakeDataSource.restoMenu2.asDomainObject()),
+                    staleData = false,
+                    showRefreshingIndicator = false,
+                    errorSnackbar = null,
+                ), restoMenuViewmodel.uiState.value
             )
         }
     }

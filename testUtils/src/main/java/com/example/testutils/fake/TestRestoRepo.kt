@@ -28,7 +28,7 @@ class TestRestoRepository : RestoRepository {
      * The backing hot flow for the menu of a specific restaurant for testing.
      * The key is the restaurant name.
      */
-    private val restoMenuFlowMap = mutableMapOf<String, MutableSharedFlow<StaleAbleData<MenuData>>>()
+    private val restoMenuFlowMap = mutableMapOf<String, MutableSharedFlow<ResultOrError<StaleAbleData<MenuData>>>>()
 
     override fun getRestoList(): Flow<List<Resto>> = restoListFlow.map {
         when (it) {
@@ -48,6 +48,11 @@ class TestRestoRepository : RestoRepository {
     override suspend fun getRestoMenuSt(name: String): Flow<StaleAbleData<MenuData>> {
         return restoMenuFlowMap.getOrPut(name) {
             MutableSharedFlow(replay = 1, onBufferOverflow = BufferOverflow.DROP_OLDEST)
+        }.map { resultOrError ->
+            when (resultOrError) {
+                is ResultOrError.Result -> resultOrError.data
+                is ResultOrError.Error -> throw resultOrError.error
+            }
         }
     }
 
@@ -66,15 +71,21 @@ class TestRestoRepository : RestoRepository {
         restoListFlow.tryEmit(ResultOrError.Result(restos))
     }
 
+    /**
+     * A test-only API to throw an error int flow returned by [getRestoList].
+     */
     fun throwErrorInRestoList(throwable: Throwable) {
         restoListFlow.tryEmit(ResultOrError.Error(throwable))
     }
 
-
-
-
-
-
+    /**
+     * A test-only API to throw an error int flow returned by [getRestoMenu].
+     */
+    fun throwErrorInRestoMenu(name: String, throwable: Throwable) {
+        restoMenuFlowMap.getOrPut(name) {
+            MutableSharedFlow(replay = 1, onBufferOverflow = BufferOverflow.DROP_OLDEST)
+        }.tryEmit(ResultOrError.Error(throwable))
+    }
 
 
     /**
@@ -84,6 +95,6 @@ class TestRestoRepository : RestoRepository {
         val menuFlow = restoMenuFlowMap.getOrPut(name) {
             MutableSharedFlow(replay = 1, onBufferOverflow = BufferOverflow.DROP_OLDEST)
         }
-        menuFlow.tryEmit(menuData)
+        menuFlow.tryEmit(ResultOrError.Result(menuData))
     }
 }
