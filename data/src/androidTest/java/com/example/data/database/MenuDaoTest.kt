@@ -15,7 +15,7 @@ import java.io.IOException
 @RunWith(AndroidJUnit4::class)
 class MenuDaoTest {
     private lateinit var menuDao: MenuDao
-    private lateinit var database: MenuDatabase
+    private lateinit var database: RestoDatabase
 
     private val menu1 = com.example.testutils.fake.FakeDataSource.restoMenu.toDbMenu()
     private val menu2 = com.example.testutils.fake.FakeDataSource.restoMenu2.toDbMenu()
@@ -34,7 +34,7 @@ class MenuDaoTest {
         val context = ApplicationProvider.getApplicationContext<Context>()
 
         database = Room.inMemoryDatabaseBuilder(
-            context, MenuDatabase::class.java
+            context, RestoDatabase::class.java
         ).allowMainThreadQueries().build()
 
         menuDao = database.menuDao()

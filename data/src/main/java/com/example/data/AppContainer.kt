@@ -1,7 +1,6 @@
 package com.example.data
 
 import android.content.Context
-import com.example.data.database.MenuDatabase
 import com.example.data.database.RestoDatabase
 import com.example.data.util.ConnectivityManagerNetworkMonitor
 import com.example.data.util.NetworkMonitor
@@ -33,7 +32,7 @@ class DefaultAppContainer(
     override val restoRepository: RestoRepository by lazy { RestoOfflineRepositoryImpl(
         retrofitService,
         RestoDatabase.getDatabase(context).restoDao(),
-        MenuDatabase.getDatabase(context).menuDao()
+        RestoDatabase.getDatabase(context).menuDao()
     )
     }
 
