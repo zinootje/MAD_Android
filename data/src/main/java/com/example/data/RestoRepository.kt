@@ -90,8 +90,9 @@ class RestoOfflineRepositoryImpl(
                 refreshRestoMenu(name)
             } else {
                 if (it.timestamp + 86400000 < System.currentTimeMillis()) {
+                    emit(StaleAbleData(it.toMenuData(), true))
                     refreshRestoMenu(name)
-                    return@transform emit(StaleAbleData(it.toMenuData(), true))
+                    return@transform
                 } else {
                     return@transform emit(StaleAbleData(it.toMenuData(), false))
                 }

@@ -155,7 +155,6 @@ internal fun ShowRestoOverview(
                 }
             }, label = ""
         ) { restoOverviewUiState ->
-
             when (restoOverviewUiState.restoOverviewApiState) {
                 is RestoOverviewApiState.Loading -> {
                     LoadingIndicator()

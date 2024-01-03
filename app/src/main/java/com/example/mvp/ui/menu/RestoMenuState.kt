@@ -12,6 +12,7 @@ import com.example.mvp.ui.menu.RestoMenuApiState.*
  * @property restoName The name of the restaurant.
  * @property staleData Indicates whether the data is stale or not.
  * @property toastDataShown Indicates whether the toast data has been shown or not.
+ * @property errorSnackbar The error message to be shown in the snackbar. Null if no error.
  */
 data class RestoMenuUiState(
     val currentTab: Int = 0,
@@ -20,6 +21,8 @@ data class RestoMenuUiState(
     val staleData: Boolean = false,
     val showRefreshingIndicator: Boolean = false,
     val toastDataShown: Boolean = false,
+    //null if no error
+    val errorSnackbar: String? = null
 
 )
 

@@ -10,11 +10,13 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.core.Result
 import com.example.core.asResult
 import com.example.data.RestoRepository
+import com.example.data.isNetworkError
 import com.example.data.util.NetworkMonitor
 import com.example.mvp.MvpApplication
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 /**
@@ -33,6 +35,7 @@ class RestoMenuViewmodel(
 
     private val _uiState = MutableStateFlow(RestoMenuUiState())
     val uiState: StateFlow<RestoMenuUiState> = _uiState.asStateFlow()
+
 
     //val networkStatus: Flow<Boolean>  = networkMonitor.
 
@@ -62,36 +65,68 @@ class RestoMenuViewmodel(
     private fun getRestoMenu() {
         viewModelScope.launch {
             restoRepository.getRestoMenuSt(restoName).asResult().collect {
-                val state = when (it) {
-                    is Result.Loading -> RestoMenuApiState.Loading
-                    is Result.Error -> {
 
+
+                when (it) {
+                    is Result.Loading -> _uiState.update { uiState ->
+
+                        //If stale data, show refreshing indicator but keep stale data
+                        if (uiState.restoMenuApiState is RestoMenuApiState.Success) {
+                            uiState.copy(
+                                showRefreshingIndicator = true
+                            )
+                            return@collect
+                        }
+                        uiState.copy(
+                            restoMenuApiState = RestoMenuApiState.Loading
+                        )
+                    }
+
+                    is Result.Error -> {
                         Log.e("RestoMenuViewmodel", "getRestoMenu: ", it.exception)
-                        RestoMenuApiState.Error(it.exception?.message ?: "Unknown error")
+
+                        //If network error, show snackbar but keep stale data
+                        if ((_uiState.value.restoMenuApiState is RestoMenuApiState.Success) || (it.exception?.isNetworkError() == true)) {
+                            _uiState.update { uiState ->
+                                uiState.copy(
+                                    errorSnackbar = "Network error"
+                                )
+                            }
+                            return@collect
+                        }
+                        _uiState.update { uiState ->
+                            uiState.copy(
+                                restoMenuApiState = RestoMenuApiState.Error(it.exception?.message ?: "Unknown error")
+                            )
+                        }
                     }
 
                     is Result.Success -> {
-                        //TODO remove double reassignment
                         if (it.data.isStale) {
-                            _uiState.value = _uiState.value.copy(staleData = true, toastDataShown = false)
+                            _uiState.update { uiState ->
+                                uiState.copy(
+                                    restoMenuApiState = RestoMenuApiState.Success(it.data.data),
+                                    staleData = true,
+                                    toastDataShown = false,
+                                    showRefreshingIndicator = true,
+                                    errorSnackbar = null,
+                                )
+                            }
+                        } else {
+                            _uiState.update { uiState ->
+                                uiState.copy(
+                                    restoMenuApiState = RestoMenuApiState.Success(it.data.data),
+                                    staleData = false,
+                                    toastDataShown = false,
+                                    showRefreshingIndicator = false,
+                                    errorSnackbar = null,
+
+                                    )
+                            }
                         }
-                        RestoMenuApiState.Success(it.data.data)
                     }
-
                 }
-                _uiState.value = _uiState.value.copy(restoMenuApiState = state)
-
-
             }
-//            restoApiState = try {
-//                //TODO Remove first() to get a flow
-//                val restoMenu = restoRepository.getRestoMenu(restoName).first()
-//                RestoMenuApiState.Success(restoMenu)
-//            } catch (e: Exception) {
-//                //Log error to logcat
-//                Log.e("RestoMenuViewmodel", "getRestoMenu: ", e)
-//                RestoMenuApiState.Error(e.message ?: "Unknown error")
-//            }
         }
     }
 
@@ -106,11 +141,13 @@ class RestoMenuViewmodel(
          * @param name The name of the restaurant.
          * @return A [ViewModelProvider.Factory] object.
          */
-        fun Factory(name: String): ViewModelProvider.Factory = viewModelFactory { initializer {
-            val application = (this[APPLICATION_KEY] as MvpApplication)
-            val restoRepository = application.container.restoRepository
-            RestoMenuViewmodel(restoRepository, name, application.container.networkMonitor)
-        } }
+        fun Factory(name: String): ViewModelProvider.Factory = viewModelFactory {
+            initializer {
+                val application = (this[APPLICATION_KEY] as MvpApplication)
+                val restoRepository = application.container.restoRepository
+                RestoMenuViewmodel(restoRepository, name, application.container.networkMonitor)
+            }
+        }
     }
 
 }

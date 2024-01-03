@@ -25,6 +25,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.zIndex
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.core.model.*
 import com.example.mvp.R
@@ -56,6 +57,9 @@ fun RestoMenuScreen(
     val apiState = remember {
         derivedStateOf { uiState.restoMenuApiState }
     }
+    val snackbarError by remember {
+        derivedStateOf { uiState.errorSnackbar }
+    }
 
     val shouldShowToast by remember {
         derivedStateOf { !uiState.toastDataShown && uiState.staleData }
@@ -64,7 +68,7 @@ fun RestoMenuScreen(
         derivedStateOf { uiState.showRefreshingIndicator }
     }
     val toastMessage = stringResource(R.string.showing_stale_data)
-    LaunchedEffect(key1 = shouldShowToast) {
+    LaunchedEffect(shouldShowToast) {
         if (shouldShowToast) {
             Toast.makeText(
                 context,
@@ -74,10 +78,26 @@ fun RestoMenuScreen(
             viewModel.toastShown()
         }
     }
-
-
-
+    val snackbarHostState = remember { SnackbarHostState() }
+    LaunchedEffect(snackbarError) {
+        if (snackbarError != null) {
+            snackbarHostState.showSnackbar(
+                snackbarError!!,
+                duration = SnackbarDuration.Indefinite,
+                withDismissAction = true,
+            )
+        } else {
+            //dismiss existing snackbar
+            snackbarHostState.currentSnackbarData?.dismiss()
+        }
+    }
     Scaffold(
+        snackbarHost =
+        {
+            SnackbarHost(
+                hostState = snackbarHostState,
+            )
+        },
         topBar = {
             CenterAlignedTopAppBar(
                 title = { Text(text = "Menu of ${viewModel.getRestoName()}") },
@@ -88,6 +108,7 @@ fun RestoMenuScreen(
                 })
         }
     ) { innerPadding ->
+
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -98,7 +119,33 @@ fun RestoMenuScreen(
                 apiState = apiState.value,
                 tabRowType = tabRowType
             )
+            AnimatedVisibility(
+                visible = isRefreshing,
+                enter = slideInVertically(
+                    initialOffsetY = { fullHeight -> -fullHeight },
+                ) + fadeIn(),
+                exit = slideOutVertically(
+                    targetOffsetY = { fullHeight -> -fullHeight },
+                ) + fadeOut(),
+            ) {
+                val loadingContentDescription = stringResource(id = R.string.stale_data_refreshing)
+                Box(
+                    modifier = Modifier
+                        //draw above other composables
+                        .zIndex(1f)
+                        .fillMaxWidth()
+                        .padding(top = 8.dp),
+                ) {
+                    NiaOverlayLoadingWheel(
+                        modifier = Modifier
+                            .align(Alignment.Center),
+                        contentDesc = loadingContentDescription,
+                    )
+                }
+            }
+
         }
+
     }
 }
 
