@@ -8,11 +8,11 @@ import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.performClick
 import androidx.navigation.compose.ComposeNavigator
 import androidx.navigation.testing.TestNavHostController
-import com.example.data.database.fake.FakeDataSource
 import com.example.mvp.ui.MVPApp
 import com.example.mvp.ui.MvpScreens
 import com.example.mvp.utils.assertCurrentRouteName
 import com.example.mvp.utils.setFakeAppContainer
+import com.example.testutils.fake.FakeDataSource
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -44,7 +44,7 @@ class MvpNavigationTest {
 
     @Test
     fun MvpNavHost_navigateToMenuPage() {
-        val firstRestoName = com.example.data.database.fake.FakeDataSource.restoObjectList.first().name
+        val firstRestoName = FakeDataSource.restoObjectList.first().name
         composeTestRule.onAllNodesWithText(firstRestoName)[0].performClick()
         navController.assertCurrentRouteName(MvpScreens.RestoMenu.toRoute())
     }

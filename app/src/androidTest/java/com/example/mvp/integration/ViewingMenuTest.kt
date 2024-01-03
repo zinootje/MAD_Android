@@ -5,9 +5,6 @@ import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import com.example.core.StaleAbleData
-import com.example.data.database.fake.FakeAppContainer
-import com.example.data.database.fake.FakeDataSource
-import com.example.data.database.fake.TestRestoRepository
 import com.example.mvp.R
 import com.example.mvp.ui.MVPApp
 import com.example.mvp.ui.menu.assertMenuIsDisplayedCorrectly
@@ -16,6 +13,9 @@ import com.example.mvp.utils.assertNodeCountIsNotZero
 import com.example.mvp.utils.onNodeWithContentDescriptionStringId
 import com.example.mvp.utils.setFakeAppContainer
 import com.example.network.asDomainObject
+import com.example.testutils.fake.FakeAppContainer
+import com.example.testutils.fake.FakeDataSource
+import com.example.testutils.fake.TestRestoRepository
 import org.junit.Rule
 import org.junit.Test
 
@@ -35,8 +35,8 @@ class ViewingMenuTest {
     //TODO name
     fun navigateToAMenuAndDisplayCorrectly() {
         //TODO use string resource for loading
-        val restoRepository = com.example.data.database.fake.TestRestoRepository()
-        val fakeAppContainer = com.example.data.database.fake.FakeAppContainer(restoRepository = restoRepository)
+        val restoRepository = TestRestoRepository()
+        val fakeAppContainer = FakeAppContainer(restoRepository = restoRepository)
         composeTestRule.setFakeAppContainer(fakeAppContainer)
         composeTestRule.setContent {
             MVPApp(windowSize = WindowWidthSizeClass.Compact)
@@ -44,7 +44,7 @@ class ViewingMenuTest {
 
         composeTestRule.onNodeWithContentDescriptionStringId(R.string.loading_indicator).assertExists()
 
-        val restos = com.example.data.database.fake.FakeDataSource.restoObjectList
+        val restos = FakeDataSource.restoObjectList
         restoRepository.sendRestoList(restos)
         //Wait for loading to be done
         //TODO maybe use a better way to wait for loading to be done
@@ -68,16 +68,16 @@ class ViewingMenuTest {
             .assertNodeCountIsNotZero()
         restoRepository.sendRestoMenu(
             selectedRestaurant.name,
-            StaleAbleData(com.example.data.database.fake.FakeDataSource.restoMenu.asDomainObject(), false)
+            StaleAbleData(FakeDataSource.restoMenu.asDomainObject(), false)
         )
         composeTestRule.onNodeWithContentDescriptionStringId(R.string.loading_indicator).assertDoesNotExist()
 
 
-        composeTestRule.assertMenuIsDisplayedCorrectly(com.example.data.database.fake.FakeDataSource.restoMenu.asDomainObject().days[0])
+        composeTestRule.assertMenuIsDisplayedCorrectly(FakeDataSource.restoMenu.asDomainObject().days[0])
 
 
         //switch to another day
-        val day2 = com.example.data.database.fake.FakeDataSource.restoMenu.asDomainObject().days[1]
+        val day2 = FakeDataSource.restoMenu.asDomainObject().days[1]
         composeTestRule.onNode(
             SemanticsMatcher.expectValue(
                 TabKey,

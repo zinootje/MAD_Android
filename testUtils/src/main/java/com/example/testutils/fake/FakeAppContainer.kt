@@ -1,4 +1,4 @@
-package com.example.data.database.fake
+package com.example.testutils.fake
 
 import com.example.data.AppContainer
 import com.example.data.RestoRepository

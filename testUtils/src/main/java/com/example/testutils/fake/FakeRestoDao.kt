@@ -1,4 +1,4 @@
-package com.example.mvp.fake
+package com.example.testutils.fake
 
 import com.example.data.database.Resto
 import com.example.data.database.RestoDao

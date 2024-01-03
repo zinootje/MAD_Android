@@ -32,10 +32,13 @@ android {
 
 dependencies {
 
-    implementation(":network")
     implementation(libs.androidx.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+    implementation(project(":data"))
+    implementation(project(":core"))
+    implementation(project(":data"))
+    implementation(project(":network"))
     testImplementation(libs.junit.lib)
     androidTestImplementation(libs.androidx.test.junit)
     androidTestImplementation(libs.androidx.test.espresso.core)

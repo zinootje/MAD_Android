@@ -17,7 +17,6 @@ import com.example.mvp.ui.menu.RestoMenuApiState.*
 data class RestoMenuUiState(
     val currentTab: Int = 0,
     val restoMenuApiState: RestoMenuApiState = Loading,
-    val restoName: String = "",
     val staleData: Boolean = false,
     val showRefreshingIndicator: Boolean = false,
     val toastDataShown: Boolean = false,

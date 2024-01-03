@@ -29,7 +29,7 @@ import kotlinx.coroutines.launch
  */
 class RestoMenuViewmodel(
     private val restoRepository: RestoRepository,
-    private val restoName: String,
+    val restoName: String,
     private val networkMonitor: NetworkMonitor
 ) : ViewModel() {
 
@@ -44,15 +44,6 @@ class RestoMenuViewmodel(
         getRestoMenu()
     }
 
-    /**
-     * Retrieves the name of the restaurant.
-     *
-     * @return The name of the restaurant as a [String].
-     */
-//public restoname
-    fun getRestoName(): String {
-        return restoName
-    }
 
     /**
      * Updates the UI state to indicate that the toast has been shown.

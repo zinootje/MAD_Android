@@ -4,7 +4,6 @@ import android.content.Context
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.example.data.database.fake.FakeDataSource
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.junit.After
@@ -18,8 +17,8 @@ class MenuDaoTest {
     private lateinit var menuDao: MenuDao
     private lateinit var database: MenuDatabase
 
-    private val menu1 = FakeDataSource.restoMenu.toDbMenu()
-    private val menu2 = FakeDataSource.restoMenu2.toDbMenu()
+    private val menu1 = com.example.testutils.fake.FakeDataSource.restoMenu.toDbMenu()
+    private val menu2 = com.example.testutils.fake.FakeDataSource.restoMenu2.toDbMenu()
 
     private suspend fun insertMenus() {
         menuDao.insertMenuData(menu1)

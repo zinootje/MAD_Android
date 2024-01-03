@@ -1,4 +1,4 @@
-package com.example.mvp.fake
+package com.example.testutils.fake
 
 class FakeRestoApiService : com.example.network.RestoApiService {
     override suspend fun getRestoList(): List<String> {

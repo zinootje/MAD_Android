@@ -1,11 +1,11 @@
 package com.example.mvp.data
 
 import com.example.data.RestoOfflineRepositoryImpl
-import com.example.mvp.fake.FakeDataSource
-import com.example.mvp.fake.FakeMenuDao
-import com.example.mvp.fake.FakeRestoApiService
-import com.example.mvp.fake.FakeRestoDao
 import com.example.network.asDomainObject
+import com.example.testutils.fake.FakeDataSource
+import com.example.testutils.fake.FakeMenuDao
+import com.example.testutils.fake.FakeRestoApiService
+import com.example.testutils.fake.FakeRestoDao
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals

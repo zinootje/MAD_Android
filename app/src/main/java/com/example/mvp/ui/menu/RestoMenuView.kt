@@ -101,7 +101,7 @@ fun RestoMenuScreen(
         },
         topBar = {
             CenterAlignedTopAppBar(
-                title = { Text(text = "Menu of ${viewModel.getRestoName()}") },
+                title = { Text(text = "Menu of ${viewModel.restoName}") },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
                         Icon(Icons.Filled.ArrowBack, contentDescription = "Back")

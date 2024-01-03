@@ -1,10 +1,10 @@
 package com.example.mvp.ui.test
 
-import com.example.mvp.fake.FakeDataSource
-import com.example.mvp.fake.TestRestoRepository
 import com.example.mvp.ui.overview.RestoOverviewApiState
 import com.example.mvp.ui.overview.RestoOverviewViewModel
 import com.example.mvp.util.MainDispatcherRule
+import com.example.testutils.fake.FakeDataSource
+import com.example.testutils.fake.TestRestoRepository
 import kotlinx.coroutines.test.runTest
 import org.junit.Before
 import org.junit.Rule
@@ -39,6 +39,14 @@ class RestoOverviewViewmodelTest {
             assert(restoOverviewViewmodel.uiState.value.restoOverviewApiState is RestoOverviewApiState.Success)
             assert((restoOverviewViewmodel.uiState.value.restoOverviewApiState as RestoOverviewApiState.Success).data == FakeDataSource.restoObjectList)
 
+        }
+    }
+
+    @Test
+    fun RestoOverviewViewModel_OnError_showError() {
+        runTest {
+            restoRepository.throwErrorInRestoList(RuntimeException())
+            assert(restoOverviewViewmodel.uiState.value.restoOverviewApiState is RestoOverviewApiState.Error)
         }
     }
 

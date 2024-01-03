@@ -25,8 +25,8 @@ import androidx.compose.ui.test.junit4.AndroidComposeTestRule
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
 import androidx.test.ext.junit.rules.ActivityScenarioRule
-import com.example.data.database.fake.FakeAppContainer
 import com.example.mvp.MvpApplication
+import com.example.testutils.fake.FakeAppContainer
 
 /**
  * Retrieves the [SemanticsNodeInteraction] with the given string resource id as text.
@@ -61,7 +61,7 @@ fun <A : ComponentActivity> AndroidComposeTestRule<ActivityScenarioRule<A>, A>.o
  *
  * @param appContainer The fake app container to use.
  */
-fun <A : ComponentActivity> AndroidComposeTestRule<ActivityScenarioRule<A>, A>.setFakeAppContainer(appContainer: com.example.data.database.fake.FakeAppContainer = com.example.data.database.fake.FakeAppContainer()) {
+fun <A : ComponentActivity> AndroidComposeTestRule<ActivityScenarioRule<A>, A>.setFakeAppContainer(appContainer: FakeAppContainer = FakeAppContainer()) {
     activityRule.scenario.onActivity {
         val app = it.application as MvpApplication
         app.container = appContainer

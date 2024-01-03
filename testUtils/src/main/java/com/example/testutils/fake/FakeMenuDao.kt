@@ -1,4 +1,4 @@
-package com.example.mvp.fake
+package com.example.testutils.fake
 
 import com.example.data.database.MenuDao
 import com.example.data.database.MenuDataEntity

@@ -3,7 +3,6 @@ import android.content.Context
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.example.data.database.fake.FakeDataSource
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.junit.After
@@ -17,8 +16,8 @@ class RestoDaoTest {
     private lateinit var menuDao: RestoDao
     private lateinit var database: RestoDatabase
 
-    private val resto1 = FakeDataSource.restoObjectList[0].asDbObject()
-    private val resto2 = FakeDataSource.restoObjectList[1].asDbObject()
+    private val resto1 = com.example.testutils.fake.FakeDataSource.restoObjectList[0].asDbObject()
+    private val resto2 = com.example.testutils.fake.FakeDataSource.restoObjectList[1].asDbObject()
 
     private suspend fun addTwoRestos() {
         menuDao.insert(resto1)
