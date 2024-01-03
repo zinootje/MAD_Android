@@ -1,5 +1,6 @@
-package com.example.mvp.fake
+package com.example.data.database.fake
 
+import com.example.core.StaleAbleData
 import com.example.core.model.MenuData
 import com.example.core.model.Resto
 import com.example.data.RestoRepository
@@ -23,6 +24,12 @@ class FakeRestoRepository: RestoRepository
 
     override suspend fun setFavoriteResto(name: String, favorite: Boolean) {
         TODO("Not yet implemented")
+    }
+
+    override suspend fun getRestoMenuSt(name: String): Flow<StaleAbleData<MenuData>> {
+        return flow {
+            emit(StaleAbleData(FakeDataSource.restoMenu.asDomainObject(), false))
+        }
     }
 
     override suspend fun refreshRestoList() {

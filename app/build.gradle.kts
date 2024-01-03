@@ -58,6 +58,9 @@ dependencies {
     implementation(project(":core"))
     implementation(project(":data"))
     implementation(project(":network"))
+    androidTestImplementation(project(":data"))
+    androidTestImplementation(project(":testUtils"))
+    testImplementation(project(":testUtils"))
 
     implementation(libs.kotlinx.collections.immutable)
 

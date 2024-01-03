@@ -1,13 +1,10 @@
-package com.example.mvp.database
+package com.example.data.database
 
 import android.content.Context
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.example.data.database.MenuDao
-import com.example.data.database.MenuDatabase
-import com.example.data.database.toDbMenu
-import com.example.mvp.fake.FakeDataSource
+import com.example.data.database.fake.FakeDataSource
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.junit.After

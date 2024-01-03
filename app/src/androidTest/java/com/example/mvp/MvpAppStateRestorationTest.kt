@@ -7,7 +7,7 @@ import androidx.compose.ui.test.junit4.StateRestorationTester
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
-import com.example.mvp.fake.FakeDataSource
+import com.example.data.database.fake.FakeDataSource
 import com.example.mvp.ui.MVPApp
 import com.example.mvp.ui.util.TabKey
 import com.example.mvp.utils.setFakeAppContainer
@@ -34,7 +34,7 @@ class MvpAppStateRestorationTest {
         composeTestRule.onNode(
             SemanticsMatcher.expectValue(
                 TabKey,
-                FakeDataSource.restoMenu.days[1].dag
+                com.example.data.database.fake.FakeDataSource.restoMenu.days[1].dag
             )).performClick()
 
         //verfify correct location

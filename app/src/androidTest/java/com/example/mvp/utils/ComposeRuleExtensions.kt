@@ -25,6 +25,7 @@ import androidx.compose.ui.test.junit4.AndroidComposeTestRule
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
 import androidx.test.ext.junit.rules.ActivityScenarioRule
+import com.example.data.database.fake.FakeAppContainer
 import com.example.mvp.MvpApplication
 
 /**
@@ -58,10 +59,11 @@ fun <A : ComponentActivity> AndroidComposeTestRule<ActivityScenarioRule<A>, A>.o
  * This is useful for testing purposes when you want to replace the default implementation
  * with a fake implementation of the [com.example.data.AppContainer].
  *
+ * @param appContainer The fake app container to use.
  */
-fun <A : ComponentActivity> AndroidComposeTestRule<ActivityScenarioRule<A>, A>.setFakeAppContainer() {
+fun <A : ComponentActivity> AndroidComposeTestRule<ActivityScenarioRule<A>, A>.setFakeAppContainer(appContainer: com.example.data.database.fake.FakeAppContainer = com.example.data.database.fake.FakeAppContainer()) {
     activityRule.scenario.onActivity {
         val app = it.application as MvpApplication
-        app.container = FakeAppContainer()
+        app.container = appContainer
     }
 }

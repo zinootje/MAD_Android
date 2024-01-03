@@ -8,8 +8,9 @@ import com.example.mvp.fake.FakeRestoDao
 import com.example.network.asDomainObject
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
+import org.junit.Assert.assertEquals
 import org.junit.Test
-import org.junit.jupiter.api.Assertions.*
+
 
 class RestoRepositoryTest {
 

@@ -1,4 +1,4 @@
-package com.example.mvp.ui
+package com.example.mvp.ui.overview
 
 import androidx.activity.ComponentActivity
 import androidx.compose.foundation.layout.PaddingValues
@@ -10,9 +10,6 @@ import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onNodeWithText
 import com.example.core.model.Resto
 import com.example.mvp.R
-import com.example.mvp.ui.overview.RestoOverviewApiState
-import com.example.mvp.ui.overview.RestoOverviewUiState
-import com.example.mvp.ui.overview.ShowRestoOverview
 import com.example.mvp.ui.util.GridSize
 import com.example.mvp.utils.onNodeWithContentDescriptionStringId
 import org.junit.Rule

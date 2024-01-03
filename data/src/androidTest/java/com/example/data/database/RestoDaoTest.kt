@@ -1,14 +1,9 @@
-package com.example.mvp.database
-
+package com.example.data.database
 import android.content.Context
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.example.data.database.RestoDao
-import com.example.data.database.RestoDatabase
-import com.example.data.database.asDbObject
-import com.example.mvp.data.database.*
-import com.example.mvp.fake.FakeDataSource
+import com.example.data.database.fake.FakeDataSource
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.junit.After

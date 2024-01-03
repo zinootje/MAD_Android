@@ -1,4 +1,4 @@
-package com.example.mvp.fake
+package com.example.data.database.fake
 
 import com.example.core.model.Resto
 

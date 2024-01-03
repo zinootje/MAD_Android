@@ -1,4 +1,4 @@
-package com.example.mvp.ui
+package com.example.mvp.ui.menu
 
 import androidx.activity.ComponentActivity
 import androidx.compose.runtime.Composable
@@ -6,12 +6,11 @@ import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import com.example.core.model.*
 import com.example.mvp.R
-import com.example.mvp.ui.menu.RestoMenu
-import com.example.mvp.ui.menu.RestoMenuApiState
 import com.example.mvp.ui.util.TabKey
 import com.example.mvp.ui.util.TabRowType
 import com.example.mvp.utils.onNodeWithContentDescriptionStringId
 import com.example.mvp.utils.onNodeWithStringId
+import kotlinx.collections.immutable.persistentListOf
 import org.junit.Rule
 import org.junit.Test
 
@@ -49,7 +48,7 @@ class RestoMenuTest {
         // TODO: Replace with actual data
         val menuData = MenuData(
             location = "location",
-            days = listOf(
+            days = persistentListOf(
                 Day(
                     dag = "dayName",
                     message = "message",
@@ -118,7 +117,7 @@ class RestoMenuTest {
                 apiState = RestoMenuApiState.Success(
                     MenuData(
                 location = "location",
-                days = listOf(
+                        days = persistentListOf(
                     //showed on first tab
                     Day(
                         dag = "dayName",

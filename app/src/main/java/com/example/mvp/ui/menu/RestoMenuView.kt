@@ -19,6 +19,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
@@ -254,7 +255,10 @@ private fun MenuContent(menuData: MenuData, tabRowType: TabRowType) {
             contentPadding = PaddingValues(horizontal = 16.dp)
         ) { page ->
             // Content for the selected day
-            DayMenuContent(day = menuData.days[page])
+            DayMenuContent(
+                modifier = Modifier.testTag("page-$page"),
+                day = menuData.days[page]
+            )
         }
     }
 }
@@ -324,9 +328,12 @@ fun MvpTabRow(
  * @param day The Day object containing the menu information for the day.
  */
 @Composable
-private fun DayMenuContent(day: Day) {
+private fun DayMenuContent(
+    modifier: Modifier = Modifier,
+    day: Day
+) {
     LazyColumn(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
             .padding(16.dp)

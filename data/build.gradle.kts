@@ -54,11 +54,17 @@ dependencies {
 
     //room
     implementation(libs.room.runtime)
-    // optional - Kotlin Extensions and Coroutines support for Room
-    implementation(libs.room.ktx)
-    // To use Kotlin Symbol Processing (KSP)
-    ksp(libs.room.compiler)
-    // optional - Test helpers
-    testImplementation(libs.room.testing)
     annotationProcessor(libs.room.compiler)
+    implementation(libs.room.ktx)
+    ksp(libs.room.compiler)
+
+    //Test
+    testImplementation(libs.room.testing)
+    androidTestImplementation(libs.junit.lib)
+    androidTestImplementation(libs.androidx.test.junit)
+    androidTestImplementation(libs.androidx.runner)
+    androidTestImplementation(project(":testUtils"))
+    testImplementation(project(":testUtils"))
+
+
 }

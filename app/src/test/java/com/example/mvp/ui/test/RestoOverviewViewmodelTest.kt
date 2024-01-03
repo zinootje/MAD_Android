@@ -14,10 +14,6 @@ class RestoOverviewViewmodelTest {
     @get:Rule
     val mainDispatcherRule = MainDispatcherRule()
 
-    //const
-    val RESTO_NAME = "test"
-
-
     private val restoRepository = TestRestoRepository()
 
     private lateinit var restoOverviewViewmodel: RestoOverviewViewModel
