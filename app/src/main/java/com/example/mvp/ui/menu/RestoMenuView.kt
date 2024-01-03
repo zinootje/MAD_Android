@@ -42,7 +42,7 @@ import kotlinx.coroutines.launch
 /**
  * Composable function that represents the screen for displaying the menu of a restaurant.
  *
- * @param viewModel Intance of [RestoMenuViewmodel] to handle the business logic.
+ * @param viewModel Instance of [RestoMenuViewmodel] to handle the business logic.
  * @param tabRowType The type of the tab row, can be either [TabRowType.Scrollable] or [TabRowType.Expanded].
  * @param onBack Callback function for navigating back from the screen.
  */
@@ -440,7 +440,7 @@ private fun DishItemPreview() {
 private fun DishItemCutoffPreview() {
     DishItem(
         dish = Dish(
-            name = "Dish namessdqfsdqf dsq fsqdf sdf sdqf sdqf sqdfsdqfsqdf sdfsdqfsdqsdf sdfq",
+            name = "Dish name that is really really really really really really really really really long ",
             special = Special.VEGIE
         )
     )

@@ -7,6 +7,4 @@ import com.example.data.util.NetworkMonitor
 class FakeAppContainer(
     override val restoRepository: RestoRepository = FakeRestoRepository(),
     override val networkMonitor: NetworkMonitor = FakeNetworkMonitor()
-) : AppContainer {
-
-}
+) : AppContainer

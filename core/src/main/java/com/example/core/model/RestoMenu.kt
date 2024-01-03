@@ -40,8 +40,4 @@ enum class Special(@StringRes val title: Int) {
     VEGIE(R.string.veggie),
     NONE(R.string.none),
     UNKNOWN(R.string.unknown)
-//    VEGAN(0),
-//    VEGIE(0),
-//    NONE(0),
-//    UNKNOWN(0)
 }

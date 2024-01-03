@@ -19,13 +19,15 @@ class RestoMenuViewmodelTest {
     @get:Rule
     val mainDispatcherRule = MainDispatcherRule()
 
-    //const
-    val RESTO_NAME = "test"
-
 
     private val restoRepository = TestRestoRepository()
 
     private lateinit var restoMenuViewmodel: RestoMenuViewmodel
+
+    companion object {
+        //const
+        const val RESTO_NAME = "test"
+    }
 
     @Before
     fun setup() {
@@ -128,5 +130,6 @@ class RestoMenuViewmodelTest {
             )
         }
     }
+
 
 }

@@ -27,7 +27,7 @@ abstract class RestoDatabase : RoomDatabase() {
     companion object{
         @Volatile
 
-        private var Instace: RestoDatabase? = null
+        private var Instance: RestoDatabase? = null
 
 
         /**
@@ -39,7 +39,7 @@ abstract class RestoDatabase : RoomDatabase() {
          * @return The RestoDatabase instance.
          */
         fun getDatabase(context: Context): RestoDatabase {
-            return Instace ?: synchronized(this) {
+            return Instance ?: synchronized(this) {
                  Room.databaseBuilder(
                     context,
                     RestoDatabase::class.java,
@@ -47,7 +47,7 @@ abstract class RestoDatabase : RoomDatabase() {
                  )
                      //TODO remove in prod
                      .fallbackToDestructiveMigration()
-                     .build().also { Instace = it }
+                     .build().also { Instance = it }
 
             }
         }

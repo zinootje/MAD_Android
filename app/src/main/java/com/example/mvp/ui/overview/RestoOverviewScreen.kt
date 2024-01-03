@@ -79,7 +79,7 @@ fun RestoOverviewScreen(
             TopAppBar(
                 title = { Text(text = "Resto Overview") },
                 actions = {
-                    GriddTogleButton(
+                    GridToggleButton(
                         isGrid = gridMode,
                         toggleGridMode = { restoOverviewViewModel.toggleGridMode() }
                     )
@@ -101,7 +101,7 @@ fun RestoOverviewScreen(
  * @param toggleGridMode a callback function that is called when the toggle button is clicked.
  */
 @Composable
-private fun GriddTogleButton(
+private fun GridToggleButton(
     isGrid: Boolean,
     toggleGridMode: () -> Unit
 ) {

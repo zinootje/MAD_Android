@@ -9,7 +9,6 @@ import com.example.mvp.ui.menu.RestoMenuApiState.*
  *
  * @property currentTab The current tab index selected in the UI.
  * @property restoMenuApiState The API state of the restaurant menu as a [RestoMenuApiState] object.
- * @property restoName The name of the restaurant.
  * @property staleData Indicates whether the data is stale or not.
  * @property toastDataShown Indicates whether the toast data has been shown or not.
  * @property errorSnackbar The error message to be shown in the snackbar. Null if no error.

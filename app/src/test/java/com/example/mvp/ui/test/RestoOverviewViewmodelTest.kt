@@ -26,14 +26,14 @@ class RestoOverviewViewmodelTest {
 
     //@OptIn(ExperimentalCoroutinesApi::class)
     @Test
-    fun RestoOverviewViewModel_Init_StartsInLoading() {
+    fun restoOverviewViewModel_Init_StartsInLoading() {
         runTest {
             assert(restoOverviewViewmodel.uiState.value.restoOverviewApiState is RestoOverviewApiState.Loading)
         }
     }
 
     @Test
-    fun RestoOverviewViewModel_Init_LoadsData() {
+    fun restoOverviewViewModel_Init_LoadsData() {
         runTest {
             restoRepository.sendRestoList(FakeDataSource.restoObjectList)
             assert(restoOverviewViewmodel.uiState.value.restoOverviewApiState is RestoOverviewApiState.Success)
@@ -43,7 +43,7 @@ class RestoOverviewViewmodelTest {
     }
 
     @Test
-    fun RestoOverviewViewModel_OnError_showError() {
+    fun restoOverviewViewModel_OnError_showError() {
         runTest {
             restoRepository.throwErrorInRestoList(RuntimeException())
             assert(restoOverviewViewmodel.uiState.value.restoOverviewApiState is RestoOverviewApiState.Error)

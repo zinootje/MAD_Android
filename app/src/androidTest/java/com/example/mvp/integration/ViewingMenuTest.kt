@@ -88,7 +88,7 @@ class ViewingMenuTest {
         //get second page of menu and check if it is displayed correctly
         //just asserting existence of the menu can give error if there are similar items in the menu and the menu of screen because they both exist
 
-        var page = composeTestRule.onNodeWithTag("page-1")
+        val page = composeTestRule.onNodeWithTag("page-1")
         //assert page is displayed
         page.assertIsDisplayed()
         //assert menu is displayed correctly
@@ -97,7 +97,6 @@ class ViewingMenuTest {
     }
 
     companion object {
-        private const val TAG = "RestoMenuTest"
     }
 
 }

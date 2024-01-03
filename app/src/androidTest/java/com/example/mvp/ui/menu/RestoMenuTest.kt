@@ -22,7 +22,7 @@ class RestoMenuTest {
     @Test
     fun restoMenu_Displays_showsLoadingState() {
         composeTestRule.setContent {
-            CreateRestoMenu(
+            Companion.CreateRestoMenu(
                 apiState = RestoMenuApiState.Loading
 
             )
@@ -35,7 +35,7 @@ class RestoMenuTest {
     fun restoMenu_Displays_showsErrorState() {
         val error = "errorText"
         composeTestRule.setContent {
-            CreateRestoMenu(
+            Companion.CreateRestoMenu(
                 apiState = RestoMenuApiState.Error(error)
             )
         }
@@ -82,7 +82,7 @@ class RestoMenuTest {
             )
         )
         composeTestRule.setContent {
-            CreateRestoMenu(
+            Companion.CreateRestoMenu(
                 apiState = RestoMenuApiState.Success(menuData)
             )
         }
@@ -103,7 +103,7 @@ class RestoMenuTest {
         composeTestRule.onNodeWithText("Coffee").assertExists()
         composeTestRule.onNodeWithText("Tea").assertExists()
 
-        //veriffy that vegan en veggie indicators are displayed
+        //verify that vegan en veggie indicators are displayed
         composeTestRule.onNodeWithStringId(R.string.vegan).assertExists()
         composeTestRule.onNodeWithStringId(R.string.veggie).assertExists()
 
@@ -113,74 +113,74 @@ class RestoMenuTest {
     fun restoMenu_switch_showsCorrectTab() {
 
         composeTestRule.setContent {
-            CreateRestoMenu(
+            Companion.CreateRestoMenu(
                 apiState = RestoMenuApiState.Success(
                     MenuData(
-                location = "location",
+                        location = "location",
                         days = persistentListOf(
-                    //showed on first tab
-                    Day(
-                        dag = "dayName",
-                        message = "messageOfDay1",
-                        menu = Menu(
-                            items = mapOf(
-                                "Breakfast" to listOf(
-                                    Dish(
-                                        name = "Bread",
-                                        Special.NONE
-                                    ),
-                                    Dish(
-                                        name = "Cereal",
-                                        Special.VEGAN
-                                    )
-                                ),
-                                "Drinks"
-                                        to listOf(
-                                    Dish(
-                                        name = "Coffee",
-                                        Special.NONE
-                                    ),
-                                    Dish(
-                                        name = "Tea",
-                                        Special.VEGIE
-                                    )
-                                )
-                            )
-                        )
-
-                    )
-                    //showed on second tab
-                    , Day(
-                        dag = "dayName2",
-                        message = "message2",
-                        menu = Menu(
-                            items = mapOf(
-                                "Breakfast2" to listOf(
-                                    Dish(
-                                        name = "Bread2",
-                                        Special.NONE
-                                    ),
-                                    Dish(
-                                        name = "Cereal2",
-                                        Special.VEGAN
-                                    )
-                                ),
-                                "Drinks2"
-                                        to listOf(
-                                    Dish(
-                                        name = "Coffee2",
-                                        Special.NONE
-                                    ),
-                                    Dish(
-                                        name = "Tea2",
-                                        Special.VEGIE
+                            //showed on first tab
+                            Day(
+                                dag = "dayName",
+                                message = "messageOfDay1",
+                                menu = Menu(
+                                    items = mapOf(
+                                        "Breakfast" to listOf(
+                                            Dish(
+                                                name = "Bread",
+                                                Special.NONE
+                                            ),
+                                            Dish(
+                                                name = "Cereal",
+                                                Special.VEGAN
+                                            )
+                                        ),
+                                        "Drinks"
+                                                to listOf(
+                                            Dish(
+                                                name = "Coffee",
+                                                Special.NONE
+                                            ),
+                                            Dish(
+                                                name = "Tea",
+                                                Special.VEGIE
+                                            )
+                                        )
                                     )
                                 )
+
+                            )
+                            //showed on second tab
+                            , Day(
+                                dag = "dayName2",
+                                message = "message2",
+                                menu = Menu(
+                                    items = mapOf(
+                                        "Breakfast2" to listOf(
+                                            Dish(
+                                                name = "Bread2",
+                                                Special.NONE
+                                            ),
+                                            Dish(
+                                                name = "Cereal2",
+                                                Special.VEGAN
+                                            )
+                                        ),
+                                        "Drinks2"
+                                                to listOf(
+                                            Dish(
+                                                name = "Coffee2",
+                                                Special.NONE
+                                            ),
+                                            Dish(
+                                                name = "Tea2",
+                                                Special.VEGIE
+                                            )
+                                        )
+                                    )
+                                )
+
                             )
                         )
-
-                    )
-                )
                     )
                 )
             )
@@ -189,12 +189,13 @@ class RestoMenuTest {
         //simple check if the first tab is displayed
         composeTestRule.onNodeWithText("messageOfDay1").assertExists()
 
-        //switch to seccond tab
+        //switch to second tab
         composeTestRule.onNode(
             SemanticsMatcher.expectValue(
                 TabKey,
                 "dayName2"
-            )).performClick()
+            )
+        ).performClick()
 
         //check if the second tab is displayed
         composeTestRule.onNodeWithText("message2").assertExists()
@@ -214,15 +215,18 @@ class RestoMenuTest {
         composeTestRule.onNodeWithText("Coffee", ignoreCase = true).assertIsNotDisplayed()
         composeTestRule.onNodeWithText("Tea", ignoreCase = true).assertIsNotDisplayed()
 
+
     }
 
-    @Composable
-    private fun CreateRestoMenu(
-        apiState: RestoMenuApiState
-    ) {
-        RestoMenu(
-            apiState = apiState,
-            tabRowType = TabRowType.Expanded
-        )
+    companion object {
+        @Composable
+        private fun CreateRestoMenu(
+            apiState: RestoMenuApiState
+        ) {
+            RestoMenu(
+                apiState = apiState,
+                tabRowType = TabRowType.Expanded
+            )
+        }
     }
 }

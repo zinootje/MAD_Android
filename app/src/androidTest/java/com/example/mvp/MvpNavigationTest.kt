@@ -38,12 +38,12 @@ class MvpNavigationTest {
 
 
     @Test
-    fun MvpNavHost_verifyStartDestination() {
+    fun mvpNavHost_verifyStartDestination() {
         navController.assertCurrentRouteName(MvpScreens.Start.toRoute())
     }
 
     @Test
-    fun MvpNavHost_navigateToMenuPage() {
+    fun mvpNavHost_navigateToMenuPage() {
         val firstRestoName = FakeDataSource.restoObjectList.first().name
         composeTestRule.onAllNodesWithText(firstRestoName)[0].performClick()
         navController.assertCurrentRouteName(MvpScreens.RestoMenu.toRoute())

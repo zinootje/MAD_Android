@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.example.mvp.ui.menu
 
 import android.util.Log
@@ -66,8 +68,7 @@ class RestoMenuViewmodel(
                             uiState.copy(
                                 showRefreshingIndicator = true
                             )
-                            return@collect
-                        }
+                        } else
                         uiState.copy(
                             restoMenuApiState = RestoMenuApiState.Loading
                         )

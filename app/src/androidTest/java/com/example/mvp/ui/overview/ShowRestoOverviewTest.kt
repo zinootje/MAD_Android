@@ -134,7 +134,7 @@ class ShowRestoOverviewTest {
     }
 
     @Test
-    fun showRestoOverview_Displays_GridModeCorretly() {
+    fun showRestoOverview_Displays_GridModeCorrectly() {
         composeTestRule.setContent {
             ShowRestoOverview(
                 innerPadding = PaddingValues(),
@@ -163,7 +163,7 @@ class ShowRestoOverviewTest {
     }
 
     @Test
-    fun showRestoOverview_Displays_ListModeCorretly() {
+    fun showRestoOverview_Displays_ListModeCorrectly() {
         composeTestRule.setContent {
             ShowRestoOverview(
                 innerPadding = PaddingValues(),

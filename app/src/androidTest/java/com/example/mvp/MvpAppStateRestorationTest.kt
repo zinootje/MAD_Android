@@ -21,7 +21,7 @@ class MvpAppStateRestorationTest {
     val composeTestRule = createAndroidComposeRule<ComponentActivity>()
 
     @Test
-    fun Device_locationRetained_afterConfigChange() {
+    fun device_locationRetained_afterConfigChange() {
 
         composeTestRule.setFakeAppContainer()
         val stateRestorationTester = StateRestorationTester(composeTestRule)
@@ -37,7 +37,7 @@ class MvpAppStateRestorationTest {
                 FakeDataSource.restoMenu.days[1].dag
             )).performClick()
 
-        //verfify correct location
+        //verify correct location
         composeTestRule.onNodeWithText("Test message day2").assertExists()
 
 
