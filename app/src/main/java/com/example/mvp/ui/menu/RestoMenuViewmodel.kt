@@ -11,6 +11,7 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.core.Result
 import com.example.core.asResult
+import com.example.core.model.ErrorMessage
 import com.example.data.RestoRepository
 import com.example.data.isNetworkError
 import com.example.data.util.NetworkMonitor
@@ -81,7 +82,7 @@ class RestoMenuViewmodel(
                         if ((_uiState.value.restoMenuApiState is RestoMenuApiState.Success) || (it.exception?.isNetworkError() == true)) {
                             _uiState.update { uiState ->
                                 uiState.copy(
-                                    errorSnackbar = "Network error"
+                                    errorSnackbar = ErrorMessage.NoNetwork,
                                 )
                             }
                             return@collect

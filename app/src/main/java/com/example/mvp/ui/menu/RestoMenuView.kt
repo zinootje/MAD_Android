@@ -33,6 +33,7 @@ import com.example.mvp.R
 import com.example.mvp.ui.common.LoadingIndicator
 import com.example.mvp.ui.common.NiaOverlayLoadingWheel
 import com.example.mvp.ui.util.TabRowType
+import com.example.mvp.ui.util.formatErrorMessage
 import com.example.mvp.ui.util.tabKey
 import com.theapache64.rebugger.Rebugger
 import kotlinx.collections.immutable.persistentMapOf
@@ -61,6 +62,8 @@ fun RestoMenuScreen(
     val snackbarError by remember {
         derivedStateOf { uiState.errorSnackbar }
     }
+    val snackbarErrorString = snackbarError?.let { formatErrorMessage(it) }
+
 
     val shouldShowToast by remember {
         derivedStateOf { !uiState.toastDataShown && uiState.staleData }
@@ -83,7 +86,7 @@ fun RestoMenuScreen(
     LaunchedEffect(snackbarError) {
         if (snackbarError != null) {
             snackbarHostState.showSnackbar(
-                snackbarError!!,
+                snackbarErrorString!!,
                 duration = SnackbarDuration.Indefinite,
                 withDismissAction = true,
             )

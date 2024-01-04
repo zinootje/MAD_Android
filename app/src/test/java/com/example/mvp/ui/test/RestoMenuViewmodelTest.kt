@@ -1,6 +1,7 @@
 package com.example.mvp.ui.test
 
 import com.example.core.StaleAbleData
+import com.example.core.model.ErrorMessage
 import com.example.mvp.ui.menu.RestoMenuApiState
 import com.example.mvp.ui.menu.RestoMenuUiState
 import com.example.mvp.ui.menu.RestoMenuViewmodel
@@ -108,7 +109,7 @@ class RestoMenuViewmodelTest {
                     staleData = true,
                     showRefreshingIndicator = true,
                     //TODO error enum
-                    errorSnackbar = "Network error"
+                    errorSnackbar = ErrorMessage.NoNetwork
                 ),
                 restoMenuViewmodel.uiState.value,
             )

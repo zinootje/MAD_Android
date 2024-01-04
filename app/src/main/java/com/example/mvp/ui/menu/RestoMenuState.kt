@@ -1,5 +1,6 @@
 package com.example.mvp.ui.menu
 
+import com.example.core.model.ErrorMessage
 import com.example.core.model.MenuData
 import com.example.mvp.ui.menu.RestoMenuApiState.*
 
@@ -20,7 +21,7 @@ data class RestoMenuUiState(
     val showRefreshingIndicator: Boolean = false,
     val toastDataShown: Boolean = false,
     //null if no error
-    val errorSnackbar: String? = null
+    val errorSnackbar: ErrorMessage? = null
 
 )
 

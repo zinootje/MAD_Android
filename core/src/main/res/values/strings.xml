@@ -4,4 +4,9 @@
     <string name="veggie">veggie</string>
     <string name="unknown">unknown</string>
     <string name="none">geen</string>
+    <string name="no_network">No network\n</string>
+    <string name="internal_server_error">Internal server error\n</string>
+    <string name="application_error">application error</string>
+    <string name="unknown_error">Unknown error\n</string>
+    <string name="misc_network_error">Network error with code %1$s</string>
 </resources>
