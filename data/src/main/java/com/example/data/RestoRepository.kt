@@ -114,7 +114,6 @@ class RestoOfflineRepositoryImpl(
         restoDao.setFavoriteResto(name, favorite)
     }
     override suspend fun refreshRestoList() {
-        //TODO maybe error handling
         val restos = restoApiService.getRestoListAsFlow().map { it -> it.map { Resto(it) } }.first()
         for (resto in restos) {
             restoDao.insert(resto.asDbObject())

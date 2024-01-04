@@ -1,7 +1,7 @@
-/*
+
 package com.example.data.util
 
-*/
+
 /*
  * Copyright 2022 The Android Open Source Project
  *
@@ -16,7 +16,7 @@ package com.example.data.util
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *//*
+ */
 
 
 
@@ -45,11 +45,11 @@ internal class ConnectivityManagerNetworkMonitor(
             return@callbackFlow
         }
 
-        */
+
 /**
          * The callback's methods are invoked on changes to *any* network matching the [NetworkRequest],
          * not just the active network. So we can simply track the presence (or absence) of such [Network].
- *//*
+ */
 
         val callback = object : NetworkCallback() {
 
@@ -71,10 +71,10 @@ internal class ConnectivityManagerNetworkMonitor(
             .build()
         connectivityManager.registerNetworkCallback(request, callback)
 
-        */
-/**
+
+        /**
          * Sends the latest connectivity status to the underlying channel.
- *//*
+         */
 
         channel.trySend(connectivityManager.isCurrentlyConnected())
 
@@ -87,4 +87,4 @@ internal class ConnectivityManagerNetworkMonitor(
     private fun ConnectivityManager.isCurrentlyConnected() = activeNetwork
         ?.let(::getNetworkCapabilities)
         ?.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET) ?: false
-}*/
+}

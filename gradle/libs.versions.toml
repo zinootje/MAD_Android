@@ -23,6 +23,7 @@ junitKtx = "1.1.5"
 agp = "8.2.0"
 kotlin1921 = "1.9.21"
 material = "1.11.0"
+turbine = "1.0.0"
 
 [libraries]
 androidx-runner = { module = "androidx.test:runner", version.ref = "runner" }
@@ -64,6 +65,7 @@ androidx-compose-runtime = { group = "androidx.compose.runtime", name = "runtime
 kotlinx-collections-immutable = { group = "org.jetbrains.kotlinx", name = "kotlinx-collections-immutable", version = "0.3.6" }
 androidx-junit-ktx = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "junitKtx" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 
 [bundles]
 

@@ -91,6 +91,8 @@ dependencies {
     //Testing
     testImplementation(libs.junit.lib)
     testImplementation(libs.kotlinx.coroutines.test)
+    //For testing couroutines
+    testImplementation(libs.turbine)
 
 
     //Layout
