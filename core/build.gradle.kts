@@ -1,16 +1,28 @@
+import com.android.build.api.variant.LibraryAndroidComponentsExtension
+
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.serialization")
 }
 
+fun LibraryAndroidComponentsExtension.disableUnnecessaryAndroidTests(
+    project: Project,
+) = beforeVariants {
+    it.enableAndroidTest = it.enableAndroidTest
+            && project.projectDir.resolve("src/androidTest").exists()
+}
+
+extensions.configure<LibraryAndroidComponentsExtension> {
+    disableUnnecessaryAndroidTests(project)
+}
 android {
     namespace = "com.example.core"
     compileSdk = 34
 
+
     defaultConfig {
         minSdk = 24
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
@@ -27,6 +39,8 @@ android {
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.7"
+
+
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
