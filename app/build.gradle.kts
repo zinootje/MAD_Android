@@ -66,9 +66,9 @@ dependencies {
     testImplementation(project(":testUtils"))
 
     implementation(libs.kotlinx.collections.immutable)
-
-
-    implementation((libs.androidx.compose.bom))
+    //TODO check if needed
+    implementation(libs.material)
+    implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.lifecycle.runtime.ktx)
