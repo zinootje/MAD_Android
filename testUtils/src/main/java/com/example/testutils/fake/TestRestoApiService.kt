@@ -6,7 +6,7 @@ import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.first
 
-class TestResoApiService : RestoApiService {
+class TestRestoApiService : RestoApiService {
 
     /**
      * The backing hot flow for the list of restaurants for testing.

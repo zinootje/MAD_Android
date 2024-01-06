@@ -7,6 +7,7 @@ import com.example.core.model.MenuData
 import com.example.network.ApiRestoMenu
 import com.example.network.asDomainObject
 import kotlinx.collections.immutable.toImmutableList
+import org.jetbrains.annotations.TestOnly
 
 
 /**
@@ -52,12 +53,15 @@ fun MenuData.toDbMenu(): MenuDataEntity {
     )
 }
 
+
+//Todo check if this can be done in a better way
 /**
+ * TEST ONLY not used in production
  * Converts an [ApiRestoMenu] (network)object to a [MenuDataEntity] (database)object.
  *
  * @return A [MenuDataEntity] object representing the menu data.
  */
+@TestOnly
 fun ApiRestoMenu.toDbMenu(): MenuDataEntity {
-    //Todo check if this can be done in a better way
     return this.asDomainObject().toDbMenu()
 }

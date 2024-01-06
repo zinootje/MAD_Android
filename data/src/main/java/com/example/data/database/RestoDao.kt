@@ -30,8 +30,6 @@ interface RestoDao {
     @Delete
     suspend fun delete(resto: Resto)
 
-
-    ///TODO check nullability
     /**
      * Retrieves a single [Resto] object from the database based on the given name.
      *
@@ -39,7 +37,7 @@ interface RestoDao {
      * @return A [Flow] emitting the [Resto] object.
      */
     @Query("SELECT * FROM resto_list_table WHERE name = :name")
-    fun getResto(name: String): Flow<Resto>
+    fun getResto(name: String): Flow<Resto?>
 
     /**
      * Retrieves a list of restaurants from the database. The list is ordered by favorite status and then by name.

@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.flow
 
 class FakeMenuDao : MenuDao {
     override suspend fun insertMenuData(menuData: MenuDataEntity) {
-        TODO("Not yet implemented")
+        //no-op
     }
 
     override fun getMenuData(location: String): Flow<MenuDataEntity?> {

@@ -41,16 +41,15 @@ enum class Special {
     VEGGIE,
                         @SerialName("none")
     NONE,
-    //TODO
-    //if the json is not one of the above, it will be UNKNOWN
 
+    //TODO if the json is not one of the above, it will be UNKNOWN
     UNKNOWN
 }
 
 fun Special.asDomainObject(): ModelSpecial {
     return when (this) {
         Special.VEGAN -> ModelSpecial.VEGAN
-        Special.VEGGIE -> ModelSpecial.VEGIE
+        Special.VEGGIE -> ModelSpecial.VEGGIE
         Special.NONE -> ModelSpecial.NONE
         Special.UNKNOWN -> ModelSpecial.UNKNOWN
     }

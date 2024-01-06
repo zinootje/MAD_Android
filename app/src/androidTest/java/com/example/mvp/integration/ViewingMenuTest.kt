@@ -33,8 +33,7 @@ class ViewingMenuTest {
     @OptIn(ExperimentalTestApi::class)
     @Test
     //TODO name
-    fun navigateToAMenuAndDisplayCorrectly() {
-        //TODO use string resource for loading
+    fun happyPath_navigateToMenuAndDisplayCorrectly() {
         val restoRepository = TestRestoRepository()
         val fakeAppContainer = FakeAppContainer(restoRepository = restoRepository)
         composeTestRule.setFakeAppContainer(fakeAppContainer)
@@ -53,8 +52,7 @@ class ViewingMenuTest {
                 composeTestRule.activity.getString(
                     R.string.loading_indicator
                 )
-            ),
-            2_000L
+            ), 2_000L
         )
         composeTestRule.onNodeWithContentDescriptionStringId(R.string.loading_indicator).assertDoesNotExist()
         for (resto in restos) {

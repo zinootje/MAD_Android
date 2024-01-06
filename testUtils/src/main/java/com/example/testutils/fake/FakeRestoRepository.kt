@@ -8,6 +8,15 @@ import com.example.network.asDomainObject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
+
+/**
+ * Represents a fake implementation of the [RestoRepository] interface.
+ * This return static data from the [FakeDataSource] object.
+ * for more advanced testing, you can use [TestRestoApiService] instead.
+ *
+ * The [FakeRestoRepository] class is used for test purposes and contains dummy implementation for the [RestoRepository] functions.
+ *
+ */
 class FakeRestoRepository: RestoRepository
 {
     override  fun getRestoList(): Flow<List<Resto>> {
@@ -23,7 +32,7 @@ class FakeRestoRepository: RestoRepository
     }
 
     override suspend fun setFavoriteResto(name: String, favorite: Boolean) {
-        TODO("Not yet implemented")
+        //no-op
     }
 
     override suspend fun getRestoMenuSt(name: String): Flow<StaleAbleData<MenuData>> {
@@ -33,11 +42,11 @@ class FakeRestoRepository: RestoRepository
     }
 
     override suspend fun refreshRestoList() {
-        TODO("Not yet implemented")
+        //no-op
     }
 
     override suspend fun refreshRestoMenu(name: String) {
-        TODO("Not yet implemented")
+        //no-op
     }
 
 }

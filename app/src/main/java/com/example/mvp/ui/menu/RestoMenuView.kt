@@ -433,7 +433,7 @@ private fun DishItemPreview() {
     DishItem(
         dish = Dish(
             name = "Dish names",
-            special = Special.VEGIE
+            special = Special.VEGGIE
         )
     )
 }
@@ -444,7 +444,7 @@ private fun DishItemCutoffPreview() {
     DishItem(
         dish = Dish(
             name = "Dish name that is really really really really really really really really really long ",
-            special = Special.VEGIE
+            special = Special.VEGGIE
         )
     )
 }
@@ -474,7 +474,7 @@ private val mndata = MenuData(
                         ),
                         Dish(
                             name = "Tea",
-                            special = Special.VEGIE
+                            special = Special.VEGGIE
                         )
                     )
                 )
@@ -503,7 +503,7 @@ private val mndata = MenuData(
                         ),
                         Dish(
                             name = "Tea2",
-                            special = Special.VEGIE
+                            special = Special.VEGGIE
                         )
                     )
                 )

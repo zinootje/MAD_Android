@@ -44,7 +44,6 @@ dependencies {
     testImplementation(libs.junit.lib)
 
 
-    //TODO remove maybe
     implementation(libs.serialization.json)
 
     // Retrofit

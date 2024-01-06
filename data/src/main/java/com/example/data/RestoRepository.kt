@@ -82,13 +82,13 @@ class RestoOfflineRepositoryImpl(
 
 
     private suspend fun getRestoMenuInternal(name: String): Flow<StaleAbleData<MenuData>> {
-        //TODO move logic to different function
         //Needed because of the way the api works
         val shortName = toShortName(name)
         return menuDao.getMenuData(shortName).transform {
             if (it == null) {
                 refreshRestoMenu(name)
             } else {
+                //if the data is older than 24 hours, refresh it
                 if (it.timestamp + 86400000 < System.currentTimeMillis()) {
                     emit(StaleAbleData(it.toMenuData(), true))
                     refreshRestoMenu(name)

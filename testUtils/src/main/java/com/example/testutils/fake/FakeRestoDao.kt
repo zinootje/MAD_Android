@@ -6,17 +6,26 @@ import com.example.data.database.asDbObject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
+/**
+ * Represents a fake implementation of the [RestoDao] interface.
+ * This return static data from the [FakeDataSource] object.
+ * for more advanced testing, you can use [TestRestoRepository] instead.
+ *
+ * The [FakeRestoDao] class is used for test purposes and contains dummy implementation for the [RestoDao] functions.
+ *
+ * @constructor Creates an instance of [FakeRestoDao].
+ */
 class FakeRestoDao : RestoDao {
     override suspend fun insert(resto: Resto) {
-        TODO("Not yet implemented")
+        //no-op
     }
 
     override suspend fun update(resto: Resto) {
-        TODO("Not yet implemented")
+        //no-op
     }
 
     override suspend fun delete(resto: Resto) {
-        TODO("Not yet implemented")
+        //no-op
     }
 
     override fun getResto(name: String): Flow<Resto> {
@@ -32,6 +41,6 @@ class FakeRestoDao : RestoDao {
     }
 
     override suspend fun setFavoriteResto(name: String, favorite: Boolean) {
-        TODO("Not yet implemented")
+        //no-op
     }
 }

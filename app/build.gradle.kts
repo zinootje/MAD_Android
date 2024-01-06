@@ -16,6 +16,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
@@ -66,7 +67,6 @@ dependencies {
     testImplementation(project(":testUtils"))
 
     implementation(libs.kotlinx.collections.immutable)
-    //TODO check if needed
     implementation(libs.material)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ktx)
@@ -98,8 +98,9 @@ dependencies {
     //Layout
     implementation(libs.androidx.compose.material3.windowSizeClass)
 
-    //TODO remove in production
+
     //rebugger
+    //TODO remove in production
     implementation(libs.rebugger.lib)
     implementation(libs.androidx.runtime.tracing)
 

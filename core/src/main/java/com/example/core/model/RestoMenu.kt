@@ -1,7 +1,6 @@
 package com.example.core.model
 
-//TODO fix
-//import com.example.mvp.R
+
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Immutable
 import com.example.core.R
@@ -33,11 +32,10 @@ data class Dish(
     val special: Special
 )
 
-//TODO fix
 @Serializable
 enum class Special(@StringRes val title: Int) {
     VEGAN(R.string.vegan),
-    VEGIE(R.string.veggie),
+    VEGGIE(R.string.veggie),
     NONE(R.string.none),
     UNKNOWN(R.string.unknown)
 }

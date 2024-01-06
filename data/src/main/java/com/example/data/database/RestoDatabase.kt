@@ -45,8 +45,6 @@ abstract class RestoDatabase : RoomDatabase() {
                     RestoDatabase::class.java,
                     "resto_list_database"
                  )
-                     //TODO remove in prod
-                     .fallbackToDestructiveMigration()
                      .build().also { Instance = it }
 
             }

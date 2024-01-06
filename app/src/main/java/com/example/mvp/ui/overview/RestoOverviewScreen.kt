@@ -24,13 +24,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.unit.times
+import com.example.core.model.Resto
 import com.example.mvp.R
 import com.example.mvp.ui.common.ErrorComponent
 import com.example.mvp.ui.common.LoadingIndicator
 import com.example.mvp.ui.util.GridSize
+import com.example.mvp.ui.util.PreviewScreenSizes
 import com.example.mvp.ui.util.contentDescription
 import com.example.mvp.ui.util.getColorFromName
 import com.theapache64.rebugger.Rebugger
@@ -354,3 +357,53 @@ private fun FavoriteButton(
 //    val restoOverviewViewModel = RestoOverviewViewModel(FakeRestoRepository())
 //    RestoOverviewPage(restoOverviewViewModel = restoOverviewViewModel)
 //}
+
+
+@PreviewScreenSizes
+@Composable
+private fun ShowRestoOverviewPreview() {
+
+    ShowRestoOverview(
+        innerPadding = PaddingValues(),
+        restoOverviewUiState = RestoOverviewUiState(
+            gridMode = false,
+            restoOverviewApiState = RestoOverviewApiState.Success(
+                data = listOf(
+                    Resto("Restaurant 1", false),
+                    Resto("Restaurant 2", true),
+                    Resto("Restaurant 3", false),
+                    Resto("D 4", true),
+                )
+            )
+        ),
+        navigateToMenu = {/*navigate to menu*/ },
+        favoriteResto = { _, _ -> run {} },
+        gridSize = GridSize.Fixed
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun RestoGridTilePreview() {
+    RestoGridTile(
+        name = "Restaurant",
+        isFavorite = true,
+        navigateToMenu = {/*navigate to menu*/ },
+        onFavoriteClick = {/*favorite restaurant*/ })
+}
+
+@Preview
+@Composable
+private fun RestoListTilePreview() {
+    RestoListTile(
+        name = "Restaurant",
+        isFavorite = true,
+        navigateToMenu = { /*navigate to menu*/ },
+        favoriteResto = {/*favorite restaurant*/ })
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun FavoriteButtonPreview() {
+    FavoriteButton(isFavorite = false, favoriteResto = { /*favorite restaurant*/ })
+}

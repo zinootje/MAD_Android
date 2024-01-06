@@ -45,7 +45,6 @@ class RestoMenuTest {
 
     @Test
     fun restoMenu_Displays_showsSuccessState() {
-        // TODO: Replace with actual data
         val menuData = MenuData(
             location = "location",
             days = persistentListOf(
@@ -72,7 +71,7 @@ class RestoMenuTest {
                                 ),
                                 Dish(
                                     name = "Tea",
-                                    Special.VEGIE
+                                    Special.VEGGIE
                                 )
                             )
                         )
@@ -142,7 +141,7 @@ class RestoMenuTest {
                                             ),
                                             Dish(
                                                 name = "Tea",
-                                                Special.VEGIE
+                                                Special.VEGGIE
                                             )
                                         )
                                     )
@@ -173,7 +172,7 @@ class RestoMenuTest {
                                             ),
                                             Dish(
                                                 name = "Tea2",
-                                                Special.VEGIE
+                                                Special.VEGGIE
                                             )
                                         )
                                     )
