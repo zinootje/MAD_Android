@@ -1,8 +1,7 @@
-package com.example.mvp.data
+package com.example.data
 
 import app.cash.turbine.test
 import com.example.core.StaleAbleData
-import com.example.data.RestoOfflineRepositoryImpl
 import com.example.data.database.MenuDataEntity
 import com.example.data.database.toDbMenu
 import com.example.network.asDomainObject
@@ -71,12 +70,19 @@ class RestoRepositoryTest {
         runTest {
             val testRestoDao = TestRestoDao()
             val testMenuDao = TestMenuDao()
+            val testResoApiService = TestResoApiService()
             val repo = RestoOfflineRepositoryImpl(FakeRestoApiService(), testRestoDao, testMenuDao)
             repo.refreshRestoList()
-            val list = repo.getRestoList().first()
-            assertEquals(FakeDataSource.restoObjectList, list)
+            repo.getRestoList().test {
+                testResoApiService.setRestoList(FakeDataSource.restoObjectList.map { it.name })
+                assertEquals(FakeDataSource.restoObjectList.map {
+                    //set favorite to false
+                    it.copy(isFavorite = false)
+                }, awaitItem())
+            }
         }
     }
+
 
 
     //https://developer.android.com/kotlin/flow/test#turbine

@@ -65,6 +65,13 @@ dependencies {
     androidTestImplementation(libs.androidx.runner)
     androidTestImplementation(project(":testUtils"))
     testImplementation(project(":testUtils"))
+    testImplementation(libs.kotlinx.coroutines.test)
+    //For testing couroutines
+    testImplementation(libs.turbine)
+
+
+    //TODO check if needed
+    implementation(libs.material)
 
 
 }

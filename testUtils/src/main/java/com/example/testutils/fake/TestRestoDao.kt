@@ -4,7 +4,6 @@ import com.example.core.StaleAbleData
 import com.example.core.model.MenuData
 import com.example.data.database.Resto
 import com.example.data.database.RestoDao
-import com.example.data.database.asDbObject
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -15,7 +14,7 @@ class TestRestoDao : RestoDao {
     /**
      * The backing hot flow for the list of restaurants for testing.
      */
-    private val restoListFlow: MutableSharedFlow<List<com.example.core.model.Resto>> =
+    private val restoListFlow: MutableSharedFlow<List<Resto>> =
         MutableSharedFlow(replay = 1, onBufferOverflow = BufferOverflow.DROP_OLDEST)
 
     /**
@@ -25,7 +24,9 @@ class TestRestoDao : RestoDao {
     private val restoMenuFlowMap = mutableMapOf<String, MutableSharedFlow<StaleAbleData<MenuData>>>()
 
     override suspend fun insert(resto: Resto) {
-        // no-op
+        val list: List<Resto> = restoListFlow.replayCache.firstOrNull()?.filter { it.name != resto.name } ?: emptyList()
+
+        restoListFlow.tryEmit(list + resto)
     }
 
     override suspend fun update(resto: Resto) {
@@ -38,14 +39,12 @@ class TestRestoDao : RestoDao {
 
     override fun getResto(name: String): Flow<Resto> {
         return restoListFlow.map {
-            it.first { it.name == name }.asDbObject()
+            it.first { it.name == name }
         }
     }
 
     override fun getRestoList(): Flow<List<Resto>> {
-        return restoListFlow.map {
-            it.map { it.asDbObject() }
-        }
+        return restoListFlow
     }
 
     override suspend fun setFavoriteResto(name: String, favorite: Boolean) {
@@ -57,7 +56,7 @@ class TestRestoDao : RestoDao {
      *
      * @param restoList The list of restaurants to be set.
      */
-    fun setRestoList(restoList: List<com.example.core.model.Resto>) {
+    fun setRestoList(restoList: List<Resto>) {
         restoListFlow.tryEmit(restoList)
     }
 
