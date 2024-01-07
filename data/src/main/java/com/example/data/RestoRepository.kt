@@ -118,6 +118,10 @@ class RestoOfflineRepositoryImpl(
         for (resto in restos) {
             restoDao.insert(resto.asDbObject())
         }
+        //if resto in db but not in api remove from db
+        restoDao.deleteNotInList(restos.map { it.name })
+
+
     }
 
     override suspend fun refreshRestoMenu(name: String) {

@@ -6,13 +6,13 @@ import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.first
 
-class TestRestoApiService : RestoApiService {
+class TestRestoApiService(replay: Int = 0) : RestoApiService {
 
     /**
      * The backing hot flow for the list of restaurants for testing.
      */
     private val restoListFlow: MutableSharedFlow<List<String>> =
-        MutableSharedFlow(replay = 0, onBufferOverflow = BufferOverflow.DROP_OLDEST, extraBufferCapacity = 1)
+        MutableSharedFlow(replay = replay, onBufferOverflow = BufferOverflow.DROP_OLDEST, extraBufferCapacity = 1)
 
     /**
      * The backing hot flow for the menu of a specific restaurant for testing.

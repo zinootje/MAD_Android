@@ -56,4 +56,7 @@ interface RestoDao {
      */
     @Query("UPDATE resto_list_table SET favorite = :favorite WHERE name = :name")
     suspend fun setFavoriteResto(name: String, favorite: Boolean)
+
+    @Query("DELETE FROM resto_list_table WHERE name NOT IN (:restoList)")
+    suspend fun deleteNotInList(restoList: List<String>)
 }

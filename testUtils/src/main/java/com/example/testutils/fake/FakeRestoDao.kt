@@ -43,4 +43,8 @@ class FakeRestoDao : RestoDao {
     override suspend fun setFavoriteResto(name: String, favorite: Boolean) {
         //no-op
     }
+
+    override suspend fun deleteNotInList(restoList: List<String>) {
+        //no-op
+    }
 }

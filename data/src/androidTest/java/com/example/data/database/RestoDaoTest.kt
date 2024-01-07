@@ -110,6 +110,17 @@ class RestoDaoTest {
         }
     }
 
+    @Test
+    @Throws(Exception::class)
+    fun dao_deleteNotInList() {
+        runBlocking {
+            addTwoRestos()
+            menuDao.deleteNotInList(listOf(resto1.name))
+            val menu = menuDao.getRestoList().first()
+            assert(menu == listOf(resto1))
+        }
+    }
+
 
 
 }

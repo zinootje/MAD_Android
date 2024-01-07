@@ -3,9 +3,11 @@ package com.example.data
 import app.cash.turbine.test
 import com.example.core.StaleAbleData
 import com.example.data.database.MenuDataEntity
+import com.example.data.database.asDbObject
 import com.example.data.database.toDbMenu
 import com.example.network.asDomainObject
 import com.example.testutils.fake.*
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
@@ -110,6 +112,32 @@ class RestoRepositoryTest {
             val repo = RestoOfflineRepositoryImpl(FakeRestoApiService(), FakeRestoDao(), FakeMenuDao())
             val menu = repo.getRestoMenuSt(FakeDataSource.restoMenu.location).first()
             assertEquals(StaleAbleData(FakeDataSource.restoMenu.asDomainObject(), false), menu)
+        }
+    }
+
+    @Test
+    fun restoOfflineRepositoryImpl_refreshRestoList_shouldRemoveRestoNotInApi() {
+        runTest {
+            val testRestoDao = TestRestoDao()
+            val testMenuDao = TestMenuDao()
+            val testRestoApiService = TestRestoApiService(replay = 1)
+            val repo = RestoOfflineRepositoryImpl(testRestoApiService, testRestoDao, testMenuDao)
+            repo.getRestoList().test {
+                //set db to contain all restos
+                testRestoDao.setRestoList(FakeDataSource.restoObjectList.map { it.asDbObject() })
+                val listBeforeRemoval = awaitItem()
+                //set api to return only one resto
+                testRestoApiService.setRestoList(listOf(FakeDataSource.restoObjectList.last().name))
+                repo.refreshRestoList()
+                //to avoid getting intermediate values
+                delay(10)
+                val listAfterRemoval = expectMostRecentItem()
+
+                //check if the list is the correct before removal
+                assertEquals(FakeDataSource.restoObjectList, listBeforeRemoval)
+                //check if all other restos than the one in the api are removed
+                assertEquals(listOf(FakeDataSource.restoObjectList.last()), listAfterRemoval)
+            }
         }
     }
 

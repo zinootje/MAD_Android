@@ -39,7 +39,7 @@ class TestRestoDao : RestoDao {
 
     override fun getResto(name: String): Flow<Resto> {
         return restoListFlow.map {
-            it.first { it.name == name }
+            it.first { resto -> resto.name == name }
         }
     }
 
@@ -48,7 +48,24 @@ class TestRestoDao : RestoDao {
     }
 
     override suspend fun setFavoriteResto(name: String, favorite: Boolean) {
-        // no-op
+        val list: List<Resto> = restoListFlow.replayCache.firstOrNull()?.map {
+            if (it.name == name) {
+                it.copy(favorite = favorite)
+            } else {
+                it
+            }
+        } ?: emptyList()
+        if (list.isNotEmpty()) {
+            restoListFlow.tryEmit(list)
+        }
+    }
+
+    override suspend fun deleteNotInList(restoList: List<String>) {
+        val list: List<Resto> = restoListFlow.replayCache.firstOrNull()?.filter { restoList.contains(it.name) }
+            ?: emptyList()
+        if (list.isNotEmpty()) {
+            restoListFlow.tryEmit(list)
+        }
     }
 
     /**
