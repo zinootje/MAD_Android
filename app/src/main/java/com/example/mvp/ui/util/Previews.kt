@@ -14,7 +14,7 @@ import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 @Preview(name = "Phone", device = PHONE)
 @Preview(
     name = "Phone - Landscape",
-    device = "spec:width = 411dp, height = 891dp, orientation = landscape, dpi = 420"
+    device = "spec:width= 411dp, height= 891dp, orientation= landscape, dpi= 420"
 )
 @Preview(name = "Unfolded Foldable", device = FOLDABLE)
 @Preview(name = "Tablet", device = TABLET)

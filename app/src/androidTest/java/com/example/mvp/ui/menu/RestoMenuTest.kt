@@ -22,7 +22,7 @@ class RestoMenuTest {
     @Test
     fun restoMenu_Displays_showsLoadingState() {
         composeTestRule.setContent {
-            Companion.CreateRestoMenu(
+            CreateRestoMenu(
                 apiState = RestoMenuApiState.Loading
 
             )
@@ -35,7 +35,7 @@ class RestoMenuTest {
     fun restoMenu_Displays_showsErrorState() {
         val error = "errorText"
         composeTestRule.setContent {
-            Companion.CreateRestoMenu(
+            CreateRestoMenu(
                 apiState = RestoMenuApiState.Error(error)
             )
         }
@@ -81,7 +81,7 @@ class RestoMenuTest {
             )
         )
         composeTestRule.setContent {
-            Companion.CreateRestoMenu(
+            CreateRestoMenu(
                 apiState = RestoMenuApiState.Success(menuData)
             )
         }
@@ -112,7 +112,7 @@ class RestoMenuTest {
     fun restoMenu_switch_showsCorrectTab() {
 
         composeTestRule.setContent {
-            Companion.CreateRestoMenu(
+            CreateRestoMenu(
                 apiState = RestoMenuApiState.Success(
                     MenuData(
                         location = "location",

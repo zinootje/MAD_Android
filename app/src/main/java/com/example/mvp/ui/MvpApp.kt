@@ -69,7 +69,7 @@ enum class MvpScreens(@StringRes val title: Int, val arguments: String? = null) 
  * @param windowSize The [WindowWidthSizeClass] representing the size of the window.
  */
 @Composable
-fun MVPApp(navController: NavHostController = rememberNavController(),windowSize: WindowWidthSizeClass){
+fun MVPApp(navController: NavHostController = rememberNavController(), windowSize: WindowWidthSizeClass) {
 
 
     val backStackEntry = navController.currentBackStackEntryAsState()
@@ -78,7 +78,47 @@ fun MVPApp(navController: NavHostController = rememberNavController(),windowSize
 
     fun navigateToMenu(restoName: String) {
         //TODO fix null safety
-        navController.navigate(MvpScreens.RestoMenu.toRoute().replace("{${MvpScreens.RestoMenu.arguments!!}}", restoName))
+        navController.navigate(
+            MvpScreens.RestoMenu.toRoute().replace("{${MvpScreens.RestoMenu.arguments!!}}", restoName)
+        )
+    }
+
+    val tabRowType = when (windowSize) {
+        WindowWidthSizeClass.Compact -> {
+            TabRowType.Scrollable
+        }
+
+        WindowWidthSizeClass.Medium -> {
+            TabRowType.Scrollable
+        }
+
+        WindowWidthSizeClass.Expanded -> {
+            TabRowType.Expanded
+        }
+
+        else -> {
+            TabRowType.Scrollable
+        }
+
+
+    }
+
+    val gridSize = when (windowSize) {
+        WindowWidthSizeClass.Compact -> {
+            GridSize.Fixed
+        }
+
+        WindowWidthSizeClass.Medium -> {
+            GridSize.Fixed
+        }
+
+        WindowWidthSizeClass.Expanded -> {
+            GridSize.Fixed
+        }
+
+        else -> {
+            GridSize.Fixed
+        }
     }
 
     MVPTheme {
@@ -87,71 +127,43 @@ fun MVPApp(navController: NavHostController = rememberNavController(),windowSize
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colorScheme.background
         ) {
-           NavHost(navController = navController, startDestination = MvpScreens.Start.name) {
-               composable(MvpScreens.Start.toRoute()) {
-                    RestoOverviewScreen(navigateToMenu = ::navigateToMenu, restoOverviewViewModel = viewModel(factory = RestoOverviewViewModel.Factory), gridSize = when(windowSize){
-                        WindowWidthSizeClass.Compact -> {
-                            GridSize.Fixed
-                        }
-                        WindowWidthSizeClass.Medium -> {
-                            GridSize.Fixed
-                        }
-                        WindowWidthSizeClass.Expanded -> {
-                            GridSize.Fixed
-                        }
+            NavHost(navController = navController, startDestination = MvpScreens.Start.name) {
+                composable(MvpScreens.Start.toRoute()) {
+                    RestoOverviewScreen(
+                        navigateToMenu = ::navigateToMenu,
+                        restoOverviewViewModel = viewModel(factory = RestoOverviewViewModel.Factory),
+                        gridSize = gridSize
+                    )
+                }
 
-                        else -> {
-                            GridSize.Fixed
-                        }
-                    })
-               }
-               composable(MvpScreens.RestoMenu.toRoute(),
-                   enterTransition = {
-                       //slide in from the right
-                       slideInHorizontally(
-                           //slide in from the right
-                           initialOffsetX = { it / 2 }
-                       )
-                   },
-                   exitTransition = {
-                       //slide out to the left
-                       slideOutHorizontally(
+                composable(MvpScreens.RestoMenu.toRoute(),
+                    enterTransition = {
+                        //slide in from the right
+                        slideInHorizontally(
+                            initialOffsetX = { it / 2 }
+                        )
+                    },
+                    exitTransition = {
+                        //slide out to the right
+                        slideOutHorizontally(
+                            targetOffsetX = { it },
+                        )
+                    }
+                ) {
+                    val restoId = it.arguments?.getString(MvpScreens.RestoMenu.arguments)
 
-                           //slide out to the left
-                           targetOffsetX = { it },
-                       )
-                   }
-               ) {
-                   val restoId = it.arguments?.getString(MvpScreens.RestoMenu.arguments)
-                   val tabRowType = when (windowSize) {
-                       WindowWidthSizeClass.Compact -> {
-                           TabRowType.Scrollable
-                       }
-
-                       WindowWidthSizeClass.Medium -> {
-                           TabRowType.Scrollable
-                       }
-
-                       WindowWidthSizeClass.Expanded -> {
-                           TabRowType.Expanded
-                       }
-
-                       else -> {
-                           TabRowType.Scrollable
-                       }
-                   }
-                   if (restoId == null) {
-                       Log.e("MVPApp", "RestoMenu route called without restoId")
-                       navController.popBackStack()
-                       return@composable
-                   }
-                   RestoMenuScreen(
-                       viewModel = viewModel<RestoMenuViewmodel>(factory = RestoMenuViewmodel.Factory(restoId)),
-                       onBack = { navController.popBackStack() },
-                       tabRowType = tabRowType
-                   )
-               }
-           }
+                    if (restoId == null) {
+                        Log.e("MVPApp", "RestoMenu route called without restoId")
+                        navController.popBackStack()
+                        return@composable
+                    }
+                    RestoMenuScreen(
+                        viewModel = viewModel<RestoMenuViewmodel>(factory = RestoMenuViewmodel.Factory(restoId)),
+                        onBack = { navController.popBackStack() },
+                        tabRowType = tabRowType
+                    )
+                }
+            }
         }
     }
 }

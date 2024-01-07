@@ -93,7 +93,6 @@ class ViewingMenuTest {
 
     }
 
-    companion object {
-    }
+    companion object
 
 }

@@ -108,7 +108,6 @@ class RestoMenuViewmodelTest {
                     restoMenuApiState = RestoMenuApiState.Success(FakeDataSource.restoMenu.asDomainObject()),
                     staleData = true,
                     showRefreshingIndicator = true,
-                    //TODO error enum
                     errorSnackbar = ErrorMessage.NoNetwork
                 ),
                 restoMenuViewmodel.uiState.value,
