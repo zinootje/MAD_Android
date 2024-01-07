@@ -11,6 +11,7 @@ import com.example.core.model.Resto
 import com.example.mvp.R
 import com.example.mvp.ui.util.GridSize
 import com.example.mvp.utils.onNodeWithContentDescriptionStringId
+import com.example.mvp.utils.onNodeWithStringId
 import org.junit.Rule
 import org.junit.Test
 
@@ -44,7 +45,7 @@ class ShowRestoOverviewTest {
             )
         }
         //at least one node with text error
-        composeTestRule.onNodeWithContentDescriptionStringId(ErrorMessage.NoNetwork.message).assertIsDisplayed()
+        composeTestRule.onNodeWithStringId(ErrorMessage.NoNetwork.message).assertIsDisplayed()
     }
 
     @Test

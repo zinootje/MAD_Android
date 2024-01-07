@@ -1,0 +1,3242 @@
+[
+  {
+    "name": "Adaptive",
+    "description": "com.example.mvp.ui.util.GridSize.Adaptive",
+    "location": "app/com.example.mvp.ui.util/-grid-size/-adaptive/index.html",
+    "searchKeys": [
+      "Adaptive",
+      "Adaptive",
+      "com.example.mvp.ui.util.GridSize.Adaptive"
+    ]
+  },
+  {
+    "name": "Expanded",
+    "description": "com.example.mvp.ui.util.TabRowType.Expanded",
+    "location": "app/com.example.mvp.ui.util/-tab-row-type/-expanded/index.html",
+    "searchKeys": [
+      "Expanded",
+      "Expanded",
+      "com.example.mvp.ui.util.TabRowType.Expanded"
+    ]
+  },
+  {
+    "name": "Fixed",
+    "description": "com.example.mvp.ui.util.GridSize.Fixed",
+    "location": "app/com.example.mvp.ui.util/-grid-size/-fixed/index.html",
+    "searchKeys": [
+      "Fixed",
+      "Fixed",
+      "com.example.mvp.ui.util.GridSize.Fixed"
+    ]
+  },
+  {
+    "name": "RestoMenu",
+    "description": "com.example.mvp.ui.navigation.MvpScreens.RestoMenu",
+    "location": "app/com.example.mvp.ui.navigation/-mvp-screens/-resto-menu/index.html",
+    "searchKeys": [
+      "RestoMenu",
+      "RestoMenu",
+      "com.example.mvp.ui.navigation.MvpScreens.RestoMenu"
+    ]
+  },
+  {
+    "name": "Scrollable",
+    "description": "com.example.mvp.ui.util.TabRowType.Scrollable",
+    "location": "app/com.example.mvp.ui.util/-tab-row-type/-scrollable/index.html",
+    "searchKeys": [
+      "Scrollable",
+      "Scrollable",
+      "com.example.mvp.ui.util.TabRowType.Scrollable"
+    ]
+  },
+  {
+    "name": "Start",
+    "description": "com.example.mvp.ui.navigation.MvpScreens.Start",
+    "location": "app/com.example.mvp.ui.navigation/-mvp-screens/-start/index.html",
+    "searchKeys": [
+      "Start",
+      "Start",
+      "com.example.mvp.ui.navigation.MvpScreens.Start"
+    ]
+  },
+  {
+    "name": "annotation class PreviewScreenSizes",
+    "description": "com.example.mvp.ui.util.PreviewScreenSizes",
+    "location": "app/com.example.mvp.ui.util/-preview-screen-sizes/index.html",
+    "searchKeys": [
+      "PreviewScreenSizes",
+      "annotation class PreviewScreenSizes",
+      "com.example.mvp.ui.util.PreviewScreenSizes"
+    ]
+  },
+  {
+    "name": "class BooleanProvider : PreviewParameterProvider<Boolean> ",
+    "description": "com.example.mvp.ui.util.BooleanProvider",
+    "location": "app/com.example.mvp.ui.util/-boolean-provider/index.html",
+    "searchKeys": [
+      "BooleanProvider",
+      "class BooleanProvider : PreviewParameterProvider<Boolean> ",
+      "com.example.mvp.ui.util.BooleanProvider"
+    ]
+  },
+  {
+    "name": "class MainActivity : ComponentActivity",
+    "description": "com.example.mvp.MainActivity",
+    "location": "app/com.example.mvp/-main-activity/index.html",
+    "searchKeys": [
+      "MainActivity",
+      "class MainActivity : ComponentActivity",
+      "com.example.mvp.MainActivity"
+    ]
+  },
+  {
+    "name": "class MvpApplication : Application",
+    "description": "com.example.mvp.MvpApplication",
+    "location": "app/com.example.mvp/-mvp-application/index.html",
+    "searchKeys": [
+      "MvpApplication",
+      "class MvpApplication : Application",
+      "com.example.mvp.MvpApplication"
+    ]
+  },
+  {
+    "name": "class RestoMenuViewmodel(restoRepository: RestoRepository, val restoName: String) : ViewModel",
+    "description": "com.example.mvp.ui.menu.RestoMenuViewmodel",
+    "location": "app/com.example.mvp.ui.menu/-resto-menu-viewmodel/index.html",
+    "searchKeys": [
+      "RestoMenuViewmodel",
+      "class RestoMenuViewmodel(restoRepository: RestoRepository, val restoName: String) : ViewModel",
+      "com.example.mvp.ui.menu.RestoMenuViewmodel"
+    ]
+  },
+  {
+    "name": "class RestoOverviewViewModel(restoRepository: RestoRepository) : ViewModel",
+    "description": "com.example.mvp.ui.overview.RestoOverviewViewModel",
+    "location": "app/com.example.mvp.ui.overview/-resto-overview-view-model/index.html",
+    "searchKeys": [
+      "RestoOverviewViewModel",
+      "class RestoOverviewViewModel(restoRepository: RestoRepository) : ViewModel",
+      "com.example.mvp.ui.overview.RestoOverviewViewModel"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.example.mvp.MainActivity.MainActivity",
+    "location": "app/com.example.mvp/-main-activity/-main-activity.html",
+    "searchKeys": [
+      "MainActivity",
+      "constructor()",
+      "com.example.mvp.MainActivity.MainActivity"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.example.mvp.MvpApplication.MvpApplication",
+    "location": "app/com.example.mvp/-mvp-application/-mvp-application.html",
+    "searchKeys": [
+      "MvpApplication",
+      "constructor()",
+      "com.example.mvp.MvpApplication.MvpApplication"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.example.mvp.ui.util.BooleanProvider.BooleanProvider",
+    "location": "app/com.example.mvp.ui.util/-boolean-provider/-boolean-provider.html",
+    "searchKeys": [
+      "BooleanProvider",
+      "constructor()",
+      "com.example.mvp.ui.util.BooleanProvider.BooleanProvider"
+    ]
+  },
+  {
+    "name": "constructor(currentTab: Int = 0, restoMenuApiState: RestoMenuApiState = Loading, staleData: Boolean = false, showRefreshingIndicator: Boolean = false, toastDataShown: Boolean = false, errorSnackbar: ErrorMessage? = null)",
+    "description": "com.example.mvp.ui.menu.RestoMenuUiState.RestoMenuUiState",
+    "location": "app/com.example.mvp.ui.menu/-resto-menu-ui-state/-resto-menu-ui-state.html",
+    "searchKeys": [
+      "RestoMenuUiState",
+      "constructor(currentTab: Int = 0, restoMenuApiState: RestoMenuApiState = Loading, staleData: Boolean = false, showRefreshingIndicator: Boolean = false, toastDataShown: Boolean = false, errorSnackbar: ErrorMessage? = null)",
+      "com.example.mvp.ui.menu.RestoMenuUiState.RestoMenuUiState"
+    ]
+  },
+  {
+    "name": "constructor(data: List<Resto>)",
+    "description": "com.example.mvp.ui.overview.RestoOverviewApiState.Success.Success",
+    "location": "app/com.example.mvp.ui.overview/-resto-overview-api-state/-success/-success.html",
+    "searchKeys": [
+      "Success",
+      "constructor(data: List<Resto>)",
+      "com.example.mvp.ui.overview.RestoOverviewApiState.Success.Success"
+    ]
+  },
+  {
+    "name": "constructor(data: MenuData)",
+    "description": "com.example.mvp.ui.menu.RestoMenuApiState.Success.Success",
+    "location": "app/com.example.mvp.ui.menu/-resto-menu-api-state/-success/-success.html",
+    "searchKeys": [
+      "Success",
+      "constructor(data: MenuData)",
+      "com.example.mvp.ui.menu.RestoMenuApiState.Success.Success"
+    ]
+  },
+  {
+    "name": "constructor(message: ErrorMessage)",
+    "description": "com.example.mvp.ui.overview.RestoOverviewApiState.Error.Error",
+    "location": "app/com.example.mvp.ui.overview/-resto-overview-api-state/-error/-error.html",
+    "searchKeys": [
+      "Error",
+      "constructor(message: ErrorMessage)",
+      "com.example.mvp.ui.overview.RestoOverviewApiState.Error.Error"
+    ]
+  },
+  {
+    "name": "constructor(message: String)",
+    "description": "com.example.mvp.ui.menu.RestoMenuApiState.Error.Error",
+    "location": "app/com.example.mvp.ui.menu/-resto-menu-api-state/-error/-error.html",
+    "searchKeys": [
+      "Error",
+      "constructor(message: String)",
+      "com.example.mvp.ui.menu.RestoMenuApiState.Error.Error"
+    ]
+  },
+  {
+    "name": "constructor(restoOverviewApiState: RestoOverviewApiState, gridMode: Boolean = false)",
+    "description": "com.example.mvp.ui.overview.RestoOverviewUiState.RestoOverviewUiState",
+    "location": "app/com.example.mvp.ui.overview/-resto-overview-ui-state/-resto-overview-ui-state.html",
+    "searchKeys": [
+      "RestoOverviewUiState",
+      "constructor(restoOverviewApiState: RestoOverviewApiState, gridMode: Boolean = false)",
+      "com.example.mvp.ui.overview.RestoOverviewUiState.RestoOverviewUiState"
+    ]
+  },
+  {
+    "name": "constructor(restoRepository: RestoRepository)",
+    "description": "com.example.mvp.ui.overview.RestoOverviewViewModel.RestoOverviewViewModel",
+    "location": "app/com.example.mvp.ui.overview/-resto-overview-view-model/-resto-overview-view-model.html",
+    "searchKeys": [
+      "RestoOverviewViewModel",
+      "constructor(restoRepository: RestoRepository)",
+      "com.example.mvp.ui.overview.RestoOverviewViewModel.RestoOverviewViewModel"
+    ]
+  },
+  {
+    "name": "constructor(restoRepository: RestoRepository, restoName: String)",
+    "description": "com.example.mvp.ui.menu.RestoMenuViewmodel.RestoMenuViewmodel",
+    "location": "app/com.example.mvp.ui.menu/-resto-menu-viewmodel/-resto-menu-viewmodel.html",
+    "searchKeys": [
+      "RestoMenuViewmodel",
+      "constructor(restoRepository: RestoRepository, restoName: String)",
+      "com.example.mvp.ui.menu.RestoMenuViewmodel.RestoMenuViewmodel"
+    ]
+  },
+  {
+    "name": "data class Error(val message: ErrorMessage) : RestoOverviewApiState",
+    "description": "com.example.mvp.ui.overview.RestoOverviewApiState.Error",
+    "location": "app/com.example.mvp.ui.overview/-resto-overview-api-state/-error/index.html",
+    "searchKeys": [
+      "Error",
+      "data class Error(val message: ErrorMessage) : RestoOverviewApiState",
+      "com.example.mvp.ui.overview.RestoOverviewApiState.Error"
+    ]
+  },
+  {
+    "name": "data class Error(val message: String) : RestoMenuApiState",
+    "description": "com.example.mvp.ui.menu.RestoMenuApiState.Error",
+    "location": "app/com.example.mvp.ui.menu/-resto-menu-api-state/-error/index.html",
+    "searchKeys": [
+      "Error",
+      "data class Error(val message: String) : RestoMenuApiState",
+      "com.example.mvp.ui.menu.RestoMenuApiState.Error"
+    ]
+  },
+  {
+    "name": "data class RestoMenuUiState(val currentTab: Int = 0, val restoMenuApiState: RestoMenuApiState = Loading, val staleData: Boolean = false, val showRefreshingIndicator: Boolean = false, val toastDataShown: Boolean = false, val errorSnackbar: ErrorMessage? = null)",
+    "description": "com.example.mvp.ui.menu.RestoMenuUiState",
+    "location": "app/com.example.mvp.ui.menu/-resto-menu-ui-state/index.html",
+    "searchKeys": [
+      "RestoMenuUiState",
+      "data class RestoMenuUiState(val currentTab: Int = 0, val restoMenuApiState: RestoMenuApiState = Loading, val staleData: Boolean = false, val showRefreshingIndicator: Boolean = false, val toastDataShown: Boolean = false, val errorSnackbar: ErrorMessage? = null)",
+      "com.example.mvp.ui.menu.RestoMenuUiState"
+    ]
+  },
+  {
+    "name": "data class RestoOverviewUiState(val restoOverviewApiState: RestoOverviewApiState, val gridMode: Boolean = false)",
+    "description": "com.example.mvp.ui.overview.RestoOverviewUiState",
+    "location": "app/com.example.mvp.ui.overview/-resto-overview-ui-state/index.html",
+    "searchKeys": [
+      "RestoOverviewUiState",
+      "data class RestoOverviewUiState(val restoOverviewApiState: RestoOverviewApiState, val gridMode: Boolean = false)",
+      "com.example.mvp.ui.overview.RestoOverviewUiState"
+    ]
+  },
+  {
+    "name": "data class Success(val data: List<Resto>) : RestoOverviewApiState",
+    "description": "com.example.mvp.ui.overview.RestoOverviewApiState.Success",
+    "location": "app/com.example.mvp.ui.overview/-resto-overview-api-state/-success/index.html",
+    "searchKeys": [
+      "Success",
+      "data class Success(val data: List<Resto>) : RestoOverviewApiState",
+      "com.example.mvp.ui.overview.RestoOverviewApiState.Success"
+    ]
+  },
+  {
+    "name": "data class Success(val data: MenuData) : RestoMenuApiState",
+    "description": "com.example.mvp.ui.menu.RestoMenuApiState.Success",
+    "location": "app/com.example.mvp.ui.menu/-resto-menu-api-state/-success/index.html",
+    "searchKeys": [
+      "Success",
+      "data class Success(val data: MenuData) : RestoMenuApiState",
+      "com.example.mvp.ui.menu.RestoMenuApiState.Success"
+    ]
+  },
+  {
+    "name": "data object Loading : RestoMenuApiState",
+    "description": "com.example.mvp.ui.menu.RestoMenuApiState.Loading",
+    "location": "app/com.example.mvp.ui.menu/-resto-menu-api-state/-loading/index.html",
+    "searchKeys": [
+      "Loading",
+      "data object Loading : RestoMenuApiState",
+      "com.example.mvp.ui.menu.RestoMenuApiState.Loading"
+    ]
+  },
+  {
+    "name": "data object Loading : RestoOverviewApiState",
+    "description": "com.example.mvp.ui.overview.RestoOverviewApiState.Loading",
+    "location": "app/com.example.mvp.ui.overview/-resto-overview-api-state/-loading/index.html",
+    "searchKeys": [
+      "Loading",
+      "data object Loading : RestoOverviewApiState",
+      "com.example.mvp.ui.overview.RestoOverviewApiState.Loading"
+    ]
+  },
+  {
+    "name": "enum GridSize : Enum<GridSize> ",
+    "description": "com.example.mvp.ui.util.GridSize",
+    "location": "app/com.example.mvp.ui.util/-grid-size/index.html",
+    "searchKeys": [
+      "GridSize",
+      "enum GridSize : Enum<GridSize> ",
+      "com.example.mvp.ui.util.GridSize"
+    ]
+  },
+  {
+    "name": "enum MvpScreens : Enum<MvpScreens> ",
+    "description": "com.example.mvp.ui.navigation.MvpScreens",
+    "location": "app/com.example.mvp.ui.navigation/-mvp-screens/index.html",
+    "searchKeys": [
+      "MvpScreens",
+      "enum MvpScreens : Enum<MvpScreens> ",
+      "com.example.mvp.ui.navigation.MvpScreens"
+    ]
+  },
+  {
+    "name": "enum TabRowType : Enum<TabRowType> ",
+    "description": "com.example.mvp.ui.util.TabRowType",
+    "location": "app/com.example.mvp.ui.util/-tab-row-type/index.html",
+    "searchKeys": [
+      "TabRowType",
+      "enum TabRowType : Enum<TabRowType> ",
+      "com.example.mvp.ui.util.TabRowType"
+    ]
+  },
+  {
+    "name": "fun ErrorComponent(errorMessage: ErrorMessage, onRetry: () -> Unit? = null)",
+    "description": "com.example.mvp.ui.common.ErrorComponent",
+    "location": "app/com.example.mvp.ui.common/-error-component.html",
+    "searchKeys": [
+      "ErrorComponent",
+      "fun ErrorComponent(errorMessage: ErrorMessage, onRetry: () -> Unit? = null)",
+      "com.example.mvp.ui.common.ErrorComponent"
+    ]
+  },
+  {
+    "name": "fun ErrorComponent(message: String? = null, error: Throwable? = null, onRetry: () -> Unit? = null)",
+    "description": "com.example.mvp.ui.common.ErrorComponent",
+    "location": "app/com.example.mvp.ui.common/-error-component.html",
+    "searchKeys": [
+      "ErrorComponent",
+      "fun ErrorComponent(message: String? = null, error: Throwable? = null, onRetry: () -> Unit? = null)",
+      "com.example.mvp.ui.common.ErrorComponent"
+    ]
+  },
+  {
+    "name": "fun Factory(name: String): ViewModelProvider.Factory",
+    "description": "com.example.mvp.ui.menu.RestoMenuViewmodel.Companion.Factory",
+    "location": "app/com.example.mvp.ui.menu/-resto-menu-viewmodel/-companion/-factory.html",
+    "searchKeys": [
+      "Factory",
+      "fun Factory(name: String): ViewModelProvider.Factory",
+      "com.example.mvp.ui.menu.RestoMenuViewmodel.Companion.Factory"
+    ]
+  },
+  {
+    "name": "fun LoadingIndicator(modifier: Modifier = Modifier)",
+    "description": "com.example.mvp.ui.common.LoadingIndicator",
+    "location": "app/com.example.mvp.ui.common/-loading-indicator.html",
+    "searchKeys": [
+      "LoadingIndicator",
+      "fun LoadingIndicator(modifier: Modifier = Modifier)",
+      "com.example.mvp.ui.common.LoadingIndicator"
+    ]
+  },
+  {
+    "name": "fun MVPApp(navController: NavHostController = rememberNavController(), windowSize: WindowWidthSizeClass)",
+    "description": "com.example.mvp.ui.MVPApp",
+    "location": "app/com.example.mvp.ui/-m-v-p-app.html",
+    "searchKeys": [
+      "MVPApp",
+      "fun MVPApp(navController: NavHostController = rememberNavController(), windowSize: WindowWidthSizeClass)",
+      "com.example.mvp.ui.MVPApp"
+    ]
+  },
+  {
+    "name": "fun MVPTheme(darkTheme: Boolean = isSystemInDarkTheme(), dynamicColor: Boolean = true, content: () -> Unit)",
+    "description": "com.example.mvp.ui.theme.MVPTheme",
+    "location": "app/com.example.mvp.ui.theme/-m-v-p-theme.html",
+    "searchKeys": [
+      "MVPTheme",
+      "fun MVPTheme(darkTheme: Boolean = isSystemInDarkTheme(), dynamicColor: Boolean = true, content: () -> Unit)",
+      "com.example.mvp.ui.theme.MVPTheme"
+    ]
+  },
+  {
+    "name": "fun MenuCategory(categoryName: String, dishes: List<Dish>)",
+    "description": "com.example.mvp.ui.menu.MenuCategory",
+    "location": "app/com.example.mvp.ui.menu/-menu-category.html",
+    "searchKeys": [
+      "MenuCategory",
+      "fun MenuCategory(categoryName: String, dishes: List<Dish>)",
+      "com.example.mvp.ui.menu.MenuCategory"
+    ]
+  },
+  {
+    "name": "fun Modifier.contentDescription(contentDescription: String): Modifier",
+    "description": "com.example.mvp.ui.util.contentDescription",
+    "location": "app/com.example.mvp.ui.util/content-description.html",
+    "searchKeys": [
+      "contentDescription",
+      "fun Modifier.contentDescription(contentDescription: String): Modifier",
+      "com.example.mvp.ui.util.contentDescription"
+    ]
+  },
+  {
+    "name": "fun MvpTabRow(selectedTabIndex: Int, contentColor: Color, tabRowType: TabRowType, tabs: () -> Unit)",
+    "description": "com.example.mvp.ui.menu.MvpTabRow",
+    "location": "app/com.example.mvp.ui.menu/-mvp-tab-row.html",
+    "searchKeys": [
+      "MvpTabRow",
+      "fun MvpTabRow(selectedTabIndex: Int, contentColor: Color, tabRowType: TabRowType, tabs: () -> Unit)",
+      "com.example.mvp.ui.menu.MvpTabRow"
+    ]
+  },
+  {
+    "name": "fun NiaLoadingWheel(contentDesc: String, modifier: Modifier = Modifier)",
+    "description": "com.example.mvp.ui.common.NiaLoadingWheel",
+    "location": "app/com.example.mvp.ui.common/-nia-loading-wheel.html",
+    "searchKeys": [
+      "NiaLoadingWheel",
+      "fun NiaLoadingWheel(contentDesc: String, modifier: Modifier = Modifier)",
+      "com.example.mvp.ui.common.NiaLoadingWheel"
+    ]
+  },
+  {
+    "name": "fun NiaOverlayLoadingWheel(contentDesc: String, modifier: Modifier = Modifier)",
+    "description": "com.example.mvp.ui.common.NiaOverlayLoadingWheel",
+    "location": "app/com.example.mvp.ui.common/-nia-overlay-loading-wheel.html",
+    "searchKeys": [
+      "NiaOverlayLoadingWheel",
+      "fun NiaOverlayLoadingWheel(contentDesc: String, modifier: Modifier = Modifier)",
+      "com.example.mvp.ui.common.NiaOverlayLoadingWheel"
+    ]
+  },
+  {
+    "name": "fun RestoGridTile(modifier: Modifier = Modifier, name: String, isFavorite: Boolean, navigateToMenu: () -> Unit = {}, onFavoriteClick: () -> Unit)",
+    "description": "com.example.mvp.ui.overview.RestoGridTile",
+    "location": "app/com.example.mvp.ui.overview/-resto-grid-tile.html",
+    "searchKeys": [
+      "RestoGridTile",
+      "fun RestoGridTile(modifier: Modifier = Modifier, name: String, isFavorite: Boolean, navigateToMenu: () -> Unit = {}, onFavoriteClick: () -> Unit)",
+      "com.example.mvp.ui.overview.RestoGridTile"
+    ]
+  },
+  {
+    "name": "fun RestoMenu(modifier: Modifier = Modifier, apiState: RestoMenuApiState, tabRowType: TabRowType)",
+    "description": "com.example.mvp.ui.menu.RestoMenu",
+    "location": "app/com.example.mvp.ui.menu/-resto-menu.html",
+    "searchKeys": [
+      "RestoMenu",
+      "fun RestoMenu(modifier: Modifier = Modifier, apiState: RestoMenuApiState, tabRowType: TabRowType)",
+      "com.example.mvp.ui.menu.RestoMenu"
+    ]
+  },
+  {
+    "name": "fun RestoMenuScreen(viewModel: RestoMenuViewmodel, tabRowType: TabRowType = TabRowType.Scrollable, onBack: () -> Unit)",
+    "description": "com.example.mvp.ui.menu.RestoMenuScreen",
+    "location": "app/com.example.mvp.ui.menu/-resto-menu-screen.html",
+    "searchKeys": [
+      "RestoMenuScreen",
+      "fun RestoMenuScreen(viewModel: RestoMenuViewmodel, tabRowType: TabRowType = TabRowType.Scrollable, onBack: () -> Unit)",
+      "com.example.mvp.ui.menu.RestoMenuScreen"
+    ]
+  },
+  {
+    "name": "fun RestoOverviewScreen(navigateToMenu: (String) -> Unit = {}, restoOverviewViewModel: RestoOverviewViewModel, gridSize: GridSize = GridSize.Fixed)",
+    "description": "com.example.mvp.ui.overview.RestoOverviewScreen",
+    "location": "app/com.example.mvp.ui.overview/-resto-overview-screen.html",
+    "searchKeys": [
+      "RestoOverviewScreen",
+      "fun RestoOverviewScreen(navigateToMenu: (String) -> Unit = {}, restoOverviewViewModel: RestoOverviewViewModel, gridSize: GridSize = GridSize.Fixed)",
+      "com.example.mvp.ui.overview.RestoOverviewScreen"
+    ]
+  },
+  {
+    "name": "fun formatErrorMessage(errorMessage: ErrorMessage): String",
+    "description": "com.example.mvp.ui.util.formatErrorMessage",
+    "location": "app/com.example.mvp.ui.util/format-error-message.html",
+    "searchKeys": [
+      "formatErrorMessage",
+      "fun formatErrorMessage(errorMessage: ErrorMessage): String",
+      "com.example.mvp.ui.util.formatErrorMessage"
+    ]
+  },
+  {
+    "name": "fun getColorFromName(name: String): Color",
+    "description": "com.example.mvp.ui.util.getColorFromName",
+    "location": "app/com.example.mvp.ui.util/get-color-from-name.html",
+    "searchKeys": [
+      "getColorFromName",
+      "fun getColorFromName(name: String): Color",
+      "com.example.mvp.ui.util.getColorFromName"
+    ]
+  },
+  {
+    "name": "fun setFavorite(restoName: String, isFavorite: Boolean)",
+    "description": "com.example.mvp.ui.overview.RestoOverviewViewModel.setFavorite",
+    "location": "app/com.example.mvp.ui.overview/-resto-overview-view-model/set-favorite.html",
+    "searchKeys": [
+      "setFavorite",
+      "fun setFavorite(restoName: String, isFavorite: Boolean)",
+      "com.example.mvp.ui.overview.RestoOverviewViewModel.setFavorite"
+    ]
+  },
+  {
+    "name": "fun switchTab(tabNumber: Int)",
+    "description": "com.example.mvp.ui.menu.RestoMenuViewmodel.switchTab",
+    "location": "app/com.example.mvp.ui.menu/-resto-menu-viewmodel/switch-tab.html",
+    "searchKeys": [
+      "switchTab",
+      "fun switchTab(tabNumber: Int)",
+      "com.example.mvp.ui.menu.RestoMenuViewmodel.switchTab"
+    ]
+  },
+  {
+    "name": "fun toRoute(): String",
+    "description": "com.example.mvp.ui.navigation.MvpScreens.toRoute",
+    "location": "app/com.example.mvp.ui.navigation/-mvp-screens/to-route.html",
+    "searchKeys": [
+      "toRoute",
+      "fun toRoute(): String",
+      "com.example.mvp.ui.navigation.MvpScreens.toRoute"
+    ]
+  },
+  {
+    "name": "fun toastShown()",
+    "description": "com.example.mvp.ui.menu.RestoMenuViewmodel.toastShown",
+    "location": "app/com.example.mvp.ui.menu/-resto-menu-viewmodel/toast-shown.html",
+    "searchKeys": [
+      "toastShown",
+      "fun toastShown()",
+      "com.example.mvp.ui.menu.RestoMenuViewmodel.toastShown"
+    ]
+  },
+  {
+    "name": "fun toggleGridMode()",
+    "description": "com.example.mvp.ui.overview.RestoOverviewViewModel.toggleGridMode",
+    "location": "app/com.example.mvp.ui.overview/-resto-overview-view-model/toggle-grid-mode.html",
+    "searchKeys": [
+      "toggleGridMode",
+      "fun toggleGridMode()",
+      "com.example.mvp.ui.overview.RestoOverviewViewModel.toggleGridMode"
+    ]
+  },
+  {
+    "name": "fun valueOf(value: String): GridSize",
+    "description": "com.example.mvp.ui.util.GridSize.valueOf",
+    "location": "app/com.example.mvp.ui.util/-grid-size/value-of.html",
+    "searchKeys": [
+      "valueOf",
+      "fun valueOf(value: String): GridSize",
+      "com.example.mvp.ui.util.GridSize.valueOf"
+    ]
+  },
+  {
+    "name": "fun valueOf(value: String): MvpScreens",
+    "description": "com.example.mvp.ui.navigation.MvpScreens.valueOf",
+    "location": "app/com.example.mvp.ui.navigation/-mvp-screens/value-of.html",
+    "searchKeys": [
+      "valueOf",
+      "fun valueOf(value: String): MvpScreens",
+      "com.example.mvp.ui.navigation.MvpScreens.valueOf"
+    ]
+  },
+  {
+    "name": "fun valueOf(value: String): TabRowType",
+    "description": "com.example.mvp.ui.util.TabRowType.valueOf",
+    "location": "app/com.example.mvp.ui.util/-tab-row-type/value-of.html",
+    "searchKeys": [
+      "valueOf",
+      "fun valueOf(value: String): TabRowType",
+      "com.example.mvp.ui.util.TabRowType.valueOf"
+    ]
+  },
+  {
+    "name": "fun values(): Array<GridSize>",
+    "description": "com.example.mvp.ui.util.GridSize.values",
+    "location": "app/com.example.mvp.ui.util/-grid-size/values.html",
+    "searchKeys": [
+      "values",
+      "fun values(): Array<GridSize>",
+      "com.example.mvp.ui.util.GridSize.values"
+    ]
+  },
+  {
+    "name": "fun values(): Array<MvpScreens>",
+    "description": "com.example.mvp.ui.navigation.MvpScreens.values",
+    "location": "app/com.example.mvp.ui.navigation/-mvp-screens/values.html",
+    "searchKeys": [
+      "values",
+      "fun values(): Array<MvpScreens>",
+      "com.example.mvp.ui.navigation.MvpScreens.values"
+    ]
+  },
+  {
+    "name": "fun values(): Array<TabRowType>",
+    "description": "com.example.mvp.ui.util.TabRowType.values",
+    "location": "app/com.example.mvp.ui.util/-tab-row-type/values.html",
+    "searchKeys": [
+      "values",
+      "fun values(): Array<TabRowType>",
+      "com.example.mvp.ui.util.TabRowType.values"
+    ]
+  },
+  {
+    "name": "interface RestoMenuApiState",
+    "description": "com.example.mvp.ui.menu.RestoMenuApiState",
+    "location": "app/com.example.mvp.ui.menu/-resto-menu-api-state/index.html",
+    "searchKeys": [
+      "RestoMenuApiState",
+      "interface RestoMenuApiState",
+      "com.example.mvp.ui.menu.RestoMenuApiState"
+    ]
+  },
+  {
+    "name": "interface RestoOverviewApiState",
+    "description": "com.example.mvp.ui.overview.RestoOverviewApiState",
+    "location": "app/com.example.mvp.ui.overview/-resto-overview-api-state/index.html",
+    "searchKeys": [
+      "RestoOverviewApiState",
+      "interface RestoOverviewApiState",
+      "com.example.mvp.ui.overview.RestoOverviewApiState"
+    ]
+  },
+  {
+    "name": "lateinit var container: AppContainer",
+    "description": "com.example.mvp.MvpApplication.container",
+    "location": "app/com.example.mvp/-mvp-application/container.html",
+    "searchKeys": [
+      "container",
+      "lateinit var container: AppContainer",
+      "com.example.mvp.MvpApplication.container"
+    ]
+  },
+  {
+    "name": "object Companion",
+    "description": "com.example.mvp.ui.menu.RestoMenuViewmodel.Companion",
+    "location": "app/com.example.mvp.ui.menu/-resto-menu-viewmodel/-companion/index.html",
+    "searchKeys": [
+      "Companion",
+      "object Companion",
+      "com.example.mvp.ui.menu.RestoMenuViewmodel.Companion"
+    ]
+  },
+  {
+    "name": "object Companion",
+    "description": "com.example.mvp.ui.overview.RestoOverviewViewModel.Companion",
+    "location": "app/com.example.mvp.ui.overview/-resto-overview-view-model/-companion/index.html",
+    "searchKeys": [
+      "Companion",
+      "object Companion",
+      "com.example.mvp.ui.overview.RestoOverviewViewModel.Companion"
+    ]
+  },
+  {
+    "name": "open override fun onCreate()",
+    "description": "com.example.mvp.MvpApplication.onCreate",
+    "location": "app/com.example.mvp/-mvp-application/on-create.html",
+    "searchKeys": [
+      "onCreate",
+      "open override fun onCreate()",
+      "com.example.mvp.MvpApplication.onCreate"
+    ]
+  },
+  {
+    "name": "open override val values: Sequence<Boolean>",
+    "description": "com.example.mvp.ui.util.BooleanProvider.values",
+    "location": "app/com.example.mvp.ui.util/-boolean-provider/values.html",
+    "searchKeys": [
+      "values",
+      "open override val values: Sequence<Boolean>",
+      "com.example.mvp.ui.util.BooleanProvider.values"
+    ]
+  },
+  {
+    "name": "val Factory: ViewModelProvider.Factory",
+    "description": "com.example.mvp.ui.overview.RestoOverviewViewModel.Companion.Factory",
+    "location": "app/com.example.mvp.ui.overview/-resto-overview-view-model/-companion/-factory.html",
+    "searchKeys": [
+      "Factory",
+      "val Factory: ViewModelProvider.Factory",
+      "com.example.mvp.ui.overview.RestoOverviewViewModel.Companion.Factory"
+    ]
+  },
+  {
+    "name": "val Pink40: Color",
+    "description": "com.example.mvp.ui.theme.Pink40",
+    "location": "app/com.example.mvp.ui.theme/-pink40.html",
+    "searchKeys": [
+      "Pink40",
+      "val Pink40: Color",
+      "com.example.mvp.ui.theme.Pink40"
+    ]
+  },
+  {
+    "name": "val Pink80: Color",
+    "description": "com.example.mvp.ui.theme.Pink80",
+    "location": "app/com.example.mvp.ui.theme/-pink80.html",
+    "searchKeys": [
+      "Pink80",
+      "val Pink80: Color",
+      "com.example.mvp.ui.theme.Pink80"
+    ]
+  },
+  {
+    "name": "val Purple40: Color",
+    "description": "com.example.mvp.ui.theme.Purple40",
+    "location": "app/com.example.mvp.ui.theme/-purple40.html",
+    "searchKeys": [
+      "Purple40",
+      "val Purple40: Color",
+      "com.example.mvp.ui.theme.Purple40"
+    ]
+  },
+  {
+    "name": "val Purple80: Color",
+    "description": "com.example.mvp.ui.theme.Purple80",
+    "location": "app/com.example.mvp.ui.theme/-purple80.html",
+    "searchKeys": [
+      "Purple80",
+      "val Purple80: Color",
+      "com.example.mvp.ui.theme.Purple80"
+    ]
+  },
+  {
+    "name": "val PurpleGrey40: Color",
+    "description": "com.example.mvp.ui.theme.PurpleGrey40",
+    "location": "app/com.example.mvp.ui.theme/-purple-grey40.html",
+    "searchKeys": [
+      "PurpleGrey40",
+      "val PurpleGrey40: Color",
+      "com.example.mvp.ui.theme.PurpleGrey40"
+    ]
+  },
+  {
+    "name": "val PurpleGrey80: Color",
+    "description": "com.example.mvp.ui.theme.PurpleGrey80",
+    "location": "app/com.example.mvp.ui.theme/-purple-grey80.html",
+    "searchKeys": [
+      "PurpleGrey80",
+      "val PurpleGrey80: Color",
+      "com.example.mvp.ui.theme.PurpleGrey80"
+    ]
+  },
+  {
+    "name": "val TabKey: SemanticsPropertyKey<String>",
+    "description": "com.example.mvp.ui.util.TabKey",
+    "location": "app/com.example.mvp.ui.util/-tab-key.html",
+    "searchKeys": [
+      "TabKey",
+      "val TabKey: SemanticsPropertyKey<String>",
+      "com.example.mvp.ui.util.TabKey"
+    ]
+  },
+  {
+    "name": "val Typography: Typography",
+    "description": "com.example.mvp.ui.theme.Typography",
+    "location": "app/com.example.mvp.ui.theme/-typography.html",
+    "searchKeys": [
+      "Typography",
+      "val Typography: Typography",
+      "com.example.mvp.ui.theme.Typography"
+    ]
+  },
+  {
+    "name": "val arguments: String? = null",
+    "description": "com.example.mvp.ui.navigation.MvpScreens.arguments",
+    "location": "app/com.example.mvp.ui.navigation/-mvp-screens/arguments.html",
+    "searchKeys": [
+      "arguments",
+      "val arguments: String? = null",
+      "com.example.mvp.ui.navigation.MvpScreens.arguments"
+    ]
+  },
+  {
+    "name": "val currentTab: Int = 0",
+    "description": "com.example.mvp.ui.menu.RestoMenuUiState.currentTab",
+    "location": "app/com.example.mvp.ui.menu/-resto-menu-ui-state/current-tab.html",
+    "searchKeys": [
+      "currentTab",
+      "val currentTab: Int = 0",
+      "com.example.mvp.ui.menu.RestoMenuUiState.currentTab"
+    ]
+  },
+  {
+    "name": "val data: List<Resto>",
+    "description": "com.example.mvp.ui.overview.RestoOverviewApiState.Success.data",
+    "location": "app/com.example.mvp.ui.overview/-resto-overview-api-state/-success/data.html",
+    "searchKeys": [
+      "data",
+      "val data: List<Resto>",
+      "com.example.mvp.ui.overview.RestoOverviewApiState.Success.data"
+    ]
+  },
+  {
+    "name": "val data: MenuData",
+    "description": "com.example.mvp.ui.menu.RestoMenuApiState.Success.data",
+    "location": "app/com.example.mvp.ui.menu/-resto-menu-api-state/-success/data.html",
+    "searchKeys": [
+      "data",
+      "val data: MenuData",
+      "com.example.mvp.ui.menu.RestoMenuApiState.Success.data"
+    ]
+  },
+  {
+    "name": "val entries: EnumEntries<GridSize>",
+    "description": "com.example.mvp.ui.util.GridSize.entries",
+    "location": "app/com.example.mvp.ui.util/-grid-size/entries.html",
+    "searchKeys": [
+      "entries",
+      "val entries: EnumEntries<GridSize>",
+      "com.example.mvp.ui.util.GridSize.entries"
+    ]
+  },
+  {
+    "name": "val entries: EnumEntries<MvpScreens>",
+    "description": "com.example.mvp.ui.navigation.MvpScreens.entries",
+    "location": "app/com.example.mvp.ui.navigation/-mvp-screens/entries.html",
+    "searchKeys": [
+      "entries",
+      "val entries: EnumEntries<MvpScreens>",
+      "com.example.mvp.ui.navigation.MvpScreens.entries"
+    ]
+  },
+  {
+    "name": "val entries: EnumEntries<TabRowType>",
+    "description": "com.example.mvp.ui.util.TabRowType.entries",
+    "location": "app/com.example.mvp.ui.util/-tab-row-type/entries.html",
+    "searchKeys": [
+      "entries",
+      "val entries: EnumEntries<TabRowType>",
+      "com.example.mvp.ui.util.TabRowType.entries"
+    ]
+  },
+  {
+    "name": "val errorSnackbar: ErrorMessage? = null",
+    "description": "com.example.mvp.ui.menu.RestoMenuUiState.errorSnackbar",
+    "location": "app/com.example.mvp.ui.menu/-resto-menu-ui-state/error-snackbar.html",
+    "searchKeys": [
+      "errorSnackbar",
+      "val errorSnackbar: ErrorMessage? = null",
+      "com.example.mvp.ui.menu.RestoMenuUiState.errorSnackbar"
+    ]
+  },
+  {
+    "name": "val gridMode: Boolean = false",
+    "description": "com.example.mvp.ui.overview.RestoOverviewUiState.gridMode",
+    "location": "app/com.example.mvp.ui.overview/-resto-overview-ui-state/grid-mode.html",
+    "searchKeys": [
+      "gridMode",
+      "val gridMode: Boolean = false",
+      "com.example.mvp.ui.overview.RestoOverviewUiState.gridMode"
+    ]
+  },
+  {
+    "name": "val message: ErrorMessage",
+    "description": "com.example.mvp.ui.overview.RestoOverviewApiState.Error.message",
+    "location": "app/com.example.mvp.ui.overview/-resto-overview-api-state/-error/message.html",
+    "searchKeys": [
+      "message",
+      "val message: ErrorMessage",
+      "com.example.mvp.ui.overview.RestoOverviewApiState.Error.message"
+    ]
+  },
+  {
+    "name": "val message: String",
+    "description": "com.example.mvp.ui.menu.RestoMenuApiState.Error.message",
+    "location": "app/com.example.mvp.ui.menu/-resto-menu-api-state/-error/message.html",
+    "searchKeys": [
+      "message",
+      "val message: String",
+      "com.example.mvp.ui.menu.RestoMenuApiState.Error.message"
+    ]
+  },
+  {
+    "name": "val restoMenuApiState: RestoMenuApiState",
+    "description": "com.example.mvp.ui.menu.RestoMenuUiState.restoMenuApiState",
+    "location": "app/com.example.mvp.ui.menu/-resto-menu-ui-state/resto-menu-api-state.html",
+    "searchKeys": [
+      "restoMenuApiState",
+      "val restoMenuApiState: RestoMenuApiState",
+      "com.example.mvp.ui.menu.RestoMenuUiState.restoMenuApiState"
+    ]
+  },
+  {
+    "name": "val restoName: String",
+    "description": "com.example.mvp.ui.menu.RestoMenuViewmodel.restoName",
+    "location": "app/com.example.mvp.ui.menu/-resto-menu-viewmodel/resto-name.html",
+    "searchKeys": [
+      "restoName",
+      "val restoName: String",
+      "com.example.mvp.ui.menu.RestoMenuViewmodel.restoName"
+    ]
+  },
+  {
+    "name": "val restoOverviewApiState: RestoOverviewApiState",
+    "description": "com.example.mvp.ui.overview.RestoOverviewUiState.restoOverviewApiState",
+    "location": "app/com.example.mvp.ui.overview/-resto-overview-ui-state/resto-overview-api-state.html",
+    "searchKeys": [
+      "restoOverviewApiState",
+      "val restoOverviewApiState: RestoOverviewApiState",
+      "com.example.mvp.ui.overview.RestoOverviewUiState.restoOverviewApiState"
+    ]
+  },
+  {
+    "name": "val showRefreshingIndicator: Boolean = false",
+    "description": "com.example.mvp.ui.menu.RestoMenuUiState.showRefreshingIndicator",
+    "location": "app/com.example.mvp.ui.menu/-resto-menu-ui-state/show-refreshing-indicator.html",
+    "searchKeys": [
+      "showRefreshingIndicator",
+      "val showRefreshingIndicator: Boolean = false",
+      "com.example.mvp.ui.menu.RestoMenuUiState.showRefreshingIndicator"
+    ]
+  },
+  {
+    "name": "val staleData: Boolean = false",
+    "description": "com.example.mvp.ui.menu.RestoMenuUiState.staleData",
+    "location": "app/com.example.mvp.ui.menu/-resto-menu-ui-state/stale-data.html",
+    "searchKeys": [
+      "staleData",
+      "val staleData: Boolean = false",
+      "com.example.mvp.ui.menu.RestoMenuUiState.staleData"
+    ]
+  },
+  {
+    "name": "val title: Int",
+    "description": "com.example.mvp.ui.navigation.MvpScreens.title",
+    "location": "app/com.example.mvp.ui.navigation/-mvp-screens/title.html",
+    "searchKeys": [
+      "title",
+      "val title: Int",
+      "com.example.mvp.ui.navigation.MvpScreens.title"
+    ]
+  },
+  {
+    "name": "val toastDataShown: Boolean = false",
+    "description": "com.example.mvp.ui.menu.RestoMenuUiState.toastDataShown",
+    "location": "app/com.example.mvp.ui.menu/-resto-menu-ui-state/toast-data-shown.html",
+    "searchKeys": [
+      "toastDataShown",
+      "val toastDataShown: Boolean = false",
+      "com.example.mvp.ui.menu.RestoMenuUiState.toastDataShown"
+    ]
+  },
+  {
+    "name": "val uiState: StateFlow<RestoMenuUiState>",
+    "description": "com.example.mvp.ui.menu.RestoMenuViewmodel.uiState",
+    "location": "app/com.example.mvp.ui.menu/-resto-menu-viewmodel/ui-state.html",
+    "searchKeys": [
+      "uiState",
+      "val uiState: StateFlow<RestoMenuUiState>",
+      "com.example.mvp.ui.menu.RestoMenuViewmodel.uiState"
+    ]
+  },
+  {
+    "name": "val uiState: StateFlow<RestoOverviewUiState>",
+    "description": "com.example.mvp.ui.overview.RestoOverviewViewModel.uiState",
+    "location": "app/com.example.mvp.ui.overview/-resto-overview-view-model/ui-state.html",
+    "searchKeys": [
+      "uiState",
+      "val uiState: StateFlow<RestoOverviewUiState>",
+      "com.example.mvp.ui.overview.RestoOverviewViewModel.uiState"
+    ]
+  },
+  {
+    "name": "var SemanticsPropertyReceiver.tabKey: String",
+    "description": "com.example.mvp.ui.util.tabKey",
+    "location": "app/com.example.mvp.ui.util/tab-key.html",
+    "searchKeys": [
+      "tabKey",
+      "var SemanticsPropertyReceiver.tabKey: String",
+      "com.example.mvp.ui.util.tabKey"
+    ]
+  },
+  {
+    "name": "NONE",
+    "description": "com.example.core.model.Special.NONE",
+    "location": "core/com.example.core.model/-special/-n-o-n-e/index.html",
+    "searchKeys": [
+      "NONE",
+      "NONE",
+      "com.example.core.model.Special.NONE"
+    ]
+  },
+  {
+    "name": "UNKNOWN",
+    "description": "com.example.core.model.Special.UNKNOWN",
+    "location": "core/com.example.core.model/-special/-u-n-k-n-o-w-n/index.html",
+    "searchKeys": [
+      "UNKNOWN",
+      "UNKNOWN",
+      "com.example.core.model.Special.UNKNOWN"
+    ]
+  },
+  {
+    "name": "VEGAN",
+    "description": "com.example.core.model.Special.VEGAN",
+    "location": "core/com.example.core.model/-special/-v-e-g-a-n/index.html",
+    "searchKeys": [
+      "VEGAN",
+      "VEGAN",
+      "com.example.core.model.Special.VEGAN"
+    ]
+  },
+  {
+    "name": "VEGGIE",
+    "description": "com.example.core.model.Special.VEGGIE",
+    "location": "core/com.example.core.model/-special/-v-e-g-g-i-e/index.html",
+    "searchKeys": [
+      "VEGGIE",
+      "VEGGIE",
+      "com.example.core.model.Special.VEGGIE"
+    ]
+  },
+  {
+    "name": "constructor(dag: String, message: String, menu: Menu)",
+    "description": "com.example.core.model.Day.Day",
+    "location": "core/com.example.core.model/-day/-day.html",
+    "searchKeys": [
+      "Day",
+      "constructor(dag: String, message: String, menu: Menu)",
+      "com.example.core.model.Day.Day"
+    ]
+  },
+  {
+    "name": "constructor(data: T)",
+    "description": "com.example.core.Result.Success.Success",
+    "location": "core/com.example.core/-result/-success/-success.html",
+    "searchKeys": [
+      "Success",
+      "constructor(data: T)",
+      "com.example.core.Result.Success.Success"
+    ]
+  },
+  {
+    "name": "constructor(data: T, isStale: Boolean)",
+    "description": "com.example.core.StaleAbleData.StaleAbleData",
+    "location": "core/com.example.core/-stale-able-data/-stale-able-data.html",
+    "searchKeys": [
+      "StaleAbleData",
+      "constructor(data: T, isStale: Boolean)",
+      "com.example.core.StaleAbleData.StaleAbleData"
+    ]
+  },
+  {
+    "name": "constructor(errorCode: Int)",
+    "description": "com.example.core.model.ErrorMessage.MiscNetworkErrorWithCode.MiscNetworkErrorWithCode",
+    "location": "core/com.example.core.model/-error-message/-misc-network-error-with-code/-misc-network-error-with-code.html",
+    "searchKeys": [
+      "MiscNetworkErrorWithCode",
+      "constructor(errorCode: Int)",
+      "com.example.core.model.ErrorMessage.MiscNetworkErrorWithCode.MiscNetworkErrorWithCode"
+    ]
+  },
+  {
+    "name": "constructor(exception: Throwable? = null)",
+    "description": "com.example.core.Result.Error.Error",
+    "location": "core/com.example.core/-result/-error/-error.html",
+    "searchKeys": [
+      "Error",
+      "constructor(exception: Throwable? = null)",
+      "com.example.core.Result.Error.Error"
+    ]
+  },
+  {
+    "name": "constructor(items: Map<String, List<Dish>>)",
+    "description": "com.example.core.model.Menu.Menu",
+    "location": "core/com.example.core.model/-menu/-menu.html",
+    "searchKeys": [
+      "Menu",
+      "constructor(items: Map<String, List<Dish>>)",
+      "com.example.core.model.Menu.Menu"
+    ]
+  },
+  {
+    "name": "constructor(location: String, days: ImmutableList<Day>)",
+    "description": "com.example.core.model.MenuData.MenuData",
+    "location": "core/com.example.core.model/-menu-data/-menu-data.html",
+    "searchKeys": [
+      "MenuData",
+      "constructor(location: String, days: ImmutableList<Day>)",
+      "com.example.core.model.MenuData.MenuData"
+    ]
+  },
+  {
+    "name": "constructor(name: String, isFavorite: Boolean = false)",
+    "description": "com.example.core.model.Resto.Resto",
+    "location": "core/com.example.core.model/-resto/-resto.html",
+    "searchKeys": [
+      "Resto",
+      "constructor(name: String, isFavorite: Boolean = false)",
+      "com.example.core.model.Resto.Resto"
+    ]
+  },
+  {
+    "name": "constructor(name: String, special: Special)",
+    "description": "com.example.core.model.Dish.Dish",
+    "location": "core/com.example.core.model/-dish/-dish.html",
+    "searchKeys": [
+      "Dish",
+      "constructor(name: String, special: Special)",
+      "com.example.core.model.Dish.Dish"
+    ]
+  },
+  {
+    "name": "data class Day(val dag: String, val message: String, val menu: Menu)",
+    "description": "com.example.core.model.Day",
+    "location": "core/com.example.core.model/-day/index.html",
+    "searchKeys": [
+      "Day",
+      "data class Day(val dag: String, val message: String, val menu: Menu)",
+      "com.example.core.model.Day"
+    ]
+  },
+  {
+    "name": "data class Dish(val name: String, val special: Special)",
+    "description": "com.example.core.model.Dish",
+    "location": "core/com.example.core.model/-dish/index.html",
+    "searchKeys": [
+      "Dish",
+      "data class Dish(val name: String, val special: Special)",
+      "com.example.core.model.Dish"
+    ]
+  },
+  {
+    "name": "data class Error(val exception: Throwable? = null) : Result<Nothing> ",
+    "description": "com.example.core.Result.Error",
+    "location": "core/com.example.core/-result/-error/index.html",
+    "searchKeys": [
+      "Error",
+      "data class Error(val exception: Throwable? = null) : Result<Nothing> ",
+      "com.example.core.Result.Error"
+    ]
+  },
+  {
+    "name": "data class Menu(val items: Map<String, List<Dish>>)",
+    "description": "com.example.core.model.Menu",
+    "location": "core/com.example.core.model/-menu/index.html",
+    "searchKeys": [
+      "Menu",
+      "data class Menu(val items: Map<String, List<Dish>>)",
+      "com.example.core.model.Menu"
+    ]
+  },
+  {
+    "name": "data class MenuData(val location: String, val days: ImmutableList<Day>)",
+    "description": "com.example.core.model.MenuData",
+    "location": "core/com.example.core.model/-menu-data/index.html",
+    "searchKeys": [
+      "MenuData",
+      "data class MenuData(val location: String, val days: ImmutableList<Day>)",
+      "com.example.core.model.MenuData"
+    ]
+  },
+  {
+    "name": "data class MiscNetworkErrorWithCode(val errorCode: Int) : ErrorMessage",
+    "description": "com.example.core.model.ErrorMessage.MiscNetworkErrorWithCode",
+    "location": "core/com.example.core.model/-error-message/-misc-network-error-with-code/index.html",
+    "searchKeys": [
+      "MiscNetworkErrorWithCode",
+      "data class MiscNetworkErrorWithCode(val errorCode: Int) : ErrorMessage",
+      "com.example.core.model.ErrorMessage.MiscNetworkErrorWithCode"
+    ]
+  },
+  {
+    "name": "data class Resto(val name: String, val isFavorite: Boolean = false)",
+    "description": "com.example.core.model.Resto",
+    "location": "core/com.example.core.model/-resto/index.html",
+    "searchKeys": [
+      "Resto",
+      "data class Resto(val name: String, val isFavorite: Boolean = false)",
+      "com.example.core.model.Resto"
+    ]
+  },
+  {
+    "name": "data class StaleAbleData<T>(val data: T, val isStale: Boolean)",
+    "description": "com.example.core.StaleAbleData",
+    "location": "core/com.example.core/-stale-able-data/index.html",
+    "searchKeys": [
+      "StaleAbleData",
+      "data class StaleAbleData<T>(val data: T, val isStale: Boolean)",
+      "com.example.core.StaleAbleData"
+    ]
+  },
+  {
+    "name": "data class Success<T>(val data: T) : Result<T> ",
+    "description": "com.example.core.Result.Success",
+    "location": "core/com.example.core/-result/-success/index.html",
+    "searchKeys": [
+      "Success",
+      "data class Success<T>(val data: T) : Result<T> ",
+      "com.example.core.Result.Success"
+    ]
+  },
+  {
+    "name": "data object ApplicationError : ErrorMessage",
+    "description": "com.example.core.model.ErrorMessage.ApplicationError",
+    "location": "core/com.example.core.model/-error-message/-application-error/index.html",
+    "searchKeys": [
+      "ApplicationError",
+      "data object ApplicationError : ErrorMessage",
+      "com.example.core.model.ErrorMessage.ApplicationError"
+    ]
+  },
+  {
+    "name": "data object InternalServerError : ErrorMessage",
+    "description": "com.example.core.model.ErrorMessage.InternalServerError",
+    "location": "core/com.example.core.model/-error-message/-internal-server-error/index.html",
+    "searchKeys": [
+      "InternalServerError",
+      "data object InternalServerError : ErrorMessage",
+      "com.example.core.model.ErrorMessage.InternalServerError"
+    ]
+  },
+  {
+    "name": "data object Loading : Result<Nothing> ",
+    "description": "com.example.core.Result.Loading",
+    "location": "core/com.example.core/-result/-loading/index.html",
+    "searchKeys": [
+      "Loading",
+      "data object Loading : Result<Nothing> ",
+      "com.example.core.Result.Loading"
+    ]
+  },
+  {
+    "name": "data object NoNetwork : ErrorMessage",
+    "description": "com.example.core.model.ErrorMessage.NoNetwork",
+    "location": "core/com.example.core.model/-error-message/-no-network/index.html",
+    "searchKeys": [
+      "NoNetwork",
+      "data object NoNetwork : ErrorMessage",
+      "com.example.core.model.ErrorMessage.NoNetwork"
+    ]
+  },
+  {
+    "name": "data object Unknown : ErrorMessage",
+    "description": "com.example.core.model.ErrorMessage.Unknown",
+    "location": "core/com.example.core.model/-error-message/-unknown/index.html",
+    "searchKeys": [
+      "Unknown",
+      "data object Unknown : ErrorMessage",
+      "com.example.core.model.ErrorMessage.Unknown"
+    ]
+  },
+  {
+    "name": "enum Special : Enum<Special> ",
+    "description": "com.example.core.model.Special",
+    "location": "core/com.example.core.model/-special/index.html",
+    "searchKeys": [
+      "Special",
+      "enum Special : Enum<Special> ",
+      "com.example.core.model.Special"
+    ]
+  },
+  {
+    "name": "fun <T> Flow<T>.asResult(): Flow<Result<T>>",
+    "description": "com.example.core.asResult",
+    "location": "core/com.example.core/as-result.html",
+    "searchKeys": [
+      "asResult",
+      "fun <T> Flow<T>.asResult(): Flow<Result<T>>",
+      "com.example.core.asResult"
+    ]
+  },
+  {
+    "name": "fun valueOf(value: String): Special",
+    "description": "com.example.core.model.Special.valueOf",
+    "location": "core/com.example.core.model/-special/value-of.html",
+    "searchKeys": [
+      "valueOf",
+      "fun valueOf(value: String): Special",
+      "com.example.core.model.Special.valueOf"
+    ]
+  },
+  {
+    "name": "fun values(): Array<Special>",
+    "description": "com.example.core.model.Special.values",
+    "location": "core/com.example.core.model/-special/values.html",
+    "searchKeys": [
+      "values",
+      "fun values(): Array<Special>",
+      "com.example.core.model.Special.values"
+    ]
+  },
+  {
+    "name": "interface Result<out T>",
+    "description": "com.example.core.Result",
+    "location": "core/com.example.core/-result/index.html",
+    "searchKeys": [
+      "Result",
+      "interface Result<out T>",
+      "com.example.core.Result"
+    ]
+  },
+  {
+    "name": "sealed class ErrorMessage",
+    "description": "com.example.core.model.ErrorMessage",
+    "location": "core/com.example.core.model/-error-message/index.html",
+    "searchKeys": [
+      "ErrorMessage",
+      "sealed class ErrorMessage",
+      "com.example.core.model.ErrorMessage"
+    ]
+  },
+  {
+    "name": "val dag: String",
+    "description": "com.example.core.model.Day.dag",
+    "location": "core/com.example.core.model/-day/dag.html",
+    "searchKeys": [
+      "dag",
+      "val dag: String",
+      "com.example.core.model.Day.dag"
+    ]
+  },
+  {
+    "name": "val data: T",
+    "description": "com.example.core.Result.Success.data",
+    "location": "core/com.example.core/-result/-success/data.html",
+    "searchKeys": [
+      "data",
+      "val data: T",
+      "com.example.core.Result.Success.data"
+    ]
+  },
+  {
+    "name": "val data: T",
+    "description": "com.example.core.StaleAbleData.data",
+    "location": "core/com.example.core/-stale-able-data/data.html",
+    "searchKeys": [
+      "data",
+      "val data: T",
+      "com.example.core.StaleAbleData.data"
+    ]
+  },
+  {
+    "name": "val days: ImmutableList<Day>",
+    "description": "com.example.core.model.MenuData.days",
+    "location": "core/com.example.core.model/-menu-data/days.html",
+    "searchKeys": [
+      "days",
+      "val days: ImmutableList<Day>",
+      "com.example.core.model.MenuData.days"
+    ]
+  },
+  {
+    "name": "val entries: EnumEntries<Special>",
+    "description": "com.example.core.model.Special.entries",
+    "location": "core/com.example.core.model/-special/entries.html",
+    "searchKeys": [
+      "entries",
+      "val entries: EnumEntries<Special>",
+      "com.example.core.model.Special.entries"
+    ]
+  },
+  {
+    "name": "val errorCode: Int",
+    "description": "com.example.core.model.ErrorMessage.MiscNetworkErrorWithCode.errorCode",
+    "location": "core/com.example.core.model/-error-message/-misc-network-error-with-code/error-code.html",
+    "searchKeys": [
+      "errorCode",
+      "val errorCode: Int",
+      "com.example.core.model.ErrorMessage.MiscNetworkErrorWithCode.errorCode"
+    ]
+  },
+  {
+    "name": "val exception: Throwable? = null",
+    "description": "com.example.core.Result.Error.exception",
+    "location": "core/com.example.core/-result/-error/exception.html",
+    "searchKeys": [
+      "exception",
+      "val exception: Throwable? = null",
+      "com.example.core.Result.Error.exception"
+    ]
+  },
+  {
+    "name": "val isFavorite: Boolean = false",
+    "description": "com.example.core.model.Resto.isFavorite",
+    "location": "core/com.example.core.model/-resto/is-favorite.html",
+    "searchKeys": [
+      "isFavorite",
+      "val isFavorite: Boolean = false",
+      "com.example.core.model.Resto.isFavorite"
+    ]
+  },
+  {
+    "name": "val isStale: Boolean",
+    "description": "com.example.core.StaleAbleData.isStale",
+    "location": "core/com.example.core/-stale-able-data/is-stale.html",
+    "searchKeys": [
+      "isStale",
+      "val isStale: Boolean",
+      "com.example.core.StaleAbleData.isStale"
+    ]
+  },
+  {
+    "name": "val items: Map<String, List<Dish>>",
+    "description": "com.example.core.model.Menu.items",
+    "location": "core/com.example.core.model/-menu/items.html",
+    "searchKeys": [
+      "items",
+      "val items: Map<String, List<Dish>>",
+      "com.example.core.model.Menu.items"
+    ]
+  },
+  {
+    "name": "val location: String",
+    "description": "com.example.core.model.MenuData.location",
+    "location": "core/com.example.core.model/-menu-data/location.html",
+    "searchKeys": [
+      "location",
+      "val location: String",
+      "com.example.core.model.MenuData.location"
+    ]
+  },
+  {
+    "name": "val menu: Menu",
+    "description": "com.example.core.model.Day.menu",
+    "location": "core/com.example.core.model/-day/menu.html",
+    "searchKeys": [
+      "menu",
+      "val menu: Menu",
+      "com.example.core.model.Day.menu"
+    ]
+  },
+  {
+    "name": "val message: Int",
+    "description": "com.example.core.model.ErrorMessage.message",
+    "location": "core/com.example.core.model/-error-message/message.html",
+    "searchKeys": [
+      "message",
+      "val message: Int",
+      "com.example.core.model.ErrorMessage.message"
+    ]
+  },
+  {
+    "name": "val message: String",
+    "description": "com.example.core.model.Day.message",
+    "location": "core/com.example.core.model/-day/message.html",
+    "searchKeys": [
+      "message",
+      "val message: String",
+      "com.example.core.model.Day.message"
+    ]
+  },
+  {
+    "name": "val name: String",
+    "description": "com.example.core.model.Dish.name",
+    "location": "core/com.example.core.model/-dish/name.html",
+    "searchKeys": [
+      "name",
+      "val name: String",
+      "com.example.core.model.Dish.name"
+    ]
+  },
+  {
+    "name": "val name: String",
+    "description": "com.example.core.model.Resto.name",
+    "location": "core/com.example.core.model/-resto/name.html",
+    "searchKeys": [
+      "name",
+      "val name: String",
+      "com.example.core.model.Resto.name"
+    ]
+  },
+  {
+    "name": "val special: Special",
+    "description": "com.example.core.model.Dish.special",
+    "location": "core/com.example.core.model/-dish/special.html",
+    "searchKeys": [
+      "special",
+      "val special: Special",
+      "com.example.core.model.Dish.special"
+    ]
+  },
+  {
+    "name": "val title: Int",
+    "description": "com.example.core.model.Special.title",
+    "location": "core/com.example.core.model/-special/title.html",
+    "searchKeys": [
+      "title",
+      "val title: Int",
+      "com.example.core.model.Special.title"
+    ]
+  },
+  {
+    "name": "abstract class RestoDatabase : RoomDatabase",
+    "description": "com.example.data.database.RestoDatabase",
+    "location": "data/com.example.data.database/-resto-database/index.html",
+    "searchKeys": [
+      "RestoDatabase",
+      "abstract class RestoDatabase : RoomDatabase",
+      "com.example.data.database.RestoDatabase"
+    ]
+  },
+  {
+    "name": "abstract fun getMenuData(location: String): Flow<MenuDataEntity?>",
+    "description": "com.example.data.database.MenuDao.getMenuData",
+    "location": "data/com.example.data.database/-menu-dao/get-menu-data.html",
+    "searchKeys": [
+      "getMenuData",
+      "abstract fun getMenuData(location: String): Flow<MenuDataEntity?>",
+      "com.example.data.database.MenuDao.getMenuData"
+    ]
+  },
+  {
+    "name": "abstract fun getResto(name: String): Flow<Resto?>",
+    "description": "com.example.data.database.RestoDao.getResto",
+    "location": "data/com.example.data.database/-resto-dao/get-resto.html",
+    "searchKeys": [
+      "getResto",
+      "abstract fun getResto(name: String): Flow<Resto?>",
+      "com.example.data.database.RestoDao.getResto"
+    ]
+  },
+  {
+    "name": "abstract fun getRestoList(): Flow<List<Resto>>",
+    "description": "com.example.data.RestoRepository.getRestoList",
+    "location": "data/com.example.data/-resto-repository/get-resto-list.html",
+    "searchKeys": [
+      "getRestoList",
+      "abstract fun getRestoList(): Flow<List<Resto>>",
+      "com.example.data.RestoRepository.getRestoList"
+    ]
+  },
+  {
+    "name": "abstract fun getRestoList(): Flow<List<Resto>>",
+    "description": "com.example.data.database.RestoDao.getRestoList",
+    "location": "data/com.example.data.database/-resto-dao/get-resto-list.html",
+    "searchKeys": [
+      "getRestoList",
+      "abstract fun getRestoList(): Flow<List<Resto>>",
+      "com.example.data.database.RestoDao.getRestoList"
+    ]
+  },
+  {
+    "name": "abstract fun menuDao(): MenuDao",
+    "description": "com.example.data.database.RestoDatabase.menuDao",
+    "location": "data/com.example.data.database/-resto-database/menu-dao.html",
+    "searchKeys": [
+      "menuDao",
+      "abstract fun menuDao(): MenuDao",
+      "com.example.data.database.RestoDatabase.menuDao"
+    ]
+  },
+  {
+    "name": "abstract fun restoDao(): RestoDao",
+    "description": "com.example.data.database.RestoDatabase.restoDao",
+    "location": "data/com.example.data.database/-resto-database/resto-dao.html",
+    "searchKeys": [
+      "restoDao",
+      "abstract fun restoDao(): RestoDao",
+      "com.example.data.database.RestoDatabase.restoDao"
+    ]
+  },
+  {
+    "name": "abstract suspend fun delete(resto: Resto)",
+    "description": "com.example.data.database.RestoDao.delete",
+    "location": "data/com.example.data.database/-resto-dao/delete.html",
+    "searchKeys": [
+      "delete",
+      "abstract suspend fun delete(resto: Resto)",
+      "com.example.data.database.RestoDao.delete"
+    ]
+  },
+  {
+    "name": "abstract suspend fun deleteNotInList(restoList: List<String>)",
+    "description": "com.example.data.database.RestoDao.deleteNotInList",
+    "location": "data/com.example.data.database/-resto-dao/delete-not-in-list.html",
+    "searchKeys": [
+      "deleteNotInList",
+      "abstract suspend fun deleteNotInList(restoList: List<String>)",
+      "com.example.data.database.RestoDao.deleteNotInList"
+    ]
+  },
+  {
+    "name": "abstract suspend fun getRestoMenu(name: String): Flow<MenuData>",
+    "description": "com.example.data.RestoRepository.getRestoMenu",
+    "location": "data/com.example.data/-resto-repository/get-resto-menu.html",
+    "searchKeys": [
+      "getRestoMenu",
+      "abstract suspend fun getRestoMenu(name: String): Flow<MenuData>",
+      "com.example.data.RestoRepository.getRestoMenu"
+    ]
+  },
+  {
+    "name": "abstract suspend fun getRestoMenuSt(name: String): Flow<StaleAbleData<MenuData>>",
+    "description": "com.example.data.RestoRepository.getRestoMenuSt",
+    "location": "data/com.example.data/-resto-repository/get-resto-menu-st.html",
+    "searchKeys": [
+      "getRestoMenuSt",
+      "abstract suspend fun getRestoMenuSt(name: String): Flow<StaleAbleData<MenuData>>",
+      "com.example.data.RestoRepository.getRestoMenuSt"
+    ]
+  },
+  {
+    "name": "abstract suspend fun insert(resto: Resto)",
+    "description": "com.example.data.database.RestoDao.insert",
+    "location": "data/com.example.data.database/-resto-dao/insert.html",
+    "searchKeys": [
+      "insert",
+      "abstract suspend fun insert(resto: Resto)",
+      "com.example.data.database.RestoDao.insert"
+    ]
+  },
+  {
+    "name": "abstract suspend fun insertMenuData(menuData: MenuDataEntity)",
+    "description": "com.example.data.database.MenuDao.insertMenuData",
+    "location": "data/com.example.data.database/-menu-dao/insert-menu-data.html",
+    "searchKeys": [
+      "insertMenuData",
+      "abstract suspend fun insertMenuData(menuData: MenuDataEntity)",
+      "com.example.data.database.MenuDao.insertMenuData"
+    ]
+  },
+  {
+    "name": "abstract suspend fun refreshRestoList()",
+    "description": "com.example.data.RestoRepository.refreshRestoList",
+    "location": "data/com.example.data/-resto-repository/refresh-resto-list.html",
+    "searchKeys": [
+      "refreshRestoList",
+      "abstract suspend fun refreshRestoList()",
+      "com.example.data.RestoRepository.refreshRestoList"
+    ]
+  },
+  {
+    "name": "abstract suspend fun refreshRestoMenu(name: String)",
+    "description": "com.example.data.RestoRepository.refreshRestoMenu",
+    "location": "data/com.example.data/-resto-repository/refresh-resto-menu.html",
+    "searchKeys": [
+      "refreshRestoMenu",
+      "abstract suspend fun refreshRestoMenu(name: String)",
+      "com.example.data.RestoRepository.refreshRestoMenu"
+    ]
+  },
+  {
+    "name": "abstract suspend fun setFavoriteResto(name: String, favorite: Boolean)",
+    "description": "com.example.data.RestoRepository.setFavoriteResto",
+    "location": "data/com.example.data/-resto-repository/set-favorite-resto.html",
+    "searchKeys": [
+      "setFavoriteResto",
+      "abstract suspend fun setFavoriteResto(name: String, favorite: Boolean)",
+      "com.example.data.RestoRepository.setFavoriteResto"
+    ]
+  },
+  {
+    "name": "abstract suspend fun setFavoriteResto(name: String, favorite: Boolean)",
+    "description": "com.example.data.database.RestoDao.setFavoriteResto",
+    "location": "data/com.example.data.database/-resto-dao/set-favorite-resto.html",
+    "searchKeys": [
+      "setFavoriteResto",
+      "abstract suspend fun setFavoriteResto(name: String, favorite: Boolean)",
+      "com.example.data.database.RestoDao.setFavoriteResto"
+    ]
+  },
+  {
+    "name": "abstract suspend fun update(resto: Resto)",
+    "description": "com.example.data.database.RestoDao.update",
+    "location": "data/com.example.data.database/-resto-dao/update.html",
+    "searchKeys": [
+      "update",
+      "abstract suspend fun update(resto: Resto)",
+      "com.example.data.database.RestoDao.update"
+    ]
+  },
+  {
+    "name": "abstract val isOnline: Flow<Boolean>",
+    "description": "com.example.data.util.NetworkMonitor.isOnline",
+    "location": "data/com.example.data.util/-network-monitor/is-online.html",
+    "searchKeys": [
+      "isOnline",
+      "abstract val isOnline: Flow<Boolean>",
+      "com.example.data.util.NetworkMonitor.isOnline"
+    ]
+  },
+  {
+    "name": "abstract val networkMonitor: NetworkMonitor",
+    "description": "com.example.data.AppContainer.networkMonitor",
+    "location": "data/com.example.data/-app-container/network-monitor.html",
+    "searchKeys": [
+      "networkMonitor",
+      "abstract val networkMonitor: NetworkMonitor",
+      "com.example.data.AppContainer.networkMonitor"
+    ]
+  },
+  {
+    "name": "abstract val restoRepository: RestoRepository",
+    "description": "com.example.data.AppContainer.restoRepository",
+    "location": "data/com.example.data/-app-container/resto-repository.html",
+    "searchKeys": [
+      "restoRepository",
+      "abstract val restoRepository: RestoRepository",
+      "com.example.data.AppContainer.restoRepository"
+    ]
+  },
+  {
+    "name": "class DayMenuConverter",
+    "description": "com.example.data.database.convertors.DayMenuConverter",
+    "location": "data/com.example.data.database.convertors/-day-menu-converter/index.html",
+    "searchKeys": [
+      "DayMenuConverter",
+      "class DayMenuConverter",
+      "com.example.data.database.convertors.DayMenuConverter"
+    ]
+  },
+  {
+    "name": "class DefaultAppContainer(context: Context) : AppContainer",
+    "description": "com.example.data.DefaultAppContainer",
+    "location": "data/com.example.data/-default-app-container/index.html",
+    "searchKeys": [
+      "DefaultAppContainer",
+      "class DefaultAppContainer(context: Context) : AppContainer",
+      "com.example.data.DefaultAppContainer"
+    ]
+  },
+  {
+    "name": "class RestoOfflineRepositoryImpl(restoApiService: RestoApiService, restoDao: RestoDao, menuDao: MenuDao) : RestoRepository",
+    "description": "com.example.data.RestoOfflineRepositoryImpl",
+    "location": "data/com.example.data/-resto-offline-repository-impl/index.html",
+    "searchKeys": [
+      "RestoOfflineRepositoryImpl",
+      "class RestoOfflineRepositoryImpl(restoApiService: RestoApiService, restoDao: RestoDao, menuDao: MenuDao) : RestoRepository",
+      "com.example.data.RestoOfflineRepositoryImpl"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.example.data.database.RestoDatabase.RestoDatabase",
+    "location": "data/com.example.data.database/-resto-database/-resto-database.html",
+    "searchKeys": [
+      "RestoDatabase",
+      "constructor()",
+      "com.example.data.database.RestoDatabase.RestoDatabase"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.example.data.database.convertors.DayMenuConverter.DayMenuConverter",
+    "location": "data/com.example.data.database.convertors/-day-menu-converter/-day-menu-converter.html",
+    "searchKeys": [
+      "DayMenuConverter",
+      "constructor()",
+      "com.example.data.database.convertors.DayMenuConverter.DayMenuConverter"
+    ]
+  },
+  {
+    "name": "constructor(context: Context)",
+    "description": "com.example.data.DefaultAppContainer.DefaultAppContainer",
+    "location": "data/com.example.data/-default-app-container/-default-app-container.html",
+    "searchKeys": [
+      "DefaultAppContainer",
+      "constructor(context: Context)",
+      "com.example.data.DefaultAppContainer.DefaultAppContainer"
+    ]
+  },
+  {
+    "name": "constructor(location: String, days: List<Day>, timestamp: Long = System.currentTimeMillis())",
+    "description": "com.example.data.database.MenuDataEntity.MenuDataEntity",
+    "location": "data/com.example.data.database/-menu-data-entity/-menu-data-entity.html",
+    "searchKeys": [
+      "MenuDataEntity",
+      "constructor(location: String, days: List<Day>, timestamp: Long = System.currentTimeMillis())",
+      "com.example.data.database.MenuDataEntity.MenuDataEntity"
+    ]
+  },
+  {
+    "name": "constructor(name: String, favorite: Boolean)",
+    "description": "com.example.data.database.Resto.Resto",
+    "location": "data/com.example.data.database/-resto/-resto.html",
+    "searchKeys": [
+      "Resto",
+      "constructor(name: String, favorite: Boolean)",
+      "com.example.data.database.Resto.Resto"
+    ]
+  },
+  {
+    "name": "constructor(restoApiService: RestoApiService, restoDao: RestoDao, menuDao: MenuDao)",
+    "description": "com.example.data.RestoOfflineRepositoryImpl.RestoOfflineRepositoryImpl",
+    "location": "data/com.example.data/-resto-offline-repository-impl/-resto-offline-repository-impl.html",
+    "searchKeys": [
+      "RestoOfflineRepositoryImpl",
+      "constructor(restoApiService: RestoApiService, restoDao: RestoDao, menuDao: MenuDao)",
+      "com.example.data.RestoOfflineRepositoryImpl.RestoOfflineRepositoryImpl"
+    ]
+  },
+  {
+    "name": "data class MenuDataEntity(val location: String, val days: List<Day>, val timestamp: Long = System.currentTimeMillis())",
+    "description": "com.example.data.database.MenuDataEntity",
+    "location": "data/com.example.data.database/-menu-data-entity/index.html",
+    "searchKeys": [
+      "MenuDataEntity",
+      "data class MenuDataEntity(val location: String, val days: List<Day>, val timestamp: Long = System.currentTimeMillis())",
+      "com.example.data.database.MenuDataEntity"
+    ]
+  },
+  {
+    "name": "data class Resto(val name: String, val favorite: Boolean)",
+    "description": "com.example.data.database.Resto",
+    "location": "data/com.example.data.database/-resto/index.html",
+    "searchKeys": [
+      "Resto",
+      "data class Resto(val name: String, val favorite: Boolean)",
+      "com.example.data.database.Resto"
+    ]
+  },
+  {
+    "name": "fun ApiRestoMenu.toDbMenu(): MenuDataEntity",
+    "description": "com.example.data.database.toDbMenu",
+    "location": "data/com.example.data.database/to-db-menu.html",
+    "searchKeys": [
+      "toDbMenu",
+      "fun ApiRestoMenu.toDbMenu(): MenuDataEntity",
+      "com.example.data.database.toDbMenu"
+    ]
+  },
+  {
+    "name": "fun List<Resto>.asDomainObject(): List<Resto>",
+    "description": "com.example.data.database.asDomainObject",
+    "location": "data/com.example.data.database/as-domain-object.html",
+    "searchKeys": [
+      "asDomainObject",
+      "fun List<Resto>.asDomainObject(): List<Resto>",
+      "com.example.data.database.asDomainObject"
+    ]
+  },
+  {
+    "name": "fun MenuData.toDbMenu(): MenuDataEntity",
+    "description": "com.example.data.database.toDbMenu",
+    "location": "data/com.example.data.database/to-db-menu.html",
+    "searchKeys": [
+      "toDbMenu",
+      "fun MenuData.toDbMenu(): MenuDataEntity",
+      "com.example.data.database.toDbMenu"
+    ]
+  },
+  {
+    "name": "fun MenuDataEntity.toMenuData(): MenuData",
+    "description": "com.example.data.database.toMenuData",
+    "location": "data/com.example.data.database/to-menu-data.html",
+    "searchKeys": [
+      "toMenuData",
+      "fun MenuDataEntity.toMenuData(): MenuData",
+      "com.example.data.database.toMenuData"
+    ]
+  },
+  {
+    "name": "fun Resto.asDbObject(): Resto",
+    "description": "com.example.data.database.asDbObject",
+    "location": "data/com.example.data.database/as-db-object.html",
+    "searchKeys": [
+      "asDbObject",
+      "fun Resto.asDbObject(): Resto",
+      "com.example.data.database.asDbObject"
+    ]
+  },
+  {
+    "name": "fun Resto.asDomainObject(): Resto",
+    "description": "com.example.data.database.asDomainObject",
+    "location": "data/com.example.data.database/as-domain-object.html",
+    "searchKeys": [
+      "asDomainObject",
+      "fun Resto.asDomainObject(): Resto",
+      "com.example.data.database.asDomainObject"
+    ]
+  },
+  {
+    "name": "fun Throwable.getErrorMessage(): ErrorMessage",
+    "description": "com.example.data.getErrorMessage",
+    "location": "data/com.example.data/get-error-message.html",
+    "searchKeys": [
+      "getErrorMessage",
+      "fun Throwable.getErrorMessage(): ErrorMessage",
+      "com.example.data.getErrorMessage"
+    ]
+  },
+  {
+    "name": "fun Throwable.isNoNetworkError(): Boolean",
+    "description": "com.example.data.isNoNetworkError",
+    "location": "data/com.example.data/is-no-network-error.html",
+    "searchKeys": [
+      "isNoNetworkError",
+      "fun Throwable.isNoNetworkError(): Boolean",
+      "com.example.data.isNoNetworkError"
+    ]
+  },
+  {
+    "name": "fun fromDayList(days: List<Day>): String",
+    "description": "com.example.data.database.convertors.DayMenuConverter.fromDayList",
+    "location": "data/com.example.data.database.convertors/-day-menu-converter/from-day-list.html",
+    "searchKeys": [
+      "fromDayList",
+      "fun fromDayList(days: List<Day>): String",
+      "com.example.data.database.convertors.DayMenuConverter.fromDayList"
+    ]
+  },
+  {
+    "name": "fun getDatabase(context: Context): RestoDatabase",
+    "description": "com.example.data.database.RestoDatabase.Companion.getDatabase",
+    "location": "data/com.example.data.database/-resto-database/-companion/get-database.html",
+    "searchKeys": [
+      "getDatabase",
+      "fun getDatabase(context: Context): RestoDatabase",
+      "com.example.data.database.RestoDatabase.Companion.getDatabase"
+    ]
+  },
+  {
+    "name": "fun toDayList(dayString: String): List<Day>",
+    "description": "com.example.data.database.convertors.DayMenuConverter.toDayList",
+    "location": "data/com.example.data.database.convertors/-day-menu-converter/to-day-list.html",
+    "searchKeys": [
+      "toDayList",
+      "fun toDayList(dayString: String): List<Day>",
+      "com.example.data.database.convertors.DayMenuConverter.toDayList"
+    ]
+  },
+  {
+    "name": "fun toShortName(name: String): String",
+    "description": "com.example.data.toShortName",
+    "location": "data/com.example.data/to-short-name.html",
+    "searchKeys": [
+      "toShortName",
+      "fun toShortName(name: String): String",
+      "com.example.data.toShortName"
+    ]
+  },
+  {
+    "name": "interface AppContainer",
+    "description": "com.example.data.AppContainer",
+    "location": "data/com.example.data/-app-container/index.html",
+    "searchKeys": [
+      "AppContainer",
+      "interface AppContainer",
+      "com.example.data.AppContainer"
+    ]
+  },
+  {
+    "name": "interface MenuDao",
+    "description": "com.example.data.database.MenuDao",
+    "location": "data/com.example.data.database/-menu-dao/index.html",
+    "searchKeys": [
+      "MenuDao",
+      "interface MenuDao",
+      "com.example.data.database.MenuDao"
+    ]
+  },
+  {
+    "name": "interface NetworkMonitor",
+    "description": "com.example.data.util.NetworkMonitor",
+    "location": "data/com.example.data.util/-network-monitor/index.html",
+    "searchKeys": [
+      "NetworkMonitor",
+      "interface NetworkMonitor",
+      "com.example.data.util.NetworkMonitor"
+    ]
+  },
+  {
+    "name": "interface RestoDao",
+    "description": "com.example.data.database.RestoDao",
+    "location": "data/com.example.data.database/-resto-dao/index.html",
+    "searchKeys": [
+      "RestoDao",
+      "interface RestoDao",
+      "com.example.data.database.RestoDao"
+    ]
+  },
+  {
+    "name": "interface RestoRepository",
+    "description": "com.example.data.RestoRepository",
+    "location": "data/com.example.data/-resto-repository/index.html",
+    "searchKeys": [
+      "RestoRepository",
+      "interface RestoRepository",
+      "com.example.data.RestoRepository"
+    ]
+  },
+  {
+    "name": "object Companion",
+    "description": "com.example.data.database.RestoDatabase.Companion",
+    "location": "data/com.example.data.database/-resto-database/-companion/index.html",
+    "searchKeys": [
+      "Companion",
+      "object Companion",
+      "com.example.data.database.RestoDatabase.Companion"
+    ]
+  },
+  {
+    "name": "open override fun getRestoList(): Flow<List<Resto>>",
+    "description": "com.example.data.RestoOfflineRepositoryImpl.getRestoList",
+    "location": "data/com.example.data/-resto-offline-repository-impl/get-resto-list.html",
+    "searchKeys": [
+      "getRestoList",
+      "open override fun getRestoList(): Flow<List<Resto>>",
+      "com.example.data.RestoOfflineRepositoryImpl.getRestoList"
+    ]
+  },
+  {
+    "name": "open override val networkMonitor: NetworkMonitor",
+    "description": "com.example.data.DefaultAppContainer.networkMonitor",
+    "location": "data/com.example.data/-default-app-container/network-monitor.html",
+    "searchKeys": [
+      "networkMonitor",
+      "open override val networkMonitor: NetworkMonitor",
+      "com.example.data.DefaultAppContainer.networkMonitor"
+    ]
+  },
+  {
+    "name": "open override val restoRepository: RestoRepository",
+    "description": "com.example.data.DefaultAppContainer.restoRepository",
+    "location": "data/com.example.data/-default-app-container/resto-repository.html",
+    "searchKeys": [
+      "restoRepository",
+      "open override val restoRepository: RestoRepository",
+      "com.example.data.DefaultAppContainer.restoRepository"
+    ]
+  },
+  {
+    "name": "open suspend override fun getRestoMenu(name: String): Flow<MenuData>",
+    "description": "com.example.data.RestoOfflineRepositoryImpl.getRestoMenu",
+    "location": "data/com.example.data/-resto-offline-repository-impl/get-resto-menu.html",
+    "searchKeys": [
+      "getRestoMenu",
+      "open suspend override fun getRestoMenu(name: String): Flow<MenuData>",
+      "com.example.data.RestoOfflineRepositoryImpl.getRestoMenu"
+    ]
+  },
+  {
+    "name": "open suspend override fun getRestoMenuSt(name: String): Flow<StaleAbleData<MenuData>>",
+    "description": "com.example.data.RestoOfflineRepositoryImpl.getRestoMenuSt",
+    "location": "data/com.example.data/-resto-offline-repository-impl/get-resto-menu-st.html",
+    "searchKeys": [
+      "getRestoMenuSt",
+      "open suspend override fun getRestoMenuSt(name: String): Flow<StaleAbleData<MenuData>>",
+      "com.example.data.RestoOfflineRepositoryImpl.getRestoMenuSt"
+    ]
+  },
+  {
+    "name": "open suspend override fun refreshRestoList()",
+    "description": "com.example.data.RestoOfflineRepositoryImpl.refreshRestoList",
+    "location": "data/com.example.data/-resto-offline-repository-impl/refresh-resto-list.html",
+    "searchKeys": [
+      "refreshRestoList",
+      "open suspend override fun refreshRestoList()",
+      "com.example.data.RestoOfflineRepositoryImpl.refreshRestoList"
+    ]
+  },
+  {
+    "name": "open suspend override fun refreshRestoMenu(name: String)",
+    "description": "com.example.data.RestoOfflineRepositoryImpl.refreshRestoMenu",
+    "location": "data/com.example.data/-resto-offline-repository-impl/refresh-resto-menu.html",
+    "searchKeys": [
+      "refreshRestoMenu",
+      "open suspend override fun refreshRestoMenu(name: String)",
+      "com.example.data.RestoOfflineRepositoryImpl.refreshRestoMenu"
+    ]
+  },
+  {
+    "name": "open suspend override fun setFavoriteResto(name: String, favorite: Boolean)",
+    "description": "com.example.data.RestoOfflineRepositoryImpl.setFavoriteResto",
+    "location": "data/com.example.data/-resto-offline-repository-impl/set-favorite-resto.html",
+    "searchKeys": [
+      "setFavoriteResto",
+      "open suspend override fun setFavoriteResto(name: String, favorite: Boolean)",
+      "com.example.data.RestoOfflineRepositoryImpl.setFavoriteResto"
+    ]
+  },
+  {
+    "name": "val days: List<Day>",
+    "description": "com.example.data.database.MenuDataEntity.days",
+    "location": "data/com.example.data.database/-menu-data-entity/days.html",
+    "searchKeys": [
+      "days",
+      "val days: List<Day>",
+      "com.example.data.database.MenuDataEntity.days"
+    ]
+  },
+  {
+    "name": "val favorite: Boolean",
+    "description": "com.example.data.database.Resto.favorite",
+    "location": "data/com.example.data.database/-resto/favorite.html",
+    "searchKeys": [
+      "favorite",
+      "val favorite: Boolean",
+      "com.example.data.database.Resto.favorite"
+    ]
+  },
+  {
+    "name": "val location: String",
+    "description": "com.example.data.database.MenuDataEntity.location",
+    "location": "data/com.example.data.database/-menu-data-entity/location.html",
+    "searchKeys": [
+      "location",
+      "val location: String",
+      "com.example.data.database.MenuDataEntity.location"
+    ]
+  },
+  {
+    "name": "val name: String",
+    "description": "com.example.data.database.Resto.name",
+    "location": "data/com.example.data.database/-resto/name.html",
+    "searchKeys": [
+      "name",
+      "val name: String",
+      "com.example.data.database.Resto.name"
+    ]
+  },
+  {
+    "name": "val timestamp: Long",
+    "description": "com.example.data.database.MenuDataEntity.timestamp",
+    "location": "data/com.example.data.database/-menu-data-entity/timestamp.html",
+    "searchKeys": [
+      "timestamp",
+      "val timestamp: Long",
+      "com.example.data.database.MenuDataEntity.timestamp"
+    ]
+  },
+  {
+    "name": "class FakeAppContainer(val restoRepository: RestoRepository = FakeRestoRepository(), val networkMonitor: NetworkMonitor = FakeNetworkMonitor()) : AppContainer",
+    "description": "com.example.testutils.fake.FakeAppContainer",
+    "location": "testUtils/com.example.testutils.fake/-fake-app-container/index.html",
+    "searchKeys": [
+      "FakeAppContainer",
+      "class FakeAppContainer(val restoRepository: RestoRepository = FakeRestoRepository(), val networkMonitor: NetworkMonitor = FakeNetworkMonitor()) : AppContainer",
+      "com.example.testutils.fake.FakeAppContainer"
+    ]
+  },
+  {
+    "name": "class FakeMenuDao : MenuDao",
+    "description": "com.example.testutils.fake.FakeMenuDao",
+    "location": "testUtils/com.example.testutils.fake/-fake-menu-dao/index.html",
+    "searchKeys": [
+      "FakeMenuDao",
+      "class FakeMenuDao : MenuDao",
+      "com.example.testutils.fake.FakeMenuDao"
+    ]
+  },
+  {
+    "name": "class FakeNetworkMonitor : NetworkMonitor",
+    "description": "com.example.testutils.fake.FakeNetworkMonitor",
+    "location": "testUtils/com.example.testutils.fake/-fake-network-monitor/index.html",
+    "searchKeys": [
+      "FakeNetworkMonitor",
+      "class FakeNetworkMonitor : NetworkMonitor",
+      "com.example.testutils.fake.FakeNetworkMonitor"
+    ]
+  },
+  {
+    "name": "class FakeRestoApiService : RestoApiService",
+    "description": "com.example.testutils.fake.FakeRestoApiService",
+    "location": "testUtils/com.example.testutils.fake/-fake-resto-api-service/index.html",
+    "searchKeys": [
+      "FakeRestoApiService",
+      "class FakeRestoApiService : RestoApiService",
+      "com.example.testutils.fake.FakeRestoApiService"
+    ]
+  },
+  {
+    "name": "class FakeRestoDao : RestoDao",
+    "description": "com.example.testutils.fake.FakeRestoDao",
+    "location": "testUtils/com.example.testutils.fake/-fake-resto-dao/index.html",
+    "searchKeys": [
+      "FakeRestoDao",
+      "class FakeRestoDao : RestoDao",
+      "com.example.testutils.fake.FakeRestoDao"
+    ]
+  },
+  {
+    "name": "class FakeRestoRepository : RestoRepository",
+    "description": "com.example.testutils.fake.FakeRestoRepository",
+    "location": "testUtils/com.example.testutils.fake/-fake-resto-repository/index.html",
+    "searchKeys": [
+      "FakeRestoRepository",
+      "class FakeRestoRepository : RestoRepository",
+      "com.example.testutils.fake.FakeRestoRepository"
+    ]
+  },
+  {
+    "name": "class TestMenuDao : MenuDao",
+    "description": "com.example.testutils.fake.TestMenuDao",
+    "location": "testUtils/com.example.testutils.fake/-test-menu-dao/index.html",
+    "searchKeys": [
+      "TestMenuDao",
+      "class TestMenuDao : MenuDao",
+      "com.example.testutils.fake.TestMenuDao"
+    ]
+  },
+  {
+    "name": "class TestRestoApiService(replay: Int = 0) : RestoApiService",
+    "description": "com.example.testutils.fake.TestRestoApiService",
+    "location": "testUtils/com.example.testutils.fake/-test-resto-api-service/index.html",
+    "searchKeys": [
+      "TestRestoApiService",
+      "class TestRestoApiService(replay: Int = 0) : RestoApiService",
+      "com.example.testutils.fake.TestRestoApiService"
+    ]
+  },
+  {
+    "name": "class TestRestoDao : RestoDao",
+    "description": "com.example.testutils.fake.TestRestoDao",
+    "location": "testUtils/com.example.testutils.fake/-test-resto-dao/index.html",
+    "searchKeys": [
+      "TestRestoDao",
+      "class TestRestoDao : RestoDao",
+      "com.example.testutils.fake.TestRestoDao"
+    ]
+  },
+  {
+    "name": "class TestRestoRepository : RestoRepository",
+    "description": "com.example.testutils.fake.TestRestoRepository",
+    "location": "testUtils/com.example.testutils.fake/-test-resto-repository/index.html",
+    "searchKeys": [
+      "TestRestoRepository",
+      "class TestRestoRepository : RestoRepository",
+      "com.example.testutils.fake.TestRestoRepository"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.example.testutils.fake.FakeMenuDao.FakeMenuDao",
+    "location": "testUtils/com.example.testutils.fake/-fake-menu-dao/-fake-menu-dao.html",
+    "searchKeys": [
+      "FakeMenuDao",
+      "constructor()",
+      "com.example.testutils.fake.FakeMenuDao.FakeMenuDao"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.example.testutils.fake.FakeNetworkMonitor.FakeNetworkMonitor",
+    "location": "testUtils/com.example.testutils.fake/-fake-network-monitor/-fake-network-monitor.html",
+    "searchKeys": [
+      "FakeNetworkMonitor",
+      "constructor()",
+      "com.example.testutils.fake.FakeNetworkMonitor.FakeNetworkMonitor"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.example.testutils.fake.FakeRestoApiService.FakeRestoApiService",
+    "location": "testUtils/com.example.testutils.fake/-fake-resto-api-service/-fake-resto-api-service.html",
+    "searchKeys": [
+      "FakeRestoApiService",
+      "constructor()",
+      "com.example.testutils.fake.FakeRestoApiService.FakeRestoApiService"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.example.testutils.fake.FakeRestoDao.FakeRestoDao",
+    "location": "testUtils/com.example.testutils.fake/-fake-resto-dao/-fake-resto-dao.html",
+    "searchKeys": [
+      "FakeRestoDao",
+      "constructor()",
+      "com.example.testutils.fake.FakeRestoDao.FakeRestoDao"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.example.testutils.fake.FakeRestoRepository.FakeRestoRepository",
+    "location": "testUtils/com.example.testutils.fake/-fake-resto-repository/-fake-resto-repository.html",
+    "searchKeys": [
+      "FakeRestoRepository",
+      "constructor()",
+      "com.example.testutils.fake.FakeRestoRepository.FakeRestoRepository"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.example.testutils.fake.TestMenuDao.TestMenuDao",
+    "location": "testUtils/com.example.testutils.fake/-test-menu-dao/-test-menu-dao.html",
+    "searchKeys": [
+      "TestMenuDao",
+      "constructor()",
+      "com.example.testutils.fake.TestMenuDao.TestMenuDao"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.example.testutils.fake.TestRestoDao.TestRestoDao",
+    "location": "testUtils/com.example.testutils.fake/-test-resto-dao/-test-resto-dao.html",
+    "searchKeys": [
+      "TestRestoDao",
+      "constructor()",
+      "com.example.testutils.fake.TestRestoDao.TestRestoDao"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.example.testutils.fake.TestRestoRepository.TestRestoRepository",
+    "location": "testUtils/com.example.testutils.fake/-test-resto-repository/-test-resto-repository.html",
+    "searchKeys": [
+      "TestRestoRepository",
+      "constructor()",
+      "com.example.testutils.fake.TestRestoRepository.TestRestoRepository"
+    ]
+  },
+  {
+    "name": "constructor(data: T)",
+    "description": "com.example.testutils.fake.ResultOrError.Result.Result",
+    "location": "testUtils/com.example.testutils.fake/-result-or-error/-result/-result.html",
+    "searchKeys": [
+      "Result",
+      "constructor(data: T)",
+      "com.example.testutils.fake.ResultOrError.Result.Result"
+    ]
+  },
+  {
+    "name": "constructor(error: Throwable)",
+    "description": "com.example.testutils.fake.ResultOrError.Error.Error",
+    "location": "testUtils/com.example.testutils.fake/-result-or-error/-error/-error.html",
+    "searchKeys": [
+      "Error",
+      "constructor(error: Throwable)",
+      "com.example.testutils.fake.ResultOrError.Error.Error"
+    ]
+  },
+  {
+    "name": "constructor(replay: Int = 0)",
+    "description": "com.example.testutils.fake.TestRestoApiService.TestRestoApiService",
+    "location": "testUtils/com.example.testutils.fake/-test-resto-api-service/-test-resto-api-service.html",
+    "searchKeys": [
+      "TestRestoApiService",
+      "constructor(replay: Int = 0)",
+      "com.example.testutils.fake.TestRestoApiService.TestRestoApiService"
+    ]
+  },
+  {
+    "name": "constructor(restoRepository: RestoRepository = FakeRestoRepository(), networkMonitor: NetworkMonitor = FakeNetworkMonitor())",
+    "description": "com.example.testutils.fake.FakeAppContainer.FakeAppContainer",
+    "location": "testUtils/com.example.testutils.fake/-fake-app-container/-fake-app-container.html",
+    "searchKeys": [
+      "FakeAppContainer",
+      "constructor(restoRepository: RestoRepository = FakeRestoRepository(), networkMonitor: NetworkMonitor = FakeNetworkMonitor())",
+      "com.example.testutils.fake.FakeAppContainer.FakeAppContainer"
+    ]
+  },
+  {
+    "name": "data class Error(val error: Throwable) : ResultOrError<Nothing> ",
+    "description": "com.example.testutils.fake.ResultOrError.Error",
+    "location": "testUtils/com.example.testutils.fake/-result-or-error/-error/index.html",
+    "searchKeys": [
+      "Error",
+      "data class Error(val error: Throwable) : ResultOrError<Nothing> ",
+      "com.example.testutils.fake.ResultOrError.Error"
+    ]
+  },
+  {
+    "name": "data class Result<out T>(val data: T) : ResultOrError<T> ",
+    "description": "com.example.testutils.fake.ResultOrError.Result",
+    "location": "testUtils/com.example.testutils.fake/-result-or-error/-result/index.html",
+    "searchKeys": [
+      "Result",
+      "data class Result<out T>(val data: T) : ResultOrError<T> ",
+      "com.example.testutils.fake.ResultOrError.Result"
+    ]
+  },
+  {
+    "name": "fun sendRestoList(restos: List<Resto>)",
+    "description": "com.example.testutils.fake.TestRestoRepository.sendRestoList",
+    "location": "testUtils/com.example.testutils.fake/-test-resto-repository/send-resto-list.html",
+    "searchKeys": [
+      "sendRestoList",
+      "fun sendRestoList(restos: List<Resto>)",
+      "com.example.testutils.fake.TestRestoRepository.sendRestoList"
+    ]
+  },
+  {
+    "name": "fun sendRestoMenu(name: String, menuData: StaleAbleData<MenuData>)",
+    "description": "com.example.testutils.fake.TestRestoRepository.sendRestoMenu",
+    "location": "testUtils/com.example.testutils.fake/-test-resto-repository/send-resto-menu.html",
+    "searchKeys": [
+      "sendRestoMenu",
+      "fun sendRestoMenu(name: String, menuData: StaleAbleData<MenuData>)",
+      "com.example.testutils.fake.TestRestoRepository.sendRestoMenu"
+    ]
+  },
+  {
+    "name": "fun setMenuData(menu: MenuDataEntity)",
+    "description": "com.example.testutils.fake.TestMenuDao.setMenuData",
+    "location": "testUtils/com.example.testutils.fake/-test-menu-dao/set-menu-data.html",
+    "searchKeys": [
+      "setMenuData",
+      "fun setMenuData(menu: MenuDataEntity)",
+      "com.example.testutils.fake.TestMenuDao.setMenuData"
+    ]
+  },
+  {
+    "name": "fun setRestoList(restoList: List<Resto>)",
+    "description": "com.example.testutils.fake.TestRestoDao.setRestoList",
+    "location": "testUtils/com.example.testutils.fake/-test-resto-dao/set-resto-list.html",
+    "searchKeys": [
+      "setRestoList",
+      "fun setRestoList(restoList: List<Resto>)",
+      "com.example.testutils.fake.TestRestoDao.setRestoList"
+    ]
+  },
+  {
+    "name": "fun setRestoList(restoList: List<String>)",
+    "description": "com.example.testutils.fake.TestRestoApiService.setRestoList",
+    "location": "testUtils/com.example.testutils.fake/-test-resto-api-service/set-resto-list.html",
+    "searchKeys": [
+      "setRestoList",
+      "fun setRestoList(restoList: List<String>)",
+      "com.example.testutils.fake.TestRestoApiService.setRestoList"
+    ]
+  },
+  {
+    "name": "fun setRestoMenu(name: String, menu: ApiRestoMenu)",
+    "description": "com.example.testutils.fake.TestRestoApiService.setRestoMenu",
+    "location": "testUtils/com.example.testutils.fake/-test-resto-api-service/set-resto-menu.html",
+    "searchKeys": [
+      "setRestoMenu",
+      "fun setRestoMenu(name: String, menu: ApiRestoMenu)",
+      "com.example.testutils.fake.TestRestoApiService.setRestoMenu"
+    ]
+  },
+  {
+    "name": "fun setRestoMenu(name: String, menuData: StaleAbleData<MenuData>)",
+    "description": "com.example.testutils.fake.TestRestoDao.setRestoMenu",
+    "location": "testUtils/com.example.testutils.fake/-test-resto-dao/set-resto-menu.html",
+    "searchKeys": [
+      "setRestoMenu",
+      "fun setRestoMenu(name: String, menuData: StaleAbleData<MenuData>)",
+      "com.example.testutils.fake.TestRestoDao.setRestoMenu"
+    ]
+  },
+  {
+    "name": "fun throwErrorInRestoList(throwable: Throwable)",
+    "description": "com.example.testutils.fake.TestRestoRepository.throwErrorInRestoList",
+    "location": "testUtils/com.example.testutils.fake/-test-resto-repository/throw-error-in-resto-list.html",
+    "searchKeys": [
+      "throwErrorInRestoList",
+      "fun throwErrorInRestoList(throwable: Throwable)",
+      "com.example.testutils.fake.TestRestoRepository.throwErrorInRestoList"
+    ]
+  },
+  {
+    "name": "fun throwErrorInRestoMenu(name: String, throwable: Throwable)",
+    "description": "com.example.testutils.fake.TestRestoRepository.throwErrorInRestoMenu",
+    "location": "testUtils/com.example.testutils.fake/-test-resto-repository/throw-error-in-resto-menu.html",
+    "searchKeys": [
+      "throwErrorInRestoMenu",
+      "fun throwErrorInRestoMenu(name: String, throwable: Throwable)",
+      "com.example.testutils.fake.TestRestoRepository.throwErrorInRestoMenu"
+    ]
+  },
+  {
+    "name": "object FakeDataSource",
+    "description": "com.example.testutils.fake.FakeDataSource",
+    "location": "testUtils/com.example.testutils.fake/-fake-data-source/index.html",
+    "searchKeys": [
+      "FakeDataSource",
+      "object FakeDataSource",
+      "com.example.testutils.fake.FakeDataSource"
+    ]
+  },
+  {
+    "name": "open override fun getMenuData(location: String): Flow<MenuDataEntity?>",
+    "description": "com.example.testutils.fake.FakeMenuDao.getMenuData",
+    "location": "testUtils/com.example.testutils.fake/-fake-menu-dao/get-menu-data.html",
+    "searchKeys": [
+      "getMenuData",
+      "open override fun getMenuData(location: String): Flow<MenuDataEntity?>",
+      "com.example.testutils.fake.FakeMenuDao.getMenuData"
+    ]
+  },
+  {
+    "name": "open override fun getMenuData(location: String): Flow<MenuDataEntity?>",
+    "description": "com.example.testutils.fake.TestMenuDao.getMenuData",
+    "location": "testUtils/com.example.testutils.fake/-test-menu-dao/get-menu-data.html",
+    "searchKeys": [
+      "getMenuData",
+      "open override fun getMenuData(location: String): Flow<MenuDataEntity?>",
+      "com.example.testutils.fake.TestMenuDao.getMenuData"
+    ]
+  },
+  {
+    "name": "open override fun getResto(name: String): Flow<Resto>",
+    "description": "com.example.testutils.fake.FakeRestoDao.getResto",
+    "location": "testUtils/com.example.testutils.fake/-fake-resto-dao/get-resto.html",
+    "searchKeys": [
+      "getResto",
+      "open override fun getResto(name: String): Flow<Resto>",
+      "com.example.testutils.fake.FakeRestoDao.getResto"
+    ]
+  },
+  {
+    "name": "open override fun getResto(name: String): Flow<Resto>",
+    "description": "com.example.testutils.fake.TestRestoDao.getResto",
+    "location": "testUtils/com.example.testutils.fake/-test-resto-dao/get-resto.html",
+    "searchKeys": [
+      "getResto",
+      "open override fun getResto(name: String): Flow<Resto>",
+      "com.example.testutils.fake.TestRestoDao.getResto"
+    ]
+  },
+  {
+    "name": "open override fun getRestoList(): Flow<List<Resto>>",
+    "description": "com.example.testutils.fake.FakeRestoDao.getRestoList",
+    "location": "testUtils/com.example.testutils.fake/-fake-resto-dao/get-resto-list.html",
+    "searchKeys": [
+      "getRestoList",
+      "open override fun getRestoList(): Flow<List<Resto>>",
+      "com.example.testutils.fake.FakeRestoDao.getRestoList"
+    ]
+  },
+  {
+    "name": "open override fun getRestoList(): Flow<List<Resto>>",
+    "description": "com.example.testutils.fake.FakeRestoRepository.getRestoList",
+    "location": "testUtils/com.example.testutils.fake/-fake-resto-repository/get-resto-list.html",
+    "searchKeys": [
+      "getRestoList",
+      "open override fun getRestoList(): Flow<List<Resto>>",
+      "com.example.testutils.fake.FakeRestoRepository.getRestoList"
+    ]
+  },
+  {
+    "name": "open override fun getRestoList(): Flow<List<Resto>>",
+    "description": "com.example.testutils.fake.TestRestoDao.getRestoList",
+    "location": "testUtils/com.example.testutils.fake/-test-resto-dao/get-resto-list.html",
+    "searchKeys": [
+      "getRestoList",
+      "open override fun getRestoList(): Flow<List<Resto>>",
+      "com.example.testutils.fake.TestRestoDao.getRestoList"
+    ]
+  },
+  {
+    "name": "open override fun getRestoList(): Flow<List<Resto>>",
+    "description": "com.example.testutils.fake.TestRestoRepository.getRestoList",
+    "location": "testUtils/com.example.testutils.fake/-test-resto-repository/get-resto-list.html",
+    "searchKeys": [
+      "getRestoList",
+      "open override fun getRestoList(): Flow<List<Resto>>",
+      "com.example.testutils.fake.TestRestoRepository.getRestoList"
+    ]
+  },
+  {
+    "name": "open override val isOnline: Flow<Boolean>",
+    "description": "com.example.testutils.fake.FakeNetworkMonitor.isOnline",
+    "location": "testUtils/com.example.testutils.fake/-fake-network-monitor/is-online.html",
+    "searchKeys": [
+      "isOnline",
+      "open override val isOnline: Flow<Boolean>",
+      "com.example.testutils.fake.FakeNetworkMonitor.isOnline"
+    ]
+  },
+  {
+    "name": "open override val networkMonitor: NetworkMonitor",
+    "description": "com.example.testutils.fake.FakeAppContainer.networkMonitor",
+    "location": "testUtils/com.example.testutils.fake/-fake-app-container/network-monitor.html",
+    "searchKeys": [
+      "networkMonitor",
+      "open override val networkMonitor: NetworkMonitor",
+      "com.example.testutils.fake.FakeAppContainer.networkMonitor"
+    ]
+  },
+  {
+    "name": "open override val restoRepository: RestoRepository",
+    "description": "com.example.testutils.fake.FakeAppContainer.restoRepository",
+    "location": "testUtils/com.example.testutils.fake/-fake-app-container/resto-repository.html",
+    "searchKeys": [
+      "restoRepository",
+      "open override val restoRepository: RestoRepository",
+      "com.example.testutils.fake.FakeAppContainer.restoRepository"
+    ]
+  },
+  {
+    "name": "open suspend override fun delete(resto: Resto)",
+    "description": "com.example.testutils.fake.FakeRestoDao.delete",
+    "location": "testUtils/com.example.testutils.fake/-fake-resto-dao/delete.html",
+    "searchKeys": [
+      "delete",
+      "open suspend override fun delete(resto: Resto)",
+      "com.example.testutils.fake.FakeRestoDao.delete"
+    ]
+  },
+  {
+    "name": "open suspend override fun delete(resto: Resto)",
+    "description": "com.example.testutils.fake.TestRestoDao.delete",
+    "location": "testUtils/com.example.testutils.fake/-test-resto-dao/delete.html",
+    "searchKeys": [
+      "delete",
+      "open suspend override fun delete(resto: Resto)",
+      "com.example.testutils.fake.TestRestoDao.delete"
+    ]
+  },
+  {
+    "name": "open suspend override fun deleteNotInList(restoList: List<String>)",
+    "description": "com.example.testutils.fake.FakeRestoDao.deleteNotInList",
+    "location": "testUtils/com.example.testutils.fake/-fake-resto-dao/delete-not-in-list.html",
+    "searchKeys": [
+      "deleteNotInList",
+      "open suspend override fun deleteNotInList(restoList: List<String>)",
+      "com.example.testutils.fake.FakeRestoDao.deleteNotInList"
+    ]
+  },
+  {
+    "name": "open suspend override fun deleteNotInList(restoList: List<String>)",
+    "description": "com.example.testutils.fake.TestRestoDao.deleteNotInList",
+    "location": "testUtils/com.example.testutils.fake/-test-resto-dao/delete-not-in-list.html",
+    "searchKeys": [
+      "deleteNotInList",
+      "open suspend override fun deleteNotInList(restoList: List<String>)",
+      "com.example.testutils.fake.TestRestoDao.deleteNotInList"
+    ]
+  },
+  {
+    "name": "open suspend override fun getRestoList(): List<String>",
+    "description": "com.example.testutils.fake.FakeRestoApiService.getRestoList",
+    "location": "testUtils/com.example.testutils.fake/-fake-resto-api-service/get-resto-list.html",
+    "searchKeys": [
+      "getRestoList",
+      "open suspend override fun getRestoList(): List<String>",
+      "com.example.testutils.fake.FakeRestoApiService.getRestoList"
+    ]
+  },
+  {
+    "name": "open suspend override fun getRestoList(): List<String>",
+    "description": "com.example.testutils.fake.TestRestoApiService.getRestoList",
+    "location": "testUtils/com.example.testutils.fake/-test-resto-api-service/get-resto-list.html",
+    "searchKeys": [
+      "getRestoList",
+      "open suspend override fun getRestoList(): List<String>",
+      "com.example.testutils.fake.TestRestoApiService.getRestoList"
+    ]
+  },
+  {
+    "name": "open suspend override fun getRestoMenu(name: String): ApiRestoMenu",
+    "description": "com.example.testutils.fake.FakeRestoApiService.getRestoMenu",
+    "location": "testUtils/com.example.testutils.fake/-fake-resto-api-service/get-resto-menu.html",
+    "searchKeys": [
+      "getRestoMenu",
+      "open suspend override fun getRestoMenu(name: String): ApiRestoMenu",
+      "com.example.testutils.fake.FakeRestoApiService.getRestoMenu"
+    ]
+  },
+  {
+    "name": "open suspend override fun getRestoMenu(name: String): ApiRestoMenu",
+    "description": "com.example.testutils.fake.TestRestoApiService.getRestoMenu",
+    "location": "testUtils/com.example.testutils.fake/-test-resto-api-service/get-resto-menu.html",
+    "searchKeys": [
+      "getRestoMenu",
+      "open suspend override fun getRestoMenu(name: String): ApiRestoMenu",
+      "com.example.testutils.fake.TestRestoApiService.getRestoMenu"
+    ]
+  },
+  {
+    "name": "open suspend override fun getRestoMenu(name: String): Flow<MenuData>",
+    "description": "com.example.testutils.fake.FakeRestoRepository.getRestoMenu",
+    "location": "testUtils/com.example.testutils.fake/-fake-resto-repository/get-resto-menu.html",
+    "searchKeys": [
+      "getRestoMenu",
+      "open suspend override fun getRestoMenu(name: String): Flow<MenuData>",
+      "com.example.testutils.fake.FakeRestoRepository.getRestoMenu"
+    ]
+  },
+  {
+    "name": "open suspend override fun getRestoMenu(name: String): Flow<MenuData>",
+    "description": "com.example.testutils.fake.TestRestoRepository.getRestoMenu",
+    "location": "testUtils/com.example.testutils.fake/-test-resto-repository/get-resto-menu.html",
+    "searchKeys": [
+      "getRestoMenu",
+      "open suspend override fun getRestoMenu(name: String): Flow<MenuData>",
+      "com.example.testutils.fake.TestRestoRepository.getRestoMenu"
+    ]
+  },
+  {
+    "name": "open suspend override fun getRestoMenuSt(name: String): Flow<StaleAbleData<MenuData>>",
+    "description": "com.example.testutils.fake.FakeRestoRepository.getRestoMenuSt",
+    "location": "testUtils/com.example.testutils.fake/-fake-resto-repository/get-resto-menu-st.html",
+    "searchKeys": [
+      "getRestoMenuSt",
+      "open suspend override fun getRestoMenuSt(name: String): Flow<StaleAbleData<MenuData>>",
+      "com.example.testutils.fake.FakeRestoRepository.getRestoMenuSt"
+    ]
+  },
+  {
+    "name": "open suspend override fun getRestoMenuSt(name: String): Flow<StaleAbleData<MenuData>>",
+    "description": "com.example.testutils.fake.TestRestoRepository.getRestoMenuSt",
+    "location": "testUtils/com.example.testutils.fake/-test-resto-repository/get-resto-menu-st.html",
+    "searchKeys": [
+      "getRestoMenuSt",
+      "open suspend override fun getRestoMenuSt(name: String): Flow<StaleAbleData<MenuData>>",
+      "com.example.testutils.fake.TestRestoRepository.getRestoMenuSt"
+    ]
+  },
+  {
+    "name": "open suspend override fun insert(resto: Resto)",
+    "description": "com.example.testutils.fake.FakeRestoDao.insert",
+    "location": "testUtils/com.example.testutils.fake/-fake-resto-dao/insert.html",
+    "searchKeys": [
+      "insert",
+      "open suspend override fun insert(resto: Resto)",
+      "com.example.testutils.fake.FakeRestoDao.insert"
+    ]
+  },
+  {
+    "name": "open suspend override fun insert(resto: Resto)",
+    "description": "com.example.testutils.fake.TestRestoDao.insert",
+    "location": "testUtils/com.example.testutils.fake/-test-resto-dao/insert.html",
+    "searchKeys": [
+      "insert",
+      "open suspend override fun insert(resto: Resto)",
+      "com.example.testutils.fake.TestRestoDao.insert"
+    ]
+  },
+  {
+    "name": "open suspend override fun insertMenuData(menuData: MenuDataEntity)",
+    "description": "com.example.testutils.fake.FakeMenuDao.insertMenuData",
+    "location": "testUtils/com.example.testutils.fake/-fake-menu-dao/insert-menu-data.html",
+    "searchKeys": [
+      "insertMenuData",
+      "open suspend override fun insertMenuData(menuData: MenuDataEntity)",
+      "com.example.testutils.fake.FakeMenuDao.insertMenuData"
+    ]
+  },
+  {
+    "name": "open suspend override fun insertMenuData(menuData: MenuDataEntity)",
+    "description": "com.example.testutils.fake.TestMenuDao.insertMenuData",
+    "location": "testUtils/com.example.testutils.fake/-test-menu-dao/insert-menu-data.html",
+    "searchKeys": [
+      "insertMenuData",
+      "open suspend override fun insertMenuData(menuData: MenuDataEntity)",
+      "com.example.testutils.fake.TestMenuDao.insertMenuData"
+    ]
+  },
+  {
+    "name": "open suspend override fun refreshRestoList()",
+    "description": "com.example.testutils.fake.FakeRestoRepository.refreshRestoList",
+    "location": "testUtils/com.example.testutils.fake/-fake-resto-repository/refresh-resto-list.html",
+    "searchKeys": [
+      "refreshRestoList",
+      "open suspend override fun refreshRestoList()",
+      "com.example.testutils.fake.FakeRestoRepository.refreshRestoList"
+    ]
+  },
+  {
+    "name": "open suspend override fun refreshRestoList()",
+    "description": "com.example.testutils.fake.TestRestoRepository.refreshRestoList",
+    "location": "testUtils/com.example.testutils.fake/-test-resto-repository/refresh-resto-list.html",
+    "searchKeys": [
+      "refreshRestoList",
+      "open suspend override fun refreshRestoList()",
+      "com.example.testutils.fake.TestRestoRepository.refreshRestoList"
+    ]
+  },
+  {
+    "name": "open suspend override fun refreshRestoMenu(name: String)",
+    "description": "com.example.testutils.fake.FakeRestoRepository.refreshRestoMenu",
+    "location": "testUtils/com.example.testutils.fake/-fake-resto-repository/refresh-resto-menu.html",
+    "searchKeys": [
+      "refreshRestoMenu",
+      "open suspend override fun refreshRestoMenu(name: String)",
+      "com.example.testutils.fake.FakeRestoRepository.refreshRestoMenu"
+    ]
+  },
+  {
+    "name": "open suspend override fun refreshRestoMenu(name: String)",
+    "description": "com.example.testutils.fake.TestRestoRepository.refreshRestoMenu",
+    "location": "testUtils/com.example.testutils.fake/-test-resto-repository/refresh-resto-menu.html",
+    "searchKeys": [
+      "refreshRestoMenu",
+      "open suspend override fun refreshRestoMenu(name: String)",
+      "com.example.testutils.fake.TestRestoRepository.refreshRestoMenu"
+    ]
+  },
+  {
+    "name": "open suspend override fun setFavoriteResto(name: String, favorite: Boolean)",
+    "description": "com.example.testutils.fake.FakeRestoDao.setFavoriteResto",
+    "location": "testUtils/com.example.testutils.fake/-fake-resto-dao/set-favorite-resto.html",
+    "searchKeys": [
+      "setFavoriteResto",
+      "open suspend override fun setFavoriteResto(name: String, favorite: Boolean)",
+      "com.example.testutils.fake.FakeRestoDao.setFavoriteResto"
+    ]
+  },
+  {
+    "name": "open suspend override fun setFavoriteResto(name: String, favorite: Boolean)",
+    "description": "com.example.testutils.fake.FakeRestoRepository.setFavoriteResto",
+    "location": "testUtils/com.example.testutils.fake/-fake-resto-repository/set-favorite-resto.html",
+    "searchKeys": [
+      "setFavoriteResto",
+      "open suspend override fun setFavoriteResto(name: String, favorite: Boolean)",
+      "com.example.testutils.fake.FakeRestoRepository.setFavoriteResto"
+    ]
+  },
+  {
+    "name": "open suspend override fun setFavoriteResto(name: String, favorite: Boolean)",
+    "description": "com.example.testutils.fake.TestRestoDao.setFavoriteResto",
+    "location": "testUtils/com.example.testutils.fake/-test-resto-dao/set-favorite-resto.html",
+    "searchKeys": [
+      "setFavoriteResto",
+      "open suspend override fun setFavoriteResto(name: String, favorite: Boolean)",
+      "com.example.testutils.fake.TestRestoDao.setFavoriteResto"
+    ]
+  },
+  {
+    "name": "open suspend override fun setFavoriteResto(name: String, favorite: Boolean)",
+    "description": "com.example.testutils.fake.TestRestoRepository.setFavoriteResto",
+    "location": "testUtils/com.example.testutils.fake/-test-resto-repository/set-favorite-resto.html",
+    "searchKeys": [
+      "setFavoriteResto",
+      "open suspend override fun setFavoriteResto(name: String, favorite: Boolean)",
+      "com.example.testutils.fake.TestRestoRepository.setFavoriteResto"
+    ]
+  },
+  {
+    "name": "open suspend override fun update(resto: Resto)",
+    "description": "com.example.testutils.fake.FakeRestoDao.update",
+    "location": "testUtils/com.example.testutils.fake/-fake-resto-dao/update.html",
+    "searchKeys": [
+      "update",
+      "open suspend override fun update(resto: Resto)",
+      "com.example.testutils.fake.FakeRestoDao.update"
+    ]
+  },
+  {
+    "name": "open suspend override fun update(resto: Resto)",
+    "description": "com.example.testutils.fake.TestRestoDao.update",
+    "location": "testUtils/com.example.testutils.fake/-test-resto-dao/update.html",
+    "searchKeys": [
+      "update",
+      "open suspend override fun update(resto: Resto)",
+      "com.example.testutils.fake.TestRestoDao.update"
+    ]
+  },
+  {
+    "name": "sealed class ResultOrError<out T>",
+    "description": "com.example.testutils.fake.ResultOrError",
+    "location": "testUtils/com.example.testutils.fake/-result-or-error/index.html",
+    "searchKeys": [
+      "ResultOrError",
+      "sealed class ResultOrError<out T>",
+      "com.example.testutils.fake.ResultOrError"
+    ]
+  },
+  {
+    "name": "val data: T",
+    "description": "com.example.testutils.fake.ResultOrError.Result.data",
+    "location": "testUtils/com.example.testutils.fake/-result-or-error/-result/data.html",
+    "searchKeys": [
+      "data",
+      "val data: T",
+      "com.example.testutils.fake.ResultOrError.Result.data"
+    ]
+  },
+  {
+    "name": "val error: Throwable",
+    "description": "com.example.testutils.fake.ResultOrError.Error.error",
+    "location": "testUtils/com.example.testutils.fake/-result-or-error/-error/error.html",
+    "searchKeys": [
+      "error",
+      "val error: Throwable",
+      "com.example.testutils.fake.ResultOrError.Error.error"
+    ]
+  },
+  {
+    "name": "val restoList: List<String>",
+    "description": "com.example.testutils.fake.FakeDataSource.restoList",
+    "location": "testUtils/com.example.testutils.fake/-fake-data-source/resto-list.html",
+    "searchKeys": [
+      "restoList",
+      "val restoList: List<String>",
+      "com.example.testutils.fake.FakeDataSource.restoList"
+    ]
+  },
+  {
+    "name": "val restoMenu2: ApiRestoMenu",
+    "description": "com.example.testutils.fake.FakeDataSource.restoMenu2",
+    "location": "testUtils/com.example.testutils.fake/-fake-data-source/resto-menu2.html",
+    "searchKeys": [
+      "restoMenu2",
+      "val restoMenu2: ApiRestoMenu",
+      "com.example.testutils.fake.FakeDataSource.restoMenu2"
+    ]
+  },
+  {
+    "name": "val restoMenu: ApiRestoMenu",
+    "description": "com.example.testutils.fake.FakeDataSource.restoMenu",
+    "location": "testUtils/com.example.testutils.fake/-fake-data-source/resto-menu.html",
+    "searchKeys": [
+      "restoMenu",
+      "val restoMenu: ApiRestoMenu",
+      "com.example.testutils.fake.FakeDataSource.restoMenu"
+    ]
+  },
+  {
+    "name": "var restoObjectList: List<Resto>",
+    "description": "com.example.testutils.fake.FakeDataSource.restoObjectList",
+    "location": "testUtils/com.example.testutils.fake/-fake-data-source/resto-object-list.html",
+    "searchKeys": [
+      "restoObjectList",
+      "var restoObjectList: List<Resto>",
+      "com.example.testutils.fake.FakeDataSource.restoObjectList"
+    ]
+  },
+  {
+    "name": "NONE",
+    "description": "com.example.network.Special.NONE",
+    "location": "network/com.example.network/-special/-n-o-n-e/index.html",
+    "searchKeys": [
+      "NONE",
+      "NONE",
+      "com.example.network.Special.NONE"
+    ]
+  },
+  {
+    "name": "UNKNOWN",
+    "description": "com.example.network.Special.UNKNOWN",
+    "location": "network/com.example.network/-special/-u-n-k-n-o-w-n/index.html",
+    "searchKeys": [
+      "UNKNOWN",
+      "UNKNOWN",
+      "com.example.network.Special.UNKNOWN"
+    ]
+  },
+  {
+    "name": "VEGAN",
+    "description": "com.example.network.Special.VEGAN",
+    "location": "network/com.example.network/-special/-v-e-g-a-n/index.html",
+    "searchKeys": [
+      "VEGAN",
+      "VEGAN",
+      "com.example.network.Special.VEGAN"
+    ]
+  },
+  {
+    "name": "VEGGIE",
+    "description": "com.example.network.Special.VEGGIE",
+    "location": "network/com.example.network/-special/-v-e-g-g-i-e/index.html",
+    "searchKeys": [
+      "VEGGIE",
+      "VEGGIE",
+      "com.example.network.Special.VEGGIE"
+    ]
+  },
+  {
+    "name": "abstract suspend fun getRestoList(): List<String>",
+    "description": "com.example.network.RestoApiService.getRestoList",
+    "location": "network/com.example.network/-resto-api-service/get-resto-list.html",
+    "searchKeys": [
+      "getRestoList",
+      "abstract suspend fun getRestoList(): List<String>",
+      "com.example.network.RestoApiService.getRestoList"
+    ]
+  },
+  {
+    "name": "abstract suspend fun getRestoMenu(name: String): ApiRestoMenu",
+    "description": "com.example.network.RestoApiService.getRestoMenu",
+    "location": "network/com.example.network/-resto-api-service/get-resto-menu.html",
+    "searchKeys": [
+      "getRestoMenu",
+      "abstract suspend fun getRestoMenu(name: String): ApiRestoMenu",
+      "com.example.network.RestoApiService.getRestoMenu"
+    ]
+  },
+  {
+    "name": "constructor(dag: String, message: String, menu: Map<String, List<Dish>>)",
+    "description": "com.example.network.Day.Day",
+    "location": "network/com.example.network/-day/-day.html",
+    "searchKeys": [
+      "Day",
+      "constructor(dag: String, message: String, menu: Map<String, List<Dish>>)",
+      "com.example.network.Day.Day"
+    ]
+  },
+  {
+    "name": "constructor(location: String, days: List<Day>)",
+    "description": "com.example.network.ApiRestoMenu.ApiRestoMenu",
+    "location": "network/com.example.network/-api-resto-menu/-api-resto-menu.html",
+    "searchKeys": [
+      "ApiRestoMenu",
+      "constructor(location: String, days: List<Day>)",
+      "com.example.network.ApiRestoMenu.ApiRestoMenu"
+    ]
+  },
+  {
+    "name": "constructor(name: String)",
+    "description": "com.example.network.Resto.Resto",
+    "location": "network/com.example.network/-resto/-resto.html",
+    "searchKeys": [
+      "Resto",
+      "constructor(name: String)",
+      "com.example.network.Resto.Resto"
+    ]
+  },
+  {
+    "name": "constructor(name: String, special: Special)",
+    "description": "com.example.network.Dish.Dish",
+    "location": "network/com.example.network/-dish/-dish.html",
+    "searchKeys": [
+      "Dish",
+      "constructor(name: String, special: Special)",
+      "com.example.network.Dish.Dish"
+    ]
+  },
+  {
+    "name": "data class ApiRestoMenu(val location: String, val days: List<Day>)",
+    "description": "com.example.network.ApiRestoMenu",
+    "location": "network/com.example.network/-api-resto-menu/index.html",
+    "searchKeys": [
+      "ApiRestoMenu",
+      "data class ApiRestoMenu(val location: String, val days: List<Day>)",
+      "com.example.network.ApiRestoMenu"
+    ]
+  },
+  {
+    "name": "data class Day(val dag: String, val message: String, val menu: Map<String, List<Dish>>)",
+    "description": "com.example.network.Day",
+    "location": "network/com.example.network/-day/index.html",
+    "searchKeys": [
+      "Day",
+      "data class Day(val dag: String, val message: String, val menu: Map<String, List<Dish>>)",
+      "com.example.network.Day"
+    ]
+  },
+  {
+    "name": "data class Dish(val name: String, val special: Special)",
+    "description": "com.example.network.Dish",
+    "location": "network/com.example.network/-dish/index.html",
+    "searchKeys": [
+      "Dish",
+      "data class Dish(val name: String, val special: Special)",
+      "com.example.network.Dish"
+    ]
+  },
+  {
+    "name": "data class Resto(val name: String)",
+    "description": "com.example.network.Resto",
+    "location": "network/com.example.network/-resto/index.html",
+    "searchKeys": [
+      "Resto",
+      "data class Resto(val name: String)",
+      "com.example.network.Resto"
+    ]
+  },
+  {
+    "name": "enum Special : Enum<Special> ",
+    "description": "com.example.network.Special",
+    "location": "network/com.example.network/-special/index.html",
+    "searchKeys": [
+      "Special",
+      "enum Special : Enum<Special> ",
+      "com.example.network.Special"
+    ]
+  },
+  {
+    "name": "fun ApiRestoMenu.asDomainObject(): MenuData",
+    "description": "com.example.network.asDomainObject",
+    "location": "network/com.example.network/as-domain-object.html",
+    "searchKeys": [
+      "asDomainObject",
+      "fun ApiRestoMenu.asDomainObject(): MenuData",
+      "com.example.network.asDomainObject"
+    ]
+  },
+  {
+    "name": "fun Flow<List<ApiRestoMenu>>.asDomainObjects(): Flow<List<MenuData>>",
+    "description": "com.example.network.asDomainObjects",
+    "location": "network/com.example.network/as-domain-objects.html",
+    "searchKeys": [
+      "asDomainObjects",
+      "fun Flow<List<ApiRestoMenu>>.asDomainObjects(): Flow<List<MenuData>>",
+      "com.example.network.asDomainObjects"
+    ]
+  },
+  {
+    "name": "fun List<ApiRestoMenu>.asDomainObjects(): List<MenuData>",
+    "description": "com.example.network.asDomainObjects",
+    "location": "network/com.example.network/as-domain-objects.html",
+    "searchKeys": [
+      "asDomainObjects",
+      "fun List<ApiRestoMenu>.asDomainObjects(): List<MenuData>",
+      "com.example.network.asDomainObjects"
+    ]
+  },
+  {
+    "name": "fun RestoApiService.getRestoListAsFlow(): Flow<List<String>>",
+    "description": "com.example.network.getRestoListAsFlow",
+    "location": "network/com.example.network/get-resto-list-as-flow.html",
+    "searchKeys": [
+      "getRestoListAsFlow",
+      "fun RestoApiService.getRestoListAsFlow(): Flow<List<String>>",
+      "com.example.network.getRestoListAsFlow"
+    ]
+  },
+  {
+    "name": "fun RestoApiService.getRestoMenuAsFlow(name: String): Flow<ApiRestoMenu>",
+    "description": "com.example.network.getRestoMenuAsFlow",
+    "location": "network/com.example.network/get-resto-menu-as-flow.html",
+    "searchKeys": [
+      "getRestoMenuAsFlow",
+      "fun RestoApiService.getRestoMenuAsFlow(name: String): Flow<ApiRestoMenu>",
+      "com.example.network.getRestoMenuAsFlow"
+    ]
+  },
+  {
+    "name": "fun Special.asDomainObject(): Special",
+    "description": "com.example.network.asDomainObject",
+    "location": "network/com.example.network/as-domain-object.html",
+    "searchKeys": [
+      "asDomainObject",
+      "fun Special.asDomainObject(): Special",
+      "com.example.network.asDomainObject"
+    ]
+  },
+  {
+    "name": "fun valueOf(value: String): Special",
+    "description": "com.example.network.Special.valueOf",
+    "location": "network/com.example.network/-special/value-of.html",
+    "searchKeys": [
+      "valueOf",
+      "fun valueOf(value: String): Special",
+      "com.example.network.Special.valueOf"
+    ]
+  },
+  {
+    "name": "fun values(): Array<Special>",
+    "description": "com.example.network.Special.values",
+    "location": "network/com.example.network/-special/values.html",
+    "searchKeys": [
+      "values",
+      "fun values(): Array<Special>",
+      "com.example.network.Special.values"
+    ]
+  },
+  {
+    "name": "interface RestoApiService",
+    "description": "com.example.network.RestoApiService",
+    "location": "network/com.example.network/-resto-api-service/index.html",
+    "searchKeys": [
+      "RestoApiService",
+      "interface RestoApiService",
+      "com.example.network.RestoApiService"
+    ]
+  },
+  {
+    "name": "val dag: String",
+    "description": "com.example.network.Day.dag",
+    "location": "network/com.example.network/-day/dag.html",
+    "searchKeys": [
+      "dag",
+      "val dag: String",
+      "com.example.network.Day.dag"
+    ]
+  },
+  {
+    "name": "val days: List<Day>",
+    "description": "com.example.network.ApiRestoMenu.days",
+    "location": "network/com.example.network/-api-resto-menu/days.html",
+    "searchKeys": [
+      "days",
+      "val days: List<Day>",
+      "com.example.network.ApiRestoMenu.days"
+    ]
+  },
+  {
+    "name": "val entries: EnumEntries<Special>",
+    "description": "com.example.network.Special.entries",
+    "location": "network/com.example.network/-special/entries.html",
+    "searchKeys": [
+      "entries",
+      "val entries: EnumEntries<Special>",
+      "com.example.network.Special.entries"
+    ]
+  },
+  {
+    "name": "val location: String",
+    "description": "com.example.network.ApiRestoMenu.location",
+    "location": "network/com.example.network/-api-resto-menu/location.html",
+    "searchKeys": [
+      "location",
+      "val location: String",
+      "com.example.network.ApiRestoMenu.location"
+    ]
+  },
+  {
+    "name": "val menu: Map<String, List<Dish>>",
+    "description": "com.example.network.Day.menu",
+    "location": "network/com.example.network/-day/menu.html",
+    "searchKeys": [
+      "menu",
+      "val menu: Map<String, List<Dish>>",
+      "com.example.network.Day.menu"
+    ]
+  },
+  {
+    "name": "val message: String",
+    "description": "com.example.network.Day.message",
+    "location": "network/com.example.network/-day/message.html",
+    "searchKeys": [
+      "message",
+      "val message: String",
+      "com.example.network.Day.message"
+    ]
+  },
+  {
+    "name": "val name: String",
+    "description": "com.example.network.Dish.name",
+    "location": "network/com.example.network/-dish/name.html",
+    "searchKeys": [
+      "name",
+      "val name: String",
+      "com.example.network.Dish.name"
+    ]
+  },
+  {
+    "name": "val name: String",
+    "description": "com.example.network.Resto.name",
+    "location": "network/com.example.network/-resto/name.html",
+    "searchKeys": [
+      "name",
+      "val name: String",
+      "com.example.network.Resto.name"
+    ]
+  },
+  {
+    "name": "val special: Special",
+    "description": "com.example.network.Dish.special",
+    "location": "network/com.example.network/-dish/special.html",
+    "searchKeys": [
+      "special",
+      "val special: Special",
+      "com.example.network.Dish.special"
+    ]
+  }
+]
