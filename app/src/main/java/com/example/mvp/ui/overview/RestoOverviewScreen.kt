@@ -169,7 +169,7 @@ internal fun ShowRestoOverview(
                         LazyVerticalGrid(
                             columns = when (gridSize) {
                                 GridSize.Fixed -> GridCells.Fixed(2)
-                                GridSize.Adaptive -> GridCells.Adaptive(100.dp)
+                                GridSize.Adaptive -> GridCells.Adaptive(200.dp)
                             },
                             modifier = Modifier.contentDescription(
                                 stringResource(

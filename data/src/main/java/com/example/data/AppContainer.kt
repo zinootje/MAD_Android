@@ -2,8 +2,6 @@ package com.example.data
 
 import android.content.Context
 import com.example.data.database.RestoDatabase
-import com.example.data.util.ConnectivityManagerNetworkMonitor
-import com.example.data.util.NetworkMonitor
 import com.example.network.RestoApiService
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
@@ -13,7 +11,7 @@ import retrofit2.Retrofit
 
 interface AppContainer {
     val restoRepository: RestoRepository
-    val networkMonitor: NetworkMonitor
+    //val networkMonitor: NetworkMonitor
 }
 
 class DefaultAppContainer(
@@ -36,6 +34,6 @@ class DefaultAppContainer(
     )
     }
 
-    override val networkMonitor: NetworkMonitor by lazy { ConnectivityManagerNetworkMonitor(context) }
+    //override val networkMonitor: NetworkMonitor by lazy { ConnectivityManagerNetworkMonitor(context) }
 
 }
