@@ -9,7 +9,7 @@ import androidx.compose.ui.test.performClick
 import androidx.navigation.compose.ComposeNavigator
 import androidx.navigation.testing.TestNavHostController
 import com.example.mvp.ui.MVPApp
-import com.example.mvp.ui.MvpScreens
+import com.example.mvp.ui.navigation.MvpScreens
 import com.example.mvp.utils.assertCurrentRouteName
 import com.example.mvp.utils.setFakeAppContainer
 import com.example.testutils.fake.FakeDataSource

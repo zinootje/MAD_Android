@@ -1,7 +1,6 @@
 package com.example.mvp.ui
 
 import android.util.Log
-import androidx.annotation.StringRes
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,52 +13,15 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.mvp.R
 import com.example.mvp.ui.menu.RestoMenuScreen
 import com.example.mvp.ui.menu.RestoMenuViewmodel
+import com.example.mvp.ui.navigation.MvpScreens
 import com.example.mvp.ui.overview.RestoOverviewScreen
 import com.example.mvp.ui.overview.RestoOverviewViewModel
 import com.example.mvp.ui.theme.MVPTheme
 import com.example.mvp.ui.util.GridSize
 import com.example.mvp.ui.util.TabRowType
-
-
-/**
- * Enumeration class representing the screens in the MVP app.
- *
- * @param title The string resource ID for the screen title.
- * @param arguments Optional string value representing the screen argument.
- *
- *
- */
-enum class MvpScreens(@StringRes val title: Int, val arguments: String? = null) {
-    /**
-     * This class represents the Start screen in the MVP app.
-     *
-     */
-    Start(title = R.string.app_name),
-
-    /**
-     * Represents a restaurant menu in the MVP app.
-     *
-     */
-    RestoMenu(title = R.string.resto_menu_title, arguments = "restoName");
-
-
-    /**
-     * Converts the enumeration class representing the screens in the MVP app to a route string.
-     *
-     * @return The route string corresponding to the screen.
-     */
-    fun toRoute(): String = buildString {
-        append(name)
-        arguments?.let { append("/{$it}") }
-    }
-
-
-}
 
 
 /**
@@ -72,7 +34,7 @@ enum class MvpScreens(@StringRes val title: Int, val arguments: String? = null) 
 fun MVPApp(navController: NavHostController = rememberNavController(), windowSize: WindowWidthSizeClass) {
 
 
-    val backStackEntry = navController.currentBackStackEntryAsState()
+    //val backStackEntry = navController.currentBackStackEntryAsState()
 
     //TODO type safe navigation
 
@@ -82,6 +44,7 @@ fun MVPApp(navController: NavHostController = rememberNavController(), windowSiz
             MvpScreens.RestoMenu.toRoute().replace("{${MvpScreens.RestoMenu.arguments!!}}", restoName)
         )
     }
+
 
     val tabRowType = when (windowSize) {
         WindowWidthSizeClass.Compact -> {
@@ -109,15 +72,15 @@ fun MVPApp(navController: NavHostController = rememberNavController(), windowSiz
         }
 
         WindowWidthSizeClass.Medium -> {
-            GridSize.Fixed
+            GridSize.Adaptive
         }
 
         WindowWidthSizeClass.Expanded -> {
-            GridSize.Fixed
+            GridSize.Adaptive
         }
 
         else -> {
-            GridSize.Fixed
+            GridSize.Adaptive
         }
     }
 
@@ -136,7 +99,8 @@ fun MVPApp(navController: NavHostController = rememberNavController(), windowSiz
                     )
                 }
 
-                composable(MvpScreens.RestoMenu.toRoute(),
+                composable(
+                    MvpScreens.RestoMenu.toRoute(),
                     enterTransition = {
                         //slide in from the right
                         slideInHorizontally(
