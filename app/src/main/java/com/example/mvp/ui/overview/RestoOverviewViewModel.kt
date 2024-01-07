@@ -9,7 +9,9 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.core.Result
 import com.example.core.asResult
+import com.example.core.model.ErrorMessage
 import com.example.data.RestoRepository
+import com.example.data.getErrorMessage
 import com.example.mvp.MvpApplication
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -53,7 +55,7 @@ class RestoOverviewViewModel(private val restoRepository: RestoRepository): View
                    is Result.Loading -> RestoOverviewApiState.Loading
                    is Result.Error -> {
                        Log.e("RestoOverviewViewModel", "getRestoList: ", it.exception)
-                       RestoOverviewApiState.Error(it.exception?.message ?: "Unknown error")
+                       RestoOverviewApiState.Error(it.exception?.getErrorMessage() ?: ErrorMessage.Unknown)
                    }
 
                    is Result.Success -> RestoOverviewApiState.Success(it.data)

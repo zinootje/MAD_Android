@@ -14,7 +14,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.core.model.ErrorMessage
 import com.example.data.getErrorMessage
-import com.example.mvp.BuildConfig
 import com.example.mvp.R
 import com.example.mvp.ui.util.formatErrorMessage
 
@@ -83,15 +82,6 @@ private fun ErrorView(message: String, onRetry: (() -> Unit)?) {
             ) {
                 Text(text = stringResource(R.string.retry))
             }
-        }
-        //in debug show whole error
-        if (BuildConfig.DEBUG) {
-            Spacer(modifier = Modifier.height(16.dp))
-            Text(
-                text = message,
-                textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth()
-            )
         }
     }
 }

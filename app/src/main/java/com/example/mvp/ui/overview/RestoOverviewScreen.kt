@@ -229,7 +229,7 @@ internal fun ShowRestoOverview(
                 }
 
                 is RestoOverviewApiState.Error -> {
-                    ErrorComponent(message = restoOverviewUiState.restoOverviewApiState.message)
+                    ErrorComponent(restoOverviewUiState.restoOverviewApiState.message)
                 }
             }
         }

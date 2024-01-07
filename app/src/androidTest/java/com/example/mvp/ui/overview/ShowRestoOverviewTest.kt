@@ -3,11 +3,10 @@ package com.example.mvp.ui.overview
 import androidx.activity.ComponentActivity
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.test.assertAny
-import androidx.compose.ui.test.hasText
+import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
-import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onNodeWithText
+import com.example.core.model.ErrorMessage
 import com.example.core.model.Resto
 import com.example.mvp.R
 import com.example.mvp.ui.util.GridSize
@@ -36,18 +35,16 @@ class ShowRestoOverviewTest {
 
     @Test
     fun showRestoOverview_Displays_showsErrorState() {
-
-        val error = "error"
         composeTestRule.setContent {
             CreateShowRestoOverview(
                 restoOverviewUiState = RestoOverviewUiState(
-                    RestoOverviewApiState.Error(error),
+                    RestoOverviewApiState.Error(ErrorMessage.NoNetwork),
                     false
                 )
             )
         }
         //at least one node with text error
-        composeTestRule.onAllNodesWithText(error).assertAny(hasText(error))
+        composeTestRule.onNodeWithContentDescriptionStringId(ErrorMessage.NoNetwork.message).assertIsDisplayed()
     }
 
     @Test
