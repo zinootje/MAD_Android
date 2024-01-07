@@ -54,7 +54,6 @@ fun MenuData.toDbMenu(): MenuDataEntity {
 }
 
 
-//Todo check if this can be done in a better way
 /**
  * TEST ONLY not used in production
  * Converts an [ApiRestoMenu] (network)object to a [MenuDataEntity] (database)object.

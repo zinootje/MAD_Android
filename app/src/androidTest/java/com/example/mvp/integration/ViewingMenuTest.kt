@@ -46,7 +46,6 @@ class ViewingMenuTest {
         val restos = FakeDataSource.restoObjectList
         restoRepository.sendRestoList(restos)
         //Wait for loading to be done
-        //TODO maybe use a better way to wait for loading to be done
         composeTestRule.waitUntilDoesNotExist(
             hasContentDescription(
                 composeTestRule.activity.getString(
