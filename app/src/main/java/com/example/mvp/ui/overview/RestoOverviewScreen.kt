@@ -17,14 +17,18 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
+import androidx.compose.material.icons.filled.List
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.unit.times
@@ -32,10 +36,7 @@ import com.example.core.model.Resto
 import com.example.mvp.R
 import com.example.mvp.ui.common.ErrorComponent
 import com.example.mvp.ui.common.LoadingIndicator
-import com.example.mvp.ui.util.GridSize
-import com.example.mvp.ui.util.PreviewScreenSizes
-import com.example.mvp.ui.util.contentDescription
-import com.example.mvp.ui.util.getColorFromName
+import com.example.mvp.ui.util.*
 import com.theapache64.rebugger.Rebugger
 
 /**
@@ -109,13 +110,12 @@ private fun GridToggleButton(
     toggleGridMode: () -> Unit
 ) {
     if (isGrid) {
-        //TODO: icon button
-        TextButton(onClick = { toggleGridMode() }) {
-            Text(text = stringResource(R.string.list))
+        IconButton(onClick = { toggleGridMode() }) {
+            Icon(Icons.Default.List, contentDescription = stringResource(R.string.list))
         }
     } else {
-        TextButton(onClick = { toggleGridMode()}) {
-            Text(text = stringResource(R.string.grid))
+        IconButton(onClick = { toggleGridMode() }) {
+            Icon(ImageVector.vectorResource(R.drawable.grid_view), contentDescription = stringResource(R.string.grid))
         }
     }
 }
@@ -361,12 +361,14 @@ private fun FavoriteButton(
 
 @PreviewScreenSizes
 @Composable
-private fun ShowRestoOverviewPreview() {
+private fun ShowRestoOverviewPreview(
+    @PreviewParameter(BooleanProvider::class) gridMode: Boolean
+) {
 
     ShowRestoOverview(
         innerPadding = PaddingValues(),
         restoOverviewUiState = RestoOverviewUiState(
-            gridMode = false,
+            gridMode = gridMode,
             restoOverviewApiState = RestoOverviewApiState.Success(
                 data = listOf(
                     Resto("Restaurant 1", false),
