@@ -5,6 +5,7 @@ import androidx.compose.ui.tooling.preview.Devices.FOLDABLE
 import androidx.compose.ui.tooling.preview.Devices.PHONE
 import androidx.compose.ui.tooling.preview.Devices.TABLET
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 
 @Target(
     AnnotationTarget.ANNOTATION_CLASS,
@@ -19,3 +20,9 @@ import androidx.compose.ui.tooling.preview.Preview
 @Preview(name = "Tablet", device = TABLET)
 @Preview(name = "Desktop", device = DESKTOP)
 annotation class PreviewScreenSizes
+
+
+class BooleanProvider : PreviewParameterProvider<Boolean> {
+    override val values: Sequence<Boolean>
+        get() = sequenceOf(true, false)
+}
