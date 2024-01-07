@@ -11,10 +11,9 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.core.Result
 import com.example.core.asResult
-import com.example.core.model.ErrorMessage
 import com.example.data.RestoRepository
-import com.example.data.isNetworkError
-import com.example.data.util.NetworkMonitor
+import com.example.data.getErrorMessage
+import com.example.data.isNoNetworkError
 import com.example.mvp.MvpApplication
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -33,14 +32,15 @@ import kotlinx.coroutines.launch
 class RestoMenuViewmodel(
     private val restoRepository: RestoRepository,
     val restoName: String,
-    private val networkMonitor: NetworkMonitor
+    //private val networkMonitor: NetworkMonitor
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(RestoMenuUiState())
     val uiState: StateFlow<RestoMenuUiState> = _uiState.asStateFlow()
+    //val networkStatus: StateFlow<Boolean> = networkMonitor.isOnline.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000L), false)
 
 
-    //val networkStatus: Flow<Boolean>  = networkMonitor.
+
 
 
     init {
@@ -78,15 +78,16 @@ class RestoMenuViewmodel(
                     is Result.Error -> {
                         Log.e("RestoMenuViewmodel", "getRestoMenu: ", it.exception)
 
-                        //If network error, show snackbar but keep stale data
-                        if ((_uiState.value.restoMenuApiState is RestoMenuApiState.Success) || (it.exception?.isNetworkError() == true)) {
+                        //If data shown or no network error, show error snackbar but keep stale data
+                        if ((_uiState.value.restoMenuApiState is RestoMenuApiState.Success) || (it.exception?.isNoNetworkError() == true)) {
                             _uiState.update { uiState ->
                                 uiState.copy(
-                                    errorSnackbar = ErrorMessage.NoNetwork,
+                                    errorSnackbar = it.exception?.getErrorMessage(),
+                                    //show refreshing indicator if not on loading screen
+                                    showRefreshingIndicator = uiState.restoMenuApiState !is RestoMenuApiState.Loading
                                 )
                             }
-                            return@collect
-                        }
+                        } else
                         _uiState.update { uiState ->
                             uiState.copy(
                                 restoMenuApiState = RestoMenuApiState.Error(it.exception?.message ?: "Unknown error")
@@ -138,7 +139,10 @@ class RestoMenuViewmodel(
             initializer {
                 val application = (this[APPLICATION_KEY] as MvpApplication)
                 val restoRepository = application.container.restoRepository
-                RestoMenuViewmodel(restoRepository, name, application.container.networkMonitor)
+                RestoMenuViewmodel(
+                    restoRepository, name,
+                    //application.container.networkMonitor
+                )
             }
         }
     }

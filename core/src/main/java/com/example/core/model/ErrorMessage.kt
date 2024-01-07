@@ -3,7 +3,7 @@ package com.example.core.model
 import androidx.annotation.StringRes
 import com.example.core.R
 
-sealed class ErrorMessage(@StringRes val message: Int, val throwable: Throwable? = null) {
+sealed class ErrorMessage(@StringRes val message: Int) {
     data object NoNetwork : ErrorMessage(R.string.no_network)
     data object InternalServerError : ErrorMessage(R.string.internal_server_error)
     data object ApplicationError : ErrorMessage(R.string.application_error)

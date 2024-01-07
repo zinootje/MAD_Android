@@ -17,6 +17,7 @@ import org.junit.Test
 //TODO maybe use turbine in all tests
 class RestoRepositoryTest {
 
+
     @Test
     fun restoOfflineRepositoryImpl_refreshRestoList_shouldReturnRestoList() {
         runTest {
@@ -24,6 +25,7 @@ class RestoRepositoryTest {
             val testMenuDao = TestMenuDao()
             val testRestoApiService = TestRestoApiService()
             val repo = RestoOfflineRepositoryImpl(FakeRestoApiService(), testRestoDao, testMenuDao)
+
             repo.refreshRestoList()
             repo.getRestoList().test {
                 testRestoApiService.setRestoList(FakeDataSource.restoObjectList.map { it.name })
@@ -43,6 +45,7 @@ class RestoRepositoryTest {
             val testMenuDao = TestMenuDao()
             val testRestoApiService = TestRestoApiService()
             val repo = RestoOfflineRepositoryImpl(testRestoApiService, testRestoDao, testMenuDao)
+
             val restoMenu = FakeDataSource.restoMenu
             testMenuDao.setMenuData(
                 MenuDataEntity(

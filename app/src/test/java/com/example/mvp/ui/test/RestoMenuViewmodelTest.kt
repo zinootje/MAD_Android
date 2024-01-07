@@ -8,7 +8,6 @@ import com.example.mvp.ui.menu.RestoMenuViewmodel
 import com.example.mvp.util.MainDispatcherRule
 import com.example.network.asDomainObject
 import com.example.testutils.fake.FakeDataSource
-import com.example.testutils.fake.FakeNetworkMonitor
 import com.example.testutils.fake.TestRestoRepository
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
@@ -32,7 +31,7 @@ class RestoMenuViewmodelTest {
 
     @Before
     fun setup() {
-        restoMenuViewmodel = RestoMenuViewmodel(restoRepository, RESTO_NAME, FakeNetworkMonitor())
+        restoMenuViewmodel = RestoMenuViewmodel(restoRepository, RESTO_NAME)
 
 
     }
@@ -108,7 +107,7 @@ class RestoMenuViewmodelTest {
                     restoMenuApiState = RestoMenuApiState.Success(FakeDataSource.restoMenu.asDomainObject()),
                     staleData = true,
                     showRefreshingIndicator = true,
-                    errorSnackbar = ErrorMessage.NoNetwork
+                    errorSnackbar = ErrorMessage.Unknown
                 ),
                 restoMenuViewmodel.uiState.value,
             )

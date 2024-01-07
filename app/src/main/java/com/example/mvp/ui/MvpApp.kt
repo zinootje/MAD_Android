@@ -89,7 +89,7 @@ fun MVPApp(navController: NavHostController = rememberNavController(), windowSiz
         }
 
         WindowWidthSizeClass.Medium -> {
-            TabRowType.Scrollable
+            TabRowType.Expanded
         }
 
         WindowWidthSizeClass.Expanded -> {

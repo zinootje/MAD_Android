@@ -30,6 +30,7 @@ import androidx.compose.ui.zIndex
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.core.model.*
 import com.example.mvp.R
+import com.example.mvp.ui.common.ErrorComponent
 import com.example.mvp.ui.common.LoadingIndicator
 import com.example.mvp.ui.common.NiaOverlayLoadingWheel
 import com.example.mvp.ui.util.TabRowType
@@ -194,7 +195,7 @@ fun RestoMenu(
                     modifier = modifier
                 ) {
                     //error
-                    Text(text = state.message)
+                    ErrorComponent(state.message)
                 }
             }
         }
@@ -279,11 +280,14 @@ private fun DayTab(
     onClick: () -> Unit,
     text: String
 ) {
+    //remove linebreaks from text and double spaces
+    val displayedText = text.replace("\n", " ").replace("  ", " ")
+
     Tab(
         modifier = Modifier.semantics { tabKey = text },
         selected = selected,
         onClick = onClick,
-        text = { Text(text = text) }
+        text = { Text(text = displayedText) }
     )
     Rebugger(trackMap = mapOf("selected" to selected, "text" to text, "onClick" to onClick))
 }

@@ -12,8 +12,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.core.model.ErrorMessage
+import com.example.data.getErrorMessage
 import com.example.mvp.BuildConfig
 import com.example.mvp.R
+import com.example.mvp.ui.util.formatErrorMessage
 
 /**
  * A composable function that renders an error view with an optional message and retry functionality.
@@ -31,8 +34,22 @@ fun ErrorComponent(
 if (message != null) {
         ErrorView(message = message, onRetry = onRetry)
     } else if (error != null) {
-        ErrorView(message = error.message ?: "Unknown error", onRetry = onRetry)
+    ErrorComponent(errorMessage = error.getErrorMessage(), onRetry = onRetry)
     }
+}
+
+/**
+ * A composable function that renders an error component with an error message and optional retry functionality.
+ *
+ * @param errorMessage The error message to display.
+ * @param onRetry The callback function to invoke when the retry button is clicked. If null, the retry button will not be shown.
+ */
+@Composable
+fun ErrorComponent(
+    errorMessage: ErrorMessage, onRetry: (() -> Unit)? = null
+) {
+    val message = formatErrorMessage(errorMessage = errorMessage)
+    ErrorView(message = message, onRetry = onRetry)
 }
 
 /**
